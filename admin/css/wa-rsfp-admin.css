@@ -1,0 +1,137 @@
+/**
+ * All of the CSS for your admin-specific functionality should be
+ * included in this file.
+ */
+
+ /* Columns */
+ 
+.wp-list-table th.column-thumbnail, .wp-list-table thead tr th[id*='image'] { width: 50px; }
+
+.column-posted table {
+    padding: 0;
+    margin: 0;
+}
+
+.column-posted table tr th {
+    padding: 0;
+    margin: 0;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.column-posted table tr td {
+    padding: 0;
+    margin: 0;
+    padding-left: 10px;
+    font-size: 11px;
+}
+
+/* Admin UI */ 
+
+.postbox-header { background: #f7f7f7; }
+#poststuff .inside { margin: 10px 0 0; }
+
+span.important { color: #EF6223; font-weight: bold;  }
+span.required { color: #a10e03; font-weight: bold; text-decoration: underline; }
+span.label {
+	background: #5085b3;
+	color: white;
+	padding: 2px 4px;
+	font-size: 10px;
+	font-weight: bold;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+span.new {
+	background: #EF6223;
+	color: white;
+	padding: 2px 4px;
+	font-size: 10px;
+	font-weight: bold;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+span.express {
+	background: #1ecbd1;
+	color: white;
+	padding: 2px 4px;
+	font-size: 10px;
+	font-weight: bold;
+	font-style: italic;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+span.automatic {
+	background: #d1b91e;
+	color: white;
+	padding: 2px 4px;
+	font-size: 10px;
+	font-weight: bold;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+
+/* Meta Box Admin UI */
+
+.rwmb-label p.description, .rwmb-input p.description{
+    color: #5085b3;
+}
+.text-limiter {
+    margin-top: 6px !important;
+}
+.text-limiter > span {
+    background: none;
+    border: none !important;
+    padding: 2px !important;
+    color: #EF6223;   
+}
+.text-limiter > span span {
+    background: #EF6223;
+	color: white;
+	padding: 2px 4px;
+	font-size: 10px;
+	font-weight: bold;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+.rwmb-button.button-primary {
+    background: #F15D30;
+    border-color: #F15D30;
+}
+.rwmb-button.button-primary:hover {
+    background: #d6410f;
+    border-color: #d6410f;
+}
+
+.rwmb-text_list-wrapper .rwmb-text-list-label {
+    display: none;
+}
+
+.rwmb-text-wrapper .rwmb-text-clone,
+.rwmb-text_list-wrapper .rwmb-text_list-clone {
+    margin-bottom: 0;
+}
+
+.rwmb-field:not(:last-of-type) {
+	margin: 0 0 32px !important;
+}
+
+.rwmb-clone-icon {
+    top: 4px !important;
+}
+
+.rwmb-button.remove-clone {
+	top: 4px !important;
+	right: 8px !important;
+}
+
+.rwmb-button.add-clone { margin-left: 15px; }
+.rwmb-field.required label { color: #a10e03; }

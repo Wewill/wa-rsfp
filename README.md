@@ -1,2 +1,2 @@
-# wa-rsfp
-PLUGIN | A plugin to directory, knowledges, farmers, structures of "le repertoire des savoirs-paysans"
+# WA Rsfp (wa-rsfp)
+PLUGIN | A plugin to add directory, knowledges, farmers, structures of "le repertoire des savoirs-paysans"
