@@ -31,6 +31,10 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
+if ( is_admin() && !function_exists('rwmb_meta') ) {
+	wp_die('Error : please install Meta Box plugin.');
+}
+
 /**
  * Currently plugin version.
  * Start at version 1.0.0 and use SemVer - https://semver.org
