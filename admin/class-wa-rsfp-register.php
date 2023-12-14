@@ -65,7 +65,7 @@ function register_post_types() {
 		'menu_icon'           => 'dashicons-pressthis',
 		'capability_type'     => 'post',
 		'supports'            => ['title', 'thumbnail', 'editor', 'comments', 'author', 'revisions'],
-		'taxonomies'          => ['production'], //'category', 'post_tag'
+		'taxonomies'          => ['geography','production','thematic'], //'category', 'post_tag'
 		'rewrite'             => [
 			'with_front' => false,
 		],
@@ -231,7 +231,7 @@ function register_post_types() {
 		'menu_icon'           => 'dashicons-admin-generic',
 		'capability_type'     => 'post',
 		'supports'            => ['title', 'thumbnail', 'author'],
-		'taxonomies'          => ['geographie'],
+		'taxonomies'          => ['geography'],
 		'rewrite'             => [
 			'with_front' => false,
 		],
@@ -298,7 +298,7 @@ function register_post_types() {
 		'menu_icon'           => 'dashicons-flag',
 		'capability_type'     => 'post',
 		'supports'            => ['title', 'editor', 'thumbnail', 'author'],
-		'taxonomies'          => [],
+		'taxonomies'          => ['thematic'],
 		'rewrite'             => [
 			'with_front' => false,
 		],
@@ -365,7 +365,7 @@ function register_post_types() {
 		'menu_icon'           => 'dashicons-groups',
 		'capability_type'     => 'post',
 		'supports'            => ['title', 'thumbnail'],
-		'taxonomies'          => [],
+		'taxonomies'          => ['partner-type'],
 		'rewrite'             => [
 			'with_front' => false,
 		],
