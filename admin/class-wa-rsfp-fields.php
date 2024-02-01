@@ -299,9 +299,16 @@ function directory_fields( $meta_boxes ) {
                 'sort_clone'        => true,
             ],
             [
-                'name' => __( 'Transmission', 'wa-rsfp' ),
-                'id'   => $prefix . 'farm_transmission',
+                'name' => __( 'Farm to transmit', 'wa-rsfp' ),
+                'id'   => $prefix . 'farm_to_transmit',
                 'type' => 'checkbox',
+				'desc' => __( '<span class="label">TIPS</span> Check this if ... ?? ', 'wa-rsfp' ),
+            ],
+            [
+                'name' => __( 'Farm in transmission', 'wa-rsfp' ),
+                'id'   => $prefix . 'farm_in_transmission',
+                'type' => 'checkbox',
+				'desc' => __( '<span class="label">TIPS</span> Check this if ... ?? ', 'wa-rsfp' ),
             ],
         ],
     ];
