@@ -183,8 +183,9 @@ function directory_fields( $meta_boxes ) {
             [
                 'name' => __( 'Commercialization', 'wa-rsfp' ),
                 'id'   => $prefix . 'identity_commercialization',
-                'type' => 'text',
+                'type' => 'textarea',
 				'label_description' => __( '<span class="label">INFO</span> Fill with simple text', 'wa-rsfp' ),
+				'desc' => __( '<span class="label">TIPS</span> Markdown is available : *italic* **bold** ***label*** #small# ##huge##', 'wa-rsfp' ),
             ],
 			[
                 'name'              => __( 'Diagram.s', 'wa-rsfp' ),
@@ -200,12 +201,12 @@ function directory_fields( $meta_boxes ) {
                 'sort_clone'        => true,
                 'max_clone'         => 100,
             ],
-			[
-                'name' => __( 'Carbon footprint', 'wa-rsfp' ),
-                'id'   => $prefix . 'identity_carbon_footprint',
-                'type' => 'text',
-				'label_description' => __( '<span class="label">INFO</span> Fill with simple text', 'wa-rsfp' ),
-            ],
+			// [
+            //     'name' => __( 'Carbon footprint', 'wa-rsfp' ),
+            //     'id'   => $prefix . 'identity_carbon_footprint',
+            //     'type' => 'text',
+			// 	'label_description' => __( '<span class="label">INFO</span> Fill with simple text', 'wa-rsfp' ),
+            // ],
 		],
 	];
 
@@ -223,8 +224,8 @@ function directory_fields( $meta_boxes ) {
                 'clone'      => true,
                 'sort_clone' => true,
                 'limit'      => 100,
-				'label_description' => __( '<span class="label">INFO</span> Fill with simple text', 'wa-rsfp' ),
-				'desc' => __( '<span class="label">TIPS</span> Markdown is available : *italic* **bold** ***label*** #small# ##huge##', 'wa-rsfp' ),
+				'label_description' => __( '<span class="label">INFO</span> Fill with simple text', 'wa-rsfp' ) . '<br/>' .   __( '<span class="label">INFO</span> This will be rendered as a list of items', 'wa-rsfp' ),
+				'desc' => __( 'Ex. : chiffre d\'affaire actuel et évolution, charges, EBE, salaires, valeurs ajoutées ...' . '<br/>' . '<span class="label">TIPS</span> Markdown is available : *italic* **bold** ***label*** #small# ##huge##', 'wa-rsfp' ),
             ],
             [
                 'name'       => __( 'Vivability.s', 'wa-rsfp' ),
@@ -233,8 +234,8 @@ function directory_fields( $meta_boxes ) {
                 'clone'      => true,
                 'sort_clone' => true,
                 'limit'      => 100,
-				'label_description' => __( '<span class="label">INFO</span> Fill with simple text', 'wa-rsfp' ),
-				'desc' => __( '<span class="label">TIPS</span> Markdown is available : *italic* **bold** ***label*** #small# ##huge##', 'wa-rsfp' ),
+				'label_description' => __( '<span class="label">INFO</span> Fill with simple text', 'wa-rsfp' ) . '<br/>' .   __( '<span class="label">INFO</span> This will be rendered as a list of items', 'wa-rsfp' ),
+				'desc' => __( 'Ex. : répartition des tâches, horaires quotidiens, congés ...' . '<br/>' . '<span class="label">TIPS</span> Markdown is available : *italic* **bold** ***label*** #small# ##huge##', 'wa-rsfp' ),
             ],
             [
                 'name'    => __( 'Knowledge AP', 'wa-rsfp' ),
@@ -272,7 +273,7 @@ function directory_fields( $meta_boxes ) {
                 'clone'      => true,
                 'sort_clone' => true,
                 'limit'      => 100,
-				'label_description' => __( '<span class="label">INFO</span> Fill with simple text', 'wa-rsfp' ),
+				'label_description' => __( '<span class="label">INFO</span> Fill with simple text', 'wa-rsfp' ) . '<br/>' .   __( '<span class="label">INFO</span> This will be rendered as a list of items', 'wa-rsfp' ),
 				'desc' => __( '<span class="label">TIPS</span> Markdown is available : *italic* **bold** ***label*** #small# ##huge##', 'wa-rsfp' ),
             ],
 		],
@@ -302,21 +303,21 @@ function directory_fields( $meta_boxes ) {
                 'name' => __( 'Farm to transmit', 'wa-rsfp' ),
                 'id'   => $prefix . 'farm_to_transmit',
                 'type' => 'checkbox',
-				'desc' => __( '<span class="label">TIPS</span> Check this if ... ?? ', 'wa-rsfp' ),
+				'desc' => __( '<span class="label">TIPS</span> Check this if the farm is currently looking for a transferee, transferees or associates.', 'wa-rsfp' ),
             ],
             [
                 'name' => __( 'Farm in transmission', 'wa-rsfp' ),
                 'id'   => $prefix . 'farm_in_transmission',
                 'type' => 'checkbox',
-				'desc' => __( '<span class="label">TIPS</span> Check this if ... ?? ', 'wa-rsfp' ),
+				'desc' => __( '<span class="label">TIPS</span> Check this if the farm is currently in a transmission process.', 'wa-rsfp' ),
             ],
         ],
     ];
 
     // Stages 
 	$meta_boxes[] = [
-		'title'      => __( 'Directory › Stages', 'wa-rsfp' ),
-		'id'         => 'directory-stage',
+		'title'      => __( 'Directory › Opening', 'wa-rsfp' ),
+		'id'         => 'directory-opening',
 		'post_types' => ['directory'],
 		'fields'     => [
 			[
@@ -324,11 +325,23 @@ function directory_fields( $meta_boxes ) {
 				'id'              => $prefix . 'stage_opentostage',
 				'type'            => 'checkbox_list',
 				'options'         => [
-					'decouverte'  		=> __( 'Stage de découverte', 'wa-rsfp' ),
-					'non_remunere' 		=> __( 'Stage non rémunéré', 'wa-rsfp' ),
-					'remunere'     		=> __( 'Stage rémunéré', 'wa-rsfp' ),
-					'visite'  			=> __( 'Visite étudiant.e.s', 'wa-rsfp' ),
+					'stage_decouverte'  		=> __( 'Stage de découverte', 'wa-rsfp' ),
+					'stage_non_remunere' 		=> __( 'Stage non rémunéré', 'wa-rsfp' ),
+					'stage_remunere'     		=> __( 'Stage rémunéré', 'wa-rsfp' ),
 					'apprentissage'     => __( 'Apprentissage', 'wa-rsfp' ),
+				],
+				'inline'          => true,
+				'select_all_none' => true,
+				'label_description' => __( '<span class="label">INFO</span> Choose one or many option.s', 'wa-rsfp' ),
+			],
+			[
+				'name'            => __( 'Open to visit ?', 'wa-rsfp' ),
+				'id'              => $prefix . 'stage_opentovisit',
+				'type'            => 'checkbox_list',
+				'options'         => [
+					'visite_libre'  	=> __( 'Visite libre', 'wa-rsfp' ),
+					'visite_scolaire'  	=> __( 'Visite établissement scolaire', 'wa-rsfp' ),
+					'visite_collective'     => __( 'Visite collective', 'wa-rsfp' ),
 				],
 				'inline'          => true,
 				'select_all_none' => true,
