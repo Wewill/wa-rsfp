@@ -77,7 +77,7 @@ span.automatic {
 
 /* Meta Box Admin UI */
 
-.rwmb-label p.description, .rwmb-input p.description{
+.rwmb-label p.description, .rwmb-input p.description, span.description, small.description{
     color: #5085b3;
 }
 .text-limiter {
