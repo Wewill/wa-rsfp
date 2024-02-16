@@ -281,7 +281,8 @@ function directory_fields( $meta_boxes ) {
 
     // Farm
     $meta_boxes[] = [
-        'title'      => __( 'Directory › Farm', 'wa-rsfp' ),
+        'title'      => __( 'Directory › Transmission', 'wa-rsfp' ),
+		'id'         => 'directory-transmission',
         'post_types' => ['directory'],
         'fields'     => [
             [
@@ -298,15 +299,24 @@ function directory_fields( $meta_boxes ) {
                 ],
                 'clone'             => true,
                 'sort_clone'        => true,
+                'desc' => 'EN COURS DE SUPPRESSION en faveur d\'un module'
             ],
             [
-                'name' => __( 'Farm to transmit', 'wa-rsfp' ),
+                'name'       => /*translators:Parcours à l'installation*/__( 'Installation period', 'wa-rsfp' ),
+                'id'         => $prefix . 'installation_period',
+                'type'       => 'textarea',
+                'limit'      => 100,
+				'label_description' => __( '<span class="label">INFO</span> Fill with simple text', 'wa-rsfp' ) ,
+				'desc' => __( '<span class="label">TIPS</span> Markdown is available : *italic* **bold** ***label*** #small# ##huge##', 'wa-rsfp' ),
+            ],
+            [
+                'name' => /*translators:Ferme à transmettre*/__( 'Farm to transmit', 'wa-rsfp' ),
                 'id'   => $prefix . 'farm_to_transmit',
                 'type' => 'checkbox',
 				'desc' => __( '<span class="label">TIPS</span> Check this if the farm is currently looking for a transferee, transferees or associates.', 'wa-rsfp' ),
             ],
             [
-                'name' => __( 'Farm in transmission', 'wa-rsfp' ),
+                'name' => /*translators:Ferme en transmission*/__( 'Farm in transmission', 'wa-rsfp' ),
                 'id'   => $prefix . 'farm_in_transmission',
                 'type' => 'checkbox',
 				'desc' => __( '<span class="label">TIPS</span> Check this if the farm is currently in a transmission process.', 'wa-rsfp' ),
