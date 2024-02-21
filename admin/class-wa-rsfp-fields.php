@@ -7,7 +7,7 @@
 function register_custom_meta_fields() {
 	// Posts
 	add_filter( 'rwmb_meta_boxes', 'directory_fields', 10);
-	add_filter( 'rwmb_meta_boxes', 'farmer_fields', 10);
+	add_filter( 'rwmb_meta_boxes', 'farm_fields', 10);
 	add_filter( 'rwmb_meta_boxes', 'structure_fields', 10);
 	add_filter( 'rwmb_meta_boxes', 'operation_fields', 10);
 	add_filter( 'rwmb_meta_boxes', 'partner_fields', 10);
@@ -59,10 +59,15 @@ function directory_fields( $meta_boxes ) {
         'post_types' => ['directory'],
         'fields'     => [
             [
-                'name'       => __( 'Farmer.s', 'wa-rsfp' ),
-                'id'         => $prefix . 'relationships_farmer',
+                'type'       => 'divider',
+                'before'      => __( '<span class="label">INFO</span> <b>Production</b> category & <b>Thematic</b> category are to choose after publishing post in taxonomies on side panel.', 'wa-rsfp' ),
+                'save_field' => false,
+            ],
+            [
+                'name'       => __( 'Farm.s', 'wa-rsfp' ),
+                'id'         => $prefix . 'relationships_farm',
                 'type'       => 'post',
-                'post_type'  => ['farmer'],
+                'post_type'  => ['farm'],
                 'field_type' => 'select_advanced',
                 'add_new'    => true,
                 'multiple'   => true,
@@ -70,10 +75,10 @@ function directory_fields( $meta_boxes ) {
                 //'desc'              => __( '<span class="label">TIPS</span> Lorem ipsum.', 'wa-rsfp' ),
             ],
             [
-                'name' => 'Preview',
-                'id'   =>  $prefix . 'relationships_preview_farmer',
+                'name' => __( 'Preview', 'wa-rsfp' ),
+                'id'   =>  $prefix . 'relationships_preview_farm',
                 'type' => 'previewpost',
-                'meta_value' => $prefix . 'relationships_farmer'
+                'meta_value' => $prefix . 'relationships_farm'
             ],
             [
                 'name'       => __( 'Structure.s', 'wa-rsfp' ),
@@ -86,7 +91,7 @@ function directory_fields( $meta_boxes ) {
                 'label_description' => __( '<span class="label">INFO</span> Associate one or many post.s', 'wa-rsfp' ),
             ],
             [
-                'name' => 'Preview',
+                'name' => __( 'Preview', 'wa-rsfp' ),
                 'id'   =>  $prefix . 'relationships_preview_structure',
                 'type' => 'previewpost',
                 'meta_value' => $prefix . 'relationships_structure'
@@ -102,27 +107,27 @@ function directory_fields( $meta_boxes ) {
                 'label_description' => __( '<span class="label">INFO</span> Associate one or many post.s', 'wa-rsfp' ),
             ],
             [
-                'name' => 'Preview',
+                'name' => __( 'Preview', 'wa-rsfp' ),
                 'id'   =>  $prefix . 'relationships_preview_operation',
                 'type' => 'previewpost',
                 'meta_value' => $prefix . 'relationships_operation'
             ],
-            [
-                'name'       => __( 'Partner.s', 'wa-rsfp' ),
-                'id'         => $prefix . 'relationships_partner',
-                'type'       => 'post',
-                'post_type'  => ['partner'],
-                'field_type' => 'select_advanced',
-                'add_new'    => true,
-                'multiple'   => true,
-                'label_description' => __( '<span class="label">INFO</span> Associate one or many post.s', 'wa-rsfp' ),
-            ],
-            [
-                'name' => 'Preview',
-                'id'   =>  $prefix . 'relationships_preview_partner',
-                'type' => 'previewpost',
-                'meta_value' => $prefix . 'relationships_partner'
-            ],
+            // [
+            //     'name'       => __( 'Partner.s', 'wa-rsfp' ),
+            //     'id'         => $prefix . 'relationships_partner',
+            //     'type'       => 'post',
+            //     'post_type'  => ['partner'],
+            //     'field_type' => 'select_advanced',
+            //     'add_new'    => true,
+            //     'multiple'   => true,
+            //     'label_description' => __( '<span class="label">INFO</span> Associate one or many post.s', 'wa-rsfp' ),
+            // ],
+            // [
+            //     'name' => __( 'Preview', 'wa-rsfp' ),
+            //     'id'   =>  $prefix . 'relationships_preview_partner',
+            //     'type' => 'previewpost',
+            //     'meta_value' => $prefix . 'relationships_partner'
+            // ],
         ],
     ];
 
@@ -150,11 +155,6 @@ function directory_fields( $meta_boxes ) {
                 'id'   => $prefix . 'identity_number_of_people',
                 'type' => 'text',
 				'label_description' => __( '<span class="label">INFO</span> Fill with simple text', 'wa-rsfp' ),
-            ],
-			[
-                'type'       => 'divider',
-                'before'      => __( '<span class="label">INFO</span> Production is to define after publishing in side taxonomies.', 'wa-rsfp' ),
-                'save_field' => false,
             ],
             [
                 'name' => __( 'Livestock', 'wa-rsfp' ),
@@ -237,22 +237,22 @@ function directory_fields( $meta_boxes ) {
 				'label_description' => __( '<span class="label">INFO</span> Fill with simple text', 'wa-rsfp' ) . '<br/>' .   __( '<span class="label">INFO</span> This will be rendered as a list of items', 'wa-rsfp' ),
 				'desc' => __( 'Ex. : répartition des tâches, horaires quotidiens, congés ...' . '<br/>' . '<span class="label">TIPS</span> Markdown is available : *italic* **bold** ***label*** #small# ##huge##', 'wa-rsfp' ),
             ],
-            [
-                'name'    => __( 'Knowledge AP', 'wa-rsfp' ),
-                'id'      => $prefix . 'knowledge_knowledge_ap',
-                'type'    => 'checkbox_list',
-                'options' => [
-                    'nature'       		=> __( 'Travail avec la nature', 'wa-rsfp' ),
-                    'autonomie'       	=> __( 'Autonomie', 'wa-rsfp' ),
-                    'transmissiblite'   => __( 'Transmissiblité', 'wa-rsfp' ),
-                    'local'       		=> __( 'Développement local', 'wa-rsfp' ),
-                    'repartition'       => __( 'Répartition', 'wa-rsfp' ),
-                    'qualite'       	=> __( 'Qualité', 'wa-rsfp' ),
-                ],
-				'inline'          => true,
-				'select_all_none' => true,
-				'label_description' => __( '<span class="label">INFO</span> Choose AP acquired kwnoledge.s', 'wa-rsfp' ),
-            ],
+            // [
+            //     'name'    => __( 'Knowledge AP', 'wa-rsfp' ),
+            //     'id'      => $prefix . 'knowledge_knowledge_ap',
+            //     'type'    => 'checkbox_list',
+            //     'options' => [
+            //         'nature'       		=> __( 'Travail avec la nature', 'wa-rsfp' ),
+            //         'autonomie'       	=> __( 'Autonomie', 'wa-rsfp' ),
+            //         'transmissiblite'   => __( 'Transmissiblité', 'wa-rsfp' ),
+            //         'local'       		=> __( 'Développement local', 'wa-rsfp' ),
+            //         'repartition'       => __( 'Répartition', 'wa-rsfp' ),
+            //         'qualite'       	=> __( 'Qualité', 'wa-rsfp' ),
+            //     ],
+			// 	'inline'          => true,
+			// 	'select_all_none' => true,
+			// 	'label_description' => __( '<span class="label">INFO</span> Choose AP acquired kwnoledge.s', 'wa-rsfp' ),
+            // ],
             [
                 'name'       => __( 'Acquisition.s', 'wa-rsfp' ),
                 'id'         => $prefix . 'knowledge_acquisitions',
@@ -278,51 +278,6 @@ function directory_fields( $meta_boxes ) {
             ],
 		],
 	];
-
-    // Farm
-    $meta_boxes[] = [
-        'title'      => __( 'Directory › Transmission', 'wa-rsfp' ),
-		'id'         => 'directory-transmission',
-        'post_types' => ['directory'],
-        'fields'     => [
-            [
-                'name'              => __( 'Address.s', 'wa-rsfp' ),
-                'id'                => $prefix . 'farm_address',
-                'type'              => 'fieldset_text',
-                'label_description' => __( '<span class="label">INFO</span> Fill one or many complete address', 'wa-rsfp' ),
-                'options'           => [
-                    'address_line1' => 'Address',
-                    'address_line2' => 'Address (more)',
-                    'postal_code'   => 'Postal code',
-                    'city'          => 'City',
-                    'country'       => 'Country',
-                ],
-                'clone'             => true,
-                'sort_clone'        => true,
-                'desc' => 'EN COURS DE SUPPRESSION en faveur d\'un module'
-            ],
-            [
-                'name'       => /*translators:Parcours à l'installation*/__( 'Installation period', 'wa-rsfp' ),
-                'id'         => $prefix . 'installation_period',
-                'type'       => 'textarea',
-                'limit'      => 100,
-				'label_description' => __( '<span class="label">INFO</span> Fill with simple text', 'wa-rsfp' ) ,
-				'desc' => __( '<span class="label">TIPS</span> Markdown is available : *italic* **bold** ***label*** #small# ##huge##', 'wa-rsfp' ),
-            ],
-            [
-                'name' => /*translators:Ferme à transmettre*/__( 'Farm to transmit', 'wa-rsfp' ),
-                'id'   => $prefix . 'farm_to_transmit',
-                'type' => 'checkbox',
-				'desc' => __( '<span class="label">TIPS</span> Check this if the farm is currently looking for a transferee, transferees or associates.', 'wa-rsfp' ),
-            ],
-            [
-                'name' => /*translators:Ferme en transmission*/__( 'Farm in transmission', 'wa-rsfp' ),
-                'id'   => $prefix . 'farm_in_transmission',
-                'type' => 'checkbox',
-				'desc' => __( '<span class="label">TIPS</span> Check this if the farm is currently in a transmission process.', 'wa-rsfp' ),
-            ],
-        ],
-    ];
 
     // Stages 
 	$meta_boxes[] = [
@@ -408,7 +363,7 @@ function directory_fields( $meta_boxes ) {
                 'id'   => $prefix . 'internal_notes',
                 'type' => 'textarea',
 				'label_description' => __( '<span class="label">INFO</span> Fill with long text', 'wa-rsfp' ),
-				'desc' => __( '<span class="label">TIPS</span> Fill here internal informations such as re-reading, notes or reminder', 'wa-rsfp' ),
+				'desc' => __( '<span class="label">TIPS</span> Fill here internal informations such as re-reading, notes or reminder. Those informations will not be displayed in front.', 'wa-rsfp' ),
             ],
 		],
     ];
@@ -416,44 +371,37 @@ function directory_fields( $meta_boxes ) {
     return $meta_boxes;
 }
 
-function farmer_fields( $meta_boxes ) {
+function farm_fields( $meta_boxes ) {
     $prefix = 'f_';
 
     $meta_boxes[] = [
-        'title'      => __( 'Farmer › General', 'wa-rsfp' ),
-        'id'         => 'farmer-general',
-        'post_types' => ['farmer'],
+        'title'      => __( 'Farm › General', 'wa-rsfp' ),
+        'id'         => 'farm-general',
+        'post_types' => ['farm'],
         'fields'     => [
-            [
-                'name'              => __( 'Image', 'wa-rsfp' ),
-                'id'                => $prefix . 'general_image',
-                'type'              => 'image_advanced',
-                'label_description' => __( '<span class="label">INFO</span> Fill with an image of farmer / entity', 'wa-rsfp' ),
-                'max_file_uploads'  => 1,
-            ],
             [
                 'name'              => __( 'Legal entity', 'wa-rsfp' ),
                 'id'                => $prefix . 'general_legal_entity',
                 'type'              => 'text',
                 'label_description' => __( '<span class="label">INFO</span> Fill with simple text', 'wa-rsfp' ),
+                'desc'              => __( '<span class="label">TIPS</span> Only required if legal entity is different than title.', 'wa-rsfp' ),
             ],
             [
-                'name'              => __( 'Last name', 'wa-rsfp' ),
-                'id'                => $prefix . 'general_lastname',
+                'name'              => __( 'Farmer.s', 'wa-rsfp' ),
+                'id'                => $prefix . 'general_farmers',
                 'type'              => 'text',
-                'label_description' => __( '<span class="label">INFO</span> Fill with simple text', 'wa-rsfp' ),
+                'label_description' => __( '<span class="label">INFO</span> Fill with one or many simple text', 'wa-rsfp' ),
+                'desc'              => __( '<span class="label">TIPS</span> Farmer.s name, surname or full-name. You can add couple names or add fields to a collective farm.', 'wa-rsfp' ),
+                'clone'             => true,
+                'sort_clone'        => true,
             ],
             [
-                'name'              => __( 'First name', 'wa-rsfp' ),
-                'id'                => $prefix . 'general_firstname',
-                'type'              => 'text',
-                'label_description' => __( '<span class="label">INFO</span> Fill with simple text', 'wa-rsfp' ),
-            ],
-            [
-                'name'              => __( 'Email', 'wa-rsfp' ),
-                'id'                => $prefix . 'general_email',
+                'name'              => __( 'Email.s', 'wa-rsfp' ),
+                'id'                => $prefix . 'general_emails',
                 'type'              => 'email',
-                'label_description' => __( '<span class="label">INFO</span> Fill with an email', 'wa-rsfp' ),
+                'label_description' => __( '<span class="label">INFO</span> Fill with one or many email', 'wa-rsfp' ),
+                'clone'             => true,
+                'sort_clone'        => true,
             ],
             [
                 'name'              => __( 'Phone.s', 'wa-rsfp' ),
@@ -472,7 +420,7 @@ function farmer_fields( $meta_boxes ) {
                 'name'              => __( 'Address.s', 'wa-rsfp' ),
                 'id'                => $prefix . 'general_address',
                 'type'              => 'fieldset_text',
-                'label_description' => __( '<span class="label">INFO</span> Fill one or many complete address', 'wa-rsfp' ),
+                'desc' => __( '<span class="label">INFO</span> Fill one or many complete address', 'wa-rsfp' ),
                 'options'           => [
                     'address_line1' => 'Address',
                     'address_line2' => 'Address (more)',
@@ -494,29 +442,85 @@ function farmer_fields( $meta_boxes ) {
                     'teeny' => true,
                     'textarea_rows'  => 4,
                 ],
-                'label_description' => __( '<span class="label">INFO</span> Fill with a short biography of farmer / entity formatted text', 'wa-rsfp' ),
+                'label_description' => __( '<span class="label">INFO</span> Fill with a short biography of farm / entity formatted text', 'wa-rsfp' ),
+            ],
+            [
+                'name'              => __( 'Gallery', 'wa-rsfp' ),
+                'id'                => $prefix . 'general_gallery',
+                'type'              => 'image_advanced',
+                'label_description' => __( '<span class="label">INFO</span> Fill with one or many image of farm / entity', 'wa-rsfp' ),
+                'max_file_uploads'  => 10,
+            ],
+        ],
+    ];
+
+    // Transmission
+    $meta_boxes[] = [
+        'title'      => __( 'Farm › Transmission', 'wa-rsfp' ),
+        'id'         => 'farm-transmission',
+        'post_types' => ['farm'],
+        'fields'     => [
+            [
+                'name'       => /*translators:Parcours à l'installation*/__( 'Installation period', 'wa-rsfp' ),
+                'id'         => $prefix . 'installation_period',
+                'type'       => 'textarea',
+                'limit'      => 100,
+                'label_description' => __( '<span class="label">INFO</span> Fill with simple text', 'wa-rsfp' ) ,
+                'desc' => __( '<span class="label">TIPS</span> Markdown is available : *italic* **bold** ***label*** #small# ##huge##', 'wa-rsfp' ),
+            ],
+            [
+                'name' => /*translators:Ferme à transmettre*/__( 'Farm to transmit', 'wa-rsfp' ),
+                'id'   => $prefix . 'farm_to_transmit',
+                'type' => 'checkbox',
+                'desc' => __( '<span class="label">TIPS</span> Check this if the farm is currently looking for a transferee, transferees or associates.', 'wa-rsfp' ),
+            ],
+            [
+                'name' => /*translators:Ferme en transmission*/__( 'Farm in transmission', 'wa-rsfp' ),
+                'id'   => $prefix . 'farm_in_transmission',
+                'type' => 'checkbox',
+                'desc' => __( '<span class="label">TIPS</span> Check this if the farm is currently in a transmission process.', 'wa-rsfp' ),
             ],
         ],
     ];
 
 	// Internal
 	$meta_boxes[] = [
-		'title'      => __( 'Farmer › Internal', 'wa-rsfp' ),
-		'id'         => 'farmer-internal',
-		'post_types' => ['farmer'],
+		'title'      => __( 'Farm › Internal', 'wa-rsfp' ),
+		'id'         => 'farm-internal',
+		'post_types' => ['farm'],
 		'fields'     => [
 			[
 				'name' => __( 'Notes', 'wa-rsfp' ),
 				'id'   => $prefix . 'internal_notes',
 				'type' => 'textarea',
 				'label_description' => __( '<span class="label">INFO</span> Fill with long text', 'wa-rsfp' ),
-				'desc' => __( '<span class="label">TIPS</span> Fill here internal informations such as re-reading, notes or reminder', 'wa-rsfp' ),
+				'desc' => __( '<span class="label">TIPS</span> Fill here internal informations such as re-reading, notes or reminder. Those informations will not be displayed in front.', 'wa-rsfp' ),
 			],
 		],
 	];
 
     return $meta_boxes;
 }
+
+// Add content to a Post image div metabox 
+function add_image_desc_to_featured_image_metabox( $content, $post_id, $thumbnail_id ) {
+
+	$allowed_postype= array(
+		'farm'
+	);
+	
+    if ( !in_array(get_post_type( $post_id ),$allowed_postype) ) {
+        return $content;
+	}
+
+    $caption = '<p class="post-description">' . __( '<span class="label">INFO</span> This image will be used as a hero image.', 'wa-rsfp' ) . '</p>';
+    $caption .= '<p>' . __( '<span class="important">Provide at least 1440x900px image in * .jpg format.', 'wa-rsfp' ) . '</p>';
+
+    return $content . $caption;
+}
+add_filter( 'admin_post_thumbnail_html', 'add_image_desc_to_featured_image_metabox', 10, 3 );
+
+
 
 function structure_fields( $meta_boxes ) {
     $prefix = 's_';
@@ -526,14 +530,14 @@ function structure_fields( $meta_boxes ) {
         'id'         => 'structure-general',
         'post_types' => ['structure'],
         'fields'     => [
-            [
-                'name'              => __( 'Logotype', 'wa-rsfp' ),
-                'id'                => $prefix . 'general_logotype',
-                'type'              => 'image_advanced',
-                'label_description' => __( '<span class="label">INFO</span> Fill with a logotype', 'wa-rsfp' ),
-                'desc' => __( '<span class="label">TIPS</span> Choose an image 1000px squared in transparent *.png', 'wa-rsfp' ),
-                'max_file_uploads'  => 1,
-            ],
+            // [
+            //     'name'              => __( 'Logotype', 'wa-rsfp' ),
+            //     'id'                => $prefix . 'general_logotype',
+            //     'type'              => 'image_advanced',
+            //     'label_description' => __( '<span class="label">INFO</span> Fill with a logotype', 'wa-rsfp' ),
+            //     'desc' => __( '<span class="label">TIPS</span> Choose an image 1000px squared in transparent *.png', 'wa-rsfp' ),
+            //     'max_file_uploads'  => 1,
+            // ],
             [
                 'name'              => __( 'Referent', 'wa-rsfp' ),
                 'id'                => $prefix . 'general_referent',
@@ -541,10 +545,12 @@ function structure_fields( $meta_boxes ) {
                 'label_description' => __( '<span class="label">INFO</span> Fill with simple text', 'wa-rsfp' ),
             ],
             [
-                'name'              => __( 'Email', 'wa-rsfp' ),
+                'name'              => __( 'Email.s', 'wa-rsfp' ),
                 'id'                => $prefix . 'general_email',
                 'type'              => 'email',
-                'label_description' => __( '<span class="label">INFO</span> Fill with an email', 'wa-rsfp' ),
+                'label_description' => __( '<span class="label">INFO</span> Fill with one or many email', 'wa-rsfp' ),
+                'clone'             => true,
+                'sort_clone'        => true,
             ],
             [
                 'name'              => __( 'Phone.s', 'wa-rsfp' ),
@@ -563,7 +569,7 @@ function structure_fields( $meta_boxes ) {
                 'name'              => __( 'Address.s', 'wa-rsfp' ),
                 'id'                => $prefix . 'general_address',
                 'type'              => 'fieldset_text',
-                'label_description' => __( '<span class="label">INFO</span> Fill one or many complete address', 'wa-rsfp' ),
+                'desc' => __( '<span class="label">INFO</span> Fill one or many complete address', 'wa-rsfp' ),
                 'options'           => [
                     'address_line1' => 'Address',
                     'address_line2' => 'Address (more)',
@@ -613,7 +619,7 @@ function structure_fields( $meta_boxes ) {
 				'id'   => $prefix . 'internal_notes',
 				'type' => 'textarea',
 				'label_description' => __( '<span class="label">INFO</span> Fill with long text', 'wa-rsfp' ),
-				'desc' => __( '<span class="label">TIPS</span> Fill here internal informations such as re-reading, notes or reminder', 'wa-rsfp' ),
+				'desc' => __( '<span class="label">TIPS</span> Fill here internal informations such as re-reading, notes or reminder. Those informations will not be displayed in front.', 'wa-rsfp' ),
 			],
 		],
 	];
@@ -630,81 +636,6 @@ function operation_fields( $meta_boxes ) {
         'post_types' => ['operation'],
         'fields'     => [
             [
-                'name'              => __( 'Logotypes', 'wa-rsfp' ),
-                'id'                => $prefix . 'general_logotypes',
-                'type'              => 'image_advanced',
-                'label_description' => __( '<span class="label">INFO</span> Fill with a logotype.s', 'wa-rsfp' ),
-                'desc' => __( '<span class="label">TIPS</span> Choose an image 1000px squared in transparent *.png', 'wa-rsfp' ),
-                'max_file_uploads'  => 20,
-            ],
-            [
-                'name'              => __( 'Agent', 'wa-rsfp' ),
-                'id'                => $prefix . 'general_agent',
-                'type'              => 'text',
-                'label_description' => __( '<span class="label">INFO</span> Fill with simple text', 'wa-rsfp' ),
-            ],
-			[
-                'name'              => __( 'Network', 'wa-rsfp' ),
-                'id'                => $prefix . 'general_network',
-                'type'              => 'text',
-                'label_description' => __( '<span class="label">INFO</span> Fill with simple text', 'wa-rsfp' ),
-            ],
-            [
-                'name'              => __( 'Link.s', 'wa-rsfp' ),
-                'id'                => $prefix . 'general_links',
-                'type'              => 'text',
-                'label_description' => __( '<span class="label">INFO</span> Fill one or many links', 'wa-rsfp' ),
-                'desc'              => __( '<span class="label">TIPS</span> Link.s can be a website, page, social network...', 'wa-rsfp' ),
-                'clone'             => true,
-                'sort_clone'        => true,
-                'attributes'        => [
-                    'type'    => 'url',
-                ],
-            ],
-            // [
-            //     'name'              => __( 'Description', 'wa-rsfp' ),
-            //     'id'                => $prefix . 'general_description',
-            //     'type'              => 'wysiwyg',
-            //     'options'           => [
-            //         'media_buttons'  => false,
-            //         'drag_drop_upload' => false,
-            //         // 'default_editor' => true,
-            //         'teeny' => true,
-            //         'textarea_rows'  => 4,
-            //     ],
-            //     'label_description' => __( '<span class="label">INFO</span> Fill with formatted text', 'wa-rsfp' ),
-            // ],
-        ],
-    ];
-
-	// Internal
-	$meta_boxes[] = [
-		'title'      => __( 'Operation › Internal', 'wa-rsfp' ),
-		'id'         => 'operation-internal',
-		'post_types' => ['operation'],
-		'fields'     => [
-			[
-				'name' => __( 'Notes', 'wa-rsfp' ),
-				'id'   => $prefix . 'internal_notes',
-				'type' => 'textarea',
-				'label_description' => __( '<span class="label">INFO</span> Fill with long text', 'wa-rsfp' ),
-				'desc' => __( '<span class="label">TIPS</span> Fill here internal informations such as re-reading, notes or reminder', 'wa-rsfp' ),
-			],
-		],
-	];
-
-    return $meta_boxes;
-}
-
-function partner_fields( $meta_boxes ) {
-    $prefix = 'o_';
-
-    $meta_boxes[] = [
-        'title'      => __( 'Partner › General', 'wa-rsfp' ),
-        'id'         => 'partner-general',
-        'post_types' => ['partner'],
-        'fields'     => [
-            [
                 'name'              => __( 'Logotype', 'wa-rsfp' ),
                 'id'                => $prefix . 'general_logotype',
                 'type'              => 'image_advanced',
@@ -713,22 +644,20 @@ function partner_fields( $meta_boxes ) {
                 'max_file_uploads'  => 1,
             ],
             [
-                'name'              => __( 'Leader', 'wa-rsfp' ),
-                'id'                => $prefix . 'general_leader',
+                'name'              => __( 'Leader.s', 'wa-rsfp' ),
+                'id'                => $prefix . 'general_leaders',
                 'type'              => 'text',
-                'label_description' => __( '<span class="label">INFO</span> Fill with simple text', 'wa-rsfp' ),
-            ],
-			[
-                'name'              => __( 'Network', 'wa-rsfp' ),
-                'id'                => $prefix . 'general_network',
-                'type'              => 'text',
-                'label_description' => __( '<span class="label">INFO</span> Fill with simple text', 'wa-rsfp' ),
+                'label_description' => __( '<span class="label">INFO</span> Fill with one or many simple text', 'wa-rsfp' ),
+                'clone'             => true,
+                'sort_clone'        => true,
             ],
             [
-                'name'              => __( 'Email', 'wa-rsfp' ),
-                'id'                => $prefix . 'general_email',
+                'name'              => __( 'Email.s', 'wa-rsfp' ),
+                'id'                => $prefix . 'general_emails',
                 'type'              => 'email',
-                'label_description' => __( '<span class="label">INFO</span> Fill with an email', 'wa-rsfp' ),
+                'label_description' => __( '<span class="label">INFO</span> Fill with one or many email', 'wa-rsfp' ),
+                'clone'             => true,
+                'sort_clone'        => true,
             ],
             [
                 'name'              => __( 'Phone.s', 'wa-rsfp' ),
@@ -744,30 +673,11 @@ function partner_fields( $meta_boxes ) {
                 ],
             ],
             [
-                'name'              => __( 'Link.s', 'wa-rsfp' ),
-                'id'                => $prefix . 'general_links',
-                'type'              => 'text',
-                'label_description' => __( '<span class="label">INFO</span> Fill one or many links', 'wa-rsfp' ),
-                'desc'              => __( '<span class="label">TIPS</span> Link.s can be a website, page, social network...', 'wa-rsfp' ),
-                'clone'             => true,
-                'sort_clone'        => true,
-                'attributes'        => [
-                    'type'    => 'url',
-                ],
+                'name'              => __( 'Description', 'wa-rsfp' ),
+                'id'                => $prefix . 'general_description',
+				'type' => 'textarea',
+                'label_description' => __( '<span class="label">INFO</span> Fill with formatted text', 'wa-rsfp' ),
             ],
-            // [
-            //     'name'              => __( 'Description', 'wa-rsfp' ),
-            //     'id'                => $prefix . 'general_description',
-            //     'type'              => 'wysiwyg',
-            //     'options'           => [
-            //         'media_buttons'  => false,
-            //         'drag_drop_upload' => false,
-            //         // 'default_editor' => true,
-            //         'teeny' => true,
-            //         'textarea_rows'  => 4,
-            //     ],
-            //     'label_description' => __( '<span class="label">INFO</span> Fill with formatted text', 'wa-rsfp' ),
-            // ],
         ],
     ];
 
@@ -782,13 +692,73 @@ function partner_fields( $meta_boxes ) {
 				'id'   => $prefix . 'internal_notes',
 				'type' => 'textarea',
 				'label_description' => __( '<span class="label">INFO</span> Fill with long text', 'wa-rsfp' ),
-				'desc' => __( '<span class="label">TIPS</span> Fill here internal informations such as re-reading, notes or reminder', 'wa-rsfp' ),
+				'desc' => __( '<span class="label">TIPS</span> Fill here internal informations such as re-reading, notes or reminder. Those informations will not be displayed in front.', 'wa-rsfp' ),
 			],
 		],
 	];
 
     return $meta_boxes;
 }
+
+function partner_fields( $meta_boxes ) {
+    $prefix = 'p_';
+
+    $meta_boxes[] = [
+        'title'      => __( 'Partner › General', 'wa-rsfp' ),
+        'id'         => 'partner-general',
+        'post_types' => ['partner'],
+        'fields'     => [
+            [
+                'name'              => __( 'Link', 'wa-rsfp' ),
+                'id'                => $prefix . 'general_link',
+                'type'              => 'text',
+                'label_description' => __( '<span class="label">INFO</span> Fill one link', 'wa-rsfp' ),
+                'desc'              => __( '<span class="label">TIPS</span> Link can be a website, page, social network...', 'wa-rsfp' ),
+                'attributes'        => [
+                    'type'    => 'url',
+                ],
+            ],
+        ],
+    ];
+
+	// Internal
+	$meta_boxes[] = [
+		'title'      => __( 'Partner › Internal', 'wa-rsfp' ),
+		'id'         => 'partner-internal',
+		'post_types' => ['partner'],
+		'fields'     => [
+			[
+				'name' => __( 'Notes', 'wa-rsfp' ),
+				'id'   => $prefix . 'internal_notes',
+				'type' => 'textarea',
+				'label_description' => __( '<span class="label">INFO</span> Fill with long text', 'wa-rsfp' ),
+				'desc' => __( '<span class="label">TIPS</span> Fill here internal informations such as re-reading, notes or reminder. Those informations will not be displayed in front.', 'wa-rsfp' ),
+			],
+		],
+	];
+
+    return $meta_boxes;
+}
+
+
+// Add content to a Post image div metabox 
+function add_logotype_desc_to_featured_image_metabox( $content, $post_id, $thumbnail_id ) {
+
+	$allowed_postype= array(
+		'structure',
+		'partner'
+	);
+	
+    if ( !in_array(get_post_type( $post_id ),$allowed_postype) ) {
+        return $content;
+	}
+
+    $caption = '<p class="post-description">' . __( '<span class="label">INFO</span> This image will be used as a logotype', 'wa-rsfp' ) . '</p>';
+    $caption .= '<p>' . __( '<span class="important">Provide at least 1000x1000px image in transparent * .png format.', 'wa-rsfp' ) . '</p>';
+
+    return $content . $caption;
+}
+add_filter( 'admin_post_thumbnail_html', 'add_logotype_desc_to_featured_image_metabox', 10, 3 );
 
 
 // Taxonomies
@@ -834,19 +804,19 @@ function production_fields( $meta_boxes ) {
         'id'         => 'production-general',
         'taxonomies' => ['production'],
         'fields'     => [
-            [
-                'name' => __( 'Content', 'wa-rsfp' ),
-                'id'   => $prefix . 'general_content',
-                'type'              => 'wysiwyg',
-                'options'           => [
-                    'media_buttons'  => false,
-                    'drag_drop_upload' => false,
-                    // 'default_editor' => true,
-                    'teeny' => true,
-                    'textarea_rows'  => 4,
-                ],
-				'label_description' => __( '<span class="label">INFO</span> Fill with formatted text', 'wa-rsfp' ),
-            ],
+            // [
+            //     'name' => __( 'Content', 'wa-rsfp' ),
+            //     'id'   => $prefix . 'general_content',
+            //     'type'              => 'wysiwyg',
+            //     'options'           => [
+            //         'media_buttons'  => false,
+            //         'drag_drop_upload' => false,
+            //         // 'default_editor' => true,
+            //         'teeny' => true,
+            //         'textarea_rows'  => 4,
+            //     ],
+			// 	'label_description' => __( '<span class="label">INFO</span> Fill with formatted text', 'wa-rsfp' ),
+            // ],
             [
                 'name'             => __( 'Image', 'wa-rsfp' ),
                 'id'               => $prefix . 'general_image',

@@ -107,44 +107,44 @@ function register_post_types() {
 	register_post_type( 'directory', $args );
 
 	/**
-	 * Farmer (relation)
+	 * Farm (relation)
 	 */
 	$labels = [
-		'name'                     => esc_html__( 'Farmers', 'wa-rsfp' ),
-		'singular_name'            => esc_html__( 'Farmer', 'wa-rsfp' ),
+		'name'                     => esc_html__( 'Farms', 'wa-rsfp' ),
+		'singular_name'            => esc_html__( 'Farm', 'wa-rsfp' ),
 		'add_new'                  => esc_html__( 'Add New', 'wa-rsfp' ),
-		'add_new_item'             => esc_html__( 'Add New Farmer', 'wa-rsfp' ),
-		'edit_item'                => esc_html__( 'Edit Farmer', 'wa-rsfp' ),
-		'new_item'                 => esc_html__( 'New Farmer', 'wa-rsfp' ),
-		'view_item'                => esc_html__( 'View Farmer', 'wa-rsfp' ),
-		'view_items'               => esc_html__( 'View Farmers', 'wa-rsfp' ),
-		'search_items'             => esc_html__( 'Search Farmers', 'wa-rsfp' ),
-		'not_found'                => esc_html__( 'No farmers found.', 'wa-rsfp' ),
-		'not_found_in_trash'       => esc_html__( 'No farmers found in Trash.', 'wa-rsfp' ),
-		'parent_item_colon'        => esc_html__( 'Parent Farmer:', 'wa-rsfp' ),
-		'all_items'                => esc_html__( 'All Farmers', 'wa-rsfp' ),
-		'archives'                 => esc_html__( 'Farmer Archives', 'wa-rsfp' ),
-		'attributes'               => esc_html__( 'Farmer Attributes', 'wa-rsfp' ),
-		'insert_into_item'         => esc_html__( 'Insert into farmer', 'wa-rsfp' ),
-		'uploaded_to_this_item'    => esc_html__( 'Uploaded to this farmer', 'wa-rsfp' ),
+		'add_new_item'             => esc_html__( 'Add New Farm', 'wa-rsfp' ),
+		'edit_item'                => esc_html__( 'Edit Farm', 'wa-rsfp' ),
+		'new_item'                 => esc_html__( 'New Farm', 'wa-rsfp' ),
+		'view_item'                => esc_html__( 'View Farm', 'wa-rsfp' ),
+		'view_items'               => esc_html__( 'View Farms', 'wa-rsfp' ),
+		'search_items'             => esc_html__( 'Search Farms', 'wa-rsfp' ),
+		'not_found'                => esc_html__( 'No farms found.', 'wa-rsfp' ),
+		'not_found_in_trash'       => esc_html__( 'No farms found in Trash.', 'wa-rsfp' ),
+		'parent_item_colon'        => esc_html__( 'Parent Farm:', 'wa-rsfp' ),
+		'all_items'                => esc_html__( 'All Farms', 'wa-rsfp' ),
+		'archives'                 => esc_html__( 'Farm Archives', 'wa-rsfp' ),
+		'attributes'               => esc_html__( 'Farm Attributes', 'wa-rsfp' ),
+		'insert_into_item'         => esc_html__( 'Insert into farm', 'wa-rsfp' ),
+		'uploaded_to_this_item'    => esc_html__( 'Uploaded to this farm', 'wa-rsfp' ),
 		'featured_image'           => esc_html__( 'Featured image', 'wa-rsfp' ),
 		'set_featured_image'       => esc_html__( 'Set featured image', 'wa-rsfp' ),
 		'remove_featured_image'    => esc_html__( 'Remove featured image', 'wa-rsfp' ),
 		'use_featured_image'       => esc_html__( 'Use as featured image', 'wa-rsfp' ),
-		'menu_name'                => esc_html__( 'Farmers', 'wa-rsfp' ),
-		'filter_items_list'        => esc_html__( 'Filter farmers list', 'wa-rsfp' ),
-		'filter_by_date'           => esc_html__( 'Filter farmers date', 'wa-rsfp' ),
-		'items_list_navigation'    => esc_html__( 'Farmers list navigation', 'wa-rsfp' ),
-		'items_list'               => esc_html__( 'Farmers list', 'wa-rsfp' ),
-		'item_published'           => esc_html__( 'Farmer published.', 'wa-rsfp' ),
-		'item_published_privately' => esc_html__( 'Farmer published privately.', 'wa-rsfp' ),
-		'item_reverted_to_draft'   => esc_html__( 'Farmer reverted to draft.', 'wa-rsfp' ),
-		'item_scheduled'           => esc_html__( 'Farmer scheduled.', 'wa-rsfp' ),
-		'item_updated'             => esc_html__( 'Farmer updated.', 'wa-rsfp' ),
+		'menu_name'                => esc_html__( 'Farms', 'wa-rsfp' ),
+		'filter_items_list'        => esc_html__( 'Filter farms list', 'wa-rsfp' ),
+		'filter_by_date'           => esc_html__( 'Filter farms date', 'wa-rsfp' ),
+		'items_list_navigation'    => esc_html__( 'Farms list navigation', 'wa-rsfp' ),
+		'items_list'               => esc_html__( 'Farms list', 'wa-rsfp' ),
+		'item_published'           => esc_html__( 'Farm published.', 'wa-rsfp' ),
+		'item_published_privately' => esc_html__( 'Farm published privately.', 'wa-rsfp' ),
+		'item_reverted_to_draft'   => esc_html__( 'Farm reverted to draft.', 'wa-rsfp' ),
+		'item_scheduled'           => esc_html__( 'Farm scheduled.', 'wa-rsfp' ),
+		'item_updated'             => esc_html__( 'Farm updated.', 'wa-rsfp' ),
 		'text_domain'              => esc_html__( 'wa-rsfp', 'wa-rsfp' ),
 	];
 	$args = [
-		'label'               => esc_html__( 'Farmers', 'wa-rsfp' ),
+		'label'               => esc_html__( 'Farms', 'wa-rsfp' ),
 		'labels'              => $labels,
 		'description'         => '',
 		'public'              => true,
@@ -171,7 +171,74 @@ function register_post_types() {
 		],
 	];
 
-	register_post_type( 'farmer', $args );
+	register_post_type( 'farm', $args );
+
+	/**
+	 * Operation (relation)
+	 */
+	$labels = [
+		'name'                     => esc_html__( 'Operations', 'wa-rsfp' ),
+		'singular_name'            => esc_html__( 'Operation', 'wa-rsfp' ),
+		'add_new'                  => esc_html__( 'Add New', 'wa-rsfp' ),
+		'add_new_item'             => esc_html__( 'Add New Operation', 'wa-rsfp' ),
+		'edit_item'                => esc_html__( 'Edit Operation', 'wa-rsfp' ),
+		'new_item'                 => esc_html__( 'New Operation', 'wa-rsfp' ),
+		'view_item'                => esc_html__( 'View Operation', 'wa-rsfp' ),
+		'view_items'               => esc_html__( 'View Operations', 'wa-rsfp' ),
+		'search_items'             => esc_html__( 'Search Operations', 'wa-rsfp' ),
+		'not_found'                => esc_html__( 'No operations found.', 'wa-rsfp' ),
+		'not_found_in_trash'       => esc_html__( 'No operations found in Trash.', 'wa-rsfp' ),
+		'parent_item_colon'        => esc_html__( 'Parent Operation:', 'wa-rsfp' ),
+		'all_items'                => esc_html__( 'All Operations', 'wa-rsfp' ),
+		'archives'                 => esc_html__( 'Operation Archives', 'wa-rsfp' ),
+		'attributes'               => esc_html__( 'Operation Attributes', 'wa-rsfp' ),
+		'insert_into_item'         => esc_html__( 'Insert into operation', 'wa-rsfp' ),
+		'uploaded_to_this_item'    => esc_html__( 'Uploaded to this operation', 'wa-rsfp' ),
+		'featured_image'           => esc_html__( 'Featured image', 'wa-rsfp' ),
+		'set_featured_image'       => esc_html__( 'Set featured image', 'wa-rsfp' ),
+		'remove_featured_image'    => esc_html__( 'Remove featured image', 'wa-rsfp' ),
+		'use_featured_image'       => esc_html__( 'Use as featured image', 'wa-rsfp' ),
+		'menu_name'                => esc_html__( 'Operations', 'wa-rsfp' ),
+		'filter_items_list'        => esc_html__( 'Filter operations list', 'wa-rsfp' ),
+		'filter_by_date'           => esc_html__( 'Filter operations date', 'wa-rsfp' ),
+		'items_list_navigation'    => esc_html__( 'Operations list navigation', 'wa-rsfp' ),
+		'items_list'               => esc_html__( 'Operations list', 'wa-rsfp' ),
+		'item_published'           => esc_html__( 'Operation published.', 'wa-rsfp' ),
+		'item_published_privately' => esc_html__( 'Operation published privately.', 'wa-rsfp' ),
+		'item_reverted_to_draft'   => esc_html__( 'Operation reverted to draft.', 'wa-rsfp' ),
+		'item_scheduled'           => esc_html__( 'Operation scheduled.', 'wa-rsfp' ),
+		'item_updated'             => esc_html__( 'Operation updated.', 'wa-rsfp' ),
+		'text_domain'              => esc_html__( 'wa-rsfp', 'wa-rsfp' ),
+	];
+	$args = [
+		'label'               => esc_html__( 'Operations', 'wa-rsfp' ),
+		'labels'              => $labels,
+		'description'         => '',
+		'public'              => true,
+		'hierarchical'        => false,
+		'exclude_from_search' => false,
+		'publicly_queryable'  => true,
+		'show_ui'             => true,
+		'show_in_nav_menus'   => true,
+		'show_in_admin_bar'   => true,
+		'show_in_rest'        => true,
+		'query_var'           => true,
+		'can_export'          => true,
+		'delete_with_user'    => true,
+		'has_archive'         => true,
+		'rest_base'           => '',
+		'show_in_menu'        => true,
+		//'menu_position'       => 40,
+		'menu_icon'           => 'dashicons-flag',
+		'capability_type'     => 'post',
+		'supports'            => ['title', 'editor', 'author'], //'thumbnail',
+		'taxonomies'          => ['thematic'],
+		'rewrite'             => [
+			'with_front' => false,
+		],
+	];
+
+	register_post_type( 'operation', $args );
 
 	/**
 	 * Structure (relation)
@@ -238,73 +305,6 @@ function register_post_types() {
 	];
 
 	register_post_type( 'structure', $args );
-
-	/**
-	 * Operation (relation)
-	 */
-	$labels = [
-		'name'                     => esc_html__( 'Operations', 'wa-rsfp' ),
-		'singular_name'            => esc_html__( 'Operation', 'wa-rsfp' ),
-		'add_new'                  => esc_html__( 'Add New', 'wa-rsfp' ),
-		'add_new_item'             => esc_html__( 'Add New Operation', 'wa-rsfp' ),
-		'edit_item'                => esc_html__( 'Edit Operation', 'wa-rsfp' ),
-		'new_item'                 => esc_html__( 'New Operation', 'wa-rsfp' ),
-		'view_item'                => esc_html__( 'View Operation', 'wa-rsfp' ),
-		'view_items'               => esc_html__( 'View Operations', 'wa-rsfp' ),
-		'search_items'             => esc_html__( 'Search Operations', 'wa-rsfp' ),
-		'not_found'                => esc_html__( 'No operations found.', 'wa-rsfp' ),
-		'not_found_in_trash'       => esc_html__( 'No operations found in Trash.', 'wa-rsfp' ),
-		'parent_item_colon'        => esc_html__( 'Parent Operation:', 'wa-rsfp' ),
-		'all_items'                => esc_html__( 'All Operations', 'wa-rsfp' ),
-		'archives'                 => esc_html__( 'Operation Archives', 'wa-rsfp' ),
-		'attributes'               => esc_html__( 'Operation Attributes', 'wa-rsfp' ),
-		'insert_into_item'         => esc_html__( 'Insert into operation', 'wa-rsfp' ),
-		'uploaded_to_this_item'    => esc_html__( 'Uploaded to this operation', 'wa-rsfp' ),
-		'featured_image'           => esc_html__( 'Featured image', 'wa-rsfp' ),
-		'set_featured_image'       => esc_html__( 'Set featured image', 'wa-rsfp' ),
-		'remove_featured_image'    => esc_html__( 'Remove featured image', 'wa-rsfp' ),
-		'use_featured_image'       => esc_html__( 'Use as featured image', 'wa-rsfp' ),
-		'menu_name'                => esc_html__( 'Operations', 'wa-rsfp' ),
-		'filter_items_list'        => esc_html__( 'Filter operations list', 'wa-rsfp' ),
-		'filter_by_date'           => esc_html__( 'Filter operations date', 'wa-rsfp' ),
-		'items_list_navigation'    => esc_html__( 'Operations list navigation', 'wa-rsfp' ),
-		'items_list'               => esc_html__( 'Operations list', 'wa-rsfp' ),
-		'item_published'           => esc_html__( 'Operation published.', 'wa-rsfp' ),
-		'item_published_privately' => esc_html__( 'Operation published privately.', 'wa-rsfp' ),
-		'item_reverted_to_draft'   => esc_html__( 'Operation reverted to draft.', 'wa-rsfp' ),
-		'item_scheduled'           => esc_html__( 'Operation scheduled.', 'wa-rsfp' ),
-		'item_updated'             => esc_html__( 'Operation updated.', 'wa-rsfp' ),
-		'text_domain'              => esc_html__( 'wa-rsfp', 'wa-rsfp' ),
-	];
-	$args = [
-		'label'               => esc_html__( 'Operations', 'wa-rsfp' ),
-		'labels'              => $labels,
-		'description'         => '',
-		'public'              => true,
-		'hierarchical'        => false,
-		'exclude_from_search' => false,
-		'publicly_queryable'  => true,
-		'show_ui'             => true,
-		'show_in_nav_menus'   => true,
-		'show_in_admin_bar'   => true,
-		'show_in_rest'        => true,
-		'query_var'           => true,
-		'can_export'          => true,
-		'delete_with_user'    => true,
-		'has_archive'         => true,
-		'rest_base'           => '',
-		'show_in_menu'        => true,
-		//'menu_position'       => 40,
-		'menu_icon'           => 'dashicons-flag',
-		'capability_type'     => 'post',
-		'supports'            => ['title', 'editor', 'thumbnail', 'author'],
-		'taxonomies'          => ['thematic'],
-		'rewrite'             => [
-			'with_front' => false,
-		],
-	];
-
-	register_post_type( 'operation', $args );
 
 	/**
 	 * Partner

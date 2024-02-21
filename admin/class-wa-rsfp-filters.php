@@ -110,7 +110,7 @@ function rsfp_filter_post_type_by_taxonomy() {
 	};
 	
 	// Authors 
-	if ($typenow == 'directory' || $typenow == 'farmer' || $typenow == 'structure' || $typenow == 'operation' || $typenow == 'partner') {
+	if ($typenow == 'directory' || $typenow == 'farm' || $typenow == 'structure' || $typenow == 'operation' || $typenow == 'partner') {
 		wp_dropdown_users(array(
 			'name'              => 'author',
 			'show_option_all' 	=> __("All Authors",'wa-rsfp'),
@@ -151,11 +151,11 @@ function rsfp_filter_post_type_by_taxonomy() {
  */
  
 /*
- Farmers 
+ Farms 
 */
 
-add_action('restrict_manage_posts', 'rsfp_filter_directory_by_metafield_farmers');
-function rsfp_filter_directory_by_metafield_farmers($post_type){
+add_action('restrict_manage_posts', 'rsfp_filter_directory_by_metafield_farms');
+function rsfp_filter_directory_by_metafield_farms($post_type){
     global $wpdb;
 
     /** Ensure this is the correct Post Type*/
@@ -163,7 +163,7 @@ function rsfp_filter_directory_by_metafield_farmers($post_type){
         return;
 
     /** Grab the results from the DB */
-	$farmers = array();
+	$farms = array();
     $sql = <<<SQL
     SELECT
     wp_postmeta.meta_key,
@@ -175,7 +175,7 @@ function rsfp_filter_directory_by_metafield_farmers($post_type){
     wp_postmeta,
     wp_posts
     WHERE
-    wp_postmeta.meta_key LIKE 'd_relationships_farmer'
+    wp_postmeta.meta_key LIKE 'd_relationships_farm'
     AND wp_postmeta.meta_value = wp_posts.ID
     GROUP BY
     wp_postmeta.meta_value
@@ -188,7 +188,7 @@ function rsfp_filter_directory_by_metafield_farmers($post_type){
         return;
     
     foreach($posts as $post) {
-      $farmers[] = array(
+      $farms[] = array(
         'ID' => $post->ID,
         'value' => $post->post_title,
         'count' => $post->count,
@@ -196,30 +196,30 @@ function rsfp_filter_directory_by_metafield_farmers($post_type){
     }
     
     // Re-order
-    $value = array_column($farmers, 'value');
-	array_multisort($value, SORT_ASC, $farmers);
+    $value = array_column($farms, 'value');
+	array_multisort($value, SORT_ASC, $farms);
 
 
     // get selected option if there is one selected
-    if (isset( $_GET['rsfp_farmer_pids'] ) && $_GET['rsfp_farmer_pids'] != '') {
-        $selectedFarmer = $_GET['rsfp_farmer_pids'];
+    if (isset( $_GET['rsfp_farm_pids'] ) && $_GET['rsfp_farm_pids'] != '') {
+        $selectedFarm = $_GET['rsfp_farm_pids'];
     } else {
-        $selectedFarmer = -1;
+        $selectedFarm = -1;
     }
 
     /** Grab all of the options that should be shown */
-    $options[] = sprintf('<option value="-1">%1$s</option>', __('All Farmers', 'wa-rsfp'));
-    foreach($farmers as $farmer) :
+    $options[] = sprintf('<option value="-1">%1$s</option>', __('All Farms', 'wa-rsfp'));
+    foreach($farms as $farm) :
         $options[] = sprintf('<option value="%s" %s>%s</option>', 
-            (int)$farmer['ID'],
-            ($farmer['ID'] == $selectedFarmer)?'selected':'',
-            //esc_attr($farmer['value'] . ' → '.(int)$farmer['ID'] . ' ('.(int)$farmer['count'].')'),
-            esc_attr($farmer['value'] . '  ('.(int)$farmer['count'].')'),
+            (int)$farm['ID'],
+            ($farm['ID'] == $selectedFarm)?'selected':'',
+            //esc_attr($farm['value'] . ' → '.(int)$farm['ID'] . ' ('.(int)$farm['count'].')'),
+            esc_attr($farm['value'] . '  ('.(int)$farm['count'].')'),
         );
     endforeach;
 
     /** Output the dropdown menu */
-    echo '<select class="" id="rsfp_farmer_pids" name="rsfp_farmer_pids">';
+    echo '<select class="" id="rsfp_farm_pids" name="rsfp_farm_pids">';
     echo join("\n", $options);
     echo '</select>';
 
@@ -229,8 +229,8 @@ function rsfp_filter_directory_by_metafield_farmers($post_type){
  * Usage:
  * http://example.com/wp-admin/edit.php?my_pids=4088,4090,4092,4094
  */
-//add_filter( 'pre_get_posts', 'limit_directory_list_byfarmerid', 80 );
-function limit_directory_list_byfarmerid( $query ) 
+//add_filter( 'pre_get_posts', 'limit_directory_list_byfarmid', 80 );
+function limit_directory_list_byfarmid( $query ) 
 {
     // Don't run on frontend
     if( !is_admin() )
@@ -253,13 +253,13 @@ function limit_directory_list_byfarmerid( $query )
         return $query;
 
     // Check for our filter
-    if( !isset( $_GET['rsfp_farmer_pids'] ) )
+    if( !isset( $_GET['rsfp_farm_pids'] ) )
         return $query;
         
     $limit_posts = array();
-    $farmer_pids = (int)$_GET['rsfp_farmer_pids'];
+    $farm_pids = (int)$_GET['rsfp_farm_pids'];
     // echo('###DEBUG');
-    // print_r($farmer_pids);
+    // print_r($farm_pids);
         
     $sql = <<<SQL
     SELECT
@@ -268,8 +268,8 @@ function limit_directory_list_byfarmerid( $query )
     FROM
     wp_postmeta
     WHERE
-    wp_postmeta.meta_value = {$farmer_pids}
-    AND wp_postmeta.meta_key LIKE 'farmers'
+    wp_postmeta.meta_value = {$farm_pids}
+    AND wp_postmeta.meta_key LIKE 'farms'
     SQL;
 
     $posts = $wpdb->get_results($sql);
@@ -725,7 +725,7 @@ function limit_directory_list_bypartnerid( $query )
  * http://codex.wordpress.org/Plugin_API/Filter_Reference/posts_join
  */
 add_filter( 'posts_join', 'directory_search_join' );
-add_filter( 'posts_join', 'farmer_search_join' );
+add_filter( 'posts_join', 'farm_search_join' );
 add_filter( 'posts_join', 'structure_search_join' );
 add_filter( 'posts_join', 'operation_search_join' );
 add_filter( 'posts_join', 'partner_search_join' );
@@ -738,11 +738,11 @@ function directory_search_join ( $join ) {
     }
     return $join;
 }
-function farmer_search_join ( $join ) {
+function farm_search_join ( $join ) {
     global $pagenow, $wpdb;
 
     // I want the filter only when performing a search on edit page of Custom Post Type named "directory".
-    if ( is_admin() && is_search() && 'edit.php' === $pagenow && 'farmer' === $_GET['post_type'] && ! empty( $_GET['s'] ) ) {
+    if ( is_admin() && is_search() && 'edit.php' === $pagenow && 'farm' === $_GET['post_type'] && ! empty( $_GET['s'] ) ) {
         $join .= 'LEFT JOIN ' . $wpdb->postmeta . ' ON ' . $wpdb->posts . '.ID = ' . $wpdb->postmeta . '.post_id ';
     }
     return $join;
@@ -781,7 +781,7 @@ function partner_search_join ( $join ) {
  * http://codex.wordpress.org/Plugin_API/Filter_Reference/posts_where
  */
 add_filter( 'posts_where', 'directory_search_where' );
-add_filter( 'posts_where', 'farmer_search_where' );
+add_filter( 'posts_where', 'farm_search_where' );
 add_filter( 'posts_where', 'structure_search_where' );
 add_filter( 'posts_where', 'operation_search_where' );
 add_filter( 'posts_where', 'partner_search_where' );
@@ -793,9 +793,9 @@ function directory_search_where( $where ) {
         // Searching for all from 's' var
         $s = get_search_query();
 
-        // Search into farmer
+        // Search into farm
         $f_args = array(
-            'post_type' => 'farmer',
+            'post_type' => 'farm',
             's' => $s,
             'post_status' => 'publish',
             'fields' => 'ids'
@@ -835,7 +835,7 @@ function directory_search_where( $where ) {
 
         // Add additionnal where cause for belongs post types
         $additionnal_where = '';
-        if ( !empty($f_results) ) $additionnal_where .= " OR (" . $wpdb->postmeta . ".meta_key = 'd_relationships_farmer' AND " . $wpdb->postmeta . ".meta_value IN (" . $f_results_list . ") )";
+        if ( !empty($f_results) ) $additionnal_where .= " OR (" . $wpdb->postmeta . ".meta_key = 'd_relationships_farm' AND " . $wpdb->postmeta . ".meta_value IN (" . $f_results_list . ") )";
         if ( !empty($o_results) ) $additionnal_where .= " OR (" . $wpdb->postmeta . ".meta_key = 'd_relationships_operation' AND " . $wpdb->postmeta . ".meta_value IN (" . $o_results_list . ") )";
         if ( !empty($s_results) ) $additionnal_where .= " OR (" . $wpdb->postmeta . ".meta_key = 'd_relationships_structure' AND " . $wpdb->postmeta . ".meta_value IN (" . $s_results_list . ") )";
         if ( !empty($p_results) ) $additionnal_where .= " OR (" . $wpdb->postmeta . ".meta_key = 'd_relationships_partner' AND " . $wpdb->postmeta . ".meta_value IN (" . $p_results_list . ") )";
@@ -848,11 +848,11 @@ function directory_search_where( $where ) {
     }
     return $where;
 }
-function farmer_search_where( $where ) {
+function farm_search_where( $where ) {
     global $pagenow, $wpdb;
 
     // I want the filter only when performing a search on edit page of Custom Post Type named "directory".
-    if ( is_admin() && is_search() && 'edit.php' === $pagenow && 'farmer' === $_GET['post_type'] && ! empty( $_GET['s'] ) ) {
+    if ( is_admin() && is_search() && 'edit.php' === $pagenow && 'farm' === $_GET['post_type'] && ! empty( $_GET['s'] ) ) {
         // Searching for all from 's' var
         $s = get_search_query();
 

@@ -90,8 +90,8 @@ class Wa_Rsfp_Admin {
 			wp_enqueue_style( 'admin-style-directory', plugins_url('/css/admin-style-directory.css',__FILE__), array(), '1.0' );
 			break;
 
-			case 'farmer':
-			wp_enqueue_style( 'admin-style-farmer', plugins_url('/css/admin-style-farmer.css',__FILE__), array(), '1.0' );
+			case 'farm':
+			wp_enqueue_style( 'admin-style-farm', plugins_url('/css/admin-style-farm.css',__FILE__), array(), '1.0' );
 			break;
 	
 			case 'structure':

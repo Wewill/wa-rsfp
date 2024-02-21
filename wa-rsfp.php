@@ -9,14 +9,14 @@
  * that starts the plugin.
  *
  * @link              https://www.wilhemarnoldy.fr
- * @since             1.1
+ * @since             1.2
  * @package           Wa_Rsfp
  *
  * @wordpress-plugin
  * Plugin Name:       WA RSFP Repertoire des savoirs faire paysans
  * Plugin URI:        https://www.wilhemarnoldy.fr
- * Description:       A plugin to add directory, knowledges, farmers, structures of "le repertoire des savoirs-paysans"
- * Version:           1.1
+ * Description:       A plugin to add directory, knowledges, farms, farmers, structures, operations, partners of "le repertoire des savoirs-paysans"
+ * Version:           1.2
  * Author:            Wilhem Arnoldy
  * Author URI:        https://www.wilhemarnoldy.fr
  * License:           GPL-2.0+
@@ -33,6 +33,10 @@ if ( ! defined( 'WPINC' ) ) {
 
 if ( is_admin() && !function_exists('rwmb_meta') ) {
 	wp_die('Error : please install Meta Box plugin.');
+}
+
+if ( is_admin() && !function_exists('mb_term_meta_load') ) {
+	wp_die('Error : please install Meta Box Term meta plugin.');
 }
 
 /**

@@ -20,20 +20,20 @@ add_filter('manage_users_columns' , 'add_extra_user_column', 20);
 function add_extra_user_column($columns) {
     unset($columns['posts']);
     return array_merge( $columns, 
-              array(
-              		'posted' => __( 'Posted', 'wa-rsfp'),
-              		)
-              );
+		array(
+				'posted' => __( 'Posted', 'wa-rsfp'),
+				)
+		);
 }
 
 
 add_filter('manage_users_sortable_columns' , 'add_extra_user_sortable_column', 20);
 function add_extra_user_sortable_column($columns) {
     return array_merge( $columns, 
-              array(
-              		'role' => 'role',
-              		)
-              );
+		array(
+			'role' => 'role',
+			)
+		);
 }
 
 add_action('manage_users_custom_column',  'users_manage_columns', 20, 3);
@@ -130,9 +130,9 @@ directory
 // manage_edit-{$post_type}_columns
 add_filter( 'manage_edit-directory_columns', 'directory_columns' ) ;
 function directory_columns( $columns ) {
-	$columns['_farmers_id'] = __( 'Farmer.s', 'wa-rsfp');
-	$columns['_structures_id'] = __( 'Structure.s', 'wa-rsfp');
+	$columns['_farms_id'] = __( 'Farm.s', 'wa-rsfp');
 	$columns['_operations_id'] = __( 'Operation.s', 'wa-rsfp');
+	$columns['_structures_id'] = __( 'Structure.s', 'wa-rsfp');
 	return $columns;
 }
 
@@ -148,10 +148,10 @@ add_action("manage_directory_posts_custom_column", 'directory_manage_columns', 1
 function directory_manage_columns($column_name, $post_id) {
     switch ($column_name) {
 		/*case '_rsfp_belongs_directory_id' :
-			get_directory_byfarmerid($column_name, $post_id);			
+			get_directory_byfarmid($column_name, $post_id);			
 			break;*/
-		case '_farmers_id' :
-		    $custom_column = implode("\n", get_relationship('farmer', $post_id) );
+		case '_farms_id' :
+		    $custom_column = implode("\n", get_relationship('farm', $post_id) );
 		    if (empty($custom_column))
 		      $custom_column = "<th> — </th>";
 			$custom_column = "<table>\n{$custom_column}\n</table>";
@@ -183,37 +183,41 @@ function directory_manage_columns($column_name, $post_id) {
 
 /*
 --------------
-farmer
+farm
 */
 
 // manage_edit-{$post_type}_columns
-add_filter( 'manage_edit-farmer_columns', 'farmer_columns' ) ;
-function farmer_columns( $columns ) {
+add_filter( 'manage_edit-farm_columns', 'farm_columns' ) ;
+function farm_columns( $columns ) {
 	//$columns['posted'] = __( 'Posted', 'wa-rsfp');
-	$columns['_rsfp_belongs_directory_id'] = __( 'Farmer belongs to', 'wa-rsfp');
+	$columns['f_general_farmers'] = __( 'Farmer.s', 'wa-rsfp');
+	$columns['_rsfp_belongs_directory_id'] = __( 'Farm belongs to', 'wa-rsfp');
 	return $columns;
 }
 
 // manage_edit-{$post_type}_sortable_columns
-add_filter( 'manage_edit-farmer_sortable_columns', 'farmer_sortable_columns' );
-function farmer_sortable_columns( $columns ) {
+add_filter( 'manage_edit-farm_sortable_columns', 'farm_sortable_columns' );
+function farm_sortable_columns( $columns ) {
 	//$columns['_rsfp_belongs_directory_id'] = '_rsfp_belongs_directory_id';
 	return $columns;
 }
 
 // manage_{$post_type}_posts_custom_column
-add_action("manage_farmer_posts_custom_column", 'farmer_manage_columns', 10, 2);
-function farmer_manage_columns($column_name, $post_id) {
+add_action("manage_farm_posts_custom_column", 'farm_manage_columns', 10, 2);
+function farm_manage_columns($column_name, $post_id) {
     switch ($column_name) {
+		case 'f_general_farmers' :
+			echo get_recursive_meta($column_name, $post_id);			
+			break;
 		/*case '_rsfp_belongs_directory_id' :
-			get_directory_byfarmerid($column_name, $post_id);			
+			get_directory_byfarmid($column_name, $post_id);			
 			break;*/
 		case '_rsfp_belongs_directory_id' :
-			$datas = get_belongs('farmer', $post_id);
+			$datas = get_belongs('farm', $post_id);
 		    $custom_column = array();
 		    if (isset($datas[$post_id]) && is_array($datas[$post_id]))
 		      foreach($datas[$post_id] as $data) {
-		      	$link_to = 'href="'.admin_url('edit.php?post_type=directory&rsfp_pids='.$data['ID'].'&farmer_pids='.$post_id).'"';
+		      	$link_to = 'href="'.admin_url('edit.php?post_type=directory&rsfp_pids='.$data['ID'].'&farm_pids='.$post_id).'"';
 		        $custom_column[] = "\t<tr><td><strong>• <a {$link_to}>{$data['value']}</a></strong></td></tr>";
 		      }
 		    $custom_column = implode("\n",$custom_column);
@@ -236,6 +240,7 @@ structure
 add_filter( 'manage_edit-structure_columns', 'structure_columns' ) ;
 function structure_columns( $columns ) {
 	//$columns['posted'] = __( 'Posted', 'wa-rsfp');
+	$columns['s_general_referent'] = __( 'Referent', 'wa-rsfp');
 	$columns['_rsfp_belongs_directory_id'] = __( 'Structure belongs to', 'wa-rsfp');
 	return $columns;
 }
@@ -251,6 +256,9 @@ function structure_sortable_columns( $columns ) {
 add_action("manage_structure_posts_custom_column", 'structure_manage_columns', 10, 2);
 function structure_manage_columns($column_name, $post_id) {
     switch ($column_name) {
+		case 's_general_referent' :
+			get_meta($column_name, $post_id);			
+			break;
 		/*case '_rsfp_belongs_directory_id' :
 			get_directory_bystructureid($column_name, $post_id);			
 			break;*/
@@ -282,6 +290,7 @@ operation
 add_filter( 'manage_edit-operation_columns', 'operation_columns' ) ;
 function operation_columns( $columns ) {
 	//$columns['posted'] = __( 'Posted', 'wa-rsfp');
+	$columns['o_general_leaders'] = __( 'Leader.s', 'wa-rsfp');
 	$columns['_rsfp_belongs_directory_id'] = __( 'Operation belongs to', 'wa-rsfp');
 	return $columns;
 }
@@ -297,6 +306,9 @@ function operation_sortable_columns( $columns ) {
 add_action("manage_operation_posts_custom_column", 'operation_manage_columns', 10, 2);
 function operation_manage_columns($column_name, $post_id) {
     switch ($column_name) {
+		case 'o_general_leaders' :
+			get_recursive_meta($column_name, $post_id);			
+			break;
 		/*case '_rsfp_belongs_directory_id' :
 			get_directory_byoperationid($column_name, $post_id);			
 			break;*/
@@ -328,7 +340,8 @@ partner
 add_filter( 'manage_edit-partner_columns', 'partner_columns' ) ;
 function partner_columns( $columns ) {
 	//$columns['posted'] = __( 'Posted', 'wa-rsfp');
-	$columns['_rsfp_belongs_directory_id'] = __( 'Partner belongs to', 'wa-rsfp');
+	$columns['p_general_link'] = __( 'Link', 'wa-rsfp');
+	//$columns['_rsfp_belongs_directory_id'] = __( 'Partner belongs to', 'wa-rsfp');
 	return $columns;
 }
 
@@ -343,6 +356,9 @@ function partner_sortable_columns( $columns ) {
 add_action("manage_partner_posts_custom_column", 'partner_manage_columns', 10, 2);
 function partner_manage_columns($column_name, $post_id) {
     switch ($column_name) {
+		case 'p_general_link' :
+			echo get_meta($column_name, $post_id);
+            break;
 		/*case '_rsfp_belongs_directory_id' :
 			get_directory_bypartnerid($column_name, $post_id);			
 			break;*/
@@ -360,6 +376,7 @@ function partner_manage_columns($column_name, $post_id) {
 		    $custom_column = "<table>\n{$custom_column}\n</table>";
 		    //Render
 		    echo $custom_column;
+            break;
 		default:
             break;
     }
@@ -442,8 +459,8 @@ function limit_post_list_byid( $query )
     return $query;
 }
 
-// Get Farmer documents 
-function get_directory_byfarmerid($column_name, $post_id) {
+// Get Farm documents 
+function get_directory_byfarmid($column_name, $post_id) {
 	if ( empty( $post_id ) )
 		echo __( '<span style="color:silver;">—</span>' ); // marker.png
 	else
@@ -471,8 +488,8 @@ function get_relationship($post_type, $post_id) {
 			esc_attr(esc_url(admin_url('edit.php?post_type='.$post_type.'&rsfp_pids='.$post_id))),
 			get_the_title( $post_id ),
 			esc_attr(esc_url(admin_url('edit.php?post_type='.$post_type.'&rsfp_pids='.$post_id))),
-			esc_attr(esc_url(get_permalink( $post_id ))),
-			esc_attr(esc_url(get_page_link( $post_id )))
+			esc_attr(esc_url(admin_url('post.php?post='.$post_id.'&action=edit'))),
+			esc_attr(esc_url(get_permalink( $post_id )))
 		); //$field['field_name'],
 	  }
 	return $ret;
@@ -517,7 +534,6 @@ function get_belongs($post_type, $post_id) {
 	return $belongs;
 }
 
-
 // Get attachement_id form an image url  
 function get_attachment_id_from_url($url) {
 	global $wpdb;
@@ -555,22 +571,6 @@ function get_code($fd) {
 		echo __( '<span style="color:silver;">—</span>' ); // marker.png
 	else
 		printf( __( '<code>%s</code>' ), $fd );
-}
-
-// Get type 
-function get_type($fd) {
-	global $type;
-	$t = $type[$fd];
-	if ( empty( $fd ) || $fd == -1 )
-		echo __( '<span style="color:silver;">—</span>' ); // marker.png
-	if ( !empty( $t ) ) 
-		echo __( '<code class="type '.$t.'">'.$t.'</code>');
-}
-
-// Get typeid
-function get_typeid($fd) {
-	if ( !empty( $fd ) )
-		printf( __( '<span class="typeid">%s</span>' ), $fd );
 }
 
 // Get Image 
@@ -621,39 +621,13 @@ function get_meta($column_name, $post_id) {
 		printf( __( '<h3>%s</h3>' ), $meta);
 }
 
-// Get select
-function get_select_bymeta($column_name, $post_id) {
+//Get recursive meta
+function get_recursive_meta($column_name, $post_id) {
 	$meta = get_post_meta($post_id, $column_name, true );
-	
-	$customField = substr($column_name, 5); 
-	$fieldConfig = wpcf_admin_fields_get_field($customField);
-	$fieldOptions = array();
-	if (isset($fieldConfig['data']['options'])) {
-	   foreach ($fieldConfig['data']['options'] as $key => $option ) {
-	   		if( isset($option['title']) ) 
-	   			$fieldOptions[$option['title']] = $option['value'];
-	   }
-	}
-	$found_key = array_search( types_get_field_meta_value( $customField, $post_id, true), $fieldOptions);
-
-	if ( empty( $found_key ) )
+	if ( empty( $meta ) )
 		echo __( '<span style="color:silver;">—</span>' );
 	else
-		printf( __( '<h4>%s</h4>' ), $found_key);
-	
-}
-
-// Get term meta
-function get_edition_termmeta($taxonomy, $term_id) {
-	$meta = get_term_meta($term_id, $taxonomy, true );
-	$term = get_term( $meta, 'edition');
-	$name = $term->name;
-
-	if ( empty( $term ) )
-		echo __( '<span style="color:silver;">—</span>' );
-	else
-		printf( __( '<h2>%s</h2>' ), $name);
-	
+		printf( __( '<h3>%s</h3>' ), implode(',', $meta));
 }
 
 //Get time
@@ -663,19 +637,6 @@ function get_time_bymeta($column_name, $post_id) {
 		echo __( '<span style="color:silver;">—</span>' );
 	else
 		printf( __( '<h5><span class="dashicons-before dashicons-clock"></span> %s min.</h6>' ), $meta);
-}
-
-//Get date
-function get_date_bymeta($column_name, $post_id) {
-	$meta = get_post_meta($post_id, $column_name, true );
-
-    require_once WPTOOLSET_FORMS_ABSPATH . '/classes/class.date.php';
-    $meta = WPToolset_Field_Date::timetodate($meta);
-
-	if ( empty( $meta ) )
-		echo __( '<span style="color:silver;">—</span>' );
-	else
-		printf( __( '%s' ), $meta);
 }
 
 // Get post
@@ -688,7 +649,7 @@ function get_post_bymeta($column_name, $post_id) {
 		printf( __( '<h3>%s</h3>' ), $post_title);
 }
 
-//Get post w/ ink
+//Get post w/ link
 function get_postlink_bymeta($column_name, $post_id) {
 	$meta = get_post_meta($post_id, $column_name, true );
 	$post_title = get_the_title($meta);
@@ -697,23 +658,6 @@ function get_postlink_bymeta($column_name, $post_id) {
 		echo __( '<span style="color:silver;">—</span>' );
 	else
 		printf( __( '<h3><a href="%s">%s</a></h3>' ), $post_link, $post_title);
-}
-
-//Get contact 
-function get_contactlink_bymeta($column_name, $post_id) {
-	$meta = get_post_meta($post_id, $column_name, true );
-    
-    $ln = get_post_meta($meta, 'wpcf-c-name', true );
-	$fn = get_post_meta($meta, 'wpcf-c-firstname', true );
-    $post_authorname = $ln . '&nbsp;' . $fn ;
-	
-	$post_title = get_the_title($meta);
-	$post_content = ($ln!='')?$post_authorname:$post_title;
-	$post_link = get_edit_post_link($meta);
-	if ( empty( $meta ) )
-		echo __( '<span style="color:silver;">—</span>' );
-	else
-		printf( __( '<h3 style="margin-bottom:4px;"><a href="%s">%s</a></h3><small><em>( %s )</em></small>' ), $post_link, $post_content, $post_title);
 }
 
 //Get post w/ link in a btn 
@@ -727,60 +671,13 @@ function get_postlinkbtn_bymeta($column_name, $post_id) {
 		printf( __( '<br/><a href="%s" title="%s" class="page-title-action">View</a>' ), $post_link, $post_title);
 }
 
-// Get post
-function get_rating_bymeta($column_name, $post_id) {
-	$meta = get_post_meta($post_id, $column_name, true );
-	if ( empty( $meta ) ) :
-		echo __( '<span style="color:silver;">—</span>' );
-	else :
-		switch($meta) {
-			case '1':
-				$meta = '	<span class="dashicons-before dashicons-star-filled"></span>
-							<span class="dashicons-before dashicons-star-empty"></span>
-							<span class="dashicons-before dashicons-star-empty"></span>
-							<span class="dashicons-before dashicons-star-empty"></span>
-							<span class="dashicons-before dashicons-star-empty"></span>';
-			break;
-			case '2':
-				$meta = '	<span class="dashicons-before dashicons-star-filled"></span>
-							<span class="dashicons-before dashicons-star-filled"></span>
-							<span class="dashicons-before dashicons-star-empty"></span>
-							<span class="dashicons-before dashicons-star-empty"></span>
-							<span class="dashicons-before dashicons-star-empty"></span>';
-			break;
-			case '3':
-				$meta = '	<span class="dashicons-before dashicons-star-filled"></span>
-							<span class="dashicons-before dashicons-star-filled"></span>
-							<span class="dashicons-before dashicons-star-filled"></span>
-							<span class="dashicons-before dashicons-star-empty"></span>
-							<span class="dashicons-before dashicons-star-empty"></span>';
-			break;
-			case '4':
-				$meta = '	<span class="dashicons-before dashicons-star-filled"></span>
-							<span class="dashicons-before dashicons-star-filled"></span>
-							<span class="dashicons-before dashicons-star-filled"></span>
-							<span class="dashicons-before dashicons-star-filled"></span>
-							<span class="dashicons-before dashicons-star-empty"></span>';
-			break;
-			case '5':
-				$meta = '	<span class="dashicons-before dashicons-star-filled"></span>
-							<span class="dashicons-before dashicons-star-filled"></span>
-							<span class="dashicons-before dashicons-star-filled"></span>
-							<span class="dashicons-before dashicons-star-filled"></span>
-							<span class="dashicons-before dashicons-star-filled"></span>';
-			break;
-		}
-		printf( __( '%s' ), $meta);
-	endif;
-}
-
 
 //Display Post Thumbnail Also In Edit Post and Page Overview
 //http://www.hongkiat.com/blog/wordpress-tweaks-for-post-management/
 
 if ( !function_exists('wa_addthumbcolumn') && function_exists('add_theme_support') ) {
 
-	add_theme_support('post-thumbnails', array( 'directory', 'farmer', 'structure', 'operation', 'partner' ) );
+	add_theme_support('post-thumbnails', array( 'directory', 'farm', 'structure', 'operation', 'partner' ) );
 	
 	function wa_addthumbcolumn($cols) {
 
@@ -823,8 +720,8 @@ if ( !function_exists('wa_addthumbcolumn') && function_exists('add_theme_support
 	add_filter( 'manage_directory_posts_columns', 'wa_addthumbcolumn' , 99);
 	add_action( 'manage_directory_posts_custom_column', 'wa_addthumbvalue', 10, 2 ); // NE PAS AFFICHER SI PRESENT DANS LE THEME
 
-	add_filter( 'manage_farmer_posts_columns', 'wa_addthumbcolumn' , 99);
-	add_action( 'manage_farmer_posts_custom_column', 'wa_addthumbvalue', 10, 2 ); // NE PAS AFFICHER SI PRESENT DANS LE THEME
+	add_filter( 'manage_farm_posts_columns', 'wa_addthumbcolumn' , 99);
+	add_action( 'manage_farm_posts_custom_column', 'wa_addthumbvalue', 10, 2 ); // NE PAS AFFICHER SI PRESENT DANS LE THEME
 
 	add_filter( 'manage_structure_posts_columns', 'wa_addthumbcolumn' , 99);
 	add_action( 'manage_structure_posts_custom_column', 'wa_addthumbvalue', 10, 2 ); // NE PAS AFFICHER SI PRESENT DANS LE THEME

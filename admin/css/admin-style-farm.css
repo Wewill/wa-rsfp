@@ -1,0 +1,8 @@
+/* //.row-title { font-size:12px !important; } */
+
+.wp-list-table th { font-size:12px; }
+
+a.nav-tab em { border: 1px solid #0073aa; color: #0073aa; padding: 2px 4px; font-style: normal; font-size: 11px; border-radius: 2px; margin-left: 2px; }
+
+th.column-gadwp_stats, td.column-gadwp_stats
+{ display: none !important; }
