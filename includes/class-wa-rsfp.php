@@ -161,7 +161,8 @@ class Wa_Rsfp {
 		// Plugin hooks
 		// $this->loader->add_action( 'init', $plugin_admin, 'register_post_types' );
 		// $this->loader->add_action( 'rwmb_meta_boxes', $plugin_admin, 'register_blocks' );
-		$this->loader->add_action( 'init', $plugin_admin, 'init_admin' );
+		$this->loader->add_action( 'init', $plugin_admin, 'init_plugin' );
+		$this->loader->add_action( 'admin_init', $plugin_admin, 'init_admin' );
 
 	}
 

@@ -172,22 +172,40 @@ class Wa_Rsfp_Admin {
 	 * @access   private
 	 */
 	private function run_dependencies() {
+		// After init hooks
 		register_post_types();
 		register_taxonomies();
 		register_custom_meta_fields();
-		// After init hooks
 		//add_action( 'rwmb_meta_boxes', 'register_custom_meta_fields', 5);
 		add_action( 'rwmb_meta_boxes', 'register_blocks', 5);
 	}
 
 	/**
-	 * Init admin
+	 * Init plugin
 	 *
 	 * @since    1.1.0
 	 */
-	public function init_admin() {
+	public function init_plugin() {
 		$this->load_dependencies();
 		$this->run_dependencies();
 	}
+	
+	/**
+	 * Init admin
+	 *
+	 * @since    1.2.0
+	 */
+	public function init_admin() {
+		//$screen = get_current_screen(); //$screen->id
+		global $pagenow;
 
+		if ( is_admin() && !in_array( $pagenow, array( 'plugins.php' ) ) && !function_exists('rwmb_meta') ) {
+			wp_die('Error : please install Meta Box plugin.');
+		}
+
+		if ( is_admin() && !in_array( $pagenow, array( 'plugins.php' ) ) && !function_exists('mb_term_meta_load') ) {
+			wp_die('Error : please install Meta Box Term meta plugin.');
+		}
+	}
+	
 }

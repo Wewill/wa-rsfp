@@ -31,14 +31,6 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
-if ( is_admin() && !in_array( get_current_screen()->id, array( 'plugins.php' )) && !function_exists('rwmb_meta') ) {
-	wp_die('Error : please install Meta Box plugin.');
-}
-
-if ( is_admin() && !in_array( get_current_screen()->id, array( 'plugins.php' )) && !function_exists('mb_term_meta_load') ) {
-	wp_die('Error : please install Meta Box Term meta plugin.');
-}
-
 /**
  * Currently plugin version.
  * Start at version 1.0.0 and use SemVer - https://semver.org
