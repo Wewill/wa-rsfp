@@ -9,14 +9,14 @@
  * that starts the plugin.
  *
  * @link              https://www.wilhemarnoldy.fr
- * @since             1.2
+ * @since             1.3
  * @package           Wa_Rsfp
  *
  * @wordpress-plugin
  * Plugin Name:       WA RSFP Repertoire des savoirs faire paysans
  * Plugin URI:        https://www.wilhemarnoldy.fr
  * Description:       A plugin to add directory, knowledges, farms, farmers, structures, operations, partners of "le repertoire des savoirs-paysans"
- * Version:           1.2
+ * Version:           1.3
  * Author:            Wilhem Arnoldy
  * Author URI:        https://www.wilhemarnoldy.fr
  * License:           GPL-2.0+

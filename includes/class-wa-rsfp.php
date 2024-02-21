@@ -154,9 +154,11 @@ class Wa_Rsfp {
 
 		$plugin_admin = new Wa_Rsfp_Admin( $this->get_plugin_name(), $this->get_version() );
 
-		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' ); // Global admin 
-		$this->loader->add_action( 'admin_print_styles-edit.php', $plugin_admin, 'enqueue_edit_styles' ); // Edit admin
-		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
+		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' ); // Global styles 
+		$this->loader->add_action( 'admin_print_styles-edit.php', $plugin_admin, 'enqueue_edit_styles' ); // Edit pages styles
+
+		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' ); // Global scripts 
+		$this->loader->add_action( 'enqueue_block_editor_assets', $plugin_admin, 'enqueue_editor_scripts' ); // Editor scripts 
 
 		// Plugin hooks
 		// $this->loader->add_action( 'init', $plugin_admin, 'register_post_types' );
