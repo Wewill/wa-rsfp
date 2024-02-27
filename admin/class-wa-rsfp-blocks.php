@@ -1,10 +1,29 @@
 <?php
 
 /**
- * Register the blocks.
+ * Register the blocks w/ metabox.io
  *
  * @since    1.1.0
  */
+
+// @TODO REMOVE 
+//  // Register Block 
+//  function custom_meta_block_register_block() {
+//     wp_register_script(
+//         'custom-meta-block-editor',
+//         plugins_url( 'js/block/index.js', __FILE__ ),
+//         array( 'wp-blocks', 'wp-element', 'wp-block-editor', 'wp-data' ), // Ensure dependencies are correct
+//         filemtime( plugin_dir_path( __FILE__ ) . 'js/block/index.js' )
+//     );
+
+//     register_block_type( 'custom-meta-block/meta-block', array(
+//         'editor_script' => 'custom-meta-block-editor',
+//     ) );
+// }
+
+
+// @TODO REMOVE ??
+// Register via MetaBox.io block
 function register_blocks() {
 	$prefix = 'waff_blocks_';
 
@@ -32,8 +51,8 @@ function register_blocks() {
 				</div>
 				<div class="testimonial__desc">
 					Post fields (description): 
-					A:<?php echo rwmb_meta( 'description', $post_id ) ?>
-					B:<?php echo get_post_meta($post_id, 'description', true) ?>
+					A:<?php echo rwmb_meta( 'd_general_subtitle', $post_id ) ?>
+					B:<?php echo get_post_meta($post_id, 'd_general_subtitle', true) ?>
 				</div>
 			</div>
 			<?php

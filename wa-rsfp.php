@@ -9,14 +9,14 @@
  * that starts the plugin.
  *
  * @link              https://www.wilhemarnoldy.fr
- * @since             1.3
+ * @since             1.4
  * @package           Wa_Rsfp
  *
  * @wordpress-plugin
- * Plugin Name:       WA RSFP Repertoire des savoirs faire paysans
+ * Plugin Name:       WA RSFP Global functions
  * Plugin URI:        https://www.wilhemarnoldy.fr
- * Description:       A plugin to add directory, knowledges, farms, farmers, structures, operations, partners of "le repertoire des savoirs-paysans"
- * Version:           1.3
+ * Description:       A plugin to add directory, knowledges, farms, farmers, structures, operations, partners of "le Répertoire des Savoir-faire Paysans"
+ * Version:           1.4
  * Author:            Wilhem Arnoldy
  * Author URI:        https://www.wilhemarnoldy.fr
  * License:           GPL-2.0+
@@ -36,7 +36,7 @@ if ( ! defined( 'WPINC' ) ) {
  * Start at version 1.0.0 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define( 'WA_RSFP_VERSION', '1.1.0' );
+define( 'WA_RSFP_VERSION', '1.4' );
 
 /**
  * The code that runs during plugin activation.

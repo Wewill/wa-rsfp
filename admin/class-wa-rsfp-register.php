@@ -64,45 +64,45 @@ function register_post_types() {
 		//'menu_position'       => 10,
 		'menu_icon'           => 'dashicons-pressthis',
 		'capability_type'     => 'post',
-		'supports'            => ['title', 'thumbnail', 'editor', 'comments', 'author', 'revisions'],
+		'supports'            => ['title', 'thumbnail', 'editor', 'comments', 'author', 'revisions', 'custom-fields'], // https://stackoverflow.com/questions/77310854/wordpress-useentityprop-returns-undefined
 		'taxonomies'          => ['geography','production','thematic'], //'category', 'post_tag'
 		'rewrite'             => [
 			'with_front' => false,
 		],
 		//https://stackoverflow.com/questions/72302604/wordpress-default-blocks-loaded-on-new-post
-		// 'template' => array(
-		// 	// Add blocks to default content
-		// 	// Used to make the page template default and editable / removable ( instead of page model )
-		// 	array(
-		// 		'meta-box/test',
-		// 	),
-		// 	array(
-		// 		'core/paragraph',
-		// 		array(
-		// 			'align'   => 'center',
-		// 			'content' => 'Place content you already in the block, even a link to a site like <a href="stackoverflow.com">stackoverflow</a>.',
-		// 		),
-		// 	),
-		// 	array(
-		// 		'core/buttons',
-		// 		array(
-		// 			'layout' => array(
-		// 				'type'           => 'flex',
-		// 				'justifyContent' => 'center',
-		// 			),
-		// 		),
-		// 		array(
-		// 			array(
-		// 				'core/button',
-		// 				array(
-		// 					'text'      => 'button text',
-		// 					'url'       => 'https://the-url.com/',
-		// 					'className' => 'a-custom-class-name',
-		// 				),
-		// 			),
-		// 		),
-		// 	),
-		// )
+		'template' => array(
+			// Add blocks to default content
+			// Used to make the page template default and editable / removable ( instead of page model )
+			array(
+				'directory/wa-rsfp-directory-block',
+			),
+			// array(
+			// 	'core/paragraph',
+			// 	array(
+			// 		'align'   => 'center',
+			// 		'content' => 'Place content you already in the block, even a link to a site like <a href="stackoverflow.com">stackoverflow</a>.',
+			// 	),
+			// ),
+			// array(
+			// 	'core/buttons',
+			// 	array(
+			// 		'layout' => array(
+			// 			'type'           => 'flex',
+			// 			'justifyContent' => 'center',
+			// 		),
+			// 	),
+			// 	array(
+			// 		array(
+			// 			'core/button',
+			// 			array(
+			// 				'text'      => 'button text',
+			// 				'url'       => 'https://the-url.com/',
+			// 				'className' => 'a-custom-class-name',
+			// 			),
+			// 		),
+			// 	),
+			// ),
+		)
 	];
 	register_post_type( 'directory', $args );
 
@@ -365,7 +365,7 @@ function register_post_types() {
 		'menu_icon'           => 'dashicons-groups',
 		'capability_type'     => 'post',
 		'supports'            => ['title', 'thumbnail'],
-		'taxonomies'          => ['partner-type'],
+		'taxonomies'          => ['partner-category'],
 		'rewrite'             => [
 			'with_front' => false,
 		],

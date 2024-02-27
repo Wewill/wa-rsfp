@@ -189,7 +189,8 @@ class Wa_Rsfp_Admin {
 		// Adding metabox io custom fields 
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-wa-rsfp-fields.php';
 		// Adding metabox io custom blocks and default blocks 
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-wa-rsfp-blocks.php';
+		// @TODO REMOVE ? 
+		// require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-wa-rsfp-blocks.php';
 		// Extending metabox io custom fields 
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-wa-rsfp-extend.php';
 		// Manage admin columns 
@@ -215,7 +216,14 @@ class Wa_Rsfp_Admin {
 		register_taxonomies();
 		register_custom_meta_fields();
 		//add_action( 'rwmb_meta_boxes', 'register_custom_meta_fields', 5);
-		add_action( 'rwmb_meta_boxes', 'register_blocks', 5);
+
+		// @TODO REMOVE ? 
+		// Custom blocks
+		//add_action( 'rwmb_meta_boxes', 'register_blocks', 5);
+
+		// @TODO REMOVE ? 
+		// Custom blocks
+		// custom_meta_block_register_block();
 	}
 
 	/**
@@ -245,9 +253,43 @@ class Wa_Rsfp_Admin {
 			wp_die('Error : please install Meta Box Term meta plugin.');
 		}
 
-		if ( is_admin() && !in_array( $pagenow, array( 'plugins.php' ) ) && !class_exists( 'MB_Text_Limiter' ) ) {
-			wp_die('Error : please install Meta Box Text limiter plugin.');
-		}
+		// if ( is_admin() && !in_array( $pagenow, array( 'plugins.php' ) ) && !class_exists( 'MB_Text_Limiter' ) ) {
+		// 	wp_die('Error : please install Meta Box Text limiter plugin.');
+		// }
+
+
+		// @TOMOVE correct place 
+		function rsfp_directory_allowed_block_types( $allowed_blocks, $editor_context ) {
+			if ( isset( $editor_context->post ) && $editor_context->post->post_type === 'directory' ) {
+				return array(
+					'core/heading',
+					'core/paragraph', // Remplacez ceci par l'identifiant du bloc que vous souhaitez autoriser
+					// Ajoutez d'autres identifiants de blocs au besoin
+					'directory/wa-rsfp-directory-block',
+				);
+			}
+		
+			return $allowed_blocks;
+		}		
+		add_filter( 'allowed_block_types_all', 'rsfp_directory_allowed_block_types', 10, 2 );
+
+
+		// function rsfp_directory_default_meta_value($post_id, $post, $update) {
+		// 	// Check if it's not an autosave or a revision
+		// 	if (wp_is_post_autosave($post_id) || wp_is_post_revision($post_id)) {
+		// 		return;
+		// 	}
+			
+		// 	// Define the default meta value
+		// 	$default_meta_value = '1';
+			
+		// 	// Check if the meta key already has a value
+		// 	if (!metadata_exists('post', $post_id, 'page_wide_toggle')) {
+		// 		// Set the default meta value if it doesn't exist
+		// 		update_post_meta($post_id, 'page_wide_toggle', $default_meta_value);
+		// 	}
+		// }
+		// add_action('save_post_directory', 'rsfp_directory_default_meta_value', 10, 3);
 		
 	}
 	

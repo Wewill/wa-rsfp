@@ -269,6 +269,6 @@ function register_taxonomies() {
 			'hierarchical' => false,
 		],
 	];
-	register_taxonomy( 'partner-type', ['partner'], $args );
+	register_taxonomy( 'partner-category', ['partner'], $args );
     
 }
