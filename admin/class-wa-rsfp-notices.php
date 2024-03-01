@@ -28,7 +28,7 @@ function general_admin_notice(){
 			'allowed_taxonomy' => array('geography'),
 			'allowed_page' => array(),
 			'allowed_roles' => array('administrator', 'rsfp_role_member', 'rsfp_role_org_admin'), 
-			'title' => '', 'content' => 'Dans cet onglet se trouvent le.s departement.s afin de localiser les enregistrements.', 'class' => 'default',
+			'title' => '', 'content' => 'Dans cet onglet se trouvent <b>le.s département.s et région.s<b/> afin de localiser les enregistrements.', 'class' => 'default',
 			'icon' => 'dashicons dashicons-admin-site',
 		],
 		//directory > production 
