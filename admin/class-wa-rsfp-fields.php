@@ -451,6 +451,18 @@ function farm_fields( $meta_boxes ) {
                 'sort_clone'        => true,
             ],
             [
+                'name'              => __( 'Link.s', 'wa-rsfp' ),
+                'id'                => $prefix . 'general_links',
+                'type'              => 'text',
+                'label_description' => __( '<span class="label">INFO</span> Fill one or many links', 'wa-rsfp' ),
+                'desc'              => __( '<span class="label">TIPS</span> Link.s can be a website, page, social network...', 'wa-rsfp' ),
+                'clone'             => true,
+                'sort_clone'        => true,
+                'attributes'        => [
+                    'type'    => 'url',
+                ],
+            ],
+            [
                 'name'              => __( 'Biography', 'wa-rsfp' ),
                 'id'                => $prefix . 'general_biography',
                 'type'              => 'wysiwyg',
