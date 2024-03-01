@@ -40,7 +40,7 @@ function register_taxonomies() {
 		'description'        => esc_html__( 'List all department.s of France', 'wa-rsfp' ),
 		'public'             => true,
 		'publicly_queryable' => true,
-		'hierarchical'       => false,
+		'hierarchical'       => true, // Department < Region
 		'show_ui'            => true,
 		'show_in_menu'       => true,
 		'show_in_nav_menus'  => true,
