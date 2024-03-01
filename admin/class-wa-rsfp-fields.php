@@ -426,12 +426,13 @@ function farm_fields( $meta_boxes ) {
                 'id'                => $prefix . 'general_phones',
                 'type'              => 'text',
                 'label_description' => __( '<span class="label">INFO</span> Fill one or many phone', 'wa-rsfp' ),
-                'desc'              => __( '<span class="label">TIPS</span> Phone number can be a direct line, mobile phone, fax...', 'wa-rsfp' ),
+                'desc'              => __( '<span class="label">TIPS</span> Phone number can be a direct line, mobile phone, fax... Recommanded format : 0X XX XX XX XX', 'wa-rsfp' ),
                 'clone'             => true,
                 'sort_clone'        => true,
                 'attributes'        => [
                     'type'    => 'tel',
-                    'pattern' => '[0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2}',
+                    //'pattern' => '[0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2}',
+                    'pattern' => '(?:(?:\+)33|0)(?:\s*[1-9]|(?:\(+)\s*[1-9](?:\)))(?:[\s.-]*\d{2}){4}', // https://stackoverflow.com/questions/38483885/regex-for-french-telephone-numbers
                 ],
             ],
             [
@@ -576,12 +577,13 @@ function structure_fields( $meta_boxes ) {
                 'id'                => $prefix . 'general_phones',
                 'type'              => 'text',
                 'label_description' => __( '<span class="label">INFO</span> Fill one or many phone', 'wa-rsfp' ),
-                'desc'              => __( '<span class="label">TIPS</span> Phone number can be a direct line, mobile phone, fax...', 'wa-rsfp' ),
+                'desc'              => __( '<span class="label">TIPS</span> Phone number can be a direct line, mobile phone, fax... Recommanded format : 0X XX XX XX XX', 'wa-rsfp' ),
                 'clone'             => true,
                 'sort_clone'        => true,
                 'attributes'        => [
                     'type'    => 'tel',
-                    'pattern' => '[0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2}',
+                    //'pattern' => '[0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2}',
+                    'pattern' => '(?:(?:\+)33|0)(?:\s*[1-9]|(?:\(+)\s*[1-9](?:\)))(?:[\s.-]*\d{2}){4}', // https://stackoverflow.com/questions/38483885/regex-for-french-telephone-numbers
                 ],
             ],
             [
@@ -683,12 +685,25 @@ function operation_fields( $meta_boxes ) {
                 'id'                => $prefix . 'general_phones',
                 'type'              => 'text',
                 'label_description' => __( '<span class="label">INFO</span> Fill one or many phone', 'wa-rsfp' ),
-                'desc'              => __( '<span class="label">TIPS</span> Phone number can be a direct line, mobile phone, fax...', 'wa-rsfp' ),
+                'desc'              => __( '<span class="label">TIPS</span> Phone number can be a direct line, mobile phone, fax... Recommanded format : 0X XX XX XX XX', 'wa-rsfp' ),
                 'clone'             => true,
                 'sort_clone'        => true,
                 'attributes'        => [
                     'type'    => 'tel',
-                    'pattern' => '[0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2}',
+                    //'pattern' => '[0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2}',
+                    'pattern' => '(?:(?:\+)33|0)(?:\s*[1-9]|(?:\(+)\s*[1-9](?:\)))(?:[\s.-]*\d{2}){4}', // https://stackoverflow.com/questions/38483885/regex-for-french-telephone-numbers
+                ],
+            ],
+			[
+                'name'              => __( 'Link.s', 'wa-rsfp' ),
+                'id'                => $prefix . 'general_links',
+                'type'              => 'text',
+                'label_description' => __( '<span class="label">INFO</span> Fill one or many links', 'wa-rsfp' ),
+                'desc'              => __( '<span class="label">TIPS</span> Link.s can be a website, page, social network...', 'wa-rsfp' ),
+                'clone'             => true,
+                'sort_clone'        => true,
+                'attributes'        => [
+                    'type'    => 'url',
                 ],
             ],
             [
