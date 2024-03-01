@@ -463,13 +463,13 @@ function farm_fields( $meta_boxes ) {
                 ],
                 'label_description' => __( '<span class="label">INFO</span> Fill with a short biography of farm / entity formatted text', 'wa-rsfp' ),
             ],
-            [
-                'name'              => __( 'Gallery', 'wa-rsfp' ),
-                'id'                => $prefix . 'general_gallery',
-                'type'              => 'image_advanced',
-                'label_description' => __( '<span class="label">INFO</span> Fill with one or many image of farm / entity', 'wa-rsfp' ),
-                'max_file_uploads'  => 10,
-            ],
+            // [
+            //     'name'              => __( 'Gallery', 'wa-rsfp' ),
+            //     'id'                => $prefix . 'general_gallery',
+            //     'type'              => 'image_advanced',
+            //     'label_description' => __( '<span class="label">INFO</span> Fill with one or many image of farm / entity', 'wa-rsfp' ),
+            //     'max_file_uploads'  => 10,
+            // ],
         ],
     ];
 
