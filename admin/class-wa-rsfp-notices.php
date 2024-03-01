@@ -28,7 +28,7 @@ function general_admin_notice(){
 			'allowed_taxonomy' => array('geography'),
 			'allowed_page' => array(),
 			'allowed_roles' => array('administrator', 'rsfp_role_member', 'rsfp_role_org_admin'), 
-			'title' => '', 'content' => 'Dans cet onglet se trouvent <b>le.s département.s et région.s<b/> afin de localiser les enregistrements.', 'class' => 'default',
+			'title' => '', 'content' => 'Dans cet onglet se trouvent le.s département.s et région.s afin de localiser les enregistrements.', 'class' => 'default',
 			'icon' => 'dashicons dashicons-admin-site',
 		],
 		//directory > production 
@@ -37,7 +37,7 @@ function general_admin_notice(){
 			'allowed_taxonomy' => array('production'),
 			'allowed_page' => array(),
 			'allowed_roles' => array('administrator', 'rsfp_role_member', 'rsfp_role_org_admin'), 
-			'title' => '', 'content' => 'Dans cet onglet se trouvent le.s catégorie.s de type de production utilisée.s pour classer les savoir-faire dans le <em>Répertoire</em>.', 'class' => 'default',
+			'title' => '', 'content' => 'Dans cet onglet se trouvent le.s catégorie.s de type de production utilisée.s afin de classer les savoir-faire dans le <em>Répertoire</em>.', 'class' => 'default',
 			'icon' => 'dashicons dashicons-hammer',
 		],
 		//directory > thematic 
@@ -46,7 +46,7 @@ function general_admin_notice(){
 			'allowed_taxonomy' => array('thematic'),
 			'allowed_page' => array(),
 			'allowed_roles' => array('administrator', 'rsfp_role_member', 'rsfp_role_org_admin'), 
-			'title' => '', 'content' => 'Dans cet onglet se trouvent le.s thématique.s transversale.s utilisées pour classer les savoir-faire et operation dans le <em>Répertoire</em> selon les savoir-faire acquis. Le premier niveau représente les six savoir-faire de la fleur de l\'ARDEAR. ( <em>Travail avec la nature, Autonomie, Transmissiblité, Développement local, Répartition, Qualité</em> )', 'class' => 'default',
+			'title' => '', 'content' => 'Dans cet onglet se trouvent le.s thématique.s transversale.s utilisées afin de classer les savoir-faire et operation dans le <em>Répertoire</em> selon les savoir-faire acquis. Le premier niveau représente les six savoir-faire de la fleur de l\'ARDEAR. ( <em>Travail avec la nature, Autonomie, Transmissiblité, Développement local, Répartition, Qualité</em> )', 'class' => 'default',
 			'icon' => 'dashicons dashicons-sticky',
 		],
 		//farm
