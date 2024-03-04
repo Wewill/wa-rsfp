@@ -539,7 +539,7 @@ function farm_fields( $meta_boxes ) {
             // ],
             [
                 'name' => /*translators:Ferme en transmission*/__( 'Farm in transmission', 'wa-rsfp' ),
-                'id'   => $prefix . 'farm_in_transmission',
+                'id'   => $prefix . 'transmission_farm_in_transmission',
                 'type' => 'checkbox',
                 'desc' => __( '<span class="label">TIPS</span> Check this if the farm is currently in a transmission process.', 'wa-rsfp' ),
             ],
