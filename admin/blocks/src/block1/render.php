@@ -535,7 +535,7 @@ foreach($terms_list as $terms_name) {
 						<div>
 						<h6 class="fw-bold"><?= esc_html__( 'Commercialization', 'wa-rsfp' ); ?></h6>
 						<?php foreach( $identity_commercializations as $identity_commercialization) : ?>
-						<p class="mb-0"><?= esc_html($identity_commercialization); ?></p>
+						<p class="mb-0"><?= WaffTwo\Core\waff_do_markdown(esc_html($identity_commercialization)); ?></p>
 						<?php endforeach; ?>
 						</div>
 					</div>
@@ -635,7 +635,7 @@ foreach($terms_list as $terms_name) {
 			<?php if ($knowledge_viabilitys) : ?>
 			<h6 class="text-action-1"><?= esc_html__( 'Viability.s', 'wa-rsfp' ); ?></h6>
 			<?php foreach( $knowledge_viabilitys as $knowledge_viability) : ?>
-			<p class="mb-0"><?= esc_html($knowledge_viability); ?></p>
+			<p class="mb-0"><?= WaffTwo\Core\waff_do_markdown(esc_html($knowledge_viability)); ?></p>
 			<?php endforeach; ?>
 			<?php endif; ?>
 
@@ -644,7 +644,7 @@ foreach($terms_list as $terms_name) {
 			<?php if ($knowledge_vivabilitys) : ?>
 			<h6 class="text-action-1"><?= esc_html__( 'Vivability.s', 'wa-rsfp' ); ?></h6>
 			<?php foreach( $knowledge_vivabilitys as $knowledge_vivability) : ?>
-			<p class="mb-0"><?= esc_html($knowledge_vivability); ?></p>
+			<p class="mb-0"><?= WaffTwo\Core\waff_do_markdown(esc_html($knowledge_vivability)); ?></p>
 			<?php endforeach; ?>
 			<?php endif; ?>
 
@@ -653,7 +653,7 @@ foreach($terms_list as $terms_name) {
 			<?php if ($knowledge_skills) : ?>
 			<h6 class="text-action-1"><?= esc_html__( 'Skill.s', 'wa-rsfp' ); ?></h6>
 			<?php foreach( $knowledge_skills as $knowledge_skill) : ?>
-			<p class="mb-0"><?= esc_html($knowledge_skill); ?></p>
+			<p class="mb-0"><?= WaffTwo\Core\waff_do_markdown(esc_html($knowledge_skill)); ?></p>
 			<?php endforeach; ?>
 			<?php endif; ?>
 
@@ -661,7 +661,7 @@ foreach($terms_list as $terms_name) {
 			<?php $knowledge_installation_period = rwmb_meta( $prefix . 'knowledge_installation_period' ); ?>
 			<?php if ($knowledge_installation_period) : ?>
 			<h6 class="text-action-1"><?= esc_html__( 'Installation period', 'wa-rsfp' ); ?></h6>
-			<p class="mb-0"><?= esc_html($knowledge_installation_period); ?></p>
+			<p class="mb-0"><?= WaffTwo\Core\waff_do_markdown(esc_html($knowledge_installation_period)); ?></p>
 			<?php endif; ?>
 
 
@@ -669,44 +669,23 @@ foreach($terms_list as $terms_name) {
 			<h6 class="subline --text-action-1 mt-5">Galerie</h6>
 
           <!-- Begin: Gallery row -->
-          <div class="row row-cols-1 row-cols-md-3 my-5">
+          <div class="row row-cols-sm-2 row-cols-lg-3 mt-2 mb-6 g-4">
 
-            <a class="col" href="javascript:;">
-              <figure id="1">
-                <picture class="lazy" data-fancybox="gallery" data-loader="pic" data-src="https://placehold.co/1600x800?text=1600x800(1)">
-                  <data-src media="(max-width: 576px)"
-                  srcset="https://placehold.co/1200x1200/FF0000/808080?text=1200x1200@2 2x,
-                          https://placehold.co/600x600/AA0000/808080?text=600x600" type="image/jpeg"></data-src>
-                  <data-img src="https://placehold.co/600x600" alt="Lorem ipsum" class="img-fluid rounded-4 --h-300-px fit-image w-100 img-transition-scale" style=""></data-img>
-                </picture>
-                <figcaption>This is a Lazy loaded image</figcaption>
-              </figure>
-            </a>
-
-            <a class="col" href="javascript:;">
-              <figure class="" id="2">
-					<picture class="lazy" data-fancybox="gallery" data-loader="pic" data-src="https://placehold.co/1600x800?text=1600x800(2)">
-						<data-src media="(max-width: 576px)"
-						srcset="https://placehold.co/1200x1200/FF0000/808080?text=1200x1200@2 2x,
-									https://placehold.co/600x600/AA0000/808080?text=600x600" type="image/jpeg"></data-src>
-						<data-img src="https://placehold.co/600x600" alt="Lorem ipsum" class="img-fluid rounded-4 --h-300-px fit-image w-100 img-transition-scale" style=""></data-img>
-					</picture>
-					<figcaption>This is a Lazy loaded image</figcaption>
+			<?php $medias_gallery = rwmb_meta( $prefix . 'medias_gallery', ['size' => 'thumbnail'] ); ?>
+			<?php foreach ( $medias_gallery as $image ) : ?>
+				<a class="col" href="javascript:;">
+					<figure id="<?= $image['ID'] ?>">
+						<picture class="lazy" data-fancybox="gallery" data-loader="pic" data-src="<?= $image['full_url'] ?>">
+							<!--<data-src media="(min-width: 576px)" srcset="https://placehold.co/600x600/AA0000/808080?text=1200x1200" type="image/jpeg"></data-src> -->
+							<data-src media="(min-width: 150px)" srcset="<?= $image['sizes']['page-featured-image-s']['url']; ?>" type="image/jpeg"></data-src>
+							<data-img src="<?= $image['url']; ?>" alt="<?= esc_html($image['alt']); ?>" class="img-fluid rounded-4 --h-300-px fit-image w-100 img-transition-scale" style="" title="<?= $image['title']; ?>"></data-img>
+						</picture>
+						<?php if ( $image['alt'] || $image['description'] ) : ?>
+						<figcaption><strong>© <?= esc_html($image['alt']); ?></strong> <?= esc_html($image['description']); ?></figcaption>
+						<?php endif; /* If captions */ ?>
 					</figure>
 				</a>
-
-            <a class="col" href="javascript:;">
-              <figure class="" id="3">
-					<picture class="lazy" data-fancybox="gallery" data-loader="pic" data-src="https://placehold.co/1600x800?text=1600x800(3)">
-						<data-src media="(max-width: 576px)"
-						srcset="https://placehold.co/1200x1200/FF0000/808080?text=1200x1200@2 2x,
-									https://placehold.co/600x600/AA0000/808080?text=600x600" type="image/jpeg"></data-src>
-
-						<data-img src="https://placehold.co/600x600" alt="Lorem ipsum" class="img-fluid rounded-4 --h-300-px fit-image w-100 img-transition-scale" style=""></data-img>
-					</picture>
-					<figcaption>This is a Lazy loaded image</figcaption>
-					</figure>
-				</a>
+			<?php endforeach ?>
 
           </div>
           <!-- End: Gallery row -->
@@ -715,33 +694,23 @@ foreach($terms_list as $terms_name) {
 			<h6 class="subline --text-action-1 mt-5">Vidéo</h6>
 
           <!-- Begin: Video row -->
-          <div class="row row-cols-1 row-cols-md-3 my-5">
+          <div class="row row-cols-sm-2 row-cols-lg-3 mt-2 mb-6 g-4">
 
-            <a class="col" href="https://www.youtube.com/watch?v=_FN_zr4rQzY?rel=0&amp;showinfo=0" target="_blank" data-fancybox="header_71_fancybox">
-              <figure id="1">
-                <picture class="lazy">
-                  <data-src media="(max-width: 576px)"
-                  srcset="https://placehold.co/1200x1200/FF0000/808080?text=1200x1200@2 2x,
-                          https://placehold.co/600x600/AA0000/808080?text=600x600" type="image/jpeg"></data-src>
-                  <data-img src="https://placehold.co/600x600" alt="Lorem ipsum" class="img-fluid rounded-4 --h-300-px fit-image w-100 img-transition-scale" style=""></data-img>
-                </picture>
-                <figcaption>This is a Lazy loaded image</figcaption>
-                <i class="bi bi-play-fill text-action-2 h2 position-absolute top-50 start-50 translate-middle"></i>
-              </figure>
-            </a>
-
-            <a class="col" href="https://www.youtube.com/watch?v=_FN_zr4rQzY?rel=0&amp;showinfo=0" target="_blank" data-fancybox="header_71_fancybox">
-              <figure class="" id="2">
-					<picture class="lazy">
-						<data-src media="(max-width: 576px)"
-						srcset="https://placehold.co/1200x1200/FF0000/808080?text=1200x1200@2 2x,
-									https://placehold.co/600x600/AA0000/808080?text=600x600" type="image/jpeg"></data-src>
-						<data-img src="https://placehold.co/600x600" alt="Lorem ipsum" class="img-fluid rounded-4 --h-300-px fit-image w-100 img-transition-scale" style=""></data-img>
-					</picture>
-					<figcaption>This is a Lazy loaded image</figcaption>
-					<i class="bi bi-play-fill text-action-2 h2 position-absolute top-50 start-50 translate-middle"></i>
+			<?php $d_medias_videos 					= rwmb_meta( $prefix . 'medias_video', array(), $post->ID); ?>
+			<?php if (!empty($d_medias_videos)): ?>
+			<?php foreach ( $d_medias_videos as $d_medias_video ) : ?>
+				<a class="col" href="javascript:;">
+					<figure class="wp-block-video position-relative d-flex flex-center" id="<?= $d_medias_video['ID'] ?>" data-fancybox="gallery" data-loader="pic" data-src="<?= $d_medias_video['src'] ?>">
+						<img src="https://placehold.co/600x600" class="img-fluid rounded-4 fit-image w-100"/>
+						<video class="position-absolute top-0 start-0 h-100 img-fluid rounded-4 h-300-px fit-image w-100 img-transition-scale" autoplay loop muted playsinline src="<?= $d_medias_video['src']; ?>"><!-- poster="<?= $d_medias_video['image']['src']; ?>" --></video>
+						<?php if ( $d_medias_video['alt'] || $d_medias_video['description'] ) : ?>
+						<figcaption><strong>© <?= esc_html($d_medias_video['alt']); ?></strong> <?= esc_html($d_medias_video['description']); ?></figcaption>
+						<?php endif; /* If captions */ ?>
 					</figure>
 				</a>
+			<?php endforeach ?>
+			<?php endif; ?>
+
 
           </div>
           <!-- End: Video row -->
