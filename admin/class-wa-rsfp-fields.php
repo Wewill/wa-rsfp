@@ -207,20 +207,6 @@ function directory_fields( $meta_boxes ) {
 				'label_description' => __( '<span class="label">INFO</span> Fill with simple text', 'wa-rsfp' ),
 				'desc' => __( '<span class="label">TIPS</span> Markdown is available : *italic* (Command + b) **bold** (Command + i) ***label*** (Command + Shift + L) #small# (Command + Shift + S) ##huge## (Command + Shift + H)', 'wa-rsfp' ),
             ],
-			[
-                'name'              => __( 'Diagram.s', 'wa-rsfp' ),
-                'id'                => $prefix . 'identity_diagrams',
-                'type'              => 'text_list',
-                'label_description' => __( '<span class="label">INFO</span> Fill to create a diagram. Value in %. Make sure total of values is 100%.', 'wa-rsfp' ),
-                'options'           => [
-                    'Label'       => 'Label',
-                    'Description' => 'Description',
-                    'Value'       => 'Value',
-                ],
-                'clone'             => true,
-                'sort_clone'        => true,
-                'max_clone'         => 100,
-            ],
 			// [
             //     'name' => __( 'Carbon footprint', 'wa-rsfp' ),
             //     'id'   => $prefix . 'identity_carbon_footprint',
@@ -236,6 +222,20 @@ function directory_fields( $meta_boxes ) {
 		'id'         => 'directory-knowledge',
 		'post_types' => ['directory'],
 		'fields'     => [
+			[
+                'name'              => __( 'Diagram.s', 'wa-rsfp' ),
+                'id'                => $prefix . 'knowledge_diagrams',
+                'type'              => 'text_list',
+                'label_description' => __( '<span class="label">INFO</span> Fill to create a diagram. Value in %. Make sure total of values is 100%.', 'wa-rsfp' ),
+                'options'           => [
+                    'Label'       => 'Label',
+                    'Description' => 'Description',
+                    'Value'       => 'Value',
+                ],
+                'clone'             => true,
+                'sort_clone'        => true,
+                'max_clone'         => 100,
+            ],
 			[
                 'name'       => __( 'Viability.s', 'wa-rsfp' ),
                 'id'         => $prefix . 'knowledge_viabilitys',
@@ -304,7 +304,7 @@ function directory_fields( $meta_boxes ) {
             ],
             [
                 'name'       => /*translators:Parcours à l'installation*/__( 'Installation period', 'wa-rsfp' ),
-                'id'         => $prefix . 'installation_period',
+                'id'         => $prefix . 'knowledge_installation_period',
                 'type'       => 'textarea',
                 //'limit'      => 100,
                 'rows'       => 5,

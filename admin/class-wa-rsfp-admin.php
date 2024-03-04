@@ -191,6 +191,8 @@ class Wa_Rsfp_Admin {
 		// Adding metabox io custom blocks and default blocks 
 		// @TODO REMOVE ? 
 		// require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-wa-rsfp-blocks.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/blocks/wa-rsfp-directory-block.php';
+		
 		// Extending metabox io custom fields 
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-wa-rsfp-extend.php';
 		// Manage admin columns 
@@ -274,6 +276,7 @@ class Wa_Rsfp_Admin {
 		add_filter( 'allowed_block_types_all', 'rsfp_directory_allowed_block_types', 10, 2 );
 
 
+		// Default post meta page toggle 
 		// function rsfp_directory_default_meta_value($post_id, $post, $update) {
 		// 	// Check if it's not an autosave or a revision
 		// 	if (wp_is_post_autosave($post_id) || wp_is_post_revision($post_id)) {

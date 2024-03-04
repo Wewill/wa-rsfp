@@ -1,0 +1,24 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "directory/wa-rsfp-directory-block",
+  "version": "1.0.0",
+  "title": "WA RSFP directory block",
+  "category": "text",
+  "icon": "pressthis",
+  "description": "A block designed for single directory pages.",
+  "supports": {
+    "html": true,
+    "multiple": true
+  },
+  "usesContext": [
+    "postId",
+    "postType"
+  ],
+  "textdomain": "wa-rsfp",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "render": "file:./render.php",
+  "viewScript": "file:./view.js"
+}
