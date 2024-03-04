@@ -742,6 +742,13 @@ foreach($terms_list as $terms_name) {
 
         <div class="bottom-stiky p-5 bg-color-layout rounded-end-4 rounded-top-right-0">
 
+		<?php $relationships_structure = rwmb_meta( $prefix . 'relationships_structure' ); ?>
+<p>relationships_structure post ID: <?= print_r($relationships_structure, true) ?></p>
+
+<?php $relationships_operation = rwmb_meta( $prefix . 'relationships_operation' ); ?>
+<p>relationships_operation post ID: <?= print_r($relationships_operation, true) ?></p>
+
+
           <h6 class="subline --text-action-1">Contactez votre structure d'accompagnement local</h6>
 
           Logo
@@ -824,71 +831,94 @@ foreach($terms_list as $terms_name) {
       </div>
       <!-- End: Timeline-->
 
-      <!-- Begin: Contact bloc -->
+		<!-- Begin: Contact bloc -->
+		<?php
+		$relationships_farm_post_ids = rwmb_meta( $prefix . 'relationships_farm' ); 
+
+		foreach($relationships_farm_post_ids as $relationships_farm_post_id) : 
+
+		$f_prefix = 'f_'; 
+		$general_legal_entity 		= rwmb_meta( $f_prefix . 'general_legal_entity', array(), $relationships_farm_post_id); 
+		$general_farmers 			= rwmb_meta( $f_prefix . 'general_farmers', array(), $relationships_farm_post_id); 
+		$general_emails 			= rwmb_meta( $f_prefix . 'general_emails', array(), $relationships_farm_post_id); 
+		$general_phones 			= rwmb_meta( $f_prefix . 'general_phones', array(), $relationships_farm_post_id); 
+		$general_address 			= rwmb_meta( $f_prefix . 'general_address', array(), $relationships_farm_post_id); 
+		$general_links 				= rwmb_meta( $f_prefix . 'general_links', array(), $relationships_farm_post_id); 
+		$general_biography 			= rwmb_meta( $f_prefix . 'general_biography', array(), $relationships_farm_post_id); 
+		$transmission_farm_in_transmission = rwmb_meta( $f_prefix . 'transmission_farm_in_transmission', array(), $relationships_farm_post_id); 
+
+	  ?>
       <div class="bg-color-layout my-6 me-n5 p-5 rounded-start-4">
 
-      <div class="d-flex align-items-center justify-content-center me-n5">
+      <div class="d-flex align-items-center justify-content-between me-n5">
 
-      <div class="pe-3">
-      <h1 class="heading-1 mt-4 lh-xs">“</h1>
-      <p class="lead fw-bold"><strong>Un projet de vie </strong></p>
-      <p class="lead">
-      On remercie le milieu agricole ecinstalle.e.s nors cadre familial. Ariane et Julien ont démarré en 201c
-      la création de ce qu'ils nomment le « jardin »..
-      </p>
+		<?php if ($general_legal_entity || $general_biography) : ?>
+			<div class="pe-3">
+				<h1 class="heading-1 mt-4 lh-xs">“</h1>
+				<?php if ($general_farmers) printf('<p class="lead fw-bold"><strong>%s</strong></p>', implode(', ', $general_farmers)); ?>
+				<?php if ($general_biography) printf('<p class="lead">%s</p>', $general_biography); ?>
+			</div>
 
+			<div class="mt-n12">
+				<figure class="" id="2">
+					<picture class="lazy" data-fancybox="gallery" data-loader="pic" data-src="https://placehold.co/1600x800?text=1600x800(2)">
+					<data-src media="(max-width: 576px)"
+					srcset="https://placehold.co/1200x1200/FF0000/808080?text=1200x1200@2 2x,
+							https://placehold.co/600x600/AA0000/808080?text=600x600" type="image/jpeg"></data-src>
+					<data-img src="https://placehold.co/600x600" alt="Lorem ipsum" class="img-fluid rounded-start-4 h-200-px w-200-px fit-image --w-100 img-transition-scale" style=""></data-img>
+					</picture>
+					<figcaption>This is a Lazy loaded image</figcaption>
+				</figure>
+				</div>
+			</div>
 
-<?php $relationships_farm = rwmb_meta( $prefix . 'relationships_farm' ); ?>
-<p>relationships_farm post ID: <?= print_r($relationships_farm, true) ?></p>
-
-<?php $relationships_structure = rwmb_meta( $prefix . 'relationships_structure' ); ?>
-<p>relationships_structure post ID: <?= print_r($relationships_structure, true) ?></p>
-
-<?php $relationships_operation = rwmb_meta( $prefix . 'relationships_operation' ); ?>
-<p>relationships_operation post ID: <?= print_r($relationships_operation, true) ?></p>
-
-      </div>
-
-      <div class="mt-n12">
-      <figure class="" id="2">
-        <picture class="lazy" data-fancybox="gallery" data-loader="pic" data-src="https://placehold.co/1600x800?text=1600x800(2)">
-          <data-src media="(max-width: 576px)"
-          srcset="https://placehold.co/1200x1200/FF0000/808080?text=1200x1200@2 2x,
-                  https://placehold.co/600x600/AA0000/808080?text=600x600" type="image/jpeg"></data-src>
-          <data-img src="https://placehold.co/600x600" alt="Lorem ipsum" class="img-fluid rounded-start-4 --h-300-px fit-image w-100 img-transition-scale" style=""></data-img>
-        </picture>
-        <figcaption>This is a Lazy loaded image</figcaption>
-      </figure>
-      </div>
-      </div>
-
-      <span class="bullet bullet-action-2 ml-0"></span>
+			<span class="bullet bullet-action-2 ml-0"></span>
+	  <?php endif; ?>
 
       <!-- Begin: Contacts -->
       <div class="d-flex align-items-center justify-content-center mt-3 text-action-1">
-      <div class="d-flex align-items-center">
-      <i class="bi bi-bootstrap flex-shrink-0 me-3 h2"></i>
-      <div>
-        <h6 class="fw-bold text-action-1">Contact</h6>
-        <p class="mb-0 lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-      </div>
-      </div>
 
-      <div class="d-flex align-items-center justify-content-center px-5">
-      <span class="bullet bullet-v bullet-action-1 ml-0"></span>
-      </div>
+		<div class="d-flex align-items-center flex-fill w-50">
+			<i class="bi bi-chat-left flex-shrink-0 me-3 h2"></i>
+			<div>
+				<h6 class="fw-bold text-action-1">Adresse</h6>
+				<?php if ($general_legal_entity) printf('<p class="mb-0 lead"><strong>%s</strong></p>', $general_legal_entity); ?>
+				<?php if (!empty($general_address)) foreach ($general_address as $address) printf('<p class="mb-0 --lead"><strong>%s</strong></p>', implode('<br/>', $address)); ?>
+			</div>
+		</div>
 
-      <div class="d-flex align-items-center">
-      <!-- <i class="bi bi-bootstrap flex-shrink-0 me-3 h2"></i> -->
-      <div>
-        <h6 class="fw-bold text-action-1 op-0">Contact</h6>
-        <p class="mb-0 lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-      </div>
-      </div>
+		<div class="d-flex align-items-center justify-content-center px-5">
+			<span class="bullet bullet-v bullet-action-1 ml-0"></span>
+		</div>
 
-      <button type="button" class="btn btn-action-1 btn-transition-scale mt-4">Prendre contact</span></button>
+		<div class="d-flex align-items-center flex-fill w-50">
+			<!-- <i class="bi bi-bootstrap flex-shrink-0 me-3 h2"></i> -->
+			<div>
+				<h6 class="fw-bold text-action-1">Contact</h6>
+				<?php if ($general_emails) foreach ($general_emails as $email) printf('<p class="mb-0 lead"><strong>%s</strong></p>',  $email); ?>
+				<?php if ($general_phones) printf('<p class="mb-0 --lead"><strong>%s</strong></p>', implode(', ', $general_phones)); ?>
+			</div>
+		</div>
+	</div>
+
+	<div class="d-flex align-items-center justify-content-center mt-3 text-action-1">
+    
+	<div class="d-flex align-items-center flex-fill w-50">
+			<i class="bi bi-share flex-shrink-0 me-3 h2"></i>
+			<div>
+				<h6 class="fw-bold text-action-1">Liens</h6>
+				<?php if ($general_links) printf('<p class="mb-0 lead"><strong>%s</strong></p>', implode('<br/>',$general_links)); ?>
+			</div>
+		</div>
+
+	<div class="d-flex align-items-center justify-content-center px-5">
+			<span class="bullet bullet-v bullet-action-1 ml-0"></span>
+		</div>
+
+	<button type="button" class="btn btn-action-1 btn-transition-scale mt-4 flex-fill  w-50">Prendre contact</span></button>
 
       </div>
+	  <?php endforeach; ?>
       <!-- End: Contacts -->
 
 
