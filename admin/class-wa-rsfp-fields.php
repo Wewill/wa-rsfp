@@ -36,6 +36,7 @@ function directory_fields( $meta_boxes ) {
 				'desc' => __( '<span class="label">TIPS</span> Subtitle will be showed after title', 'wa-rsfp' ),
                 'show_in_rest' => true,
             ],
+            // Old version
 			// [
             //     'name'              => __( 'Introduction', 'wa-rsfp' ),
             //     'id'                => $prefix . 'general_introduction',
@@ -194,8 +195,14 @@ function directory_fields( $meta_boxes ) {
 			],
             [
                 'name' => __( 'Commercialization', 'wa-rsfp' ),
-                'id'   => $prefix . 'identity_commercialization',
-                'type' => 'textarea',
+                'id'   => $prefix . 'identity_commercializations',
+                'type'       => 'textarea',
+                // 'required'   => true,
+                'clone'      => true,
+                'sort_clone' => true,
+                'limit'      => 300,
+                'rows'       => 2,
+                'max_clone'  => 20,
                 'class' => 'enable-markdown',
 				'label_description' => __( '<span class="label">INFO</span> Fill with simple text', 'wa-rsfp' ),
 				'desc' => __( '<span class="label">TIPS</span> Markdown is available : *italic* (Command + b) **bold** (Command + i) ***label*** (Command + Shift + L) #small# (Command + Shift + S) ##huge## (Command + Shift + H)', 'wa-rsfp' ),
@@ -254,6 +261,7 @@ function directory_fields( $meta_boxes ) {
 				'label_description' => __( '<span class="label">INFO</span> Fill with simple text', 'wa-rsfp' ) . '<br/>' .   __( '<span class="label">INFO</span> This will be rendered as a list of items', 'wa-rsfp' ),
 				'desc' => __( 'Ex. : répartition des tâches, horaires quotidiens, congés ...', 'wa-rsfp' ) . '<br/>' .   __( '<span class="label">TIPS</span> Markdown is available : *italic* (Command + b) **bold** (Command + i) ***label*** (Command + Shift + L) #small# (Command + Shift + S) ##huge## (Command + Shift + H).', 'wa-rsfp' ),
             ],
+            // Filled w/ taxconomy themactics
             // [
             //     'name'    => __( 'Knowledge AP', 'wa-rsfp' ),
             //     'id'      => $prefix . 'knowledge_knowledge_ap',
@@ -271,7 +279,7 @@ function directory_fields( $meta_boxes ) {
 			// 	'label_description' => __( '<span class="label">INFO</span> Choose AP acquired kwnoledge.s', 'wa-rsfp' ),
             // ],
             [
-                'name'       => __( 'Acquisition.s', 'wa-rsfp' ),
+                'name'       => /*translators:Chronologie Frise d'acquisition du savoir-faire*/__( 'Acquisition.s', 'wa-rsfp' ),
                 'id'         => $prefix . 'knowledge_acquisitions',
                 'type'       => 'text_list',
                 'options'    => [
@@ -284,7 +292,7 @@ function directory_fields( $meta_boxes ) {
 				'desc' => __( '<span class="label">TIPS</span> Markdown is available : *italic* (Command + b) **bold** (Command + i) ***label*** (Command + Shift + L) #small# (Command + Shift + S) ##huge## (Command + Shift + H).', 'wa-rsfp' ),
             ],
             [
-                'name'       => __( 'Skill.s', 'wa-rsfp' ),
+                'name'       => /*translators:Compétence.s acquise.s*/__( 'Skill.s', 'wa-rsfp' ),
                 'id'         => $prefix . 'knowledge_skills',
                 'type'       => 'text',
                 'clone'      => true,
@@ -292,6 +300,27 @@ function directory_fields( $meta_boxes ) {
                 'limit'      => 100,
                 'class' => 'enable-markdown',
 				'label_description' => __( '<span class="label">INFO</span> Fill with simple text', 'wa-rsfp' ) . '<br/>' .   __( '<span class="label">INFO</span> This will be rendered as a list of items', 'wa-rsfp' ),
+				'desc' => __( '<span class="label">TIPS</span> Markdown is available : *italic* (Command + b) **bold** (Command + i) ***label*** (Command + Shift + L) #small# (Command + Shift + S) ##huge## (Command + Shift + H).', 'wa-rsfp' ),
+            ],
+            [
+                'name'       => /*translators:Parcours à l'installation*/__( 'Installation period', 'wa-rsfp' ),
+                'id'         => $prefix . 'installation_period',
+                'type'       => 'textarea',
+                //'limit'      => 100,
+                'rows'       => 5,
+                'class' => 'enable-markdown',
+                'label_description' => __( '<span class="label">INFO</span> Fill with simple text', 'wa-rsfp' ) ,
+                'desc' => __( '<span class="label">TIPS</span> Markdown is available : *italic* (Command + b) **bold** (Command + i) ***label*** (Command + Shift + L) #small# (Command + Shift + S) ##huge## (Command + Shift + H).', 'wa-rsfp' ),
+            ],
+            [
+                'name'       => /*translators:Témoignage libre*/__( 'Testimony', 'wa-rsfp' ),
+                'id'         => $prefix . 'knowledge_testimony',
+                'type'       => 'textarea',
+                // 'required'   => true,
+                'limit'      => 200,
+                'rows'       => 3,
+                'class' => 'enable-markdown',
+				'label_description' => __( '<span class="label">INFO</span> Fill with simple text', 'wa-rsfp' ),
 				'desc' => __( '<span class="label">TIPS</span> Markdown is available : *italic* (Command + b) **bold** (Command + i) ***label*** (Command + Shift + L) #small# (Command + Shift + S) ##huge## (Command + Shift + H).', 'wa-rsfp' ),
             ],
 		],
@@ -351,13 +380,17 @@ function directory_fields( $meta_boxes ) {
                 'name' => __( 'Vimeo & YouTube video link', 'wa-rsfp' ),
                 'id'   => $prefix . 'medias_video_link',
                 'type' => 'url',
-				'label_description' => __( '<span class="label">INFO</span> Recommanded : choose an external video link from online platform', 'wa-rsfp' ),
+                'clone'      => true,
+                'sort_clone' => true,
+                'max_clone'  => 20,
+                'label_description' => __( '<span class="label">INFO</span> Recommanded : choose an external video link from online platform', 'wa-rsfp' ),
             ],
             [
                 'name' => __( 'Video file', 'wa-rsfp' ),
                 'id'   => $prefix . 'medias_video',
                 'type' => 'video',
 				'label_description' => __( '<span class="label">INFO</span> Upload a video file directly to the media library', 'wa-rsfp' ),
+				'desc' => __( '<span class="label">TIPS</span> Video has to be *.mp4 well compressed format.', 'wa-rsfp' ),
             ],
 			[
                 'name'             => __( 'Files', 'wa-rsfp' ),
@@ -491,22 +524,12 @@ function farm_fields( $meta_boxes ) {
         'id'         => 'farm-transmission',
         'post_types' => ['farm'],
         'fields'     => [
-            [
-                'name'       => /*translators:Parcours à l'installation*/__( 'Installation period', 'wa-rsfp' ),
-                'id'         => $prefix . 'installation_period',
-                'type'       => 'textarea',
-                //'limit'      => 100,
-                'rows'       => 5,
-                'class' => 'enable-markdown',
-                'label_description' => __( '<span class="label">INFO</span> Fill with simple text', 'wa-rsfp' ) ,
-                'desc' => __( '<span class="label">TIPS</span> Markdown is available : *italic* (Command + b) **bold** (Command + i) ***label*** (Command + Shift + L) #small# (Command + Shift + S) ##huge## (Command + Shift + H).', 'wa-rsfp' ),
-            ],
-            [
-                'name' => /*translators:Ferme à transmettre*/__( 'Farm to transmit', 'wa-rsfp' ),
-                'id'   => $prefix . 'farm_to_transmit',
-                'type' => 'checkbox',
-                'desc' => __( '<span class="label">TIPS</span> Check this if the farm is currently looking for a transferee, transferees or associates.', 'wa-rsfp' ),
-            ],
+            // [
+            //     'name' => /*translators:Ferme à transmettre*/__( 'Farm to transmit', 'wa-rsfp' ),
+            //     'id'   => $prefix . 'farm_to_transmit',
+            //     'type' => 'checkbox',
+            //     'desc' => __( '<span class="label">TIPS</span> Check this if the farm is currently looking for a transferee, transferees or associates.', 'wa-rsfp' ),
+            // ],
             [
                 'name' => /*translators:Ferme en transmission*/__( 'Farm in transmission', 'wa-rsfp' ),
                 'id'   => $prefix . 'farm_in_transmission',
