@@ -664,56 +664,81 @@ foreach($terms_list as $terms_name) {
 			<p class="mb-0"><?= WaffTwo\Core\waff_do_markdown(esc_html($knowledge_installation_period)); ?></p>
 			<?php endif; ?>
 
-
-			<!-- -->
-			<h6 class="subline --text-action-1 mt-5">Galerie</h6>
-
-          <!-- Begin: Gallery row -->
-          <div class="row row-cols-sm-2 row-cols-lg-3 mt-2 mb-6 g-4">
-
+			<!-- Gallery -->
 			<?php $medias_gallery = rwmb_meta( $prefix . 'medias_gallery', ['size' => 'thumbnail'] ); ?>
-			<?php foreach ( $medias_gallery as $image ) : ?>
-				<a class="col" href="javascript:;">
-					<figure id="<?= $image['ID'] ?>">
-						<picture class="lazy" data-fancybox="gallery" data-loader="pic" data-src="<?= $image['full_url'] ?>">
-							<!--<data-src media="(min-width: 576px)" srcset="https://placehold.co/600x600/AA0000/808080?text=1200x1200" type="image/jpeg"></data-src> -->
-							<data-src media="(min-width: 150px)" srcset="<?= $image['sizes']['page-featured-image-s']['url']; ?>" type="image/jpeg"></data-src>
-							<data-img src="<?= $image['url']; ?>" alt="<?= esc_html($image['alt']); ?>" class="img-fluid rounded-4 --h-300-px fit-image w-100 img-transition-scale" style="" title="<?= $image['title']; ?>"></data-img>
-						</picture>
-						<?php if ( $image['alt'] || $image['description'] ) : ?>
-						<figcaption><strong>© <?= esc_html($image['alt']); ?></strong> <?= esc_html($image['description']); ?></figcaption>
-						<?php endif; /* If captions */ ?>
-					</figure>
-				</a>
-			<?php endforeach ?>
+			<?php if (!empty($medias_gallery)): ?>
+			<h6 class="subline --text-action-1 mt-5">Galerie</h6>
+			<!-- Begin: Gallery row -->
+			<div class="row row-cols-sm-2 row-cols-lg-3 mt-2 mb-6 g-4">
+				<?php foreach ( $medias_gallery as $image ) : ?>
+					<a class="col" href="javascript:;">
+						<figure id="<?= $image['ID'] ?>">
+							<picture class="lazy" data-fancybox="gallery" data-loader="pic" data-src="<?= $image['full_url'] ?>">
+								<!--<data-src media="(min-width: 576px)" srcset="https://placehold.co/600x600/AA0000/808080?text=1200x1200" type="image/jpeg"></data-src> -->
+								<data-src media="(min-width: 150px)" srcset="<?= $image['sizes']['page-featured-image-s']['url']; ?>" type="image/jpeg"></data-src>
+								<data-img src="<?= $image['url']; ?>" alt="<?= esc_html($image['alt']); ?>" class="img-fluid rounded-4 --h-300-px fit-image w-100 img-transition-scale" style="" title="<?= $image['title']; ?>"></data-img>
+							</picture>
+							<?php if ( $image['alt'] || $image['description'] ) : ?>
+							<figcaption><strong>© <?= esc_html($image['alt']); ?></strong> <?= esc_html($image['description']); ?></figcaption>
+							<?php endif; /* If captions */ ?>
+						</figure>
+					</a>
+				<?php endforeach ?>
+			</div>
+			<!-- End: Gallery row -->
+			<?php endif; ?>
 
-          </div>
-          <!-- End: Gallery row -->
-
-			<!-- -->
-			<h6 class="subline --text-action-1 mt-5">Vidéo</h6>
-
-          <!-- Begin: Video row -->
-          <div class="row row-cols-sm-2 row-cols-lg-3 mt-2 mb-6 g-4">
-
+			<!-- Videos -->
 			<?php $d_medias_videos 					= rwmb_meta( $prefix . 'medias_video', array(), $post->ID); ?>
-			<?php if (!empty($d_medias_videos)): ?>
-			<?php foreach ( $d_medias_videos as $d_medias_video ) : ?>
-				<a class="col" href="javascript:;">
-					<figure class="wp-block-video position-relative d-flex flex-center" id="<?= $d_medias_video['ID'] ?>" data-fancybox="gallery" data-loader="pic" data-src="<?= $d_medias_video['src'] ?>">
-						<img src="https://placehold.co/600x600" class="img-fluid rounded-4 fit-image w-100"/>
-						<video class="position-absolute top-0 start-0 h-100 img-fluid rounded-4 h-300-px fit-image w-100 img-transition-scale" autoplay loop muted playsinline src="<?= $d_medias_video['src']; ?>"><!-- poster="<?= $d_medias_video['image']['src']; ?>" --></video>
-						<?php if ( $d_medias_video['alt'] || $d_medias_video['description'] ) : ?>
-						<figcaption><strong>© <?= esc_html($d_medias_video['alt']); ?></strong> <?= esc_html($d_medias_video['description']); ?></figcaption>
-						<?php endif; /* If captions */ ?>
-					</figure>
-				</a>
-			<?php endforeach ?>
+			<?php $d_medias_video_links 					= rwmb_meta( $prefix . 'medias_video_link', array(), $post->ID); ?>
+			<?php if (!empty($d_medias_videos) || !empty($d_medias_video_links)): ?>
+			<h6 class="subline --text-action-1 mt-5">Vidéo</h6>
+			<!-- Begin: Video row -->
+			<div class="row row-cols-sm-2 row-cols-lg-3 mt-2 mb-6 g-4">
+				<?php foreach ( $d_medias_videos as $d_medias_video ) : ?>
+					<a class="col" href="javascript:;">
+						<figure class="wp-block-video position-relative d-flex flex-center" id="<?= $d_medias_video['ID'] ?>" data-fancybox="gallery" data-loader="pic" data-src="<?= $d_medias_video['src'] ?>">
+							<img src="https://placehold.co/600x600" class="img-fluid rounded-4 fit-image w-100"/>
+							<video class="position-absolute top-0 start-0 h-100 img-fluid rounded-4 h-300-px fit-image w-100 img-transition-scale" autoplay loop muted playsinline src="<?= $d_medias_video['src']; ?>"><!-- poster="<?= $d_medias_video['image']['src']; ?>" --></video>
+							<?php if ( $d_medias_video['alt'] || $d_medias_video['description'] ) : ?>
+							<figcaption><strong>© <?= esc_html($d_medias_video['alt']); ?></strong> <?= esc_html($d_medias_video['description']); ?></figcaption>
+							<?php endif; /* If captions */ ?>
+						</figure>
+					</a>
+				<?php endforeach ?>
+				<?php foreach ( $d_medias_video_links as $d_medias_video_link ) : ?>
+					<a class="col" href="javascript:;">
+						<figure class="wp-block-video position-relative d-flex flex-center" id="<?= $d_medias_video['ID'] ?>" data-fancybox="gallery" data-loader="pic" data-src="<?= $d_medias_video_link ?>">
+							<img src="https://placehold.co/600x600" class="img-fluid rounded-4 fit-image w-100"/>
+						</figure>
+					</a>
+				<?php endforeach ?>
+			</div>
+			<!-- End: Video row -->
 			<?php endif; ?>
 
 
-          </div>
-          <!-- End: Video row -->
+			<!-- Files -->
+			<?php $d_medias_files 					= rwmb_meta( $prefix . 'medias_files', array(), $post->ID); ?>
+			<?php if (!empty($d_medias_files)): ?>
+			<h6 class="subline --text-action-1 mt-5">Fichiers</h6>
+			<!-- Begin: Video row -->
+			<div class="row row-cols-sm-2 row-cols-lg-3 mt-2 mb-6 g-4">
+				<?php foreach ( $d_medias_files as $d_medias_file ) : ?>
+					<a class="col" href="javascript:;">
+						<figure class="wp-block-video position-relative d-flex flex-center" id="<?= $d_medias_file['ID'] ?>" data-fancybox="gallery" data-loader="pic" data-src="<?= $d_medias_file['src'] ?>">
+							<img src="https://placehold.co/600x600" class="img-fluid rounded-4 fit-image w-100"/>
+							<video class="position-absolute top-0 start-0 h-100 img-fluid rounded-4 h-300-px fit-image w-100 img-transition-scale" autoplay loop muted playsinline src="<?= $d_medias_file['src']; ?>"><!-- poster="<?= $d_medias_video['image']['src']; ?>" --></video>
+							<?php if ( $d_medias_file['alt'] || $d_medias_file['description'] ) : ?>
+							<figcaption><strong>© <?= esc_html($d_medias_file['alt']); ?></strong> <?= esc_html($d_medias_file['description']); ?></figcaption>
+							<?php endif; /* If captions */ ?>
+						</figure>
+					</a>
+				<?php endforeach ?>
+			</div>
+			<!-- End: Video row -->
+			<?php endif; ?>
+
 
         </div>
 
