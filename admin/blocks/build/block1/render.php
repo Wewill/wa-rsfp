@@ -2,7 +2,23 @@
 /**
  * @see https://github.com/WordPress/gutenberg/blob/trunk/docs/reference-guides/block-api/block-metadata.md#render
  */
-$prefix = 'd_'p_error( $term_link ) ) {
+
+$prefix = 'd_';
+
+$meta_output = array();
+$terms_list = array('production','thematic','geography');
+
+foreach($terms_list as $terms_name) {
+
+	$terms = get_terms( array(
+		'taxonomy'   => $terms_name,
+		'hide_empty' => false,
+	) );
+
+	if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) {
+		foreach ( $terms as $term ) {
+			$term_link = get_term_link( $term );
+			if ( ! is_wp_error( $term_link ) ) {
 				$meta_output[$terms_name] .= sprintf(
 					'<div class="%s-list d-inline %s"><a href="%s" class="%s-item --link-disabled">%s</a></div>',
 					$terms_name,
