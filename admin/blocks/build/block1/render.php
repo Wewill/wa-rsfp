@@ -2,6 +2,7 @@
 /**
  * @see https://github.com/WordPress/gutenberg/blob/trunk/docs/reference-guides/block-api/block-metadata.md#render
  */
+global $post;
 
 $prefix = 'd_';
 
@@ -10,10 +11,7 @@ $terms_list = array('production','thematic','geography');
 
 foreach($terms_list as $terms_name) {
 
-	$terms = get_terms( array(
-		'taxonomy'   => $terms_name,
-		'hide_empty' => false,
-	) );
+	$terms = wp_get_post_terms( $post->ID, $terms_name);
 
 	if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) {
 		foreach ( $terms as $term ) {
@@ -41,7 +39,7 @@ foreach($terms_list as $terms_name) {
 		<div class="row g-0  min-h-400px"> <!-- .vh-100 hack-->
 
 			<div class="col-lg-5 col-xl-5 bg-action-1 p-5 rounded-bottom-4 rounded-bottom-right-0" data-aos="fade-down" data-aos-delay="300">
-				<?=  $meta_output['geography'] ?>
+				<?= ( isset($meta_output['geography']) ) ? $meta_output['geography'] : '' ?>
 
 				<div id="map-france">
 						<!-- Voir method BS https://css-tricks.com/svg-sprites-use-better-icon-fonts/ -->
@@ -451,7 +449,7 @@ foreach($terms_list as $terms_name) {
 				<div class="w-100 d-flex align-items-center justify-content-between">
 					<h6 class="subline text-action-1">Carte d'identité</h6>
 					<div>
-						<?=  $meta_output['production'] ?>
+						<?= ( isset($meta_output['production']) ) ? $meta_output['production'] : '' ?>
 					</div>
 				</div>
 
@@ -838,6 +836,17 @@ foreach($terms_list as $terms_name) {
       On remercie le milieu agricole ecinstalle.e.s nors cadre familial. Ariane et Julien ont démarré en 201c
       la création de ce qu'ils nomment le « jardin »..
       </p>
+
+
+<?php $relationships_farm = rwmb_meta( $prefix . 'relationships_farm' ); ?>
+<p>relationships_farm post ID: <?= print_r($relationships_farm, true) ?></p>
+
+<?php $relationships_structure = rwmb_meta( $prefix . 'relationships_structure' ); ?>
+<p>relationships_structure post ID: <?= print_r($relationships_structure, true) ?></p>
+
+<?php $relationships_operation = rwmb_meta( $prefix . 'relationships_operation' ); ?>
+<p>relationships_operation post ID: <?= print_r($relationships_operation, true) ?></p>
+
       </div>
 
       <div class="mt-n12">
@@ -966,7 +975,6 @@ foreach($terms_list as $terms_name) {
 
 
 <?php
-global $post;
 $d_general_subtitle = get_post_meta( $post->ID, 'd_general_subtitle', true );
 $d_general_introduction = get_post_meta( $post->ID, 'd_general_introduction', true );
 ?>
