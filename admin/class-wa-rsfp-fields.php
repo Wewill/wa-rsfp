@@ -292,17 +292,6 @@ function directory_fields( $meta_boxes ) {
 				'desc' => __( '<span class="label">TIPS</span> Markdown is available : *italic* (Command + b) **bold** (Command + i) ***label*** (Command + Shift + L) #small# (Command + Shift + S) ##huge## (Command + Shift + H).', 'wa-rsfp' ),
             ],
             [
-                'name'       => /*translators:Compétence.s acquise.s*/__( 'Skill.s', 'wa-rsfp' ),
-                'id'         => $prefix . 'knowledge_skills',
-                'type'       => 'text',
-                'clone'      => true,
-                'sort_clone' => true,
-                'limit'      => 100,
-                'class' => 'enable-markdown',
-				'label_description' => __( '<span class="label">INFO</span> Fill with simple text', 'wa-rsfp' ) . '<br/>' .   __( '<span class="label">INFO</span> This will be rendered as a list of items', 'wa-rsfp' ),
-				'desc' => __( '<span class="label">TIPS</span> Markdown is available : *italic* (Command + b) **bold** (Command + i) ***label*** (Command + Shift + L) #small# (Command + Shift + S) ##huge## (Command + Shift + H).', 'wa-rsfp' ),
-            ],
-            [
                 'name'       => /*translators:Parcours à l'installation*/__( 'Installation period', 'wa-rsfp' ),
                 'id'         => $prefix . 'knowledge_installation_period',
                 'type'       => 'textarea',
@@ -311,6 +300,19 @@ function directory_fields( $meta_boxes ) {
                 'class' => 'enable-markdown',
                 'label_description' => __( '<span class="label">INFO</span> Fill with simple text', 'wa-rsfp' ) ,
                 'desc' => __( '<span class="label">TIPS</span> Markdown is available : *italic* (Command + b) **bold** (Command + i) ***label*** (Command + Shift + L) #small# (Command + Shift + S) ##huge## (Command + Shift + H).', 'wa-rsfp' ),
+            ],
+            [
+                'name'       => /*translators:Compétence.s acquise.s*/__( 'Skill.s', 'wa-rsfp' ),
+                'id'         => $prefix . 'knowledge_skills',
+                'type'       => 'textarea',
+                // 'required'   => true,
+                'clone'      => true,
+                'sort_clone' => true,
+                'limit'      => 300,
+                'rows'       => 2,
+                'class' => 'enable-markdown',
+				'label_description' => __( '<span class="label">INFO</span> Fill with simple text', 'wa-rsfp' ) . '<br/>' .   __( '<span class="label">INFO</span> This will be rendered as a list of items', 'wa-rsfp' ),
+				'desc' => __( '<span class="label">TIPS</span> Markdown is available : *italic* (Command + b) **bold** (Command + i) ***label*** (Command + Shift + L) #small# (Command + Shift + S) ##huge## (Command + Shift + H).', 'wa-rsfp' ),
             ],
             [
                 'name'       => /*translators:Témoignage libre*/__( 'Testimony', 'wa-rsfp' ),
@@ -368,6 +370,11 @@ function directory_fields( $meta_boxes ) {
 		'id'         => 'directory-medias',
 		'post_types' => ['directory'],
 		'fields'     => [
+            [
+                'type'       => 'divider',
+                'before'      => __( '<span class="label">INFO</span> <b>Featured image</b> please choose an image below on side panel.', 'wa-rsfp' ),
+                'save_field' => false,
+            ],
             [
                 'name'             => __( 'Gallery files', 'wa-rsfp' ),
                 'id'               => $prefix . 'medias_gallery',
