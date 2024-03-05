@@ -135,3 +135,5 @@ span.automatic {
 
 .rwmb-button.add-clone { margin-left: 15px; }
 .rwmb-field.required label { color: #a10e03; }
+
+.rwmb-fieldset_text-wrapper fieldset label { width: 40% !important; } /* Enlarge label for fields */
