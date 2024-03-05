@@ -314,17 +314,6 @@ function directory_fields( $meta_boxes ) {
 				'label_description' => __( '<span class="label">INFO</span> Fill with simple text', 'wa-rsfp' ) . '<br/>' .   __( '<span class="label">INFO</span> This will be rendered as a list of items', 'wa-rsfp' ),
 				'desc' => __( '<span class="label">TIPS</span> Markdown is available : *italic* (Command + b) **bold** (Command + i) ***label*** (Command + Shift + L) #small# (Command + Shift + S) ##huge## (Command + Shift + H).', 'wa-rsfp' ),
             ],
-            [
-                'name'       => /*translators:Témoignage libre*/__( 'Testimony', 'wa-rsfp' ),
-                'id'         => $prefix . 'knowledge_testimony',
-                'type'       => 'textarea',
-                // 'required'   => true,
-                'limit'      => 200,
-                'rows'       => 3,
-                'class' => 'enable-markdown',
-				'label_description' => __( '<span class="label">INFO</span> Fill with simple text', 'wa-rsfp' ),
-				'desc' => __( '<span class="label">TIPS</span> Markdown is available : *italic* (Command + b) **bold** (Command + i) ***label*** (Command + Shift + L) #small# (Command + Shift + S) ##huge## (Command + Shift + H).', 'wa-rsfp' ),
-            ],
 		],
 	];
 
@@ -481,11 +470,10 @@ function farm_fields( $meta_boxes ) {
                 'type'              => 'fieldset_text',
                 'desc' => __( '<span class="label">INFO</span> Fill one or many complete address', 'wa-rsfp' ),
                 'options'           => [
-                    'address_line1' => 'Address',
-                    'address_line2' => 'Address (more)',
-                    'postal_code'   => 'Postal code',
-                    'city'          => 'City',
-                    'country'       => 'Country',
+                    'address_line1'     => 'Address',
+                    'address_line2'     => 'Address (more)',
+                    'postal_code_city'  => 'Postal code & City (ex. 75000 Paris)',
+                    'country'           => 'Country',
                 ],
                 'clone'             => true,
                 'sort_clone'        => true,
@@ -502,19 +490,19 @@ function farm_fields( $meta_boxes ) {
                     'type'    => 'url',
                 ],
             ],
-            [
-                'name'              => __( 'Biography', 'wa-rsfp' ),
-                'id'                => $prefix . 'general_biography',
-                'type'              => 'wysiwyg',
-                'options'           => [
-                    'media_buttons'  => false,
-                    'drag_drop_upload' => false,
-                    // 'default_editor' => true,
-                    'teeny' => true,
-                    'textarea_rows'  => 4,
-                ],
-                'label_description' => __( '<span class="label">INFO</span> Fill with a short biography of farm / entity formatted text', 'wa-rsfp' ),
-            ],
+            // [
+            //     'name'              => __( 'Biography', 'wa-rsfp' ),
+            //     'id'                => $prefix . 'general_biography',
+            //     'type'              => 'wysiwyg',
+            //     'options'           => [
+            //         'media_buttons'  => false,
+            //         'drag_drop_upload' => false,
+            //         // 'default_editor' => true,
+            //         'teeny' => true,
+            //         'textarea_rows'  => 4,
+            //     ],
+            //     'label_description' => __( '<span class="label">INFO</span> Fill with a short biography of farm / entity formatted text', 'wa-rsfp' ),
+            // ],
             // [
             //     'name'              => __( 'Gallery', 'wa-rsfp' ),
             //     'id'                => $prefix . 'general_gallery',
@@ -543,6 +531,44 @@ function farm_fields( $meta_boxes ) {
                 'type' => 'checkbox',
                 'desc' => __( '<span class="label">TIPS</span> Check this if the farm is currently in a transmission process.', 'wa-rsfp' ),
             ],
+        ],
+    ];
+
+    // More
+    $meta_boxes[] = [
+        'title'      => __( 'Farm › More', 'wa-rsfp' ),
+        'id'         => 'farm-more',
+        'post_types' => ['farm'],
+        'fields'     => [
+            [
+                'name'       => /*translators:Témoignage libre*/__( 'Testimony', 'wa-rsfp' ),
+                'id'         => $prefix . 'more_testimony',
+                'type'       => 'textarea',
+                // 'required'   => true,
+                'limit'      => 200,
+                'rows'       => 3,
+                'class' => 'enable-markdown',
+				'label_description' => __( '<span class="label">INFO</span> Fill with simple text', 'wa-rsfp' ) . ' / ' .  __( '(Optional) This content will be displayed in knowledge single page.', 'wa-rsfp' ),
+				'desc' => __( '<span class="label">TIPS</span> Markdown is available : *italic* (Command + b) **bold** (Command + i) ***label*** (Command + Shift + L) #small# (Command + Shift + S) ##huge## (Command + Shift + H).', 'wa-rsfp' ),
+            ],
+            [
+                'name'              => __( 'Biography', 'wa-rsfp' ),
+                'id'                => $prefix . 'more_biography',
+                'type'       => 'textarea',
+                // 'required'   => true,
+                'limit'      => 200,
+                'rows'       => 3,
+                'class' => 'enable-markdown',
+                'label_description' => __( '<span class="label">INFO</span> Fill with a short biography of farm / entity formatted text', 'wa-rsfp' ) . ' / ' .  __( '(Optional) This content will be displayed in knowledge single page.', 'wa-rsfp' ),
+				'desc' => __( '<span class="label">TIPS</span> Markdown is available : *italic* (Command + b) **bold** (Command + i) ***label*** (Command + Shift + L) #small# (Command + Shift + S) ##huge## (Command + Shift + H).', 'wa-rsfp' ),
+            ],
+            // [
+            //     'name'              => __( 'Gallery', 'wa-rsfp' ),
+            //     'id'                => $prefix . 'general_gallery',
+            //     'type'              => 'image_advanced',
+            //     'label_description' => __( '<span class="label">INFO</span> Fill with one or many image of farm / entity', 'wa-rsfp' ),
+            //     'max_file_uploads'  => 10,
+            // ],
         ],
     ];
 
@@ -601,6 +627,14 @@ function structure_fields( $meta_boxes ) {
             //     'desc' => __( '<span class="label">TIPS</span> Choose an image 1000px squared in transparent *.png', 'wa-rsfp' ),
             //     'max_file_uploads'  => 1,
             // ],
+            // [
+            //     'name'              => __( 'Presentation image', 'wa-rsfp' ),
+            //     'id'                => $prefix . 'general_image',
+            //     'type'              => 'image_advanced',
+            //     'label_description' => __( '<span class="label">INFO</span> Fill with an image', 'wa-rsfp' ),
+            //     'desc' => __( '<span class="label">TIPS</span> Choose an image 1200px x 600px  in *.jpg', 'wa-rsfp' ),
+            //     'max_file_uploads'  => 1,
+            // ],
             [
                 'name'              => __( 'Referent', 'wa-rsfp' ),
                 'id'                => $prefix . 'general_referent',
@@ -635,11 +669,10 @@ function structure_fields( $meta_boxes ) {
                 'type'              => 'fieldset_text',
                 'desc' => __( '<span class="label">INFO</span> Fill one or many complete address', 'wa-rsfp' ),
                 'options'           => [
-                    'address_line1' => 'Address',
-                    'address_line2' => 'Address (more)',
-                    'postal_code'   => 'Postal code',
-                    'city'          => 'City',
-                    'country'       => 'Country',
+                    'address_line1'     => 'Address',
+                    'address_line2'     => 'Address (more)',
+                    'postal_code_city'  => 'Postal code & City (ex. 75000 Paris)',
+                    'country'           => 'Country',
                 ],
                 'clone'             => true,
                 'sort_clone'        => true,
@@ -656,18 +689,38 @@ function structure_fields( $meta_boxes ) {
                     'type'    => 'url',
                 ],
             ],
+            // [
+            //     'name'              => __( 'Description', 'wa-rsfp' ),
+            //     'id'                => $prefix . 'general_description',
+            //     'type'              => 'wysiwyg',
+            //     'options'           => [
+            //         'media_buttons'  => false,
+            //         'drag_drop_upload' => false,
+            //         // 'default_editor' => true,
+            //         'teeny' => true,
+            //         'textarea_rows'  => 4,
+            //     ],
+            //     'label_description' => __( '<span class="label">INFO</span> Fill with formatted text', 'wa-rsfp' ),
+            // ],
+        ],
+    ];
+
+    // More
+    $meta_boxes[] = [
+        'title'      => __( 'Structure › More', 'wa-rsfp' ),
+        'id'         => 'structure-more',
+        'post_types' => ['structure'],
+        'fields'     => [
             [
                 'name'              => __( 'Description', 'wa-rsfp' ),
-                'id'                => $prefix . 'general_description',
-                'type'              => 'wysiwyg',
-                'options'           => [
-                    'media_buttons'  => false,
-                    'drag_drop_upload' => false,
-                    // 'default_editor' => true,
-                    'teeny' => true,
-                    'textarea_rows'  => 4,
-                ],
-                'label_description' => __( '<span class="label">INFO</span> Fill with formatted text', 'wa-rsfp' ),
+                'id'                => $prefix . 'more_description',
+                'type'       => 'textarea',
+                // 'required'   => true,
+                'limit'      => 200,
+                'rows'       => 3,
+                'class' => 'enable-markdown',
+                'label_description' => __( '<span class="label">INFO</span> Fill with a short description of structure formatted text', 'wa-rsfp' ) . ' / ' .  __( '(Optional) This content will be displayed in knowledge single page.', 'wa-rsfp' ),
+				'desc' => __( '<span class="label">TIPS</span> Markdown is available : *italic* (Command + b) **bold** (Command + i) ***label*** (Command + Shift + L) #small# (Command + Shift + S) ##huge## (Command + Shift + H).', 'wa-rsfp' ),
             ],
         ],
     ];
@@ -699,12 +752,20 @@ function operation_fields( $meta_boxes ) {
         'id'         => 'operation-general',
         'post_types' => ['operation'],
         'fields'     => [
+            // [
+            //     'name'              => __( 'Logotype', 'wa-rsfp' ),
+            //     'id'                => $prefix . 'general_logotype',
+            //     'type'              => 'image_advanced',
+            //     'label_description' => __( '<span class="label">INFO</span> Fill with a logotype', 'wa-rsfp' ),
+            //     'desc' => __( '<span class="label">TIPS</span> Choose an image 1000px squared in transparent *.png', 'wa-rsfp' ),
+            //     'max_file_uploads'  => 1,
+            // ],
             [
-                'name'              => __( 'Logotype', 'wa-rsfp' ),
-                'id'                => $prefix . 'general_logotype',
+                'name'              => __( 'Presentation image', 'wa-rsfp' ),
+                'id'                => $prefix . 'general_image',
                 'type'              => 'image_advanced',
-                'label_description' => __( '<span class="label">INFO</span> Fill with a logotype', 'wa-rsfp' ),
-                'desc' => __( '<span class="label">TIPS</span> Choose an image 1000px squared in transparent *.png', 'wa-rsfp' ),
+                'label_description' => __( '<span class="label">INFO</span> Fill with an image', 'wa-rsfp' ),
+                'desc' => __( '<span class="label">TIPS</span> Choose an image 1200px x 600px  in *.jpg', 'wa-rsfp' ),
                 'max_file_uploads'  => 1,
             ],
             [
@@ -749,11 +810,31 @@ function operation_fields( $meta_boxes ) {
                     'type'    => 'url',
                 ],
             ],
+            // [
+            //     'name'              => __( 'Description', 'wa-rsfp' ),
+            //     'id'                => $prefix . 'general_description',
+			// 	'type' => 'textarea',
+            //     'label_description' => __( '<span class="label">INFO</span> Fill with formatted text', 'wa-rsfp' ),
+            // ],
+        ],
+    ];
+
+    // More
+    $meta_boxes[] = [
+        'title'      => __( 'Operation › More', 'wa-rsfp' ),
+        'id'         => 'operation-more',
+        'post_types' => ['operation'],
+        'fields'     => [
             [
                 'name'              => __( 'Description', 'wa-rsfp' ),
-                'id'                => $prefix . 'general_description',
-				'type' => 'textarea',
-                'label_description' => __( '<span class="label">INFO</span> Fill with formatted text', 'wa-rsfp' ),
+                'id'                => $prefix . 'more_description',
+                'type'       => 'textarea',
+                // 'required'   => true,
+                'limit'      => 200,
+                'rows'       => 3,
+                'class' => 'enable-markdown',
+                'label_description' => __( '<span class="label">INFO</span> Fill with a short description of structure formatted text', 'wa-rsfp' ) . ' / ' .  __( '(Optional) This content will be displayed in knowledge single page.', 'wa-rsfp' ),
+				'desc' => __( '<span class="label">TIPS</span> Markdown is available : *italic* (Command + b) **bold** (Command + i) ***label*** (Command + Shift + L) #small# (Command + Shift + S) ##huge## (Command + Shift + H).', 'wa-rsfp' ),
             ],
         ],
     ];

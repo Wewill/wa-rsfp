@@ -231,7 +231,7 @@ function register_post_types() {
 		//'menu_position'       => 40,
 		'menu_icon'           => 'dashicons-flag',
 		'capability_type'     => 'post',
-		'supports'            => ['title', 'editor', 'author'], //'thumbnail',
+		'supports'            => ['title', 'editor', 'author', 'thumbnail'], //'thumbnail',
 		'taxonomies'          => ['thematic'],
 		'rewrite'             => [
 			'with_front' => false,
