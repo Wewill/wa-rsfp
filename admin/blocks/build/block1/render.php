@@ -38,7 +38,7 @@ foreach($terms_list as $terms_name) {
 	<div class="container-fluid px-0">
 		<div class="row g-0  min-h-400px"> <!-- .vh-100 hack-->
 
-			<div class="col-lg-5 col-xl-5 bg-action-1 p-5 rounded-bottom-4 rounded-bottom-right-0" data-aos="fade-down" data-aos-delay="300">
+			<div class="col-lg-5 col-xl-5 bg-action-1 p-4 p-lg-5 rounded-bottom-4 rounded-bottom-right-0" data-aos="fade-down" data-aos-delay="300">
 				<?= ( isset($meta_output['geography']) ) ? $meta_output['geography'] : '' ?>
 
 				<div id="map-france">
@@ -444,7 +444,7 @@ foreach($terms_list as $terms_name) {
 
 			</div>
 
-			<div class="col-lg overflow-hidden bg-color-layout p-5 rounded-bottom-4 rounded-bottom-left-0" data-aos="fade-left" data-aos-delay="100">
+			<div class="col-lg overflow-hidden bg-color-layout p-4 p-lg-5 rounded-bottom-4 rounded-bottom-left-0" data-aos="fade-left" data-aos-delay="100">
 
 				<div class="w-100 d-flex align-items-center justify-content-between">
 					<h6 class="subline text-action-1">Carte d'identité</h6>
@@ -554,8 +554,8 @@ foreach($terms_list as $terms_name) {
 
 
       <!-- Begin: Sticky-->
-      <div class="col-lg-5 col-xl-5 sticky-top mt-5" style="top: var(--waff-header-height-reduced, 0px)" data-aos="fade-down" data-aos-delay="300">
-        <div class="inner-sticky bg-color-bg p-5 rounded-end-4 rounded-bottom-right-0">
+      <div class="col-lg-5 col-xl-5 sticky-top mt-5 order-last order-lg-first" style="top: var(--waff-header-height-reduced, 0px)" data-aos="fade-down" data-aos-delay="300">
+        <div class="inner-sticky bg-color-bg p-4 p-lg-5 rounded-end-4 rounded-bottom-right-0">
 
 
           <div class="row row-cols-1 row-cols-md-2">
@@ -789,7 +789,7 @@ foreach($terms_list as $terms_name) {
 		}
 	
 		?>
-        <div class="bottom-sticky p-5 bg-color-layout-2 rounded-top-4 rounded-top-left-0">
+        <div class="bottom-sticky p-4 p-lg-5 bg-color-layout-2 rounded-top-4 rounded-top-left-0">
 
 			<!-- Hero header image -->
 			<div class="ms-n5 me-n5 mt-n5 mb-5">
@@ -908,7 +908,7 @@ foreach($terms_list as $terms_name) {
 			$s_featured_img_description =  $s_thumb_img->post_content; // Display Description
 		}
 		?>
-		<div class="bottom-sticky p-5 bg-color-layout rounded-end-4 rounded-top-right-0">
+		<div class="bottom-sticky p-4 p-lg-5 bg-color-layout rounded-end-4 rounded-top-right-0">
 
 			<div>
 				<h6 class="subline --text-action-1">Contactez votre structure d'accompagnement local</h6>
@@ -989,7 +989,7 @@ foreach($terms_list as $terms_name) {
       <!-- End: Sticky-->
 
       <!-- Begin: Body -->
-      <div class="col-lg overflow-hidden p-5" data-aos="fade-left" data-aos-delay="100">
+      <div class="col-lg overflow-hidden p-4 p-lg-5 order-first order-lg-last" data-aos="fade-left" data-aos-delay="100">
 
       <!-- Begin: Content-->
 	  <?= apply_filters('the_content', WaffTwo\Core\waff_do_markdown($content)) ?>
