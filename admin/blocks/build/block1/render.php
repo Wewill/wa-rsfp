@@ -32,7 +32,7 @@ foreach($terms_list as $terms_name) {
 
 ?>
 
-
+<!-- Begin: Directory block -->
 <!-- #directorysubhero -->
 <section id="directorysubhero" class="mb-10 mb-lg-7 contrast--light ">
 	<div class="container-fluid px-0">
@@ -453,7 +453,7 @@ foreach($terms_list as $terms_name) {
 					</div>
 				</div>
 
-				<div class="row row-cols-1 row-cols-md-2 g-4 py-5">
+				<div class="row row-cols-1 row-cols-md-2 g-4 pt-3 py-2 py-md-5">
 
 					<!-- Lieu -->
 					<?php $identity_location = rwmb_meta( $prefix . 'identity_location' ); ?>
@@ -462,7 +462,7 @@ foreach($terms_list as $terms_name) {
 						<i class="bi bi-bootstrap flex-shrink-0 me-3 h4"></i>
 						<div>
 						<h6 class="fw-bold"><?= esc_html__( 'Location', 'wa-rsfp' ); ?></h6>
-						<p class="lead mb-4"><?= esc_html($identity_location); ?></p>
+						<p class="lead mb-0 mb-md-4"><?= esc_html($identity_location); ?></p>
 						</div>
 					</div>
 					<?php endif; ?>
@@ -474,7 +474,7 @@ foreach($terms_list as $terms_name) {
 						<i class="bi bi-bootstrap flex-shrink-0 me-3 h4"></i>
 						<div>
 						<h6 class="fw-bold"><?= esc_html__( 'Area (in ha)', 'wa-rsfp' ); ?></h6>
-						<p class="lead mb-4"><?= esc_html($identity_area); ?></p>
+						<p class="lead mb-0 mb-md-4"><?= esc_html($identity_area); ?></p>
 						</div>
 					</div>
 					<?php endif; ?>
@@ -486,7 +486,7 @@ foreach($terms_list as $terms_name) {
 						<i class="bi bi-bootstrap flex-shrink-0 me-3 h4"></i>
 						<div>
 						<h6 class="fw-bold"><?= esc_html__( 'Number of people', 'wa-rsfp' ); ?></h6>
-						<p class="lead mb-4"><?= esc_html($identity_number_of_people); ?></p>
+						<p class="lead mb-0 mb-md-4"><?= esc_html($identity_number_of_people); ?></p>
 						</div>
 					</div>
 					<?php endif; ?>
@@ -498,7 +498,7 @@ foreach($terms_list as $terms_name) {
 						<i class="bi bi-bootstrap flex-shrink-0 me-3 h4"></i>
 						<div>
 						<h6 class="fw-bold"><?= esc_html__( 'Livestock', 'wa-rsfp' ); ?></h6>
-						<p class="lead"><?= esc_html($identity_livestock); ?></p>
+						<p class="lead mb-0 mb-md-4"><?= esc_html($identity_livestock); ?></p>
 						</div>
 					</div>
 					<?php endif; ?>
@@ -523,7 +523,7 @@ foreach($terms_list as $terms_name) {
 
 				</div>
 
-				<div class="row row-cols-1 row-cols-md-1 g-4 py-5">
+				<div class="row row-cols-1 row-cols-md-1 g-4 py-2 py-md-5">
 
 					<!-- Commercialization -->
 					<?php $identity_commercializations = rwmb_meta( $prefix . 'identity_commercializations' ); ?>
@@ -962,8 +962,8 @@ foreach($terms_list as $terms_name) {
 		<!-- End: Structures -->
 
         <!-- Begin: CTA -->
-        <div class="d-flex align-items-center justify-content-center py-4 px-5 bg-body rounded-4 shadow mt-6">
-          <div class="d-flex align-items-center">
+        <div class="d-flex align-items-center justify-content-center mx-4 mx-md-0 p-3 py-md-4 px-md-5 bg-body rounded-4 shadow mt-6">
+          <div class="d-md-flex d-inline-block align-items-center px-1 px-md-0">
             <i class="bi bi-bootstrap flex-shrink-0 me-3 h2 text-action-1"></i>
             <div>
               <h6 class="fw-bold text-action-1">Lorem ipsum</h6>
@@ -971,11 +971,11 @@ foreach($terms_list as $terms_name) {
             </div>
           </div>
 
-          <div class="d-flex align-items-center justify-content-center px-5">
+          <div class="d-none d-md-flex align-items-center justify-content-center px-5">
             <span class="bullet bullet-action-2 ml-0"></span>
           </div>
 
-          <div class="d-flex align-items-center">
+          <div class="d-md-flex d-inline-block align-items-center px-1 px-md-0">
             <i class="bi bi-bootstrap flex-shrink-0 me-3 h2"></i>
             <div>
               <h6 class="fw-bold">Lorem ipsum</h6>
@@ -1195,16 +1195,4 @@ foreach($terms_list as $terms_name) {
   </div>
 </div>
 <!-- End: directorybody -->
-
-
-<?php
-$d_general_subtitle = get_post_meta( $post->ID, 'd_general_subtitle', true );
-$d_general_introduction = get_post_meta( $post->ID, 'd_general_introduction', true );
-?>
-<div <?php echo get_block_wrapper_attributes(); ?>>
-	<p>d_general_subtitle :: <?php echo esc_html( $d_general_subtitle ); ?></p>
-	<p>d_general_introduction :: <?php echo esc_html( $d_general_introduction ); ?></p>
-
-	Content :
-	<div class="inner-blocks content"><?= print_r($content); ?></div>
-</div>
+<!-- End: Directory block -->
