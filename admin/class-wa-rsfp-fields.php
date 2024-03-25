@@ -13,6 +13,7 @@ function register_custom_meta_fields() {
 	add_filter( 'rwmb_meta_boxes', 'partner_fields', 10);
 
 	// Taxonomies 
+	add_filter( 'rwmb_meta_boxes', 'geography_fields', 10);
 	add_filter( 'rwmb_meta_boxes', 'thematic_fields', 10);
 	add_filter( 'rwmb_meta_boxes', 'production_fields', 10);
 
@@ -468,7 +469,7 @@ function farm_fields( $meta_boxes ) {
                 'name'              => __( 'Address.s', 'wa-rsfp' ),
                 'id'                => $prefix . 'general_address',
                 'type'              => 'fieldset_text',
-                'desc' => __( '<span class="label">INFO</span> Fill one or many complete address', 'wa-rsfp' ),
+                'desc' => __( '<span class="label">INFO</span> Fill one or many complete address that will shown in farm sheet', 'wa-rsfp' ),
                 'options'           => [
                     'address_line1'     => 'Address',
                     'address_line2'     => 'Address (more)',
@@ -512,6 +513,43 @@ function farm_fields( $meta_boxes ) {
             // ],
         ],
     ];
+
+    // Geolocation
+    $meta_boxes[] = [
+        'title'      => __( 'Farm › Geolocation', 'wa-rsfp' ),
+        'id'         => 'farm-geolocation',
+        'post_types' => ['farm'],
+        'fields'     => [
+            [
+                'name'              => __( 'Geo address', 'wa-rsfp' ),
+                'id'                => $prefix . 'geolocation_address',
+                'type'              => 'text',
+                'desc' => __( '<span class="label">INFO</span> Fill unique address to geolocate the farm (this address will not shown in website)', 'wa-rsfp' ),
+            ],
+            // Map field.
+            [
+                'id'            => $prefix . 'geolocation_map',
+                'name'          => __( 'Location', 'wa-rsfp' ),
+                'type'          => 'osm',
+                'std'           => '48.84302835299519,2.3400878906250004',
+                'language'      => 'fr',
+                'region'        => 'fr',
+                'address_field' => $prefix . 'geolocation_address',
+            ],
+            [
+                'id' => $prefix . 'geolocation_lat',
+                'name' => 'Lat',
+                'binding' => 'lat',
+            ],
+            [
+                'id' => $prefix . 'geolocation_lng',
+                'name' => 'Lng',
+                'binding' => 'lng',
+            ],
+        ],
+        'geo' => true,
+    ];
+
 
     // Transmission
     $meta_boxes[] = [
@@ -920,6 +958,26 @@ add_filter( 'admin_post_thumbnail_html', 'add_logotype_desc_to_featured_image_me
 
 
 // Taxonomies
+function geography_fields( $meta_boxes ) {
+    $prefix = 'g_';
+
+    $meta_boxes[] = [
+        'title'      => __( 'Geography › Special', 'wa-rsfp' ),
+        'id'         => 'geography-special',
+        'taxonomies' => ['geography'],
+        'fields'     => [
+            [
+                'name'              => __( 'Code', 'wa-rsfp' ),
+                'id'                => $prefix . 'special_code',
+                'type'              => 'text',
+                'label_description' => __( '<span class="label">INFO</span> Fill with geojson area code', 'wa-rsfp' ),
+            ],
+       ],
+    ];
+
+    return $meta_boxes;
+}
+
 function thematic_fields( $meta_boxes ) {
     $prefix = 't_';
 

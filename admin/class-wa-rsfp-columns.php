@@ -191,6 +191,7 @@ add_filter( 'manage_edit-farm_columns', 'farm_columns' ) ;
 function farm_columns( $columns ) {
 	//$columns['posted'] = __( 'Posted', 'wa-rsfp');
 	$columns['f_general_farmers'] = __( 'Farmer.s', 'wa-rsfp');
+	$columns['f_geolocation_map'] = __( 'Geolocation', 'wa-rsfp');
 	$columns['_rsfp_belongs_directory_id'] = __( 'Farm belongs to', 'wa-rsfp');
 	return $columns;
 }
@@ -209,7 +210,11 @@ function farm_manage_columns($column_name, $post_id) {
 		case 'f_general_farmers' :
 			echo get_recursive_meta($column_name, $post_id);			
 			break;
-		/*case '_rsfp_belongs_directory_id' :
+		case 'f_geolocation_map' :
+			if ( get_post_meta($post_id, 'f_geolocation_lat', true ) !== '' && get_post_meta($post_id, 'f_geolocation_lng', true ) !== '' )
+				echo '<br/><span class="dashicons-before dashicons-yes"></span>';			
+			break;
+			/*case '_rsfp_belongs_directory_id' :
 			get_directory_byfarmid($column_name, $post_id);			
 			break;*/
 		case '_rsfp_belongs_directory_id' :
