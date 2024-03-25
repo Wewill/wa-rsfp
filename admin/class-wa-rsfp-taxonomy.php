@@ -51,7 +51,8 @@ function register_taxonomies() {
 		'query_var'          => true,
 		'sort'               => true,
 		'meta_box_cb'        => 'post_tags_meta_box',
-		'rest_base'          => '',
+		'rest_base'          => 'geography',
+		'rest_controller_class' => 'WP_REST_Terms_Controller',
 		'rewrite'            => [
 			'with_front'   => false,
 			'hierarchical' => false,
@@ -104,7 +105,8 @@ function register_taxonomies() {
 		'query_var'          => true,
 		'sort'               => true,
 		'meta_box_cb'        => 'post_categories_meta_box',
-		'rest_base'          => '',
+		'rest_base'          => 'production',
+		'rest_controller_class' => 'WP_REST_Terms_Controller',
 		'rewrite'            => [
 			'with_front'   => false,
 			'hierarchical' => false,
@@ -157,7 +159,8 @@ function register_taxonomies() {
 		'query_var'          => true,
 		'sort'               => true,
 		'meta_box_cb'        => 'post_categories_meta_box',
-		'rest_base'          => '',
+		'rest_base'          => 'thematic',
+		'rest_controller_class' => 'WP_REST_Terms_Controller',
 		'rewrite'            => [
 			'with_front'   => false,
 			'hierarchical' => false,
