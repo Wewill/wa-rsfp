@@ -137,3 +137,9 @@ span.automatic {
 .rwmb-field.required label { color: #a10e03; }
 
 .rwmb-fieldset_text-wrapper fieldset label { width: 40% !important; } /* Enlarge label for fields */
+
+/* Belongs to list table */
+.wp-list-table td[class*='belongs'] td {
+	padding-top: 0;
+	padding-bottom: 0;
+}
