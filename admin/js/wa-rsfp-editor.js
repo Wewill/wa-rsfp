@@ -56,3 +56,45 @@ wp.data.dispatch('core/notices').createNotice(
         // Any additional options
     }
 );
+
+// Display a notice if no featured image set 
+( function( wp ) {
+    var __ = wp.i18n.__;
+    var useEffect = wp.element.useEffect;
+    var useSelect = wp.data.useSelect;
+    var dispatch = wp.data.dispatch;
+
+    function MyFeaturedImageNotice() {
+        // Unique identifier for the notice.
+        const noticeId = 'my-featured-image-notice';
+
+        var featuredImageId = useSelect( function( select ) {
+            return select('core/editor').getEditedPostAttribute('featured_media');
+        }, [] );
+
+        useEffect(() => {
+            // If there is no featured image, display the notice.
+            if ( !featuredImageId ) {
+                dispatch( 'core/notices' ).createNotice(
+                    'warning', // Can be one of: success, info, warning, error.
+                    __( 'This post has no featured image. Consider setting one.' ), // Text string to display.
+                    {
+                        id: noticeId, // Use the unique identifier for the notice.
+                        isDismissible: true, // Whether the user can dismiss the notice.
+                        // Any actions the user can perform.
+                    }
+                );
+            } else {
+                // If a featured image is set, remove the notice.
+                dispatch( 'core/notices' ).removeNotice( noticeId );
+            }
+        }, [featuredImageId]); // Re-run this effect only if featuredImageId changes.
+
+        // Return null because this component doesn't render anything itself.
+        return null;
+    }
+
+    wp.plugins.registerPlugin( 'my-featured-image-notice', {
+        render: MyFeaturedImageNotice
+    } );
+} )( window.wp );
