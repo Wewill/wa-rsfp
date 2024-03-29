@@ -1,6 +1,6 @@
 {
 	"name": "wa-rsfp-directory-block",
-	"version": "1.0.0",
+	"version": "1.1.0",
 	"description": "A block designed for single directory pages.",
 	"author": "Wilhem Arnoldy",
 	"license": "GPL-2.0-or-later",
@@ -15,6 +15,7 @@
 		"start": "wp-scripts start --webpack-copy-php"
 	},
 	"devDependencies": {
+		"@fullhuman/postcss-purgecss": "^6.0.0",
 		"@wordpress/scripts": "^27.3.0"
 	}
 }

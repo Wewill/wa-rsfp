@@ -29,6 +29,10 @@ import { useEffect } from '@wordpress/element';
  *
  * @see https://www.npmjs.com/package/@wordpress/scripts#using-css
  */
+
+import './css/bootstrap-grid.min.css'; // import boostrap to projet 
+import './css/bootstrap-utilities.min.css'; // import boostrap to projet 
+// import '../../../../../../themes/waffthree/dist/css/style-rsfp.css'; // import boostrap to projet 
 import './editor.scss';
 
 /**
@@ -60,6 +64,15 @@ export default function Edit( {
 	// Get custom post meta
 	const { d_general_subtitle } = meta;
 	const { d_general_introduction } = meta;
+
+	// Get identity meta
+	const { d_identity_location, d_identity_area, d_identity_number_of_people, d_identity_livestock, d_identity_label, d_identity_commercialization} = meta;
+	const d_identity_label_li = (d_identity_label || []).map((label, index) =>
+		<li class="lead" key={index}>{label}</li>
+	);
+	const d_identity_commercialization_p = (d_identity_commercialization || []).map((label, index) =>
+		<p class="mb-0" key={index}>{label}</p>
+	);
 
 	// Mirror update block from custom meta input in page
 	// https://wordpress.stackexchange.com/questions/417626/force-update-the-meta-variable-first-set-using-var-meta-setmeta-useentityp
@@ -153,7 +166,7 @@ export default function Edit( {
 		<div { ...blockProps }>
 			<RichText
 				placeholder={ __( 'Subtitle', 'wa-rsfp' ) }
-				tagName="span"
+				tagName="h4"
 				allowedFormats={ [] }
 				disableLineBreaks
 				value={ d_general_subtitle }
@@ -166,23 +179,106 @@ export default function Edit( {
 					}
 				}
 			/>
-			<div class="lead">
-				<RichText
-					placeholder={ __( 'Introduction', 'wa-rsfp' ) }
-					tagName="p"
-					value={ d_general_introduction }
-					onChange={ ( newContent ) => {
-							const inputElement = document.getElementById('d_general_introduction');
-							if (inputElement) { inputElement.value = newContent; }
-						}
+
+			<RichText
+				placeholder={ __( 'Introduction', 'wa-rsfp' ) }
+				tagName="p"
+				className='lead'
+				value={ d_general_introduction }
+				onChange={ ( newContent ) => {
+						const inputElement = document.getElementById('d_general_introduction');
+						if (inputElement) { inputElement.value = newContent; }
 					}
-				/>
+				}
+			/>
+
+			<section class="mb-2">
+				<div class="container-fluid px-0">
+					<div class="row g-0">
+
+						<div class="col-lg-5 col-xl-5 bg-action-1 p-4 p-lg-5 rounded-bottom-4 rounded-bottom-right-0" data-aos="fade-down" data-aos-delay="300">
+							<h6 class="subline text-action-1">Map</h6>
+						</div>
+
+						<div class="col-lg overflow-hidden bg-color-layout p-4 p-lg-5 rounded-bottom-4 rounded-bottom-left-0" data-aos="fade-left" data-aos-delay="100">
+
+							<div class="w-100 d-flex align-items-center justify-content-between">
+								<h6 class="subline text-action-1">Carte d'identité</h6>
+							</div>
+
+							<div class="row row-cols-1 row-cols-md-2 g-4 pt-3 py-2 py-md-5">
+
+								{ d_identity_location && <div class="col d-flex align-items-center">
+									<i class="bi bi-bootstrap flex-shrink-0 me-3 h4"></i>
+									<div>
+									<h6 class="fw-bold">{ __( 'Location', 'wa-rsfp' ) }</h6>
+									<p class="lead mb-0 mb-md-4">{ d_identity_location }</p>
+									</div>
+								</div> }
+
+								{ d_identity_area && <div class="col d-flex align-items-center">
+									<i class="bi bi-bootstrap flex-shrink-0 me-3 h4"></i>
+									<div>
+									<h6 class="fw-bold">{ __( 'Area (in ha)', 'wa-rsfp' )}</h6>
+									<p class="lead mb-0 mb-md-4">{ d_identity_area }</p>
+									</div>
+								</div> }
+
+								{ d_identity_number_of_people && <div class="col d-flex align-items-center">
+									<i class="bi bi-bootstrap flex-shrink-0 me-3 h4"></i>
+									<div>
+									<h6 class="fw-bold">{__( 'Number of people', 'wa-rsfp' )}</h6>
+									<p class="lead mb-0 mb-md-4">{ d_identity_number_of_people }</p>
+									</div>
+								</div> }
+
+								{ d_identity_livestock && <div class="col d-flex align-items-center">
+									<i class="bi bi-bootstrap flex-shrink-0 me-3 h4"></i>
+									<div>
+									<h6 class="fw-bold">{ __( 'Livestock', 'wa-rsfp') }</h6>
+									<p class="lead mb-0 mb-md-4">{ d_identity_livestock }</p>
+									</div>
+								</div> }
+
+								{ d_identity_label && <div class="col d-flex align-items-center">
+									<i class="bi bi-bootstrap flex-shrink-0 me-3 h4"></i>
+									<div>
+									<h6 class="fw-bold">{ __( 'Label', 'wa-rsfp') }</h6>
+									<ul class="ps-4 list-group list-group-flush">{ d_identity_label_li }</ul>
+									</div>
+								</div> }
+
+							</div>
+
+							<div class="row row-cols-1 row-cols-md-1 g-4 py-2 py-md-5">
+
+								{ d_identity_commercialization && <div class="col d-flex align-items-center">
+									<i class="bi bi-bootstrap flex-shrink-0 me-3 h4"></i>
+									<div>
+									<h6 class="fw-bold">{ __( 'Commercialization', 'wa-rsfp') }</h6>
+									{ d_identity_commercialization_p }
+									</div>
+								</div> }
+
+							</div>
+
+						</div>
+
+					</div>
+				</div>
+			</section>
+
+			<div class="d-flex">
+				<div class="">#KNOwLEDGE</div>
+				<div class="">#CONTENT
+					<InnerBlocks
+						allowedBlocks={ALLOWED_BLOCKS}
+						template={TEMPLATE}
+						templateLock={false} // Change to "all" to lock the template structure
+					/>
+				</div>
 			</div>
-			<InnerBlocks
-                allowedBlocks={ALLOWED_BLOCKS}
-                template={TEMPLATE}
-                templateLock={false} // Change to "all" to lock the template structure
-            />
+
 		</div>
 	);
 

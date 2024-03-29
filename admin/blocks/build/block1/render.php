@@ -543,8 +543,8 @@ foreach($terms_list as $terms_name) {
 
 			</div>
 
-    </div>
-  </div>
+    	</div>
+  	</div>
 </section>
 
 <!-- #directorybody -->
@@ -560,34 +560,29 @@ foreach($terms_list as $terms_name) {
 
           <div class="row row-cols-1 row-cols-md-2">
             <div class="col">
-              <h6 class="subline --text-action-1">Repartition</h6>
+              <h6 class="subline --text-action-1">Répartition</h6>
+
+			  <?php $knowledge_diagrams = rwmb_meta( $prefix . 'knowledge_diagrams' );  ?>
               <canvas id="pieChart"></canvas>
 
               <!-- Specific theme : Chart.js-->
-              <script src="
-              https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js
-              "></script>
-
+              <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
               <script>
-
                   const ctx = document.getElementById('pieChart');
                   new Chart(ctx, {
                     type: 'doughnut',
                     data: {
-                      labels: [
-                        'Lorem ipsum 1',
-                        'Lorem ipsum 2',
-                        'Lorem ipsum 3',
-                      ],
+                      labels: <?= json_encode(array_column($knowledge_diagrams, 0)) ?>,
                       datasets: [{
                         label: 'Pourcentage',
-                        data: [300, 50, 100],
+                        data:  <?= json_encode(array_column($knowledge_diagrams, 2)) ?>,
                         backgroundColor: [
                           'rgb(255, 100, 75)',
                           'rgb(215, 190, 150)',
                           'rgb(230, 214, 189)',
                           'rgb(60, 10, 10)',
                           'rgb(150, 100, 100)',
+                          'rgb(100, 100, 100)',
                         ],
                         hoverOffset: 4
                       }]
@@ -619,9 +614,9 @@ foreach($terms_list as $terms_name) {
 
             </div>
             <div class="col">
-              <h6 class="subline --text-action-1">Compétition</h6>
-				  <?=  $meta_output['thematic'] ?>
-
+				<h6 class="subline --text-action-1">Compétition</h6>
+				<?=  $meta_output['thematic'] ?>
+				##PETALES 
             </div>
           </div>
 
@@ -629,8 +624,8 @@ foreach($terms_list as $terms_name) {
 			<h6 class="subline --text-action-1 mt-5">Rapports</h6>
 
 			<!-- Viability -->
-			<?php $knowledge_viabilitys = rwmb_meta( $prefix . 'knowledge_viabilitys' ); ?>
-			<?php if ($knowledge_viabilitys) : ?>
+			<?php echo $knowledge_viabilitys = rwmb_meta( $prefix . 'knowledge_viabilitys' ); ?>
+			<?php if (!empty($knowledge_viabilitys)) : ?>
 			<h6 class="text-action-1"><?= esc_html__( 'Viability.s', 'wa-rsfp' ); ?></h6>
 			<?php foreach( $knowledge_viabilitys as $knowledge_viability) : ?>
 			<p class="mb-0"><?= WaffTwo\Core\waff_do_markdown(esc_html($knowledge_viability)); ?></p>
@@ -638,8 +633,8 @@ foreach($terms_list as $terms_name) {
 			<?php endif; ?>
 
 			<!-- Vivability -->
-			<?php $knowledge_vivabilitys = rwmb_meta( $prefix . 'knowledge_vivabilitys' ); ?>
-			<?php if ($knowledge_vivabilitys) : ?>
+			<?php echo $knowledge_vivabilitys = rwmb_meta( $prefix . 'knowledge_vivabilitys' ); ?>
+			<?php if (!empty($knowledge_vivabilitys)) : ?>
 			<h6 class="text-action-1"><?= esc_html__( 'Vivability.s', 'wa-rsfp' ); ?></h6>
 			<?php foreach( $knowledge_vivabilitys as $knowledge_vivability) : ?>
 			<p class="mb-0"><?= WaffTwo\Core\waff_do_markdown(esc_html($knowledge_vivability)); ?></p>
@@ -648,7 +643,7 @@ foreach($terms_list as $terms_name) {
 
 			<!-- Skill -->
 			<?php $knowledge_skills = rwmb_meta( $prefix . 'knowledge_skills' ); ?>
-			<?php if ($knowledge_skills) : ?>
+			<?php if (!empty($knowledge_skills)) : ?>
 			<h6 class="text-action-1"><?= esc_html__( 'Skill.s', 'wa-rsfp' ); ?></h6>
 			<?php foreach( $knowledge_skills as $knowledge_skill) : ?>
 			<p class="mb-0"><?= WaffTwo\Core\waff_do_markdown(esc_html($knowledge_skill)); ?></p>
@@ -996,27 +991,24 @@ foreach($terms_list as $terms_name) {
       <!-- End: Content-->
 
       <!-- Begin: Timeline-->
+	  <?php $knowledge_acquisitions = rwmb_meta( $prefix . 'knowledge_acquisitions' ); ?>
+	  <?php if (!empty($knowledge_acquisitions)) : ?>
       <div class="my-6 mb-10">
-      <h6 class="subline --text-action-1">Parcours</h6>
+		<h6 class="subline --text-action-1">Parcours</h6>
 
-      <span class="bullet bullet-line bullet-action-2 mt-5"></span>
-      <div class="d-flex justify-content-between mb-5">
-
-			<!-- Acquisitions -->
-			<?php $knowledge_acquisitions = rwmb_meta( $prefix . 'knowledge_acquisitions' ); ?>
-			<?php if ($knowledge_acquisitions) : ?>
-			<?php foreach( $knowledge_acquisitions as $i=>$knowledge_acquisition ) : ?>
-			<div data-aos="flip-down" data-aos-delay="<?= $i*200 ?>">
-				<span class="bullet bullet-v bullet-action-2 mb-3"></span>
-				<h6 class="fw-bold text-action-1"><?= esc_html($knowledge_acquisition[0]); ?></h6>
-				<h6 class="fw-medium"><?= esc_html($knowledge_acquisition[1]); ?></h6>
-			</div>
-			<?php endforeach; ?>
-			<?php endif; ?>
-
+		<span class="bullet bullet-line bullet-action-2 mt-5"></span>
+		<div class="d-flex justify-content-between mb-5">
+				<!-- Acquisitions -->
+				<?php foreach( $knowledge_acquisitions as $i=>$knowledge_acquisition ) : ?>
+				<div data-aos="flip-down" data-aos-delay="<?= $i*200 ?>">
+					<span class="bullet bullet-v bullet-action-2 mb-3"></span>
+					<h6 class="fw-bold text-action-1"><?= esc_html($knowledge_acquisition[0]); ?></h6>
+					<h6 class="fw-medium"><?= esc_html($knowledge_acquisition[1]); ?></h6>
+				</div>
+				<?php endforeach; ?>
+		</div>
       </div>
-
-      </div>
+	  <?php endif; ?>
       <!-- End: Timeline-->
 
 			<!-- Begin: Farm contact bloc -->

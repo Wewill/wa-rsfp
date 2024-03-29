@@ -143,3 +143,12 @@ span.automatic {
 	padding-top: 0;
 	padding-bottom: 0;
 }
+
+/* Directory editor styles */
+.post-type-directory .editor-styles-wrapper {
+	/* Content width */
+	--go--max-width: 100% !important;
+	--go-block--padding--x: 10px !important;
+	--go-block--padding--y: 10px !important;
+	/*--go--max-width--alignwide: 100rem;/* Dynamically edited by child-block-filters.js */
+}
