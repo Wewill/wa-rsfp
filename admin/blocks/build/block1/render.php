@@ -456,7 +456,7 @@ foreach($terms_list as $terms_name) {
 				<div class="row row-cols-1 row-cols-md-2 g-4 pt-3 py-2 py-md-5">
 
 					<!-- Lieu -->
-					<?php $identity_location = rwmb_meta( $prefix . 'identity_location' ); ?>
+					<?php $identity_location = get_post_meta( $post->ID, $prefix . 'identity_location' ); ?>
 					<?php if ($identity_location) : ?>
 					<div class="col d-flex align-items-center">
 						<i class="bi bi-bootstrap flex-shrink-0 me-3 h4"></i>
@@ -468,7 +468,7 @@ foreach($terms_list as $terms_name) {
 					<?php endif; ?>
 
 					<!-- Area -->
-					<?php $identity_area = rwmb_meta( $prefix . 'identity_area' ); ?>
+					<?php $identity_area = get_post_meta( $post->ID, $prefix . 'identity_area' ); ?>
 					<?php if ($identity_area) : ?>
 					<div class="col d-flex align-items-center">
 						<i class="bi bi-bootstrap flex-shrink-0 me-3 h4"></i>
@@ -480,7 +480,7 @@ foreach($terms_list as $terms_name) {
 					<?php endif; ?>
 
 					<!-- Number of people -->
-					<?php $identity_number_of_people = rwmb_meta( $prefix . 'identity_number_of_people' ); ?>
+					<?php $identity_number_of_people = get_post_meta( $post->ID, $prefix . 'identity_number_of_people' ); ?>
 					<?php if ($identity_number_of_people) : ?>
 					<div class="col d-flex align-items-center">
 						<i class="bi bi-bootstrap flex-shrink-0 me-3 h4"></i>
@@ -492,7 +492,7 @@ foreach($terms_list as $terms_name) {
 					<?php endif; ?>
 
 					<!-- Livestock -->
-					<?php $identity_livestock = rwmb_meta( $prefix . 'identity_livestock' ); ?>
+					<?php $identity_livestock = get_post_meta( $post->ID, $prefix . 'identity_livestock' ); ?>
 					<?php if ($identity_livestock) : ?>
 					<div class="col d-flex align-items-center">
 						<i class="bi bi-bootstrap flex-shrink-0 me-3 h4"></i>
@@ -506,7 +506,7 @@ foreach($terms_list as $terms_name) {
 					<!-- Label -->
 					<?php $_identity_label   = rwmb_get_field_settings( $prefix . 'identity_label' );
 					$options_identity_label = $_identity_label['options'];
-					$identity_labels = rwmb_meta( $prefix . 'identity_label' ); ?>
+					$identity_labels = get_post_meta( $post->ID, $prefix . 'identity_label' ); ?>
 					<?php if ($identity_labels) : ?>
 					<div class="col d-flex align-items-center">
 						<i class="bi bi-bootstrap flex-shrink-0 me-3 h4"></i>
@@ -526,7 +526,7 @@ foreach($terms_list as $terms_name) {
 				<div class="row row-cols-1 row-cols-md-1 g-4 py-2 py-md-5">
 
 					<!-- Commercialization -->
-					<?php $identity_commercializations = rwmb_meta( $prefix . 'identity_commercializations' ); ?>
+					<?php $identity_commercializations = get_post_meta( $post->ID, $prefix . 'identity_commercializations' ); ?>
 					<?php if ($identity_commercializations) : ?>
 					<div class="col d-flex align-items-center">
 						<i class="bi bi-bootstrap flex-shrink-0 me-3 h4"></i>
@@ -562,7 +562,7 @@ foreach($terms_list as $terms_name) {
             <div class="col">
               <h6 class="subline --text-action-1">Répartition</h6>
 
-			  <?php $knowledge_diagrams = rwmb_meta( $prefix . 'knowledge_diagrams' );  ?>
+			  <?php $knowledge_diagrams = get_post_meta( $post->ID, $prefix . 'knowledge_diagrams', true );  ?>
               <canvas id="pieChart"></canvas>
 
               <!-- Specific theme : Chart.js-->
@@ -626,8 +626,8 @@ foreach($terms_list as $terms_name) {
 			<!-- Viability -->
 			d_knowledge_viabilitys
 			d_knowledge_viabilitys
-			<?php $knowledge_viabilitys = rwmb_meta( $prefix . 'knowledge_viabilitys' ); print_r(var_dump($knowledge_viabilitys)); ?>
-			<?php $_knowledge_viabilitys = rwmb_meta( $prefix . 'knowledge_viabilitys', array(), $post->ID); print_r(var_dump($_knowledge_viabilitys)); ?>
+			<?php $knowledge_viabilitys = get_post_meta( $post->ID, $prefix . 'knowledge_viabilitys', true); print_r(var_dump($knowledge_viabilitys)); ?>
+			<?php $_knowledge_viabilitys = get_post_meta( $post->ID, $prefix . 'knowledge_viabilitys', array(), $post->ID); print_r(var_dump($_knowledge_viabilitys)); ?>
 
 			<?php $__knowledge_viabilitys = get_post_meta( $post->ID, $prefix . 'knowledge_viabilitys', true); print_r(var_dump($__knowledge_viabilitys)); ?>
 
@@ -640,7 +640,7 @@ foreach($terms_list as $terms_name) {
 			<?php endif; ?>
 
 			<!-- Vivability -->
-			<?php $knowledge_vivabilitys = rwmb_meta( $prefix . 'knowledge_vivabilitys' ); ?>
+			<?php $knowledge_vivabilitys = get_post_meta( $post->ID, $prefix . 'knowledge_vivabilitys', true ); ?>
 			<?php if (!empty($knowledge_vivabilitys)) : ?>
 			<h6 class="text-action-1"><?= esc_html__( 'Vivability.s', 'wa-rsfp' ); ?></h6>
 			<?php foreach( $knowledge_vivabilitys as $knowledge_vivability) : ?>
@@ -649,7 +649,7 @@ foreach($terms_list as $terms_name) {
 			<?php endif; ?>
 
 			<!-- Skill -->
-			<?php $knowledge_skills = rwmb_meta( $prefix . 'knowledge_skills' ); ?>
+			<?php $knowledge_skills = get_post_meta( $post->ID, $prefix . 'knowledge_skills', true ); ?>
 			<?php if (!empty($knowledge_skills)) : ?>
 			<h6 class="text-action-1"><?= esc_html__( 'Skill.s', 'wa-rsfp' ); ?></h6>
 			<?php foreach( $knowledge_skills as $knowledge_skill) : ?>
@@ -658,7 +658,7 @@ foreach($terms_list as $terms_name) {
 			<?php endif; ?>
 
 			<!-- Installation period -->
-			<?php $knowledge_installation_period = rwmb_meta( $prefix . 'knowledge_installation_period' ); ?>
+			<?php $knowledge_installation_period = get_post_meta( $post->ID, $prefix . 'knowledge_installation_period', true ); ?>
 			<?php if ($knowledge_installation_period) : ?>
 			<h6 class="text-action-1"><?= esc_html__( 'Installation period', 'wa-rsfp' ); ?></h6>
 			<p class="mb-0"><?= WaffTwo\Core\waff_do_markdown(esc_html($knowledge_installation_period)); ?></p>
@@ -689,8 +689,8 @@ foreach($terms_list as $terms_name) {
 			<?php endif; ?>
 
 			<!-- Videos -->
-			<?php $d_medias_videos 					= rwmb_meta( $prefix . 'medias_video', array(), $post->ID); ?>
-			<?php $d_medias_video_links 			= rwmb_meta( $prefix . 'medias_video_link', array(), $post->ID); ?>
+			<?php $d_medias_videos 					= get_post_meta( $post->ID, $prefix . 'medias_video', true ); ?>
+			<?php $d_medias_video_links 			= get_post_meta( $post->ID, $prefix . 'medias_video_link', true); ?>
 			<?php if (!empty($d_medias_videos) || !empty($d_medias_video_links)): ?>
 			<h6 class="subline --text-action-1 mt-5">Vidéo</h6>
 			<!-- Begin: Video row -->
@@ -719,7 +719,7 @@ foreach($terms_list as $terms_name) {
 
 
 			<!-- Files -->
-			<?php $d_medias_files 					= rwmb_meta( $prefix . 'medias_files', array(), $post->ID); ?>
+			<?php $d_medias_files 					= get_post_meta( $post->ID, $prefix . 'medias_files', true); ?>
 			<?php if (!empty($d_medias_files)): ?>
 			<h6 class="subline --text-action-1 mt-5">Fichiers</h6>
 			<!-- Begin: Video row -->
@@ -744,7 +744,7 @@ foreach($terms_list as $terms_name) {
 
 		<!-- Begin: Operations -->
 		<?php 
-		$relationships_operation_post_ids = rwmb_meta( $prefix . 'relationships_operation' );
+		$relationships_operation_post_ids = get_post_meta( $post->ID, $prefix . 'relationships_operation', true);
 		foreach($relationships_operation_post_ids as $relationships_operation_post_id) : 
 
 		$o_prefix = 'o_'; 
@@ -882,7 +882,7 @@ foreach($terms_list as $terms_name) {
 		
 		<!-- Begin: Structures -->
 		<?php 
-		$relationships_structure_post_ids = rwmb_meta( $prefix . 'relationships_structure' );
+		$relationships_structure_post_ids = get_post_meta( $post->ID, $prefix . 'relationships_structure' );
 		foreach($relationships_structure_post_ids as $relationships_structure_post_id) : 
 
 		$s_prefix = 's_'; 
@@ -998,7 +998,7 @@ foreach($terms_list as $terms_name) {
       <!-- End: Content-->
 
       <!-- Begin: Timeline-->
-	  <?php $knowledge_acquisitions = rwmb_meta( $prefix . 'knowledge_acquisitions' ); ?>
+	  <?php $knowledge_acquisitions = get_post_meta( $post->ID, $prefix . 'knowledge_acquisitions' ); ?>
 	  <?php if (!empty($knowledge_acquisitions)) : ?>
       <div class="my-6 mb-10">
 		<h6 class="subline --text-action-1">Parcours</h6>
@@ -1020,7 +1020,7 @@ foreach($terms_list as $terms_name) {
 
 			<!-- Begin: Farm contact bloc -->
 			<?php
-			$relationships_farm_post_ids = rwmb_meta( $prefix . 'relationships_farm' ); 
+			$relationships_farm_post_ids = get_post_meta( $post->ID, $prefix . 'relationships_farm' ); 
 
 			foreach($relationships_farm_post_ids as $relationships_farm_post_id) : 
 
