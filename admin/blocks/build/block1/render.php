@@ -624,7 +624,7 @@ foreach($terms_list as $terms_name) {
 			<h6 class="subline --text-action-1 mt-5">Rapports</h6>
 
 			<!-- Viability -->
-			<?php echo $knowledge_viabilitys = rwmb_meta( $prefix . 'knowledge_viabilitys' ); ?>
+			<?php $knowledge_viabilitys = rwmb_meta( $prefix . 'knowledge_viabilitys' ); print_r($knowledge_viabilitys); ?>
 			<?php if (!empty($knowledge_viabilitys)) : ?>
 			<h6 class="text-action-1"><?= esc_html__( 'Viability.s', 'wa-rsfp' ); ?></h6>
 			<?php foreach( $knowledge_viabilitys as $knowledge_viability) : ?>
@@ -633,7 +633,7 @@ foreach($terms_list as $terms_name) {
 			<?php endif; ?>
 
 			<!-- Vivability -->
-			<?php echo $knowledge_vivabilitys = rwmb_meta( $prefix . 'knowledge_vivabilitys' ); ?>
+			<?php $knowledge_vivabilitys = rwmb_meta( $prefix . 'knowledge_vivabilitys' ); ?>
 			<?php if (!empty($knowledge_vivabilitys)) : ?>
 			<h6 class="text-action-1"><?= esc_html__( 'Vivability.s', 'wa-rsfp' ); ?></h6>
 			<?php foreach( $knowledge_vivabilitys as $knowledge_vivability) : ?>
