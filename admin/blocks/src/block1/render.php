@@ -624,10 +624,12 @@ foreach($terms_list as $terms_name) {
 			<h6 class="subline --text-action-1 mt-5">Rapports</h6>
 
 			<!-- Viability -->
+			d_knowledge_viabilitys
+			d_knowledge_viabilitys
 			<?php $knowledge_viabilitys = rwmb_meta( $prefix . 'knowledge_viabilitys' ); print_r(var_dump($knowledge_viabilitys)); ?>
 			<?php $_knowledge_viabilitys = rwmb_meta( $prefix . 'knowledge_viabilitys', array(), $post->ID); print_r(var_dump($_knowledge_viabilitys)); ?>
 
-			<?php $__knowledge_viabilitys = get_post_meta( $prefix . 'knowledge_viabilitys', $post->ID, true); print_r(var_dump($__knowledge_viabilitys)); ?>
+			<?php $__knowledge_viabilitys = get_post_meta( $post->ID, $prefix . 'knowledge_viabilitys', true); print_r(var_dump($__knowledge_viabilitys)); ?>
 
 			
 			<?php if (!empty($knowledge_viabilitys)) : ?>
