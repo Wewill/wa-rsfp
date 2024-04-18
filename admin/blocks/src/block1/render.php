@@ -54,7 +54,7 @@ foreach($terms_list as $terms_name) {
 						<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 610.4 584.5" id="map-france" class="text-light-action-1 --text-color-layout-2" width="100%" height="100%" fill="currentColor" aria-label="Map of france">
 							<style type="text/css">
 								.contour{stroke:var(--waff-action-1);stroke-width:1px;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-								.plain{stroke:#FFFFFF;stroke-width:1px;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;fill:#FFFFFF;}
+								.plain{stroke:var(--waff-action-1);stroke-width:1px;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;fill:#FFFFFF;}
 							</style>
 							<g class="contour">
 								<path
