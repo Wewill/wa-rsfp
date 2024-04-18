@@ -735,6 +735,7 @@ foreach($terms_list as $terms_name) {
 							.map-petals .cls-6.active { fill: #4565ad; }
 
 							.map-petals path {
+								fill: rgb(243, 235, 223);
 								stroke-width: 0px;
 							}
 							.map-petals path.active:hover {
