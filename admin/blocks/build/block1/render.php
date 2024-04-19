@@ -558,7 +558,7 @@ foreach($terms_list as $terms_name) {
 					<?php $identity_location = rwmb_meta( $prefix . 'identity_location' ); ?>
 					<?php if ($identity_location) : ?>
 					<div class="col d-flex align-items-center">
-						<i class="bi bi-bootstrap flex-shrink-0 me-3 h4"></i>
+						<i class="bi bi-geo-fill flex-shrink-0 me-3 h4"></i>
 						<div>
 						<h6 class="fw-bold"><?= esc_html__( 'Location', 'wa-rsfp' ); ?></h6>
 						<p class="lead mb-0 mb-md-4"><?= esc_html($identity_location); ?></p>
@@ -570,7 +570,7 @@ foreach($terms_list as $terms_name) {
 					<?php $identity_area = rwmb_meta( $prefix . 'identity_area' ); ?>
 					<?php if ($identity_area) : ?>
 					<div class="col d-flex align-items-center">
-						<i class="bi bi-bootstrap flex-shrink-0 me-3 h4"></i>
+						<i class="bi bi-arrows-fullscreen flex-shrink-0 me-3 h4"></i>
 						<div>
 						<h6 class="fw-bold"><?= esc_html__( 'Area (in ha)', 'wa-rsfp' ); ?></h6>
 						<p class="lead mb-0 mb-md-4"><?= esc_html($identity_area); ?></p>
@@ -582,7 +582,7 @@ foreach($terms_list as $terms_name) {
 					<?php $identity_number_of_people = rwmb_meta( $prefix . 'identity_number_of_people' ); ?>
 					<?php if ($identity_number_of_people) : ?>
 					<div class="col d-flex align-items-center">
-						<i class="bi bi-bootstrap flex-shrink-0 me-3 h4"></i>
+						<i class="bi bi-person-square flex-shrink-0 me-3 h4"></i>
 						<div>
 						<h6 class="fw-bold"><?= esc_html__( 'Number of people', 'wa-rsfp' ); ?></h6>
 						<p class="lead mb-0 mb-md-4"><?= esc_html($identity_number_of_people); ?></p>
@@ -594,7 +594,7 @@ foreach($terms_list as $terms_name) {
 					<?php $identity_livestock = rwmb_meta( $prefix . 'identity_livestock' ); ?>
 					<?php if ($identity_livestock) : ?>
 					<div class="col d-flex align-items-center">
-						<i class="bi bi-bootstrap flex-shrink-0 me-3 h4"></i>
+						<i class="bi bi-clipboard flex-shrink-0 me-3 h4"></i>
 						<div>
 						<h6 class="fw-bold"><?= esc_html__( 'Livestock', 'wa-rsfp' ); ?></h6>
 						<p class="lead mb-0 mb-md-4"><?= esc_html($identity_livestock); ?></p>
@@ -608,7 +608,7 @@ foreach($terms_list as $terms_name) {
 					$identity_labels = rwmb_meta( $prefix . 'identity_label' ); ?>
 					<?php if ($identity_labels) : ?>
 					<div class="col d-flex align-items-center">
-						<i class="bi bi-bootstrap flex-shrink-0 me-3 h4"></i>
+						<i class="bi bi-bookmarks flex-shrink-0 me-3 h4"></i>
 						<div>
 						<h6 class="fw-bold"><?= esc_html__( 'Label', 'wa-rsfp' ); ?></h6>
 						<ul class="ps-4 list-group list-group-flush">
@@ -628,7 +628,7 @@ foreach($terms_list as $terms_name) {
 					<?php $identity_commercializations = rwmb_meta( $prefix . 'identity_commercializations' ); ?>
 					<?php if ($identity_commercializations) : ?>
 					<div class="col d-flex align-items-center">
-						<i class="bi bi-bootstrap flex-shrink-0 me-3 h4"></i>
+						<i class="bi bi-shop-window flex-shrink-0 me-3 h4"></i>
 						<div>
 						<h6 class="fw-bold"><?= esc_html__( 'Commercialization', 'wa-rsfp' ); ?></h6>
 						<?php foreach( $identity_commercializations as $identity_commercialization) : ?>
