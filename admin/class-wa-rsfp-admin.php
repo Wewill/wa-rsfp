@@ -216,7 +216,7 @@ class Wa_Rsfp_Admin {
 		// After init hooks
 		register_post_types();
 		register_taxonomies();
-		register_custom_meta_fields();
+		//register_custom_meta_fields();
 		//add_action( 'rwmb_meta_boxes', 'register_custom_meta_fields', 5);
 
 		// @TODO REMOVE ? 
