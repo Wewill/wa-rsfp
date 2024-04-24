@@ -325,7 +325,7 @@ function directory_fields( $meta_boxes ) {
 		'post_types' => ['directory'],
 		'fields'     => [
 			[
-				'name'            => __( 'Open to stage', 'wa-rsfp' ),
+				'name'            => __( 'Open to stage ?', 'wa-rsfp' ),
 				'id'              => $prefix . 'stage_opentostage',
 				'type'            => 'checkbox_list',
 				'options'         => [
