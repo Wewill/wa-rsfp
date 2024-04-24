@@ -237,6 +237,15 @@ class Wa_Rsfp_Admin {
 		$this->load_dependencies();
 		$this->run_dependencies();
 	}
+
+	/**
+	 * Init fields
+	 *
+	 * @since    1.5.0
+	 */
+	// public function init_fields() {
+	// 	register_custom_meta_fields();
+	// }
 	
 	/**
 	 * Init admin
