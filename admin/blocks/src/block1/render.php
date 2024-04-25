@@ -883,15 +883,13 @@ foreach($terms_list as $terms_name) {
 			<!-- Begin: Video row -->
 			<div class="row row-cols-sm-2 row-cols-lg-3 mt-2 mb-6 g-4">
 				<?php foreach ( $d_medias_files as $d_medias_file ) : ?>
-					<a class="col" href="javascript:;">
-						<figure class="wp-block-video position-relative d-flex flex-center" id="<?= $d_medias_file['ID'] ?>" data-fancybox="gallery" data-loader="pic" data-src="<?= $d_medias_file['src'] ?>">
-							<img src="https://placehold.co/600x600" class="img-fluid rounded-4 fit-image w-100"/>
-							<video class="position-absolute top-0 start-0 h-100 img-fluid rounded-4 h-300-px fit-image w-100 img-transition-scale" autoplay loop muted playsinline src="<?= $d_medias_file['src']; ?>"><!-- poster="<?= $d_medias_video['image']['src']; ?>" --></video>
-							<?php if ( $d_medias_file['alt'] || $d_medias_file['description'] ) : ?>
+					<a class="col rounded-4 bg-action-3 w-100-px h-100-px d-flex flex-center" href="<?= esc_html($d_medias_file['url']); ?>" target="_blank">
+						<i class="bi bi-file-earmark-arrow-down h2 m-0"></i>
+						<?php if ( $d_medias_file['alt'] || $d_medias_file['description'] ) : ?>
 							<figcaption><strong>© <?= esc_html($d_medias_file['alt']); ?></strong> <?= esc_html($d_medias_file['description']); ?></figcaption>
-							<?php endif; /* If captions */ ?>
-						</figure>
+						<?php endif; /* If captions */ ?>
 					</a>
+					<!-- <?= esc_html($d_medias_file['name']); ?> -->
 				<?php endforeach ?>
 			</div>
 			<!-- End: Video row -->
@@ -1195,28 +1193,68 @@ foreach($terms_list as $terms_name) {
 			$f_more_biography 			= rwmb_meta( $f_prefix . 'more_biography', array(), $relationships_farm_post_id); 
 			$f_transmission_farm_in_transmission = rwmb_meta( $f_prefix . 'transmission_farm_in_transmission', array(), $relationships_farm_post_id); 
 
+			if ( has_post_thumbnail($relationships_farm_post_id) ) { 
+				$f_featured_img_id     		= get_post_thumbnail_id($relationships_farm_post_id);
+				$f_featured_img_url_full 	= get_the_post_thumbnail_url($relationships_farm_post_id);
+				foreach (array( 'thumbnail', 'post-featured-image-s', 'post-featured-image-m' ) as $size) {
+					$f_featured_img_url = wp_get_attachment_image_src( $f_featured_img_id, $size ); // OK
+					$f_featured_img_urls[$size] = ( !empty($f_featured_img_url[0]) )?$f_featured_img_url[0]:$f_featured_img_url_full; 
+				}
+				$f_alt = get_post_meta ( get_post_thumbnail_id(), '_wp_attachment_image_alt', true );
+				$f_featured_img_caption = wp_get_attachment_caption($f_featured_img_id); // ADD WIL                    
+				$f_thumb_img = get_post( $f_featured_img_id ); // Get post by ID
+				$f_featured_img_description =  $f_thumb_img->post_content; // Display Description
+			}
+	
 			?>
 			<div class="bg-color-layout my-6 me-n5 p-5 rounded-start-4">
-				<div class="d-flex align-items-center justify-content-between me-n5">
+				<div class="d-flex align-items-top justify-content-between me-n5">
 					<!-- Head -->
 					<?php if ($f_general_legal_entity || $f_more_testimony || $f_more_biography) : ?>
 						<div class="pe-3">
 							<h1 class="heading-1 mt-4 lh-xs">“</h1>
-							<?php if ($f_general_farmers) 	printf('<p class="lead fw-bold"><strong>%s</strong></p>', implode(', ', $f_general_farmers)); ?>
-							<?php if ($f_more_testimony) 	printf('<p class="lead">%s</p>', WaffTwo\Core\waff_do_markdown($f_more_testimony)); ?>
+							<?php if ($f_general_farmers) 	printf('<p class="lead fw-bold mb-3"><strong>%s</strong></p>', implode(', ', $f_general_farmers)); ?>
+							<?php if ($f_more_testimony) 	printf('<p class="lead mb-3">%s</p>', WaffTwo\Core\waff_do_markdown($f_more_testimony)); ?>
 							<?php if ($f_more_biography) 	printf('<p class="">%s</p>', WaffTwo\Core\waff_do_markdown($f_more_biography)); ?>
 						</div>
 
-						<div class="mt-n12">
-							<figure class="" id="2">
-								<picture class="lazy" data-fancybox="gallery" data-loader="pic" data-src="https://placehold.co/1600x800?text=1600x800(2)">
-								<data-src media="(max-width: 576px)"
-								srcset="https://placehold.co/1200x1200/FF0000/808080?text=1200x1200@2 2x,
-										https://placehold.co/600x600/AA0000/808080?text=600x600" type="image/jpeg"></data-src>
-								<data-img src="https://placehold.co/600x600" alt="Lorem ipsum" class="img-fluid rounded-start-4 h-200-px w-200-px fit-image --w-100 img-transition-scale" style=""></data-img>
-								</picture>
-								<figcaption>This is a Lazy loaded image</figcaption>
-							</figure>
+						<div class="w-600-px">
+							<div class="mt-n8">
+								<!-- <figure class="" id="2">
+									<picture class="lazy" data-fancybox="gallery" data-loader="pic" data-src="https://placehold.co/1600x800?text=1600x800(2)">
+									<data-src media="(max-width: 576px)"
+									srcset="https://placehold.co/1200x1200/FF0000/808080?text=1200x1200@2 2x,
+											https://placehold.co/600x600/AA0000/808080?text=600x600" type="image/jpeg"></data-src>
+									<data-img src="https://placehold.co/600x600" alt="Lorem ipsum" class="img-fluid rounded-start-4 h-200-px w-200-px fit-image --w-100 img-transition-scale" style=""></data-img>
+									</picture>
+									<figcaption>This is a Lazy loaded image</figcaption>
+								</figure>
+ -->
+
+								<!-- Farm Featured image -->  
+								<?php if (!empty($f_featured_img_urls)): ?>
+									<figure title="<?php echo esc_attr($f_featured_img_description); ?>">
+										<picture class="--contrast--light overflow-hidden h-100 lazy" data-aos="fade-up" data-aos-delay="200">
+										<!-- 3800x1200 > 1900x600 -->
+										<data-src media="(min-width: 990px)"
+												srcset="<?= $f_featured_img_urls['post-featured-image-m']; ?>" type="image/jpeg"></data-src>
+										<data-src media="(min-width: 380px)"
+												srcset="<?= $f_featured_img_urls['post-featured-image-s']; ?>" type="image/jpeg"></data-src>
+										<data-img src="<?= $f_featured_img_urls['thumbnail']; ?>" alt="<?= esc_html($f_featured_img_caption); ?>" class="img-fluid rounded-start-4 h-200-px w-200-px fit-image --w-100 --img-transition-scale"></data-img>
+										</picture>
+										<?php if ( $f_featured_img_caption || $f_featured_img_description ) : ?>
+										<figcaption><strong>© <?= esc_html($f_featured_img_caption); ?></strong> <?= esc_html($f_featured_img_description); ?></figcaption>
+										<?php endif; /* If captions */ ?>
+										<!--
+										Sizes :
+										<?php print_r($f_featured_img_urls); ?>  
+										-->
+									</figure>
+								<?php endif; ?>
+
+
+
+								</div>
 							</div>
 						</div>
 
@@ -1227,37 +1265,41 @@ foreach($terms_list as $terms_name) {
 					<!-- Line 1 -->
 					<div class="d-flex align-items-center justify-content-center mt-3 text-action-1">
 
-					<div class="d-flex align-items-center flex-fill w-50">
-						<i class="bi bi-chat-left flex-shrink-0 me-3 h2"></i>
-						<div>
-							<h6 class="fw-bold text-action-1">Adresse</h6>
-							<?php if ($f_title) printf('<p class="mb-0 lead"><strong>%s</strong></p>', $f_title); ?>
-							<?php if ($f_general_legal_entity) printf('<p class="mb-0"><strong>%s</strong></p>', $f_general_legal_entity); ?>
-							<?php if (!empty($f_general_address)) foreach ($f_general_address as $address) printf('<p class="mb-0">%s</p>', WaffTwo\Core\waff_implode_nonempty('<br/>', $address)); ?>
+						<div class="d-flex align-items-center flex-fill w-50">
+							<i class="bi bi-chat-left flex-shrink-0 me-3 h2"></i>
+							<div>
+								<?php if (!empty($f_general_address)) printf('<h6 class="fw-bold text-action-1">%s</h6>', __('Adresse', 'wa-rsfp')); ?>
+								<?php if ($f_title) printf('<p class="mb-0 lead"><strong>%s</strong></p>', $f_title); ?>
+								<?php if ($f_general_legal_entity) printf('<p class="mb-0"><strong>%s</strong></p>', $f_general_legal_entity); ?>
+								<?php if (!empty($f_general_address)) foreach ($f_general_address as $address) printf('<p class="mb-0">%s</p>', WaffTwo\Core\waff_implode_nonempty('<br/>', $address)); ?>
+							</div>
 						</div>
-					</div>
 
-					<div class="d-flex align-items-center justify-content-center px-5">
-						<span class="bullet bullet-v bullet-action-1 ml-0"></span>
-					</div>
-
-					<div class="d-flex align-items-center flex-fill w-50">
-						<!-- <i class="bi bi-bootstrap flex-shrink-0 me-3 h2"></i> -->
-						<div>
-							<h6 class="fw-bold text-action-1">Contact</h6>
-							<?php if ($f_general_emails) foreach ($f_general_emails as $email) printf('<p class="mb-0 lead"><strong>%s</strong></p>',  $email); ?>
-							<?php if ($f_general_phones) printf('<p class="mb-0 lead">%s</p>', implode('<br/>', $f_general_phones)); ?>
+						<?php if ($f_general_emails || $f_general_phones): ?>
+						<div class="d-flex align-items-center justify-content-center px-5">
+							<span class="bullet bullet-v bullet-action-1 ml-0"></span>
 						</div>
-					</div>
+
+						<div class="d-flex align-items-center flex-fill w-50">
+							<!-- <i class="bi bi-bootstrap flex-shrink-0 me-3 h2"></i> -->
+							<div>
+								<h6 class="fw-bold text-action-1"><?= __('Contact', 'wa-rsfp'); ?></h6>
+								<?php if ($f_general_emails) foreach ($f_general_emails as $email) printf('<p class="mb-0 lead"><strong>%s</strong></p>',  $email); ?>
+								<?php if ($f_general_phones) printf('<p class="mb-0 lead">%s</p>', implode('<br/>', $f_general_phones)); ?>
+							</div>
+						</div>
+						<?php endif; ?>
+
 					</div>
 					<!-- Line 2 -->
 					<div class="d-flex align-items-center justify-content-center mt-3 text-action-1">
 
+						<?php if ($f_general_links): ?>
 						<div class="d-flex align-items-center flex-fill w-50">
 							<i class="bi bi-share flex-shrink-0 me-3 h2"></i>
 							<div>
-								<h6 class="fw-bold text-action-1">Liens</h6>
-								<?php if ($f_general_links) printf('<p class="mb-0 lead">%s</p>', implode('<br/>',$f_general_links)); ?>
+								<h6 class="fw-bold text-action-1"><?= __('Links', 'wa-rsfp'); ?></h6>
+								<?php printf('<p class="mb-0 lead">%s</p>', implode('<br/>',$f_general_links)); ?>
 							</div>
 						</div>
 
@@ -1265,6 +1307,7 @@ foreach($terms_list as $terms_name) {
 						<div class="d-flex align-items-center justify-content-center px-5">
 							<span class="bullet bullet-v bullet-action-1 ml-0"></span>
 						</div>
+						<?php endif; ?>
 
 						<button type="button" class="btn btn-action-1 btn-transition-scale mt-4 flex-fill  w-50">Prendre contact</span></button>
 
