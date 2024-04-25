@@ -297,7 +297,7 @@ function directory_fields( $meta_boxes ) {
                 'id'         => $prefix . 'knowledge_installation_period',
                 'type'       => 'textarea',
                 //'limit'      => 100,
-                'rows'       => 5,
+                'rows'       => 15,
                 'class' => 'enable-markdown',
                 'label_description' => __( '<span class="label">INFO</span> Fill with simple text', 'wa-rsfp' ) ,
                 'desc' => __( '<span class="label">TIPS</span> Markdown is available : *italic* (Command + b) **bold** (Command + i) ***label*** (Command + Shift + L) #small# (Command + Shift + S) ##huge## (Command + Shift + H).', 'wa-rsfp' ),
