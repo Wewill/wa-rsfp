@@ -626,6 +626,7 @@ foreach($terms_list as $terms_name) {
 
 					<!-- Commercialization -->
 					<?php $identity_commercializations = rwmb_meta( $prefix . 'identity_commercializations' ); ?>
+					<?php $identity_commercializations = get_post_meta( $post->ID, $prefix . 'identity_commercializations', true ); ?>			
 					<?php if ($identity_commercializations) : ?>
 					<div class="col d-flex align-items-center">
 						<i class="bi bi-shop-window flex-shrink-0 me-3 h4"></i>
@@ -782,11 +783,11 @@ foreach($terms_list as $terms_name) {
           </div>
 
 			<!-- -->
-			<h6 class="subline --text-action-1 mt-5">Rapports</h6>
+			<h6 class="subline --text-action-1 mt-5"><?= esc_html__( 'Report.s', 'wa-rsfp' ); ?></h6>
 
 			<!-- Viability -->
 			<?php $knowledge_viabilitys = rwmb_meta( $prefix . 'knowledge_viabilitys' ); ?>
-			<?php $knowledge_vivabilitys = get_post_meta( $post->ID, $prefix . 'knowledge_viabilitys', true ); ?>			
+			<?php $knowledge_viabilitys = get_post_meta( $post->ID, $prefix . 'knowledge_viabilitys', true ); ?>			
 			<?php if (!empty($knowledge_viabilitys)) : ?>
 			<h6 class="text-action-1"><?= esc_html__( 'Viability.s', 'wa-rsfp' ); ?></h6>
 			<?php foreach( $knowledge_viabilitys as $knowledge_viability) : ?>
@@ -806,6 +807,7 @@ foreach($terms_list as $terms_name) {
 
 			<!-- Skill -->
 			<?php $knowledge_skills = rwmb_meta( $prefix . 'knowledge_skills' ); ?>
+			<?php $knowledge_skills = get_post_meta( $post->ID, $prefix . 'knowledge_skills', true ); ?>			
 			<?php if (!empty($knowledge_skills)) : ?>
 			<h6 class="text-action-1"><?= esc_html__( 'Skill.s', 'wa-rsfp' ); ?></h6>
 			<?php foreach( $knowledge_skills as $knowledge_skill) : ?>
