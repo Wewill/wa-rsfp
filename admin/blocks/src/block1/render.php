@@ -1069,7 +1069,7 @@ foreach($terms_list as $terms_name) {
 		<div class="bottom-sticky p-4 p-lg-5 bg-color-layout rounded-end-4 rounded-top-right-0">
 
 			<div>
-				<h6 class="subline --text-action-1">><?= /*translators:Contactez votre structure d'accompagnement local */ __('Contact your local support structure', 'wa-rsfp'); ?></h6>
+				<h6 class="subline --text-action-1"><?= /*translators:Contactez votre structure d'accompagnement local */ __('Contact your local support structure', 'wa-rsfp'); ?></h6>
 
 				<!-- Featured image -->  
 				<?php if (!empty($s_featured_img_urls)): ?>
@@ -1307,7 +1307,7 @@ foreach($terms_list as $terms_name) {
 						</div>
 						<?php endif; ?>
 
-						<button type="button" class="btn btn-action-1 btn-transition-scale mt-4 flex-fill  w-50">><?= __('Contact us', 'wa-rsfp'); ?></span></button>
+						<button type="button" class="btn btn-action-1 btn-transition-scale mt-4 flex-fill  w-50"><?= __('Contact us', 'wa-rsfp'); ?></span></button>
 
 					</div>
 					<!-- End: Contacts -->
