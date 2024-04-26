@@ -546,7 +546,7 @@ foreach($terms_list as $terms_name) {
 			<div class="col-lg overflow-hidden bg-color-layout p-4 p-lg-5 rounded-bottom-4 rounded-bottom-left-0" data-aos="fade-left" data-aos-delay="100">
 
 				<div class="w-100 d-flex align-items-center justify-content-between">
-					<h6 class="subline text-action-1">Carte d'identité</h6>
+					<h6 class="subline text-action-1"><?= /*translators:Carte d'identité */ __('Identity', 'wa-rsfp'); ?></h6>
 					<div>
 						<?= ( isset($meta_output['production']) ) ? $meta_output['production'] : '' ?>
 					</div>
@@ -660,7 +660,7 @@ foreach($terms_list as $terms_name) {
 
           <div class="row row-cols-1 row-cols-md-2">
             <div class="col">
-              <h6 class="subline --text-action-1">Répartition</h6>
+              <h6 class="subline --text-action-1"><?= /*translators:Répartition */ __('Diagram', 'wa-rsfp'); ?></h6>
 
 			  <?php $knowledge_diagrams = rwmb_meta( $prefix . 'knowledge_diagrams' );
 			  if (!empty($knowledge_diagrams)): ?>
@@ -717,7 +717,7 @@ foreach($terms_list as $terms_name) {
 
             </div>
             <div class="col">
-				<h6 class="subline --text-action-1">Compétition</h6>
+				<h6 class="subline --text-action-1"><?= /*translators:Competition */ __('Competition', 'wa-rsfp'); ?></h6>
 
 				<section class="map-petals">
 						<!-- Voir method BS https://css-tricks.com/svg-sprites-use-better-icon-fonts/ -->
@@ -825,7 +825,7 @@ foreach($terms_list as $terms_name) {
 			<!-- Gallery -->
 			<?php $medias_gallery = rwmb_meta( $prefix . 'medias_gallery', ['size' => 'thumbnail'] ); ?>
 			<?php if (!empty($medias_gallery)): ?>
-			<h6 class="subline --text-action-1 mt-5">Galerie</h6>
+			<h6 class="subline --text-action-1 mt-5"><?= /*translators:Galerie */ __('Gallery', 'wa-rsfp'); ?></h6>
 			<!-- Begin: Gallery row -->
 			<div class="row row-cols-sm-2 row-cols-lg-3 mt-2 mb-6 g-4">
 				<?php foreach ( $medias_gallery as $image ) : ?>
@@ -850,7 +850,7 @@ foreach($terms_list as $terms_name) {
 			<?php $d_medias_videos 					= rwmb_meta( $prefix . 'medias_video', array(), $post->ID); ?>
 			<?php $d_medias_video_links 			= rwmb_meta( $prefix . 'medias_video_link', array(), $post->ID); ?>
 			<?php if (!empty($d_medias_videos) || !empty($d_medias_video_links)): ?>
-			<h6 class="subline --text-action-1 mt-5">Vidéo</h6>
+			<h6 class="subline --text-action-1 mt-5"><?= /*translators:Vidéo */ __('Video', 'wa-rsfp'); ?></h6>
 			<!-- Begin: Video row -->
 			<div class="row row-cols-sm-2 row-cols-lg-3 mt-2 mb-6 g-4">
 				<?php foreach ( $d_medias_videos as $d_medias_video ) : ?>
@@ -879,7 +879,7 @@ foreach($terms_list as $terms_name) {
 			<!-- Files -->
 			<?php $d_medias_files 					= rwmb_meta( $prefix . 'medias_files', array(), $post->ID); ?>
 			<?php if (!empty($d_medias_files)): ?>
-			<h6 class="subline --text-action-1 mt-5">Fichiers</h6>
+			<h6 class="subline --text-action-1 mt-5"><?= /*translators:Files */ __('Files', 'wa-rsfp'); ?></h6>
 			<!-- Begin: Video row -->
 			<div class="row row-cols-sm-2 row-cols-lg-3 mt-2 mb-6 g-4">
 				<?php foreach ( $d_medias_files as $d_medias_file ) : ?>
@@ -965,7 +965,7 @@ foreach($terms_list as $terms_name) {
 				<?php endforeach; ?>
 			</div>
 
-			<h6 class="subline --text-action-1">Avec le soutien opérationnel de...</h6>
+			<h6 class="subline --text-action-1"><?= /*translators:Avec le soutien opérationnel de... */ __('With the operational support of...', 'wa-rsfp'); ?></h6>
 
 			<!-- Featured image -->  
 			<?php if (!empty($o_featured_img_urls)): ?>
@@ -1029,7 +1029,7 @@ foreach($terms_list as $terms_name) {
 				</div>
 				<div>
 					<!-- <button type="button" class="btn btn-color-light btn-transition-scale">Prendre contact</span></button> -->
-					<button type="button" class="btn btn-inverse-action-2 btn-transition-scale">Prendre contact</span></button>
+					<button type="button" class="btn btn-inverse-action-2 btn-transition-scale"><?= __('Contact us', 'wa-rsfp'); ?></span></button>
 				</div>
 			</div>
 		</div>
@@ -1069,7 +1069,7 @@ foreach($terms_list as $terms_name) {
 		<div class="bottom-sticky p-4 p-lg-5 bg-color-layout rounded-end-4 rounded-top-right-0">
 
 			<div>
-				<h6 class="subline --text-action-1">Contactez votre structure d'accompagnement local</h6>
+				<h6 class="subline --text-action-1">><?= /*translators:Contactez votre structure d'accompagnement local */ __('Contact your local support structure', 'wa-rsfp'); ?></h6>
 
 				<!-- Featured image -->  
 				<?php if (!empty($s_featured_img_urls)): ?>
@@ -1157,7 +1157,7 @@ foreach($terms_list as $terms_name) {
 	  <?php $knowledge_acquisitions = rwmb_meta( $prefix . 'knowledge_acquisitions' ); ?>
 	  <?php if (!empty($knowledge_acquisitions)) : ?>
       <div class="my-6 mb-10">
-		<h6 class="subline --text-action-1">Parcours</h6>
+		<h6 class="subline --text-action-1"><?= __('Acquisition', 'wa-rsfp'); ?></h6>
 
 		<span class="bullet bullet-line bullet-action-2 mt-5"></span>
 		<div class="d-flex justify-content-between mb-5">
@@ -1307,7 +1307,7 @@ foreach($terms_list as $terms_name) {
 						</div>
 						<?php endif; ?>
 
-						<button type="button" class="btn btn-action-1 btn-transition-scale mt-4 flex-fill  w-50">Prendre contact</span></button>
+						<button type="button" class="btn btn-action-1 btn-transition-scale mt-4 flex-fill  w-50">><?= __('Contact us', 'wa-rsfp'); ?></span></button>
 
 					</div>
 					<!-- End: Contacts -->
@@ -1330,7 +1330,7 @@ foreach($terms_list as $terms_name) {
 
             <i class="bi bi-arrow-left-short h1 text-transparent-action-2 p-4 mt-4"></i>
             <div>
-              <h6 class="subline text-transparent-action-2 text-start">Savoir-faire précédent</h6>
+              <h6 class="subline text-transparent-action-2 text-start">><?= __('Previous knowledge', 'wa-rsfp'); ?></h6>
               <div class="card my-2 border-0">
                 <div class="row g-0 align-items-center">
                   <div class="col-md-3 order-first">
@@ -1361,7 +1361,7 @@ foreach($terms_list as $terms_name) {
             <div class="col d-flex align-items-center">
 
               <div>
-                <h6 class="subline text-transparent-action-2 text-end">Savoir-faire suivant</h6>
+                <h6 class="subline text-transparent-action-2 text-end"><?= __('?ext knowledge', 'wa-rsfp'); ?></h6>
                 <div class="card my-2 border-0">
                   <div class="row g-0 align-items-center">
                     <div class="col-md-3 order-last">
