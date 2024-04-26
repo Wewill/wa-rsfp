@@ -1211,14 +1211,14 @@ foreach($terms_list as $terms_name) {
 				<div class="d-flex align-items-top justify-content-between me-n5">
 					<!-- Head -->
 					<?php if ($f_general_legal_entity || $f_more_testimony || $f_more_biography) : ?>
-						<div class="pe-3">
+						<div class="pe-3 flex-fill">
 							<h1 class="heading-1 mt-4 lh-xs">“</h1>
 							<?php if ($f_general_farmers) 	printf('<p class="lead fw-bold mb-3"><strong>%s</strong></p>', implode(', ', $f_general_farmers)); ?>
 							<?php if ($f_more_testimony) 	printf('<p class="lead mb-3">%s</p>', WaffTwo\Core\waff_do_markdown($f_more_testimony)); ?>
 							<?php if ($f_more_biography) 	printf('<p class="">%s</p>', WaffTwo\Core\waff_do_markdown($f_more_biography)); ?>
 						</div>
 
-						<div class="w-600-px">
+						<div class="min-w-200-px">
 							<div class="mt-n8">
 								<!-- <figure class="" id="2">
 									<picture class="lazy" data-fancybox="gallery" data-loader="pic" data-src="https://placehold.co/1600x800?text=1600x800(2)">
@@ -1252,8 +1252,6 @@ foreach($terms_list as $terms_name) {
 									</figure>
 								<?php endif; ?>
 
-
-
 								</div>
 							</div>
 						</div>
@@ -1270,7 +1268,7 @@ foreach($terms_list as $terms_name) {
 							<div>
 								<?php if (!empty($f_general_address)) printf('<h6 class="fw-bold text-action-1">%s</h6>', __('Adresse', 'wa-rsfp')); ?>
 								<?php if ($f_title) printf('<p class="mb-0 lead"><strong>%s</strong></p>', $f_title); ?>
-								<?php if ($f_general_legal_entity) printf('<p class="mb-0"><strong>%s</strong></p>', $f_general_legal_entity); ?>
+								<?php if ($f_general_legal_entity && $f_title != $f_general_legal_entity) printf('<p class="mb-0"><strong>%s</strong></p>', $f_general_legal_entity); ?>
 								<?php if (!empty($f_general_address)) foreach ($f_general_address as $address) printf('<p class="mb-0">%s</p>', WaffTwo\Core\waff_implode_nonempty('<br/>', $address)); ?>
 							</div>
 						</div>
