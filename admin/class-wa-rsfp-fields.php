@@ -1006,6 +1006,13 @@ function thematic_fields( $meta_boxes ) {
                 'max_file_uploads' => 1,
 				'label_description' => __( '<span class="label">INFO</span> Choose an image as featured image', 'wa-rsfp' ),
             ],
+            [
+                'name'             => __( 'Color', 'wa-rsfp' ),
+                'id'               => $prefix . 'general_color',
+                'type'             => 'color',
+				'label_description' => __( '<span class="label">INFO</span> Choose an color', 'wa-rsfp' ),
+            ],
+
         ],
     ];
 
