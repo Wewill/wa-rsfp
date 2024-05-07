@@ -123,7 +123,7 @@ function get_author_post_type_counts() {
 
 /*
 --------------
-directory
+* Post : directory
 */
 
 
@@ -183,7 +183,7 @@ function directory_manage_columns($column_name, $post_id) {
 
 /*
 --------------
-farm
+* Post : farm
 */
 
 // manage_edit-{$post_type}_columns
@@ -238,7 +238,7 @@ function farm_manage_columns($column_name, $post_id) {
 
 /*
 --------------
-structure
+* Post : structure
 */
 
 // manage_edit-{$post_type}_columns
@@ -288,7 +288,7 @@ function structure_manage_columns($column_name, $post_id) {
 
 /*
 --------------
-operation
+* Post : operation
 */
 
 // manage_edit-{$post_type}_columns
@@ -338,7 +338,7 @@ function operation_manage_columns($column_name, $post_id) {
 
 /*
 --------------
-partner
+* Post : partner
 */
 
 // manage_edit-{$post_type}_columns
@@ -392,9 +392,8 @@ function partner_manage_columns($column_name, $post_id) {
  * Taxonomy : production
  */
 
-add_filter( 'manage_edit-production_columns', 'taxs_columns' ) ;
-add_filter( 'manage_edit-thematic_columns', 'taxs_columns' ) ;
-function taxs_columns( $columns ) {
+add_filter( 'manage_edit-production_columns', 'taxs_production_columns' ) ;
+function taxs_production_columns( $columns ) {
 	//$columns['p_general_image'] = __( 'Image', 'wa-rsfp');
 
 	$newcols = array();
@@ -408,16 +407,50 @@ function taxs_columns( $columns ) {
 
 	//return $columns;
 }
+
+add_filter( 'manage_edit-thematic_columns', 'taxs_thematic_columns' ) ;
+function taxs_thematic_columns( $columns ) {
+	//$columns['p_general_image'] = __( 'Image', 'wa-rsfp');
+
+	$newcols = array();
+	foreach($columns as $col_key => $col_title) {
+		print( $col_key );
+		if ($col_key=='name') // Put the Thumbnail column before the Title column
+			$newcols['t_general_image'] = __('<span class="dashicons-before dashicons-visibility" style="color:silver;"></span>', 'wa-rsfp');
+			if ($col_key=='description') // Put the Thumbnail column before the Desc. column
+			$newcols['t_general_color'] = __('Color', 'wa-rsfp');
+		$newcols[$col_key] = $col_title;
+	}
+	return $newcols;
+
+	//return $columns;
+}
+
  // manage_{$taxonomy}_custom_column
-add_filter("manage_production_custom_column", 'taxs_manage_columns', 10, 3);
-add_filter("manage_thematic_custom_column", 'taxs_manage_columns', 10, 3);
-function taxs_manage_columns($out, $column_name, $term_id) {
+add_filter("manage_production_custom_column", 'taxs_manage_production_columns', 10, 3);
+function taxs_manage_production_columns($out, $column_name, $term_id) {
+	$out = '';
     switch ($column_name) {
 		case 'p_general_image' :
-			$out = '';
 			get_image_fromid(get_term_meta( $term_id, $column_name, true));			
 			break;
         default:
+            break;
+    }
+    return $out;    
+}
+
+add_filter("manage_thematic_custom_column", 'taxs_manage_thematic_columns', 10, 3);
+function taxs_manage_thematic_columns($out, $column_name, $term_id) {
+	$out = '';
+    switch ($column_name) {
+		case 't_general_image' :
+			get_image_fromid(get_term_meta( $term_id, $column_name, true));			
+			break;
+		case 't_general_color' :
+			get_color(get_term_meta( $term_id, $column_name, true));			
+			break;
+			default:
             break;
     }
     return $out;    
@@ -576,6 +609,14 @@ function get_code($fd) {
 		echo __( '<span style="color:silver;">—</span>' ); // marker.png
 	else
 		printf( __( '<code>%s</code>' ), $fd );
+}
+
+// Get code 
+function get_color($fd) {
+	if ( empty( $fd ) )
+		echo __( '<span style="color:silver;">—</span>' ); // marker.png
+	else
+		printf( __( '<div style="background-color:%s;border:1px solid #bababa;width:20px;height:20px;"></span>' ), $fd );
 }
 
 // Get Image 
