@@ -15,6 +15,12 @@ foreach($terms_list as $terms_name) {
 
 	$terms = wp_get_post_terms( $post->ID, $terms_name);
 
+	// Filter terms to return only top-level terms
+	if ( $terms_name === 'thematic')
+	$terms = array_filter($terms, function($term) {
+		return $term->parent === 0;
+	});
+
 	if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) {
 		foreach ( $terms as $term ) {
 			$term_link = get_term_link( $term );
