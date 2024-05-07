@@ -19,14 +19,15 @@ foreach($terms_list as $terms_name) {
 		foreach ( $terms as $term ) {
 			$term_link = get_term_link( $term );
 			if ( ! is_wp_error( $term_link ) ) {
-				if ($terms_name === 'thematic') { 	$thematics[] = $term->slug; }
+				if ($terms_name === 'thematic') { $t_general_color = get_term_meta($term->term_id, 't_general_color', true); $thematics[] = $term->slug; }
 				if ($terms_name === 'geography') { 	$geographys[] = get_term_meta($term->term_id, 'g_special_code', true); }
 				$meta_output[$terms_name] .= sprintf(
-					'<div class="%s-list d-inline %s"><a href="%s" class="%s-item --link-disabled">%s</a></div>',
+					'<div class="%s-list d-inline %s"><a href="%s" class="%s-item --link-disabled" %s>%s</a></div>',
 					$terms_name,
 					$terms_name === 'geography'?'inverse-list':'',
 					esc_url( $term_link ),
 					$terms_name,
+					$terms_name === 'thematic'?'style="background-color:'.$t_general_color.';border-color:'.$t_general_color.';"':'',
 					esc_html( sanitize_text_field($term->name) )
 				);
 			}
