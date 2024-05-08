@@ -724,7 +724,7 @@ foreach($terms_list as $terms_name) {
 
             </div>
             <div class="col">
-				<h6 class="subline --text-action-1"><?= /*translators:Competition */ __('Competition', 'wa-rsfp'); ?></h6>
+				<h6 class="subline --text-action-1"><?= /*translators:Thematiques */ __('Thematics', 'wa-rsfp'); ?></h6>
 
 				<section class="map-petals">
 						<!-- Voir method BS https://css-tricks.com/svg-sprites-use-better-icon-fonts/ -->
