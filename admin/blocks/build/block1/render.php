@@ -1170,7 +1170,7 @@ foreach($terms_list as $terms_name) {
 		<div class="d-flex justify-content-between mb-5">
 				<!-- Acquisitions -->
 				<?php foreach( $knowledge_acquisitions as $i=>$knowledge_acquisition ) : ?>
-				<div data-aos="flip-down" data-aos-delay="<?= $i*200 ?>">
+				<div class="me-2 flex-equal" data-aos="flip-down" data-aos-delay="<?= $i*200 ?>">
 					<span class="bullet bullet-v bullet-action-2 mb-3"></span>
 					<h6 class="fw-bold text-action-1"><?= esc_html($knowledge_acquisition[0]); ?></h6>
 					<h6 class="fw-medium"><?= esc_html($knowledge_acquisition[1]); ?></h6>
