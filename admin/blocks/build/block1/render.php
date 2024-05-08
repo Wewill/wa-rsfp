@@ -673,15 +673,16 @@ foreach($terms_list as $terms_name) {
 			  if (!empty($knowledge_diagrams)): ?>
               <canvas id="pieChart"></canvas>
               <!-- Specific theme : Chart.js-->
-              <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+              <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"></script>
               <script>
                   const ctx = document.getElementById('pieChart');
+				  const desc = <?= json_encode(array_column($knowledge_diagrams, 1)) ?>;
                   new Chart(ctx, {
                     type: 'doughnut',
                     data: {
                       labels: <?= json_encode(array_column($knowledge_diagrams, 0)) ?>,
                       datasets: [{
-                        label: 'Pourcentage',
+                        label: '%',
                         data:  <?= json_encode(array_column($knowledge_diagrams, 2)) ?>,
                         backgroundColor: [
                           'rgb(255, 100, 75)',
@@ -710,8 +711,25 @@ foreach($terms_list as $terms_name) {
                         },
                         tooltip: {
                             backgroundColor: 'rgb(255, 100, 75)',
-                            titleFont:  { family: "TT Wellingtons", weight: "bold" },
-                            bodyFont:  { family: "TT Wellingtons" }
+                            titleFont:  { family: "TT Wellingtons", weight: "normal" },
+                            bodyFont:  { family: "TT Wellingtons" },
+                            footerFont:  { family: "TT Wellingtons", weight: "bold" },
+							callbacks: {
+								 // Empty string for body to hide it
+								 beforeBody: function() {
+                return '';
+              },
+              label: function() {
+                return '';
+              },
+              afterBody: function() {
+                return '';
+              },
+								footer: function(context) {
+									console.log(context[0].dataIndex)
+									return desc[context[0].dataIndex];
+								},
+							},
                           }
                         }
                       }
