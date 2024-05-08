@@ -981,7 +981,7 @@ foreach($terms_list as $terms_name) {
 						<picture class="lazy" data-fancybox="gallery" data-loader="pic" data-src="<?= $image['full_url'] ?>">
 							<data-src media="(min-width: 150px)" srcset="<?= $image['sizes']['large']['url']; ?>" type="image/jpeg"></data-src>
 							<data-src media="(min-width: 150px)" srcset="<?= $image['sizes']['medium']['url']; ?>" type="image/jpeg"></data-src>
-							<data-img src="<?= $image['url']; ?>" alt="<?= esc_html($image['alt']); ?>" class="img-fluid --rounded-4 rounded-top-4 rounded-top-left-0 --shadow-lg h-300-px fit-image w-100 bg-light" style="" title="<?= $image['title']; ?>"></data-img>
+							<data-img src="<?= $image['url']; ?>" alt="<?= esc_html($image['alt']); ?>" class="img-fluid --rounded-4 rounded-top-4 rounded-top-left-0 --shadow-lg h-300-px fit-image w-100" style="" title="<?= $image['title']; ?>"></data-img>
 						</picture>
 						<?php if ( $image['alt'] || $image['description'] ) : ?>
 						<figcaption><strong>© <?= esc_html($image['alt']); ?></strong> <?= esc_html($image['description']); ?></figcaption>
@@ -1003,7 +1003,7 @@ foreach($terms_list as $terms_name) {
 									srcset="<?= $o_featured_img_urls['post-featured-image-m']; ?>" type="image/jpeg"></data-src>
 							<data-src media="(min-width: 380px)"
 									srcset="<?= $o_featured_img_urls['post-featured-image-s']; ?>" type="image/jpeg"></data-src>
-							<data-img src="<?= $o_featured_img_urls['thumbnail']; ?>" alt="<?= esc_html($o_featured_img_caption); ?>" class="img-fluid rounded-4 shadow-lg --h-300-px fit-image w-100 img-transition-scale"></data-img>
+							<data-img src="<?= $o_featured_img_urls['thumbnail']; ?>" alt="<?= esc_html($o_featured_img_caption); ?>" class="img-fluid rounded-4 shadow-lg --h-300-px fit-image w-100 img-transition-scale bg-light"></data-img>
 							</picture>
 							<?php if ( $o_featured_img_caption || $o_featured_img_description ) : ?>
 							<figcaption><strong>© <?= esc_html($o_featured_img_caption); ?></strong> <?= esc_html($o_featured_img_description); ?></figcaption>
