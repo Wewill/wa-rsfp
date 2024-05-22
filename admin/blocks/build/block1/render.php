@@ -1313,7 +1313,7 @@ $d_stage_opentovisit 				= rwmb_meta( $prefix . 'stage_opentovisit', $post->ID);
 												srcset="<?= $f_featured_img_urls['post-featured-image-m']; ?>" type="image/jpeg"></data-src>
 										<data-src media="(min-width: 380px)"
 												srcset="<?= $f_featured_img_urls['post-featured-image-s']; ?>" type="image/jpeg"></data-src>
-										<data-img src="<?= $f_featured_img_urls['thumbnail']; ?>" alt="<?= esc_html($f_featured_img_caption); ?>" class="img-fluid rounded-start-4 h-200-px w-200-px fit-image --w-100 --img-transition-scale"></data-img>
+										<data-img src="<?= $f_featured_img_urls['thumbnail']; ?>" alt="<?= esc_html($f_featured_img_caption); ?>" class="img-fluid rounded-start-4 h-200-px w-200-px fit-image --w-100 --img-transition-scale bg-light"></data-img>
 										</picture>
 										<?php if ( $f_featured_img_caption || $f_featured_img_description ) : ?>
 										<figcaption><strong>© <?= esc_html($f_featured_img_caption); ?></strong> <?= esc_html($f_featured_img_description); ?></figcaption>
