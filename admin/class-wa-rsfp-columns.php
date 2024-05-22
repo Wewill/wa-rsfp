@@ -85,19 +85,19 @@ function get_author_post_type_counts() {
     global $wpdb;
     global $wp_post_types;
     $sql = <<<SQL
-	SELECT
-	post_type,
-	post_author,
-	COUNT(*) AS post_count
-	FROM
-	{$wpdb->posts}
-	WHERE 1=1
-	AND post_type NOT IN ('revision','nav_menu_item', 'oembed_cache')
-	AND post_status IN ('publish','pending')
-	GROUP BY
-	post_type,
-	post_author
-	SQL;
+SELECT
+post_type,
+post_author,
+COUNT(*) AS post_count
+FROM
+{$wpdb->posts}
+WHERE 1=1
+AND post_type NOT IN ('revision','nav_menu_item', 'oembed_cache')
+AND post_status IN ('publish','pending')
+GROUP BY
+post_type,
+post_author
+SQL;
     $posts = $wpdb->get_results($sql);
     foreach($posts as $post) {
 	    $post_type_object = $wp_post_types[$post_type = $post->post_type];
@@ -540,21 +540,21 @@ function get_belongs($post_type, $post_id) {
     
 	$meta_key = 'd_relationships_' . $post_type;
     $sql = <<<SQL
-	SELECT
-	wp_postmeta.meta_key,
-	wp_postmeta.meta_value,
-	wp_postmeta.post_id,
-	wp_posts.ID,
-	wp_posts.post_title
-	FROM
-	wp_postmeta,
-	wp_posts
-	WHERE
-	wp_postmeta.meta_key LIKE '{$meta_key}'
-	AND wp_postmeta.meta_value = {$post_id}
-	AND wp_posts.ID = wp_postmeta.post_id
-	AND wp_posts.post_status IN ('publish','pending')
-	SQL;
+SELECT
+$wpdb->postmeta.meta_key,
+$wpdb->postmeta.meta_value,
+$wpdb->postmeta.post_id,
+$wpdb->posts.ID,
+$wpdb->posts.post_title
+FROM
+$wpdb->postmeta,
+$wpdb->posts
+WHERE
+$wpdb->postmeta.meta_key LIKE '{$meta_key}'
+AND $wpdb->postmeta.meta_value = {$post_id}
+AND $wpdb->posts.ID = $wpdb->postmeta.post_id
+AND $wpdb->posts.post_status IN ('publish','pending')
+SQL;
     
     $posts = $wpdb->get_results($sql);
     foreach($posts as $post) {
