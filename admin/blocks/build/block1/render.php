@@ -41,6 +41,14 @@ foreach($terms_list as $terms_name) {
 	}
 }
 
+$_d_stage_opentostage   			= rwmb_get_field_settings( $prefix . 'stage_opentostage' );
+$options_d_stage_opentostage 		= $_d_stage_opentostage['options'];
+$d_stage_opentostage 				= rwmb_meta( $prefix . 'stage_opentostage', $post->ID); // Array ( [0] => visite_libre [1] => visite_collective )
+
+$_d_stage_opentovisit  				= rwmb_get_field_settings( $prefix . 'stage_opentovisit' );
+$options_d_stage_opentovisit 		= $_d_stage_opentovisit['options'];
+$d_stage_opentovisit 				= rwmb_meta( $prefix . 'stage_opentovisit', $post->ID); // Array ( [0] => visite_libre [1] => visite_collective )
+
 ?>
 
 <!-- Begin: Directory block -->
@@ -1145,7 +1153,7 @@ foreach($terms_list as $terms_name) {
 		<!-- End: Structures -->
 
         <!-- Begin: CTA -->
-        <div class="d-flex align-items-center justify-content-center mx-4 mx-md-0 p-3 py-md-4 px-md-5 bg-body rounded-4 shadow mt-6">
+        <!-- <div class="d-flex align-items-center justify-content-center mx-4 mx-md-0 p-3 py-md-4 px-md-5 bg-body rounded-4 shadow mt-6">
           <div class="d-md-flex d-inline-block align-items-center px-1 px-md-0">
             <i class="bi bi-bootstrap flex-shrink-0 me-3 h2 text-action-1"></i>
             <div>
@@ -1165,7 +1173,47 @@ foreach($terms_list as $terms_name) {
               <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             </div>
           </div>
-        </div>
+        </div> -->
+
+        <div class="d-flex align-items-center justify-content-center mx-4 mx-md-0 p-3 py-md-4 px-md-5 bg-body rounded-4 rounded-left-0 shadow mt-6">
+			<?php if (!empty($d_stage_opentovisit)): ?>
+			<div class="d-md-flex d-inline-block align-items-center">
+				<i class="bi bi-house-heart flex-shrink-0 me-3 h2 text-action-1"></i>
+				<div>
+				<h6 class="fw-bold text-action-1"><?= esc_html__( 'Visit farm', 'waff' ); ?></h6>
+				<p class="mb-0"><span class="visually-hidden"><?= esc_html__( 'Farm is open to visit :', 'waff' ); ?></span><?= WaffTwo\Core\waff_implode_options(', ', $d_stage_opentovisit, $options_d_stage_opentovisit); ?></p>
+				<button type="button" class="btn btn-action-1 btn-transition-scale mt-4 flex-fill w-100">Lien vers form #todo</span></button>
+				</div>
+			</div>
+			<div class="d-none d-md-flex align-items-center justify-content-center px-5">
+				<span class="bullet bullet-action-2 ms-0"></span>
+			</div>
+			<?php endif; ?>
+
+			<?php if (!empty($d_stage_opentostage)): ?>
+			<div class="d-md-flex d-inline-block align-items-center">
+				<i class="bi bi-highlighter flex-shrink-0 me-3 h2 text-action-1"></i>
+				<div>
+				<h6 class="fw-bold text-action-1"><?= esc_html__( 'Open to stage', 'waff' ); ?></h6>
+				<p class="mb-0"><span class="visually-hidden"><?= esc_html__( 'Farm is open to stage :', 'waff' ); ?></span><?= WaffTwo\Core\waff_implode_options(', ', $d_stage_opentostage, $options_d_stage_opentostage); ?></p>
+				<button type="button" class="btn btn-action-1 btn-transition-scale mt-4 flex-fill w-100">Lien vers form #todo</span></button>
+				</div>
+			</div>
+			<!-- <div class="d-none d-md-flex align-items-center justify-content-center px-5">
+				<span class="bullet bullet-action-2 ms-0"></span>
+			</div> -->
+			<?php endif; ?>
+
+			<!-- <div class="d-md-flex d-inline-block align-items-center">
+				<i class="bi bi-cloud-arrow-down flex-shrink-0 me-3 h2"></i>
+				<div>
+				<h6 class="fw-bold --text-action-1"><?= esc_html__( 'Download', 'waff' ); ?></h6>
+				<p class="mb-0"><span class="badge bg-action-2">Bientôt disponible...</span></p>
+				</div>
+			</div> -->
+		</div>
+
+
         <!-- End: CTA -->
 
       </div>
