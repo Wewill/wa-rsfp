@@ -908,7 +908,7 @@ foreach($terms_list as $terms_name) {
 			<!-- Begin: Video row -->
 			<div class="row row-cols-sm-2 row-cols-lg-3 mt-2 mb-6 g-4">
 				<?php foreach ( $d_medias_files as $d_medias_file ) : ?>
-					<a class="col rounded-4 bg-action-3 w-100-px h-100-px d-flex flex-center" href="<?= esc_html($d_medias_file['url']); ?>" target="_blank">
+					<a class="col mx-3 rounded-4 bg-action-3 w-100-px h-100-px d-flex flex-center" href="<?= esc_html($d_medias_file['url']); ?>" target="_blank">
 						<i class="bi bi-file-earmark-arrow-down h2 m-0"></i>
 						<?php if ( $d_medias_file['alt'] || $d_medias_file['description'] ) : ?>
 							<figcaption><strong>© <?= esc_html($d_medias_file['alt']); ?></strong> <?= esc_html($d_medias_file['description']); ?></figcaption>
