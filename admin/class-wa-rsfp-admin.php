@@ -273,8 +273,31 @@ class Wa_Rsfp_Admin {
 		function rsfp_directory_allowed_block_types( $allowed_blocks, $editor_context ) {
 			if ( isset( $editor_context->post ) && $editor_context->post->post_type === 'directory' ) {
 				return array(
-					'core/heading',
-					'core/paragraph', // Remplacez ceci par l'identifiant du bloc que vous souhaitez autoriser
+					'core/image', 
+					'core/heading', 
+					'core/paragraph', 
+					'core/list', 
+					'core/quote', 
+					'core/pullquote', 
+					'core/block', 
+					'core/button', 
+					'core/buttons', 
+					'core/column', 
+					'core/columns', 
+					'core/table', 
+					'core/text-columns', 
+					//
+					'coblocks/accordion',
+					'coblocks/accordion-item',
+					'coblocks/alert',
+					'coblocks/counter',
+					'coblocks/column',
+					'coblocks/row',
+					'coblocks/dynamic-separator',
+					'coblocks/logos',
+					'coblocks/icon',
+					'coblocks/buttons',			
+					// Remplacez ceci par l'identifiant du bloc que vous souhaitez autoriser
 					// Ajoutez d'autres identifiants de blocs au besoin
 					'directory/wa-rsfp-directory-block',
 				);

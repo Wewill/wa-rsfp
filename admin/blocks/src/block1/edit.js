@@ -156,7 +156,32 @@ export default function Edit( {
 
 
 	// Define the allowed blocks and default template structure
-	const ALLOWED_BLOCKS = ['core/image', 'core/heading', 'core/paragraph'];
+	const ALLOWED_BLOCKS = [
+		'core/image', 
+		'core/heading', 
+		'core/paragraph', 
+		'core/list', 
+		'core/quote', 
+		'core/pullquote', 
+		'core/block', 
+		'core/button', 
+		'core/buttons', 
+		'core/column', 
+		'core/columns', 
+		'core/table', 
+		'core/text-columns', 
+		//
+		'coblocks/accordion',
+		'coblocks/accordion-item',
+		'coblocks/alert',
+		'coblocks/counter',
+		'coblocks/column',
+		'coblocks/row',
+		'coblocks/dynamic-separator',
+		'coblocks/logos',
+		'coblocks/icon',
+		'coblocks/buttons',
+	];
 	const TEMPLATE = [
 		['core/paragraph', { placeholder: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.' }], // Add a paragraph block
 		['core/image', {}], // Add an image block
