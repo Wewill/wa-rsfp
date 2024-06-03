@@ -49,6 +49,18 @@ $_d_stage_opentovisit  				= rwmb_get_field_settings( $prefix . 'stage_opentovis
 $options_d_stage_opentovisit 		= $_d_stage_opentovisit['options'];
 $d_stage_opentovisit 				= rwmb_meta( $prefix . 'stage_opentovisit', $post->ID); // Array ( [0] => visite_libre [1] => visite_collective )
 
+/* Contact form link */
+$contact_slug = "contact";
+$contact_page_object = get_page_by_path( $contact_slug );
+$contact_permalink = get_permalink( $contact_page_object->ID );
+
+// Get the previous post in the same category
+$previous_post = get_adjacent_post(true, '', true, 'thematic');
+
+// Get the next post in the same category
+$next_post = get_adjacent_post(true, '', false, 'thematic');
+
+
 ?>
 
 <!-- Begin: Directory block -->
@@ -1062,7 +1074,7 @@ $d_stage_opentovisit 				= rwmb_meta( $prefix . 'stage_opentovisit', $post->ID);
 				</div>
 				<div>
 					<!-- <button type="button" class="btn btn-color-light btn-transition-scale">Prendre contact</span></button> -->
-					<button type="button" class="btn btn-inverse-action-2 btn-transition-scale"><?= __('Contact us', 'wa-rsfp'); ?></span></button>
+					<a class="btn btn-inverse-action-2 btn-transition-scale" href="<?= add_query_arg(array('form_type' => 'operation', 'ID' => $relationships_operation_post_id),$contact_permalink) ?>"><?= __('Contact us', 'wa-rsfp'); ?></a>
 				</div>
 			</div>
 		</div>
@@ -1145,7 +1157,7 @@ $d_stage_opentovisit 				= rwmb_meta( $prefix . 'stage_opentovisit', $post->ID);
 				</div>
 				<div>
 					<!-- <button type="button" class="btn btn-color-light btn-transition-scale">Prendre contact</span></button> -->
-					<button type="button" class="btn btn-inverse-action-2 btn-transition-scale">Prendre contact</span></button>
+					<a class="btn btn-inverse-action-2 btn-transition-scale" href="<?= esc_url(add_query_arg(array('form_type' => 'structure', 'ID' => $relationships_structure_post_id),$contact_permalink)) ?>">Prendre contact</a>
 				</div>
 			</div>
         </div>
@@ -1175,43 +1187,45 @@ $d_stage_opentovisit 				= rwmb_meta( $prefix . 'stage_opentovisit', $post->ID);
           </div>
         </div> -->
 
-        <div class="d-flex align-items-center justify-content-center mx-4 mx-md-0 p-3 py-md-4 px-md-5 bg-body rounded-4 rounded-left-0 shadow mt-6">
-			<?php if (!empty($d_stage_opentovisit)): ?>
-			<div class="d-md-flex d-inline-block align-items-center">
-				<i class="bi bi-house-heart flex-shrink-0 me-3 h2 text-action-1"></i>
-				<div>
-				<h6 class="fw-bold text-action-1"><?= esc_html__( 'Visit farm', 'waff' ); ?></h6>
-				<p class="mb-0"><span class="visually-hidden"><?= esc_html__( 'Farm is open to visit :', 'waff' ); ?></span><?= WaffTwo\Core\waff_implode_options(', ', $d_stage_opentovisit, $options_d_stage_opentovisit); ?></p>
-				<button type="button" class="btn btn-action-1 btn-transition-scale mt-4 flex-fill w-100">Lien vers form #todo</span></button>
+		<?php if (!empty($d_stage_opentovisit) || !empty($d_stage_opentostage)) { ?>
+			<div class="d-flex align-items-center justify-content-center mx-4 mx-md-0 p-3 py-md-4 px-md-5 bg-body rounded-4 rounded-left-0 shadow mt-6">
+				<?php if (!empty($d_stage_opentovisit)): ?>
+				<div class="d-md-flex d-inline-block align-items-center">
+					<i class="bi bi-house-heart flex-shrink-0 me-3 h2 text-action-1"></i>
+					<div>
+					<h6 class="fw-bold text-action-1"><?= esc_html__( 'Visit farm', 'waff' ); ?></h6>
+					<p class="mb-0"><span class="visually-hidden"><?= esc_html__( 'Farm is open to visit :', 'waff' ); ?></span><?= WaffTwo\Core\waff_implode_options(', ', $d_stage_opentovisit, $options_d_stage_opentovisit); ?></p>
+					<a class="btn btn-action-1 btn-transition-scale mt-4 flex-fill w-100" href="<?= esc_url(add_query_arg(array('form_type' => 'visit', 'ID' => $post->ID),$contact_permalink)) ?>"><?= esc_html__( 'Book a visit', 'waff' ); ?></a>
+					</div>
 				</div>
-			</div>
-			<div class="d-none d-md-flex align-items-center justify-content-center px-5">
-				<span class="bullet bullet-action-2 ms-0"></span>
-			</div>
-			<?php endif; ?>
+				<div class="d-none d-md-flex align-items-center justify-content-center px-5">
+					<span class="bullet bullet-action-2 ms-0"></span>
+				</div>
+				<?php endif; ?>
 
-			<?php if (!empty($d_stage_opentostage)): ?>
-			<div class="d-md-flex d-inline-block align-items-center">
-				<i class="bi bi-highlighter flex-shrink-0 me-3 h2 text-action-1"></i>
-				<div>
-				<h6 class="fw-bold text-action-1"><?= esc_html__( 'Open to stage', 'waff' ); ?></h6>
-				<p class="mb-0"><span class="visually-hidden"><?= esc_html__( 'Farm is open to stage :', 'waff' ); ?></span><?= WaffTwo\Core\waff_implode_options(', ', $d_stage_opentostage, $options_d_stage_opentostage); ?></p>
-				<button type="button" class="btn btn-action-1 btn-transition-scale mt-4 flex-fill w-100">Lien vers form #todo</span></button>
+				<?php if (!empty($d_stage_opentostage)): ?>
+				<div class="d-md-flex d-inline-block align-items-center">
+					<i class="bi bi-highlighter flex-shrink-0 me-3 h2 text-action-1"></i>
+					<div>
+					<h6 class="fw-bold text-action-1"><?= esc_html__( 'Open to stage', 'waff' ); ?></h6>
+					<p class="mb-0"><span class="visually-hidden"><?= esc_html__( 'Farm is open to stage :', 'waff' ); ?></span><?= WaffTwo\Core\waff_implode_options(', ', $d_stage_opentostage, $options_d_stage_opentostage); ?></p>
+					<a class="btn btn-action-1 btn-transition-scale mt-4 flex-fill w-100" href="<?= esc_url(add_query_arg(array('form_type' => 'stage', 'ID' => $post->ID),$contact_permalink)) ?>"><?= esc_html__( 'Apply to a stage', 'waff' ); ?></a>
+					</div>
 				</div>
-			</div>
-			<!-- <div class="d-none d-md-flex align-items-center justify-content-center px-5">
-				<span class="bullet bullet-action-2 ms-0"></span>
-			</div> -->
-			<?php endif; ?>
+				<!-- <div class="d-none d-md-flex align-items-center justify-content-center px-5">
+					<span class="bullet bullet-action-2 ms-0"></span>
+				</div> -->
+				<?php endif; ?>
 
-			<!-- <div class="d-md-flex d-inline-block align-items-center">
-				<i class="bi bi-cloud-arrow-down flex-shrink-0 me-3 h2"></i>
-				<div>
-				<h6 class="fw-bold --text-action-1"><?= esc_html__( 'Download', 'waff' ); ?></h6>
-				<p class="mb-0"><span class="badge bg-action-2">Bientôt disponible...</span></p>
-				</div>
-			</div> -->
-		</div>
+				<!-- <div class="d-md-flex d-inline-block align-items-center">
+					<i class="bi bi-cloud-arrow-down flex-shrink-0 me-3 h2"></i>
+					<div>
+					<h6 class="fw-bold --text-action-1"><?= esc_html__( 'Download', 'waff' ); ?></h6>
+					<p class="mb-0"><span class="badge bg-action-2">Bientôt disponible...</span></p>
+					</div>
+				</div> -->
+			</div>
+		<?php } ?>
 
 
         <!-- End: CTA -->
@@ -1380,7 +1394,7 @@ $d_stage_opentovisit 				= rwmb_meta( $prefix . 'stage_opentovisit', $post->ID);
 						</div>
 						<?php endif; ?>
 
-						<button type="button" class="btn btn-action-1 btn-transition-scale mt-4 flex-fill  w-50"><?= __('Contact us', 'wa-rsfp'); ?></span></button>
+						<a class="btn btn-action-1 btn-transition-scale mt-4 flex-fill  w-50" href="<?= add_query_arg(array('form_type' => 'farmer', 'ID' => $relationships_farm_post_id),$contact_permalink) ?>"><?= __('Contact us', 'wa-rsfp'); ?></a>
 
 					</div>
 					<!-- End: Contacts -->
@@ -1395,73 +1409,105 @@ $d_stage_opentovisit 				= rwmb_meta( $prefix . 'stage_opentovisit', $post->ID);
 	<!-- End  -->
 
     <!-- #navigation -->
-    <section id="navigation" class="mt-10 mb-10 contrast--light">
-      <div class="container-fluid g-0 p-0">
+	<?php if ( is_a( $previous_post, 'WP_Post' ) || is_a( $next_post, 'WP_Post' ) ) {  ?>
+		<section id="navigation" class="mt-10 mb-10 contrast--light">
+			<div class="container-fluid g-0 p-0">
+				<div class="row row-cols-1 row-cols-md-3 mt-4 mb-4">
 
-        <div class="row row-cols-1 row-cols-md-3 mt-4 mb-4">
-          <div class="col d-flex align-items-center">
+					<?php if ( is_a( $previous_post, 'WP_Post' ) ) : ?>
+					<div class="col d-flex align-items-center">
+						<a href="<?= esc_url(get_permalink($previous_post)) ?>"><i class="bi bi-arrow-left-short h1 text-transparent-action-2 p-4 mt-4"></i></a>
+						<div>
+							<h6 class="subline text-transparent-action-2 text-start"><?= __('Previous knowledge', 'wa-rsfp'); ?></h6>
 
-            <i class="bi bi-arrow-left-short h1 text-transparent-action-2 p-4 mt-4"></i>
-            <div>
-              <h6 class="subline text-transparent-action-2 text-start">><?= __('Previous knowledge', 'wa-rsfp'); ?></h6>
-              <div class="card my-2 border-0">
-                <div class="row g-0 align-items-center">
-                  <div class="col-md-3 order-first">
-                  <img src="https://placehold.co/300x300" class="img-fluid rounded-4">
-                  </div>
-                  <div class="col-md-9">
-                  <div class="card-body">
-                    <!-- <div class="category-list d-inline-block"><a class="category-item" tabindex="-1">Long-métrage</a></div>
-                    <div class="type-list d-inline-block"><a class="type-item" tabindex="-1">Long-métrage</a></div> -->
-                    <div class="production-list d-inline-block"><a class="production-item" tabindex="-1">Production</a></div>
-                    <div class="thematic-list d-inline-block"><a class="thematic-item" tabindex="-1">Thématique</a></div>
-                    <div class="geography-list d-inline-block"><a class="geography-item" tabindex="-1">Geography</a></div>
+							<?php // Get directory card content
+							$previous_post_media_url 				= get_the_post_thumbnail_url( $previous_post, 'medium' );
+							$previous_post_media_thumbnail_url		= get_the_post_thumbnail_url( $previous_post, 'thumbnail' );
+							$previous_post_image = $previous_post_media_thumbnail_url ? '<div class="d-flex flex-center rounded-4 bg-color-layout overflow-hidden"><img decoding="async" src="'.$previous_post_media_thumbnail_url.'" class="img-fluid fit-image rounded-4 img-transition-scale --h-100-px --w-100-px"></div>' : '<div class="d-flex flex-center rounded-4 bg-color-layout"><img decoding="async" src="https://placehold.co/300x300/white/white" class="img-fluid fit-image rounded-4 img-transition-scale --h-100-px --w-100-px op-0"><i class="position-absolute bi bi-image text-action-3"></i></div>';
+							$previous_post_last_updated =  __('Last update') . " " . human_time_diff(get_post_time('U', $previous_post), current_time('timestamp')) . " " . __('ago');
 
-                    <h5 class="card-title mt-2">Card title</h5>
-                    <p class="card-text fs-sm">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
-                    <!-- <p class="card-text mt-n2"><small class="text-body-secondary">Last updated 3 mins ago</small></p> -->
-                  </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+							printf('<div class="card my-2 border-0">
+									<div class="row g-0 align-items-center">
+										<div class="col-md-3 order-first">
+											%s
+										</div>
+										<div class="col-md-9">
+											<div class="card-body">', 
+								$previous_post_image
+							);
+							WaffTwo\waff_entry_meta_header($previous_post);
+							printf('
+												%s
+												<p class="card-text fs-sm mb-0">%s</p>
+												<p class="card-text --mt-n2"><small class="text-body-secondary">%s</small></p>
+											</div>
+										</div>
+									</div>
+									</div>', 
+								sprintf( '<h5 class="post__title entry-title card-title mt-2"><a href="%s" class="stretched-link" rel="bookmark">%s</a></h5>', 
+									esc_url(get_permalink($previous_post)), 
+									get_the_title( $previous_post )),
+								wp_trim_words(
+									get_the_excerpt($previous_post) != ''?get_the_excerpt($previous_post):get_post_meta( $previous_post, 'd_general_introduction', true ),
+									15,
+									' &hellip;'
+								),
+								$previous_post_last_updated
+							);?>
+						</div>
+					</div>
+					<?php endif; ?>
 
-          </div>
+					<div class="col"></div>
 
-            <div class="col">
+					<?php if ( is_a( $next_post, 'WP_Post' ) ) : ?>
+					<div class="col d-flex align-items-center">
+						<div>
+							<h6 class="subline text-transparent-action-2 text-end"><?= __('Next knowledge', 'wa-rsfp'); ?></h6>
 
-            </div>
-            <div class="col d-flex align-items-center">
+							<?php // Get directory card content
+							$next_post_media_url 				= get_the_post_thumbnail_url( $next_post, 'medium' );
+							$next_post_media_thumbnail_url		= get_the_post_thumbnail_url( $next_post, 'thumbnail' );
+							$next_post_image = $next_post_media_thumbnail_url ? '<div class="d-flex flex-center rounded-4 bg-color-layout overflow-hidden"><img decoding="async" src="'.$next_post_media_thumbnail_url.'" class="img-fluid fit-image rounded-4 img-transition-scale --h-100-px --w-100-px"></div>' : '<div class="d-flex flex-center rounded-4 bg-color-layout"><img decoding="async" src="https://placehold.co/300x300/white/white" class="img-fluid fit-image rounded-4 img-transition-scale --h-100-px --w-100-px op-0"><i class="position-absolute bi bi-image text-action-3"></i></div>';
+							$next_post_last_updated =  __('Last update') . " " . human_time_diff(get_post_time('U', $next_post), current_time('timestamp')) . " " . __('ago');
 
-              <div>
-                <h6 class="subline text-transparent-action-2 text-end"><?= __('?ext knowledge', 'wa-rsfp'); ?></h6>
-                <div class="card my-2 border-0">
-                  <div class="row g-0 align-items-center">
-                    <div class="col-md-3 order-last">
-                    <img src="https://placehold.co/300x300" class="img-fluid rounded-4">
-                    </div>
-                    <div class="col-md-9">
-                    <div class="card-body">
-                      <!-- <div class="category-list d-inline-block"><a class="category-item" tabindex="-1">Long-métrage</a></div>
-                      <div class="type-list d-inline-block"><a class="type-item" tabindex="-1">Long-métrage</a></div> -->
-                      <div class="production-list d-inline-block"><a class="production-item" tabindex="-1">Production</a></div>
-                      <div class="thematic-list d-inline-block"><a class="thematic-item" tabindex="-1">Thématique</a></div>
-                      <div class="geography-list d-inline-block"><a class="geography-item" tabindex="-1">Geography</a></div>
+							printf('<div class="card my-2 border-0">
+									<div class="row g-0 align-items-center">
+										<div class="col-md-3 order-first">
+											%s
+										</div>
+										<div class="col-md-9">
+											<div class="card-body">', 
+								$next_post_image
+							);
+							WaffTwo\waff_entry_meta_header($next_post);
+							printf('
+												%s
+												<p class="card-text fs-sm mb-0">%s</p>
+												<p class="card-text --mt-n2"><small class="text-body-secondary">%s</small></p>
+											</div>
+										</div>
+									</div>
+									</div>', 
+								sprintf( '<h5 class="post__title entry-title card-title mt-2"><a href="%s" class="stretched-link" rel="bookmark">%s</a></h5>', 
+									esc_url(get_permalink($next_post)), 
+									get_the_title( $next_post )),
+								wp_trim_words(
+									get_the_excerpt($next_post) != ''?get_the_excerpt($next_post):get_post_meta( $next_post, 'd_general_introduction', true ),
+									15,
+									' &hellip;'
+								),
+								$next_post_last_updated
+							);?>
+						</div>
+						<a href="<?= esc_url(get_permalink($next_post)) ?>"><i class="bi bi-arrow-right-short h1 text-transparent-action-2 p-4 mt-4"></i></a>
+					</div>
+					<?php endif; ?>
 
-                      <h5 class="card-title mt-2">Card title</h5>
-                      <p class="card-text fs-sm">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
-                      <!-- <p class="card-text mt-n2"><small class="text-body-secondary">Last updated 3 mins ago</small></p> -->
-                    </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <i class="bi bi-arrow-right-short h1 text-transparent-action-2 p-4 mt-4"></i>
-
-            </div>
-        </div>
-      </div>
-    </section>
+				</div>
+			</div>
+		</section>
+	<?php } ?>
 
   </div>
 </div>
