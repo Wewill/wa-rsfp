@@ -588,7 +588,7 @@ $next_post = get_adjacent_post(true, '', false, 'thematic');
 						<i class="bi bi-geo-fill flex-shrink-0 me-3 h4"></i>
 						<div>
 						<h6 class="fw-bold"><?= esc_html__( 'Location', 'wa-rsfp' ); ?></h6>
-						<p class="lead mb-0 mb-md-3"><?= esc_html($identity_location); ?></p>
+						<p class="--lead mb-0 mb-md-3"><?= esc_html($identity_location); ?></p>
 						</div>
 					</div>
 					<?php endif; ?>
@@ -600,7 +600,7 @@ $next_post = get_adjacent_post(true, '', false, 'thematic');
 						<i class="bi bi-arrows-fullscreen flex-shrink-0 me-3 h4"></i>
 						<div>
 						<h6 class="fw-bold"><?= esc_html__( 'Area (in ha)', 'wa-rsfp' ); ?></h6>
-						<p class="lead mb-0 mb-md-3"><?= esc_html($identity_area); ?></p>
+						<p class="--lead mb-0 mb-md-3"><?= esc_html($identity_area); ?></p>
 						</div>
 					</div>
 					<?php endif; ?>
@@ -612,7 +612,7 @@ $next_post = get_adjacent_post(true, '', false, 'thematic');
 						<i class="bi bi-person-square flex-shrink-0 me-3 h4"></i>
 						<div>
 						<h6 class="fw-bold"><?= esc_html__( 'Number of people', 'wa-rsfp' ); ?></h6>
-						<p class="lead mb-0 mb-md-3"><?= esc_html($identity_number_of_people); ?></p>
+						<p class="--lead mb-0 mb-md-3"><?= esc_html($identity_number_of_people); ?></p>
 						</div>
 					</div>
 					<?php endif; ?>
@@ -624,7 +624,7 @@ $next_post = get_adjacent_post(true, '', false, 'thematic');
 						<i class="bi bi-clipboard flex-shrink-0 me-3 h4"></i>
 						<div>
 						<h6 class="fw-bold"><?= esc_html__( 'Livestock', 'wa-rsfp' ); ?></h6>
-						<p class="lead mb-0 mb-md-3"><?= esc_html($identity_livestock); ?></p>
+						<p class="--lead mb-0 mb-md-3"><?= esc_html($identity_livestock); ?></p>
 						</div>
 					</div>
 					<?php endif; ?>
@@ -640,7 +640,7 @@ $next_post = get_adjacent_post(true, '', false, 'thematic');
 						<h6 class="fw-bold"><?= esc_html__( 'Label', 'wa-rsfp' ); ?></h6>
 						<ul class="ps-4 list-group list-group-flush">
 						<?php foreach( $identity_labels as $identity_label) : ?>
-						<li class="lead"><?= esc_html($options_identity_label[ $identity_label ]); ?></li>
+						<li class="--lead"><?= esc_html($options_identity_label[ $identity_label ]); ?></li>
 						<?php endforeach; ?>
 						</ul>
 						</div>
@@ -864,7 +864,7 @@ $next_post = get_adjacent_post(true, '', false, 'thematic');
 			<?php $knowledge_installation_period = rwmb_meta( $prefix . 'knowledge_installation_period' ); ?>
 			<?php if ($knowledge_installation_period) : ?>
 			<h6 class="text-action-1"><?= esc_html__( 'Installation period', 'wa-rsfp' ); ?></h6>
-			<p class="mb-0"><?= WaffTwo\Core\waff_do_markdown(esc_html($knowledge_installation_period)); ?></p>
+			<?= WaffTwo\Core\waff_sanitize_msword_content($knowledge_installation_period) ?></p>
 			<?php endif; ?>
 
 			<!-- Gallery -->
@@ -1054,7 +1054,7 @@ $next_post = get_adjacent_post(true, '', false, 'thematic');
 			</div> -->
 			
 			<div class="d-flex justify-content-between align-items-center">
-				<?php if ($o_title) 	printf('<h3 class="my-5">%s</h3>', esc_html($o_title)); ?>
+				<?php if ($o_title) 	printf('<h4 class="my-5">%s</h4>', esc_html($o_title)); ?>
 				<?= ( isset($o_meta_output) ) ? $o_meta_output : '' ?>
 			</div>
 			
@@ -1243,26 +1243,30 @@ $next_post = get_adjacent_post(true, '', false, 'thematic');
       <!-- Begin: Timeline-->
 	  <?php $knowledge_acquisitions = rwmb_meta( $prefix . 'knowledge_acquisitions' ); ?>
 	  <?php if (!empty($knowledge_acquisitions)) : ?>
-      <div class="my-6 mb-10">
-		<h6 class="subline --text-action-1"><?= __('Acquisition', 'wa-rsfp'); ?></h6>
+		<div class="my-6 mb-10">
+			<h6 class="subline --text-action-1"><?= __('Acquisition', 'wa-rsfp'); ?></h6>
 
-		<span class="bullet bullet-line bullet-action-2 mt-5"></span>
-		<div class="d-flex justify-content-between mb-5">
-				<!-- Acquisitions -->
-				<?php foreach( $knowledge_acquisitions as $i=>$knowledge_acquisition ) : ?>
-				<div class="me-2 flex-equal" data-aos="flip-down" data-aos-delay="<?= $i*200 ?>">
-					<span class="bullet bullet-v bullet-action-2 mb-3"></span>
-					<h6 class="fw-bold text-action-1"><?= esc_html($knowledge_acquisition[0]); ?></h6>
-					<h6 class="fw-medium"><?= esc_html($knowledge_acquisition[1]); ?></h6>
-				</div>
-				<?php endforeach; ?>
+			<span class="bullet bullet-line bullet-action-2 mt-5"></span>
+			<div class="d-flex justify-content-between mb-5">
+					<!-- Acquisitions -->
+					<?php foreach( $knowledge_acquisitions as $i=>$knowledge_acquisition ) : ?>
+					<div class="me-2 flex-equal" data-aos="flip-down" data-aos-delay="<?= $i*200 ?>">
+						<span class="bullet bullet-v bullet-action-2 mb-3"></span>
+						<h6 class="fw-bold text-action-1"><?= esc_html($knowledge_acquisition[0]); ?></h6>
+						<h6 class="fw-medium"><?= esc_html($knowledge_acquisition[1]); ?></h6>
+					</div>
+					<?php endforeach; ?>
+			</div>
 		</div>
-      </div>
 	  <?php endif; ?>
       <!-- End: Timeline-->
 
-			<!-- Begin: Farm contact bloc -->
-			<?php
+
+	  
+		<!-- Begin: Farm contact bloc -->
+		<?php
+		// Display farms if user is loggued 
+    	if (is_user_logged_in()) {
 			$relationships_farm_post_ids = rwmb_meta( $prefix . 'relationships_farm' ); 
 
 			foreach($relationships_farm_post_ids as $relationships_farm_post_id) : 
@@ -1292,7 +1296,7 @@ $next_post = get_adjacent_post(true, '', false, 'thematic');
 				$f_thumb_img = get_post( $f_featured_img_id ); // Get post by ID
 				$f_featured_img_description =  $f_thumb_img->post_content; // Display Description
 			}
-	
+
 			?>
 			<div class="bg-color-layout my-6 me-n5 p-5 rounded-start-4">
 				<div class="d-flex align-items-top justify-content-between me-n5">
@@ -1316,7 +1320,7 @@ $next_post = get_adjacent_post(true, '', false, 'thematic');
 									</picture>
 									<figcaption>This is a Lazy loaded image</figcaption>
 								</figure>
- -->
+	-->
 
 								<!-- Farm Featured image -->  
 								<?php if (!empty($f_featured_img_urls)): ?>
@@ -1353,7 +1357,7 @@ $next_post = get_adjacent_post(true, '', false, 'thematic');
 						<div class="d-flex align-items-center flex-fill w-50">
 							<i class="bi bi-chat-left flex-shrink-0 me-3 h2"></i>
 							<div>
-								<?php if (!empty($f_general_address)) printf('<h6 class="fw-bold text-action-1">%s</h6>', __('Adresse', 'wa-rsfp')); ?>
+								<?php if (!empty($f_general_address)) printf('<h6 class="fw-bold text-action-1 op-6">%s</h6>', __('Adresse', 'wa-rsfp')); ?>
 								<?php if ($f_title) printf('<p class="mb-0 lead"><strong>%s</strong></p>', $f_title); ?>
 								<?php if ($f_general_legal_entity && $f_title != $f_general_legal_entity) printf('<p class="mb-0"><strong>%s</strong></p>', $f_general_legal_entity); ?>
 								<?php if (!empty($f_general_address)) foreach ($f_general_address as $address) printf('<p class="mb-0">%s</p>', WaffTwo\Core\waff_implode_nonempty('<br/>', $address)); ?>
@@ -1361,6 +1365,7 @@ $next_post = get_adjacent_post(true, '', false, 'thematic');
 						</div>
 
 						<?php if ($f_general_emails || $f_general_phones): ?>
+						<!-- Bullet -->
 						<div class="d-flex align-items-center justify-content-center px-5">
 							<span class="bullet bullet-v bullet-action-1 ml-0"></span>
 						</div>
@@ -1368,9 +1373,9 @@ $next_post = get_adjacent_post(true, '', false, 'thematic');
 						<div class="d-flex align-items-center flex-fill w-50">
 							<!-- <i class="bi bi-bootstrap flex-shrink-0 me-3 h2"></i> -->
 							<div>
-								<h6 class="fw-bold text-action-1"><?= __('Contact', 'wa-rsfp'); ?></h6>
-								<?php if ($f_general_emails) foreach ($f_general_emails as $email) printf('<p class="mb-0 lead"><strong>%s</strong></p>',  $email); ?>
-								<?php if ($f_general_phones) printf('<p class="mb-0 lead">%s</p>', implode('<br/>', $f_general_phones)); ?>
+								<h6 class="fw-bold text-action-1 op-6"><?= __('Contact', 'wa-rsfp'); ?></h6>
+								<?php if ($f_general_emails) foreach ($f_general_emails as $email) printf('<p class="mb-0 --lead"><strong>%s</strong></p>',  $email); ?>
+								<?php if ($f_general_phones) printf('<p class="mb-0 --lead">%s</p>', implode('<br/>', $f_general_phones)); ?>
 							</div>
 						</div>
 						<?php endif; ?>
@@ -1383,8 +1388,12 @@ $next_post = get_adjacent_post(true, '', false, 'thematic');
 						<div class="d-flex align-items-center flex-fill w-50">
 							<i class="bi bi-share flex-shrink-0 me-3 h2"></i>
 							<div>
-								<h6 class="fw-bold text-action-1"><?= __('Links', 'wa-rsfp'); ?></h6>
-								<?php printf('<p class="mb-0 lead">%s</p>', implode('<br/>',$f_general_links)); ?>
+								<h6 class="fw-bold text-action-1 op-6"><?= __('Links', 'wa-rsfp'); ?></h6>
+								<?php 
+								foreach($f_general_links as $f_general_link) : 
+									printf('<p class="mb-0 --lead"><a class="text-action-1" href="%s" title="Visit %s">%s</></p>', $f_general_link, $f_title, str_replace(array('http://', 'https://'), '', $f_general_link));
+								endforeach; 
+								?>
 							</div>
 						</div>
 
@@ -1400,8 +1409,36 @@ $next_post = get_adjacent_post(true, '', false, 'thematic');
 					<!-- End: Contacts -->
 				</div>
 			</div>
-			<?php endforeach; ?>
-			<!-- End: Farm contact bloc -->
+			<?php endforeach; 
+		} else {
+			?>
+			<!-- User is not loggued -->
+			<div class="bg-color-layout my-6 me-n5 p-5 rounded-start-4">
+				<div class="d-flex align-items-top justify-content-between me-n5">
+					<!-- Begin: Log -->
+					<!-- Line 1 -->
+					<div class="d-flex align-items-center justify-content-center mt-3 text-action-1">
+						<div class="d-flex align-items-center flex-fill w-50">
+							<i class="bi bi bi-person-lock flex-shrink-0 me-3 h2"></i>
+							<div>
+								<h6 class="fw-bold text-action-1">Inscrivez-vous / connectez-vous au répertoire pour découvrir les coordonnées</h6>
+								<p class="mb-0">Lorem ipsum dolor sit amet</p>																<p class="mb-0"></p>							</div>
+							</div>		
+						</div>				
+					</div>
+					<!-- Line 2 -->
+					<div class="d-flex align-items-center justify-content-center">
+						<a class="btn btn-action-1 btn-transition-scale mt-4 flex-fill --w-50 me-2" href="#">Je m'inscris</a>
+						<a class="btn btn-action-2 btn-transition-scale mt-4 flex-fill --w-50 ms-2" href="#">Je me connecte</a>
+					</div>
+					<!-- End: Log -->
+				</div>
+			</div>
+
+			<?php
+		}
+		?>
+		<!-- End: Farm contact bloc -->
 
 		</div>
 		<!-- End: Body -->
