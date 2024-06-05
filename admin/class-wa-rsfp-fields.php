@@ -57,7 +57,7 @@ function directory_fields( $meta_boxes ) {
                 'id'         => $prefix . 'general_introduction',
                 'type'       => 'textarea',
                 // 'required'   => true,
-                'limit'      => 600,
+                'limit'      => 350,
                 'rows'       => 5,
                 'class' => 'enable-markdown',
 				'label_description' => __( '<span class="label">INFO</span> Fill with simple text', 'wa-rsfp' ),
