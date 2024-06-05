@@ -1072,7 +1072,7 @@ $next_post = get_adjacent_post(true, '', false, 'thematic');
 					<?php if (!empty($o_general_emails)) printf('<p class="mb-0">%s</p>', WaffTwo\Core\waff_implode_nonempty('<br/>', $o_general_emails)); ?>
 					<?php 
 					foreach($o_general_links as $o_general_link) : 
-						printf('<p class="mb-0 --lead"><a class="text-action-1" href="%s" title="Visit %s">%s</></p>', $o_general_link, $o_title, str_replace(array('http://', 'https://'), '', $o_general_link));
+						printf('<p class="mb-0 --lead"><a class="--text-action-1" href="%s" title="Visit %s">%s</></p>', $o_general_link, $o_title, str_replace(array('http://', 'https://'), '', $o_general_link));
 					endforeach; 
 					?>
 				</div>
