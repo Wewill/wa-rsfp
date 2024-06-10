@@ -201,6 +201,8 @@ class Wa_Rsfp_Admin {
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-wa-rsfp-filters.php';
 		// Manage admin general notices
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-wa-rsfp-notices.php';
+		// Add shortcodes
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-wa-rsfp-shortcodes.php';
 	}
 
 	/**
