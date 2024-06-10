@@ -38,6 +38,7 @@ function display_contact_entity_shortcode() {
 	// Initialize an empty string to store the output
 	$output = '';
 
+	// Default post type
 	$post_type = 'directory';
 
 	// Check if query variables are not empty
@@ -52,9 +53,6 @@ function display_contact_entity_shortcode() {
 				break;
 		}
 			
-		// Echo the determined post type
-		echo $post_type;
-
 		// Get post data from ID + post type 
 		if (isset($query_vars['ID'])) {
 			$ID = $query_vars['ID'];
@@ -64,7 +62,6 @@ function display_contact_entity_shortcode() {
 			// $p_image = $p_media_thumbnail_url ? '<div class="d-flex flex-center rounded-4 bg-color-layout overflow-hidden"><img decoding="async" src="'.$p_media_thumbnail_url.'" class="img-fluid fit-image rounded-4 img-transition-scale --h-100-px --w-100-px"></div>' : '<div class="d-flex flex-center rounded-4 bg-color-layout"><img decoding="async" src="https://placehold.co/300x300/white/white" class="img-fluid fit-image rounded-4 img-transition-scale --h-100-px --w-100-px op-0"><i class="position-absolute bi bi-image text-action-3"></i></div>';
 
 			// print_r($post);
-
 			$output .= sprintf('
 				<div class="card --text-white bg-color-layout mb-3 border-0 shadow shadow-md">
 					<div class="row g-0">
@@ -98,9 +95,7 @@ function display_contact_entity_shortcode() {
 
 		}
 
-
 	}
-
 
 	// Return the output string to be displayed (if any)
 	return $output;
