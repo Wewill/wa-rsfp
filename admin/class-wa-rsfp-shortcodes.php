@@ -63,7 +63,7 @@ function display_contact_entity_shortcode() {
 
 			// print_r($post);
 			$output .= sprintf('
-				<div class="card --text-white bg-color-layout mb-5 border-0 shadow shadow-md">
+				<div class="card --text-white bg-color-layout mt-0 mb-5 border-0 shadow shadow-md">
 					<div class="row g-0">
 						<div class="col-md-4">
 							<img src="%s" class="img-fluid fit-image rounded-start mh-360-px" alt="%s">
