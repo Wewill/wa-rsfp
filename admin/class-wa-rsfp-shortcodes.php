@@ -66,7 +66,7 @@ function display_contact_entity_shortcode() {
 				<div class="card --text-white bg-color-layout mb-3 border-0 shadow shadow-md">
 					<div class="row g-0">
 						<div class="col-md-4">
-							<img src="%s" class="img-fluid fit-image rounded-start h-100" alt="%s">
+							<img src="%s" class="img-fluid fit-image rounded-start mh-360-px" alt="%s">
 						</div>
 						<div class="col-md-8 ps-4">
 							<div class="card-body">
