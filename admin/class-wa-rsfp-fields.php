@@ -694,7 +694,7 @@ function structure_fields( $meta_boxes ) {
             ],
             [
                 'name'              => __( 'Email.s', 'wa-rsfp' ),
-                'id'                => $prefix . 'general_email',
+                'id'                => $prefix . 'general_emails',
                 'type'              => 'email',
                 'label_description' => __( '<span class="label">INFO</span> Fill with one or many email', 'wa-rsfp' ),
                 'clone'             => true,
