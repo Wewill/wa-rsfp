@@ -89,9 +89,8 @@ function display_contact_entity_shortcode() {
 				</div>',
 				$p_media_url,
 				$post->post_title,
-				$post->post_title,
+				$post->post_title
 			);
-
 
 		}
 
