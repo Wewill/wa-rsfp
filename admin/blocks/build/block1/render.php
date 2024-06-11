@@ -1411,7 +1411,7 @@ $next_post = get_adjacent_post(true, '', false, 'thematic');
 						</div>
 						<?php endif; ?>
 
-						<a class="btn btn-action-1 btn-transition-scale mt-4 flex-fill  w-50" href="<?= add_query_arg(array('form_type' => 'farmer', 'ID' => $relationships_farm_post_id),$contact_permalink) ?>"><?= __('Contact us', 'wa-rsfp'); ?></a>
+						<a class="btn btn-action-1 btn-transition-scale mt-4 flex-fill  w-50" href="<?= add_query_arg(array('form_type' => 'farm', 'ID' => $relationships_farm_post_id),$contact_permalink) ?>"><?= __('Contact us', 'wa-rsfp'); ?></a>
 
 					</div>
 					<!-- End: Contacts -->

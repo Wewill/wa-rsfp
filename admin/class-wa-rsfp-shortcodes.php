@@ -38,20 +38,8 @@ function display_contact_entity_shortcode() {
 	// Initialize an empty string to store the output
 	$output = '';
 
-	// Default post type
-	$post_type = 'directory';
-
 	// Check if query variables are not empty
 	if (!empty($query_vars) && isset($query_vars['form_type'])) {
-		// Determine post type based on form_type query variable
-		switch ($query_vars['form_type']) {
-			case 'farmer':
-				$post_type = 'farm';
-				break;
-			default:
-				$post_type = 'directory';
-				break;
-		}
 			
 		// Get post data from ID + post type 
 		if (isset($query_vars['ID'])) {
