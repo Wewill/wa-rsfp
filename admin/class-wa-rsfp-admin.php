@@ -203,6 +203,8 @@ class Wa_Rsfp_Admin {
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-wa-rsfp-notices.php';
 		// Add shortcodes
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-wa-rsfp-shortcodes.php';
+		// Manage settings
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-wa-rsfp-settings.php';
 	}
 
 	/**
@@ -218,8 +220,8 @@ class Wa_Rsfp_Admin {
 		// After init hooks
 		register_post_types();
 		register_taxonomies();
-		register_custom_meta_fields();
-		//add_action( 'rwmb_meta_boxes', 'register_custom_meta_fields', 5);
+		register_custom_meta_fields(); //admin/class-wa-rsfp-fields //add_action( 'rwmb_meta_boxes', 'register_custom_meta_fields', 5);
+		register_custom_meta_settings(); //class-wa-rsfp-settings.php
 
 		// @TODO REMOVE ? 
 		// Custom blocks
@@ -258,18 +260,21 @@ class Wa_Rsfp_Admin {
 		//$screen = get_current_screen(); //$screen->id
 		global $pagenow;
 
-		if ( is_admin() && !in_array( $pagenow, array( 'plugins.php' ) ) && !function_exists('rwmb_meta') ) {
+		if ( !is_login() && is_admin() && !in_array( $pagenow, array( 'plugins.php' ) ) && !function_exists('rwmb_meta') ) {
 			wp_die('Error : please install Meta Box plugin.');
 		}
 
-		if ( is_admin() && !in_array( $pagenow, array( 'plugins.php' ) ) && !function_exists('mb_term_meta_load') ) {
+		if ( !is_login() && is_admin() && !in_array( $pagenow, array( 'plugins.php' ) ) && !function_exists('mb_term_meta_load') ) {
 			wp_die('Error : please install Meta Box Term meta plugin.');
 		}
 
-		// if ( is_admin() && !in_array( $pagenow, array( 'plugins.php' ) ) && !class_exists( 'MB_Text_Limiter' ) ) {
-		// 	wp_die('Error : please install Meta Box Text limiter plugin.');
-		// }
+		if ( !is_login() && is_admin() && !in_array( $pagenow, array( 'plugins.php' ) ) && !function_exists('mb_settings_page_load') ) {
+			wp_die('Error : please install Meta Box Settings plugin.');
+		}
 
+		if ( !is_login() && is_admin() && !in_array( $pagenow, array( 'plugins.php' ) ) && !class_exists('MB_Text_Limiter') ) {
+			wp_die('Error : please install Meta Box Text limiter plugin.');
+		}
 
 		// @TOMOVE correct place 
 		function rsfp_directory_allowed_block_types( $allowed_blocks, $editor_context ) {
