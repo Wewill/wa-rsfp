@@ -7,11 +7,11 @@
 
 function register_custom_meta_settings() {
 	// Settings
-	add_filter( 'mb_settings_pages', 'add_setting_page', 10);
-	add_filter( 'rwmb_meta_boxes', 'add_custom_fields_to_setting_page', 10);
+	add_filter( 'mb_settings_pages', 'warsfp_add_setting_page', 10);
+	add_filter( 'rwmb_meta_boxes', 'warsfp_add_custom_fields_to_setting_page', 10);
 }
 
-function add_setting_page( $settings_pages ) {
+function warsfp_add_setting_page( $settings_pages ) {
 	$settings_pages[] = [
 		'menu_title' => __( 'Plugin settings', 'wa-rsfp' ),
 		'id'         => 'warsfp',
@@ -26,7 +26,7 @@ function add_setting_page( $settings_pages ) {
 	return $settings_pages;
 }
 
-function add_custom_fields_to_setting_page( $meta_boxes ) {
+function warsfp_add_custom_fields_to_setting_page( $meta_boxes ) {
 	$prefix = 'warsfp_';
 
 	$meta_boxes[] = [
@@ -60,6 +60,6 @@ function add_custom_fields_to_setting_page( $meta_boxes ) {
  * Get results
  */
 
-function get_profiles_from_setting_page() {
+function warsfp_get_profiles_from_setting_page() {
 	return rwmb_meta( 'warsfp_profiles', [ 'object_type' => 'setting' ], 'warsfp' );
 }
