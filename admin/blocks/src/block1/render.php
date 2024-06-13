@@ -69,7 +69,7 @@ $next_post = get_adjacent_post(true, '', false, 'thematic');
 	<div class="container-fluid px-0">
 		<div class="row g-0  min-h-400px"> <!-- .vh-100 hack-->
 
-			<div class="col-lg-5 col-xl-5 bg-action-1 p-4 p-lg-5 rounded-bottom-4 rounded-bottom-right-0" data-aos="fade-down" data-aos-delay="300">
+			<div class="col-md-6 col-lg-5 bg-action-1 p-3 p-lg-5 rounded-bottom-4 rounded-bottom-right-0" data-aos="fade-down" data-aos-delay="300">
 				<?= ( isset($meta_output['geography']) ) ? $meta_output['geography'] : '' ?>
 
 				<div id="map-france">
@@ -570,7 +570,7 @@ $next_post = get_adjacent_post(true, '', false, 'thematic');
 
 			</div>
 
-			<div class="col-lg overflow-hidden bg-color-layout p-4 p-lg-5 rounded-bottom-4 rounded-bottom-left-0" data-aos="fade-left" data-aos-delay="100">
+			<div class="col-md overflow-hidden bg-color-layout p-3 p-lg-5 rounded-bottom-4 rounded-bottom-left-0" data-aos="fade-left" data-aos-delay="100">
 
 				<div class="w-100 d-flex align-items-center justify-content-between">
 					<h6 class="subline text-action-1"><?= /*translators:Carte d'identité */ __('Identity', 'wa-rsfp'); ?></h6>
