@@ -65,7 +65,7 @@ $next_post = get_adjacent_post(true, '', false, 'thematic');
 
 <!-- Begin: Directory block -->
 <!-- #directorysubhero -->
-<section id="directorysubhero" class="mb-10 mb-lg-7 contrast--light ">
+<section id="directorysubhero" class="mb-4 mb-lg-7 contrast--light ">
 	<div class="container-fluid px-0">
 		<div class="row g-0  min-h-400px"> <!-- .vh-100 hack-->
 
@@ -675,13 +675,13 @@ $next_post = get_adjacent_post(true, '', false, 'thematic');
 </section>
 
 <!-- #directorybody -->
-<div id="directorybody" class="mb-10 mb-lg-7 contrast--light">
+<div id="directorybody" class="mb-4 mb-lg-7 contrast--light">
   <div class="container-fluid px-0">
 		<div class="row g-0 align-items-start">
 
 
       <!-- Begin: Sticky-->
-      <div class="col-lg-5 col-xl-5 sticky-top mt-5 order-last order-lg-first" style="top: var(--waff-header-height-reduced, 0px)" data-aos="fade-down" data-aos-delay="300">
+      <div class="col-lg-5 col-xl-5 sticky-top mt-0 mt-lg-5 order-last order-lg-first" style="top: var(--waff-header-height-reduced, 0px)" data-aos="fade-down" data-aos-delay="300">
         <div class="inner-sticky bg-color-bg p-4 p-lg-5 rounded-end-4 rounded-bottom-right-0">
 
 
@@ -1173,63 +1173,63 @@ $next_post = get_adjacent_post(true, '', false, 'thematic');
 		<!-- End: Structures -->
 
         <!-- Begin: CTA -->
-        <!-- <div class="d-flex align-items-center justify-content-center mx-4 mx-md-0 p-3 py-md-4 px-md-5 bg-body rounded-4 shadow mt-6">
-          <div class="d-md-flex d-inline-block align-items-center px-1 px-md-0">
+        <!-- <div class="d-flex align-items-center justify-content-center mx-4 mx-md-0 p-2 py-md-3 px-md-4 py-xl-4 px-xl-5 bg-body rounded-4 shadow mt-6">
+          <div class="d-lg-flex d-inline-block align-items-center px-1 px-lg-0">
             <i class="bi bi-bootstrap flex-shrink-0 me-3 h2 text-action-1"></i>
             <div>
               <h6 class="fw-bold text-action-1">Lorem ipsum</h6>
-              <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              <p class="mb-0 small-lg">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             </div>
           </div>
 
-          <div class="d-none d-md-flex align-items-center justify-content-center px-5">
+          <div class="d-none d-lg-flex align-items-center justify-content-center px-2 px-md-4 px-xl-5">
             <span class="bullet bullet-action-2 ml-0"></span>
           </div>
 
-          <div class="d-md-flex d-inline-block align-items-center px-1 px-md-0">
+          <div class="d-lg-flex d-inline-block align-items-center px-1 px-lg-0">
             <i class="bi bi-bootstrap flex-shrink-0 me-3 h2"></i>
             <div>
               <h6 class="fw-bold">Lorem ipsum</h6>
-              <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              <p class="mb-0 small-lg">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             </div>
           </div>
         </div> -->
 
 		<?php if (!empty($d_stage_opentovisit) || !empty($d_stage_opentostage)) { ?>
-			<div class="d-flex align-items-center justify-content-center mx-4 mx-md-0 p-3 py-md-4 px-md-5 bg-body rounded-4 rounded-left-0 shadow mt-6">
+			<div class="d-flex align-items-center justify-content-center mx-4 mx-md-0 p-2 py-md-3 px-md-4 py-xl-4 px-xl-5 bg-body rounded-4 rounded-left-0 shadow mt-6">
 				<?php if (!empty($d_stage_opentovisit)): ?>
-				<div class="d-md-flex d-inline-block align-items-center">
+				<div class="d-lg-flex d-inline-block align-items-center px-1 px-lg-0">
 					<i class="bi bi-house-heart flex-shrink-0 me-3 h2 text-action-1"></i>
 					<div>
 					<h6 class="fw-bold text-action-1"><?= esc_html__( 'Visit farm', 'waff' ); ?></h6>
-					<p class="mb-0"><span class="visually-hidden"><?= esc_html__( 'Farm is open to visit :', 'waff' ); ?></span><?= WaffTwo\Core\waff_implode_options(', ', $d_stage_opentovisit, $options_d_stage_opentovisit); ?></p>
+					<p class="mb-0 small-lg"><span class="visually-hidden"><?= esc_html__( 'Farm is open to visit :', 'waff' ); ?></span><?= WaffTwo\Core\waff_implode_options(', ', $d_stage_opentovisit, $options_d_stage_opentovisit); ?></p>
 					<a class="btn btn-action-1 btn-transition-scale mt-4 flex-fill w-100" href="<?= esc_url(add_query_arg(array('form_type' => 'visit', 'ID' => $post->ID),$contact_permalink)) ?>"><?= esc_html__( 'Book a visit', 'waff' ); ?></a>
 					</div>
 				</div>
-				<div class="d-none d-md-flex align-items-center justify-content-center px-5">
+				<div class="d-none d-lg-flex align-items-center justify-content-center px-2 px-md-4 px-xl-5">
 					<span class="bullet bullet-action-2 ms-0"></span>
 				</div>
 				<?php endif; ?>
 
 				<?php if (!empty($d_stage_opentostage)): ?>
-				<div class="d-md-flex d-inline-block align-items-center">
+				<div class="d-lg-flex d-inline-block align-items-center px-1 px-lg-0">
 					<i class="bi bi-highlighter flex-shrink-0 me-3 h2 text-action-1"></i>
 					<div>
 					<h6 class="fw-bold text-action-1"><?= esc_html__( 'Open to stage', 'waff' ); ?></h6>
-					<p class="mb-0"><span class="visually-hidden"><?= esc_html__( 'Farm is open to stage :', 'waff' ); ?></span><?= WaffTwo\Core\waff_implode_options(', ', $d_stage_opentostage, $options_d_stage_opentostage); ?></p>
+					<p class="mb-0 small-lg"><span class="visually-hidden"><?= esc_html__( 'Farm is open to stage :', 'waff' ); ?></span><?= WaffTwo\Core\waff_implode_options(', ', $d_stage_opentostage, $options_d_stage_opentostage); ?></p>
 					<a class="btn btn-action-1 btn-transition-scale mt-4 flex-fill w-100" href="<?= esc_url(add_query_arg(array('form_type' => 'stage', 'ID' => $post->ID),$contact_permalink)) ?>"><?= esc_html__( 'Apply to a stage', 'waff' ); ?></a>
 					</div>
 				</div>
-				<!-- <div class="d-none d-md-flex align-items-center justify-content-center px-5">
+				<!-- <div class="d-none d-lg-flex align-items-center justify-content-center px-5">
 					<span class="bullet bullet-action-2 ms-0"></span>
 				</div> -->
 				<?php endif; ?>
 
-				<!-- <div class="d-md-flex d-inline-block align-items-center">
+				<!-- <div class="d-lg-flex d-inline-block align-items-center">
 					<i class="bi bi-cloud-arrow-down flex-shrink-0 me-3 h2"></i>
 					<div>
 					<h6 class="fw-bold --text-action-1"><?= esc_html__( 'Download', 'waff' ); ?></h6>
-					<p class="mb-0"><span class="badge bg-action-2">Bientôt disponible...</span></p>
+					<p class="mb-0 small-lg"><span class="badge bg-action-2">Bientôt disponible...</span></p>
 					</div>
 				</div> -->
 			</div>
@@ -1251,7 +1251,7 @@ $next_post = get_adjacent_post(true, '', false, 'thematic');
       <!-- Begin: Timeline-->
 	  <?php $knowledge_acquisitions = rwmb_meta( $prefix . 'knowledge_acquisitions' ); ?>
 	  <?php if (!empty($knowledge_acquisitions)) : ?>
-		<div class="my-6 mb-10">
+		<div class="my-2 my-lg-6 mb-2 mb-lg-10">
 			<h6 class="subline --text-action-1"><?= __('Acquisition', 'wa-rsfp'); ?></h6>
 
 			<span class="bullet bullet-line bullet-action-2 mt-5"></span>
@@ -1306,7 +1306,7 @@ $next_post = get_adjacent_post(true, '', false, 'thematic');
 			}
 
 			?>
-			<div class="bg-color-layout my-6 me-n5 p-5 rounded-start-4">
+			<div class="bg-color-layout my-2 my-lg-6 me-n5 p-5 rounded-start-4">
 				<div class="d-flex align-items-top justify-content-between me-n5">
 					<!-- Head -->
 					<?php if ($f_general_legal_entity || $f_more_testimony || $f_more_biography) : ?>
@@ -1421,7 +1421,7 @@ $next_post = get_adjacent_post(true, '', false, 'thematic');
 		} else {
 			?>
 			<!-- User is not loggued -->
-			<div class="bg-color-layout my-6 me-n5 p-5 rounded-start-4">
+			<div class="bg-color-layout my-2 my-lg-6 me-n5 p-5 rounded-start-4">
 				<div class="d-flex align-items-top justify-content-between me-n5">
 					<!-- Begin: Log -->
 					<!-- Line 1 -->
@@ -1430,19 +1430,19 @@ $next_post = get_adjacent_post(true, '', false, 'thematic');
 							<i class="bi bi bi-person-lock flex-shrink-0 me-3 h2"></i>
 							<div>
 								<h6 class="fw-bold text-action-1">Inscrivez-vous / connectez-vous au répertoire pour découvrir les coordonnées</h6>
-								<p class="mb-0">Lorem ipsum dolor sit amet</p>																<p class="mb-0"></p>							</div>
-							</div>		
-						</div>				
-					</div>
-					<!-- Line 2 -->
-					<div class="d-flex align-items-center justify-content-center">
-						<a class="btn btn-action-1 btn-transition-scale mt-4 flex-fill --w-50 me-2" href="#">Je m'inscris</a>
-						<a class="btn btn-action-2 btn-transition-scale mt-4 flex-fill --w-50 ms-2" href="#">Je me connecte</a>
-					</div>
-					<!-- End: Log -->
+								<p class="mb-0">Lorem ipsum dolor sit amet</p>
+								<p class="mb-0"></p>
+							</div>
+						</div>		
+					</div>				
 				</div>
+				<!-- Line 2 -->
+				<div class="d-flex align-items-center justify-content-center">
+					<a class="btn btn-action-1 btn-transition-scale mt-4 flex-fill --w-50 me-2" href="#">Je m'inscris</a>
+					<a class="btn btn-action-2 btn-transition-scale mt-4 flex-fill --w-50 ms-2" href="#">Je me connecte</a>
+				</div>
+				<!-- End: Log -->
 			</div>
-
 			<?php
 		}
 		?>
@@ -1455,7 +1455,7 @@ $next_post = get_adjacent_post(true, '', false, 'thematic');
 
     <!-- #navigation -->
 	<?php if ( is_a( $previous_post, 'WP_Post' ) || is_a( $next_post, 'WP_Post' ) ) {  ?>
-		<section id="navigation" class="mt-10 mb-10 contrast--light">
+		<section id="navigation" class="mt-3 mb-3 mt-lg-10 mb-lg-10 contrast--light">
 			<div class="container-fluid g-0 p-0">
 				<div class="row row-cols-1 row-cols-md-3 mt-4 mb-4">
 
