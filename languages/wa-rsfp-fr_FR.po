@@ -3,37 +3,37 @@ msgstr ""
 "Project-Id-Version: WA RSFP Global functions\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-06-12 10:31+0000\n"
-"PO-Revision-Date: 2024-06-12 10:33+0000\n"
+"PO-Revision-Date: 2024-06-12 12:38+0200\n"
 "Last-Translator: \n"
 "Language-Team: Français\n"
 "Language: fr_FR\n"
-"Plural-Forms: nplurals=2; plural=n > 1;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Loco https://localise.biz/\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Poedit 3.4.4\n"
 "X-Loco-Version: 2.6.9; wp-6.5.4\n"
-"X-Domain: wa-rsfp"
+"X-Domain: wa-rsfp\n"
 
 #: admin/class-wa-rsfp-taxonomy.php:197
 msgid "&larr; Go to Farm types"
-msgstr ""
+msgstr "← Aller aux types d'exploitations"
 
 #: admin/class-wa-rsfp-taxonomy.php:35
 msgid "&larr; Go to Geographies"
-msgstr ""
+msgstr "← Aller aux Géographies"
 
 #: admin/class-wa-rsfp-taxonomy.php:250
 msgid "&larr; Go to Partner categories"
-msgstr ""
+msgstr "← Aller aux catégories de partenaires"
 
 #: admin/class-wa-rsfp-taxonomy.php:89
 msgid "&larr; Go to Productions"
-msgstr ""
+msgstr "← Aller aux Productions"
 
 #: admin/class-wa-rsfp-taxonomy.php:143
 msgid "&larr; Go to Thematics"
-msgstr ""
+msgstr "← Aller aux thématiques"
 
 #: admin/class-wa-rsfp-fields.php:602 admin/class-wa-rsfp-fields.php:613
 #: admin/class-wa-rsfp-fields.php:773 admin/class-wa-rsfp-fields.php:887
@@ -48,17 +48,19 @@ msgstr ""
 
 #: admin/class-wa-rsfp-fields.php:409
 msgid "<span class=\"important\">Maximum 10 files.</span>"
-msgstr ""
+msgstr "<span class=\"important\">Maximum 10 fichiers.</span>"
 
 #: admin/class-wa-rsfp-fields.php:385
 msgid "<span class=\"important\">Maximum 20 images.</span>"
-msgstr ""
+msgstr "<span class=\"important\">Maximum 20 images.</span>"
 
 #: admin/class-wa-rsfp-fields.php:966
 msgid ""
 "<span class=\"important\">Provide at least 1000x1000px image in transparent "
 "* .png format."
 msgstr ""
+"<span class=\"important\">Fournir une image d'au moins 1000x1000px au format "
+"transparent * .png."
 
 #: admin/class-wa-rsfp-fields.php:657
 msgid ""
@@ -73,9 +75,8 @@ msgstr ""
 
 #: admin/class-wa-rsfp-fields.php:77
 msgid ""
-"<span class=\"label\">INFO</span> <b>Production</b> category & <b>"
-"Thematic</b> category are to choose after publishing post in taxonomies on "
-"side panel."
+"<span class=\"label\">INFO</span> <b>Production</b> category & <b>Thematic</"
+"b> category are to choose after publishing post in taxonomies on side panel."
 msgstr ""
 
 #: admin/class-wa-rsfp-fields.php:88 admin/class-wa-rsfp-fields.php:105
@@ -497,8 +498,9 @@ msgid "Choose most used thematics"
 msgstr ""
 
 #: admin/class-wa-rsfp-fields.php:983
+#, fuzzy
 msgid "Code"
-msgstr ""
+msgstr "Code postal"
 
 #: admin/class-wa-rsfp-fields.php:1023 admin/class-wa-rsfp-columns.php:421
 msgid "Color"
@@ -597,12 +599,14 @@ msgid "Edit Knowledge"
 msgstr ""
 
 #: admin/class-wa-rsfp-register.php:184
+#, fuzzy
 msgid "Edit Operation"
-msgstr ""
+msgstr "Editer l'opération"
 
 #: admin/class-wa-rsfp-register.php:317
+#, fuzzy
 msgid "Edit Partner"
-msgstr ""
+msgstr "Editer le partenaire"
 
 #: admin/class-wa-rsfp-taxonomy.php:236
 msgid "Edit Partner category"
@@ -991,8 +995,9 @@ msgid "New Knowledge"
 msgstr ""
 
 #: admin/class-wa-rsfp-register.php:185
+#, fuzzy
 msgid "New Operation"
-msgstr ""
+msgstr "Créer une opération"
 
 #: admin/class-wa-rsfp-register.php:318
 msgid "New Partner"
@@ -1097,8 +1102,9 @@ msgstr ""
 #: admin/class-wa-rsfp-fields.php:423 admin/class-wa-rsfp-fields.php:633
 #: admin/class-wa-rsfp-fields.php:786 admin/class-wa-rsfp-fields.php:900
 #: admin/class-wa-rsfp-fields.php:940
+#, fuzzy
 msgid "Notes"
-msgstr ""
+msgstr "Notes ajoutées"
 
 #: admin/class-wa-rsfp-fields.php:168
 msgid "Number of people"
@@ -1114,7 +1120,7 @@ msgstr ""
 
 #: admin/class-wa-rsfp-register.php:181
 msgid "Operation"
-msgstr ""
+msgstr "Opération"
 
 #: admin/class-wa-rsfp-register.php:193
 msgid "Operation Archives"
@@ -1167,7 +1173,7 @@ msgstr ""
 #: admin/class-wa-rsfp-register.php:180 admin/class-wa-rsfp-register.php:201
 #: admin/class-wa-rsfp-register.php:214
 msgid "Operations"
-msgstr ""
+msgstr "Opérations"
 
 #: admin/class-wa-rsfp-register.php:205
 msgid "Operations list"
@@ -1239,7 +1245,7 @@ msgstr ""
 
 #: admin/class-wa-rsfp-register.php:314
 msgid "Partner"
-msgstr ""
+msgstr "Partenaire"
 
 #: admin/class-wa-rsfp-register.php:326
 msgid "Partner Archives"
@@ -1297,7 +1303,7 @@ msgstr ""
 #: admin/class-wa-rsfp-register.php:313 admin/class-wa-rsfp-register.php:334
 #: admin/class-wa-rsfp-register.php:347
 msgid "Partners"
-msgstr ""
+msgstr "Partenaires"
 
 #: admin/class-wa-rsfp-register.php:338
 msgid "Partners list"

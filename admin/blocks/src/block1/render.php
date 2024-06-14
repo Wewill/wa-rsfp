@@ -1175,9 +1175,9 @@ $next_post = get_adjacent_post(true, '', false, 'thematic');
         <!-- Begin: CTA -->
         <!-- <div class="d-flex align-items-center justify-content-center mx-4 mx-md-0 p-2 py-md-3 px-md-4 py-xl-4 px-xl-5 bg-body rounded-4 shadow mt-6">
           <div class="d-lg-flex d-inline-block align-items-center px-1 px-lg-0">
-            <i class="bi bi-bootstrap flex-shrink-0 me-3 h2 text-action-1"></i>
+            <i class="bi bi-bootstrap flex-shrink-0 me-2 me-md-3 h2 md-reset-fontsize text-action-1"></i>
             <div>
-              <h6 class="fw-bold text-action-1">Lorem ipsum</h6>
+              <h6 class="fw-bold text-action-1 my-2 my-lg-3">Lorem ipsum</h6>
               <p class="mb-0 small-lg">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             </div>
           </div>
@@ -1187,7 +1187,7 @@ $next_post = get_adjacent_post(true, '', false, 'thematic');
           </div>
 
           <div class="d-lg-flex d-inline-block align-items-center px-1 px-lg-0">
-            <i class="bi bi-bootstrap flex-shrink-0 me-3 h2"></i>
+            <i class="bi bi-bootstrap flex-shrink-0 me-2 me-md-3 h2 md-reset-fontsize text-action-1"></i>
             <div>
               <h6 class="fw-bold">Lorem ipsum</h6>
               <p class="mb-0 small-lg">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -1199,9 +1199,9 @@ $next_post = get_adjacent_post(true, '', false, 'thematic');
 			<div class="d-flex align-items-center justify-content-center mx-4 mx-md-0 p-2 py-md-3 px-md-4 py-xl-4 px-xl-5 bg-body rounded-4 rounded-left-0 shadow mt-6">
 				<?php if (!empty($d_stage_opentovisit)): ?>
 				<div class="d-lg-flex d-inline-block align-items-center px-1 px-lg-0">
-					<i class="bi bi-house-heart flex-shrink-0 me-3 h2 text-action-1"></i>
+					<i class="bi bi-house-heart flex-shrink-0 me-2 me-md-3 h2 md-reset-fontsize text-action-1"></i>
 					<div>
-					<h6 class="fw-bold text-action-1"><?= esc_html__( 'Visit farm', 'waff' ); ?></h6>
+					<h6 class="fw-bold text-action-1 my-2 my-lg-3"><?= esc_html__( 'Visit farm', 'waff' ); ?></h6>
 					<p class="mb-0 small-lg"><span class="visually-hidden"><?= esc_html__( 'Farm is open to visit :', 'waff' ); ?></span><?= WaffTwo\Core\waff_implode_options(', ', $d_stage_opentovisit, $options_d_stage_opentovisit); ?></p>
 					<a class="btn btn-action-1 btn-transition-scale mt-4 flex-fill w-100" href="<?= esc_url(add_query_arg(array('form_type' => 'visit', 'ID' => $post->ID),$contact_permalink)) ?>"><?= esc_html__( 'Book a visit', 'waff' ); ?></a>
 					</div>
@@ -1213,9 +1213,9 @@ $next_post = get_adjacent_post(true, '', false, 'thematic');
 
 				<?php if (!empty($d_stage_opentostage)): ?>
 				<div class="d-lg-flex d-inline-block align-items-center px-1 px-lg-0">
-					<i class="bi bi-highlighter flex-shrink-0 me-3 h2 text-action-1"></i>
+					<i class="bi bi-highlighter flex-shrink-0 me-2 me-md-3 h2 md-reset-fontsize text-action-1"></i>
 					<div>
-					<h6 class="fw-bold text-action-1"><?= esc_html__( 'Open to stage', 'waff' ); ?></h6>
+					<h6 class="fw-bold text-action-1 my-2 my-lg-3"><?= esc_html__( 'Open to stage', 'waff' ); ?></h6>
 					<p class="mb-0 small-lg"><span class="visually-hidden"><?= esc_html__( 'Farm is open to stage :', 'waff' ); ?></span><?= WaffTwo\Core\waff_implode_options(', ', $d_stage_opentostage, $options_d_stage_opentostage); ?></p>
 					<a class="btn btn-action-1 btn-transition-scale mt-4 flex-fill w-100" href="<?= esc_url(add_query_arg(array('form_type' => 'stage', 'ID' => $post->ID),$contact_permalink)) ?>"><?= esc_html__( 'Apply to a stage', 'waff' ); ?></a>
 					</div>
@@ -1226,7 +1226,7 @@ $next_post = get_adjacent_post(true, '', false, 'thematic');
 				<?php endif; ?>
 
 				<!-- <div class="d-lg-flex d-inline-block align-items-center">
-					<i class="bi bi-cloud-arrow-down flex-shrink-0 me-3 h2"></i>
+					<i class="bi bi-cloud-arrow-down flex-shrink-0 me-2 me-md-3 h2 md-reset-fontsize text-action-1"></i>
 					<div>
 					<h6 class="fw-bold --text-action-1"><?= esc_html__( 'Download', 'waff' ); ?></h6>
 					<p class="mb-0 small-lg"><span class="badge bg-action-2">Bientôt disponible...</span></p>
@@ -1260,7 +1260,7 @@ $next_post = get_adjacent_post(true, '', false, 'thematic');
 					<?php foreach( $knowledge_acquisitions as $i=>$knowledge_acquisition ) : ?>
 					<div class="me-2 flex-equal" data-aos="flip-down" data-aos-delay="<?= $i*200 ?>">
 						<span class="bullet bullet-v bullet-action-2 mb-3"></span>
-						<h6 class="fw-bold text-action-1"><?= esc_html($knowledge_acquisition[0]); ?></h6>
+						<h6 class="fw-bold text-action-1 my-2 my-lg-3"><?= esc_html($knowledge_acquisition[0]); ?></h6>
 						<h6 class="fw-medium"><?= esc_html($knowledge_acquisition[1]); ?></h6>
 					</div>
 					<?php endforeach; ?>
@@ -1363,7 +1363,7 @@ $next_post = get_adjacent_post(true, '', false, 'thematic');
 					<div class="d-flex align-items-center justify-content-center mt-3 text-action-1">
 
 						<div class="d-flex align-items-center flex-fill w-50">
-							<i class="bi bi-chat-left flex-shrink-0 me-3 h2"></i>
+							<i class="bi bi-chat-left flex-shrink-0 me-2 me-md-3 h2 md-reset-fontsize text-action-1"></i>
 							<div>
 								<?php if (!empty($f_general_address)) printf('<h6 class="fw-bold text-action-1 op-6">%s</h6>', __('Adresse', 'wa-rsfp')); ?>
 								<?php if ($f_title) printf('<p class="mb-0 lead"><strong>%s</strong></p>', $f_title); ?>
@@ -1379,7 +1379,7 @@ $next_post = get_adjacent_post(true, '', false, 'thematic');
 						</div>
 
 						<div class="d-flex align-items-center flex-fill w-50">
-							<!-- <i class="bi bi-bootstrap flex-shrink-0 me-3 h2"></i> -->
+							<!-- <i class="bi bi-bootstrap flex-shrink-0 me-2 me-md-3 h2 md-reset-fontsize text-action-1"></i> -->
 							<div>
 								<h6 class="fw-bold text-action-1 op-6"><?= __('Contact', 'wa-rsfp'); ?></h6>
 								<?php if ($f_general_emails) foreach ($f_general_emails as $email) printf('<p class="mb-0 --lead"><strong>%s</strong></p>',  $email); ?>
@@ -1394,7 +1394,7 @@ $next_post = get_adjacent_post(true, '', false, 'thematic');
 
 						<?php if ($f_general_links): ?>
 						<div class="d-flex align-items-center flex-fill w-50">
-							<i class="bi bi-share flex-shrink-0 me-3 h2"></i>
+							<i class="bi bi-share flex-shrink-0 me-2 me-md-3 h2 md-reset-fontsize text-action-1"></i>
 							<div>
 								<h6 class="fw-bold text-action-1 op-6"><?= __('Links', 'wa-rsfp'); ?></h6>
 								<?php 
@@ -1427,7 +1427,7 @@ $next_post = get_adjacent_post(true, '', false, 'thematic');
 					<!-- Line 1 -->
 					<div class="d-flex align-items-center justify-content-center --mt-3 text-action-1">
 						<div class="d-flex align-items-center flex-fill --w-50">
-							<i class="bi bi bi-person-lock flex-shrink-0 me-3 h2"></i>
+							<i class="bi bi bi-person-lock flex-shrink-0 me-2 me-md-3 h2 md-reset-fontsize text-action-1"></i>
 							<div>
 								<h6 class="fw-bold text-action-1 mt-0">Inscrivez-vous / connectez-vous au répertoire pour découvrir les coordonnées</h6>
 								<p class="mb-0">Entrez en contact avec des paysans désireux de partager leur savoir-faire avec vous ...</p>
