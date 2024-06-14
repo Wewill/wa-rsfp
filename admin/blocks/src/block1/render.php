@@ -1422,24 +1422,23 @@ $next_post = get_adjacent_post(true, '', false, 'thematic');
 			?>
 			<!-- User is not loggued -->
 			<div class="bg-color-layout my-2 my-lg-6 me-n5 p-5 rounded-start-4">
-				<div class="d-flex align-items-top justify-content-between me-n5">
+				<div class="d-flex align-items-top justify-content-between --me-n5">
 					<!-- Begin: Log -->
 					<!-- Line 1 -->
-					<div class="d-flex align-items-center justify-content-center mt-3 text-action-1">
-						<div class="d-flex align-items-center flex-fill w-50">
+					<div class="d-flex align-items-center justify-content-center --mt-3 text-action-1">
+						<div class="d-flex align-items-center flex-fill --w-50">
 							<i class="bi bi bi-person-lock flex-shrink-0 me-3 h2"></i>
 							<div>
-								<h6 class="fw-bold text-action-1">Inscrivez-vous / connectez-vous au répertoire pour découvrir les coordonnées</h6>
-								<p class="mb-0">Lorem ipsum dolor sit amet</p>
-								<p class="mb-0"></p>
+								<h6 class="fw-bold text-action-1 mt-0">Inscrivez-vous / connectez-vous au répertoire pour découvrir les coordonnées</h6>
+								<p class="mb-0">Entrez en contact avec des paysans désireux de partager leur savoir-faire avec vous ...</p>
 							</div>
 						</div>		
 					</div>				
 				</div>
 				<!-- Line 2 -->
-				<div class="d-flex align-items-center justify-content-center">
-					<a class="btn btn-action-1 btn-transition-scale mt-4 flex-fill --w-50 me-2" href="#">Je m'inscris</a>
-					<a class="btn btn-action-2 btn-transition-scale mt-4 flex-fill --w-50 ms-2" href="#">Je me connecte</a>
+				<div class="d-flex align-items-center justify-content-center gap-3">
+					<a class="btn btn-action-1 btn-transition-scale mt-4 flex-fill --w-50 --me-2" href="http://localhost/wp-login.php?action=register">Je m'inscris</a>
+					<button class="btn btn-action-2 btn-transition-scale mt-4 flex-fill --w-50 --ms-2" role="switch" data-bs-toggle="modal" data-bs-target="#modalLoginout" aria-checked="false" aria-label="">Je me connecte</button>
 				</div>
 				<!-- End: Log -->
 			</div>
