@@ -61,7 +61,7 @@ function directory_fields( $meta_boxes ) {
                 'rows'       => 5,
                 'class' => 'enable-markdown',
 				'label_description' => __( '<span class="label">INFO</span> Fill with simple text', 'wa-rsfp' ),
-				'desc' => __( '<span class="label">TIPS</span> Lead content will be showed after title', 'wa-rsfp' ) . '<br/>' .   __( '<span class="label">TIPS</span> Markdown is available : *italic* (Command + b) **bold** (Command + i) ***label*** (Command + Shift + L) #small# (Command + Shift + S) ##huge## (Command + Shift + H).', 'wa-rsfp' ),
+				'desc' => __( '<span class="label">TIPS</span> Lead content will be showed after title', 'wa-rsfp' ) . '<br/>' .   __( '<span class="label">TIPS</span> Markdown is available : *italic* (Command + b) **bold** (Command + i) ***label*** (Command + Shift + L) #small# (Command + Shift + S) ##huge## (Command + Shift + H)', 'wa-rsfp' ),
             ],
 		],
     ];
@@ -248,7 +248,7 @@ function directory_fields( $meta_boxes ) {
                 'rows'       => 2,
                 'class' => 'enable-markdown',
 				'label_description' => __( '<span class="label">INFO</span> Fill with simple text', 'wa-rsfp' ) . '<br/>' .   __( '<span class="label">INFO</span> This will be rendered as a list of items', 'wa-rsfp' ),
-				'desc' => __( 'Ex. : chiffre d\'affaire actuel et évolution, charges, EBE, salaires, valeurs ajoutées ...', 'wa-rsfp' ) . '<br/>' .   __( '<span class="label">TIPS</span> Markdown is available : *italic* (Command + b) **bold** (Command + i) ***label*** (Command + Shift + L) #small# (Command + Shift + S) ##huge## (Command + Shift + H).', 'wa-rsfp' ),
+				'desc' => __( 'Ex. : chiffre d\'affaire actuel et évolution, charges, EBE, salaires, valeurs ajoutées ...', 'wa-rsfp' ) . '<br/>' .   __( '<span class="label">TIPS</span> Markdown is available : *italic* (Command + b) **bold** (Command + i) ***label*** (Command + Shift + L) #small# (Command + Shift + S) ##huge## (Command + Shift + H)', 'wa-rsfp' ),
             ],
             [
                 'name'       => __( 'Vivability.s', 'wa-rsfp' ),
@@ -260,7 +260,7 @@ function directory_fields( $meta_boxes ) {
                 'rows'       => 2,
                 'class' => 'enable-markdown',
 				'label_description' => __( '<span class="label">INFO</span> Fill with simple text', 'wa-rsfp' ) . '<br/>' .   __( '<span class="label">INFO</span> This will be rendered as a list of items', 'wa-rsfp' ),
-				'desc' => __( 'Ex. : répartition des tâches, horaires quotidiens, congés ...', 'wa-rsfp' ) . '<br/>' .   __( '<span class="label">TIPS</span> Markdown is available : *italic* (Command + b) **bold** (Command + i) ***label*** (Command + Shift + L) #small# (Command + Shift + S) ##huge## (Command + Shift + H).', 'wa-rsfp' ),
+				'desc' => __( 'Ex. : répartition des tâches, horaires quotidiens, congés ...', 'wa-rsfp' ) . '<br/>' .   __( '<span class="label">TIPS</span> Markdown is available : *italic* (Command + b) **bold** (Command + i) ***label*** (Command + Shift + L) #small# (Command + Shift + S) ##huge## (Command + Shift + H)', 'wa-rsfp' ),
             ],
             // Filled w/ taxconomy themactics
             // [
@@ -290,7 +290,7 @@ function directory_fields( $meta_boxes ) {
                 'clone'      => true,
                 'sort_clone' => true,
 				'label_description' => __( '<span class="label">INFO</span> Fill acquisitation.s as a chronology', 'wa-rsfp' ),
-				'desc' => __( '<span class="label">TIPS</span> Markdown is available : *italic* (Command + b) **bold** (Command + i) ***label*** (Command + Shift + L) #small# (Command + Shift + S) ##huge## (Command + Shift + H).', 'wa-rsfp' ),
+				'desc' => __( '<span class="label">TIPS</span> Markdown is available : *italic* (Command + b) **bold** (Command + i) ***label*** (Command + Shift + L) #small# (Command + Shift + S) ##huge## (Command + Shift + H)', 'wa-rsfp' ),
             ],
             // [
             //     'name'       => /*translators:Parcours à l'installation*/__( 'Installation period', 'wa-rsfp' ),
@@ -300,7 +300,7 @@ function directory_fields( $meta_boxes ) {
             //     'rows'       => 15,
             //     'class' => 'enable-markdown',
             //     'label_description' => __( '<span class="label">INFO</span> Fill with simple text', 'wa-rsfp' ) ,
-            //     'desc' => __( '<span class="label">TIPS</span> Markdown is available : *italic* (Command + b) **bold** (Command + i) ***label*** (Command + Shift + L) #small# (Command + Shift + S) ##huge## (Command + Shift + H).', 'wa-rsfp' ),
+            //     'desc' => __( '<span class="label">TIPS</span> Markdown is available : *italic* (Command + b) **bold** (Command + i) ***label*** (Command + Shift + L) #small# (Command + Shift + S) ##huge## (Command + Shift + H)', 'wa-rsfp' ),
             // ],
             [
                 'name'       => /*translators:Parcours à l'installation*/__( 'Installation period', 'wa-rsfp' ),
@@ -326,7 +326,7 @@ function directory_fields( $meta_boxes ) {
                 'rows'       => 2,
                 'class' => 'enable-markdown',
 				'label_description' => __( '<span class="label">INFO</span> Fill with simple text', 'wa-rsfp' ) . '<br/>' .   __( '<span class="label">INFO</span> This will be rendered as a list of items', 'wa-rsfp' ),
-				'desc' => __( '<span class="label">TIPS</span> Markdown is available : *italic* (Command + b) **bold** (Command + i) ***label*** (Command + Shift + L) #small# (Command + Shift + S) ##huge## (Command + Shift + H).', 'wa-rsfp' ),
+				'desc' => __( '<span class="label">TIPS</span> Markdown is available : *italic* (Command + b) **bold** (Command + i) ***label*** (Command + Shift + L) #small# (Command + Shift + S) ##huge## (Command + Shift + H)', 'wa-rsfp' ),
             ],
 		],
 	];
@@ -600,7 +600,7 @@ function farm_fields( $meta_boxes ) {
                 'rows'       => 3,
                 'class' => 'enable-markdown',
 				'label_description' => __( '<span class="label">INFO</span> Fill with simple text', 'wa-rsfp' ) . ' / ' .  __( '(Optional) This content will be displayed in knowledge single page.', 'wa-rsfp' ),
-				'desc' => __( '<span class="label">TIPS</span> Markdown is available : *italic* (Command + b) **bold** (Command + i) ***label*** (Command + Shift + L) #small# (Command + Shift + S) ##huge## (Command + Shift + H).', 'wa-rsfp' ),
+				'desc' => __( '<span class="label">TIPS</span> Markdown is available : *italic* (Command + b) **bold** (Command + i) ***label*** (Command + Shift + L) #small# (Command + Shift + S) ##huge## (Command + Shift + H)', 'wa-rsfp' ),
             ],
             [
                 'name'              => __( 'Biography', 'wa-rsfp' ),
@@ -611,7 +611,7 @@ function farm_fields( $meta_boxes ) {
                 'rows'       => 3,
                 'class' => 'enable-markdown',
                 'label_description' => __( '<span class="label">INFO</span> Fill with a short biography of farm / entity formatted text', 'wa-rsfp' ) . ' / ' .  __( '(Optional) This content will be displayed in knowledge single page.', 'wa-rsfp' ),
-				'desc' => __( '<span class="label">TIPS</span> Markdown is available : *italic* (Command + b) **bold** (Command + i) ***label*** (Command + Shift + L) #small# (Command + Shift + S) ##huge## (Command + Shift + H).', 'wa-rsfp' ),
+				'desc' => __( '<span class="label">TIPS</span> Markdown is available : *italic* (Command + b) **bold** (Command + i) ***label*** (Command + Shift + L) #small# (Command + Shift + S) ##huge## (Command + Shift + H)', 'wa-rsfp' ),
             ],
             // [
             //     'name'              => __( 'Gallery', 'wa-rsfp' ),
@@ -771,7 +771,7 @@ function structure_fields( $meta_boxes ) {
                 'rows'       => 3,
                 'class' => 'enable-markdown',
                 'label_description' => __( '<span class="label">INFO</span> Fill with a short description of structure formatted text', 'wa-rsfp' ) . ' / ' .  __( '(Optional) This content will be displayed in knowledge single page.', 'wa-rsfp' ),
-				'desc' => __( '<span class="label">TIPS</span> Markdown is available : *italic* (Command + b) **bold** (Command + i) ***label*** (Command + Shift + L) #small# (Command + Shift + S) ##huge## (Command + Shift + H).', 'wa-rsfp' ),
+				'desc' => __( '<span class="label">TIPS</span> Markdown is available : *italic* (Command + b) **bold** (Command + i) ***label*** (Command + Shift + L) #small# (Command + Shift + S) ##huge## (Command + Shift + H)', 'wa-rsfp' ),
             ],
         ],
     ];
@@ -885,7 +885,7 @@ function operation_fields( $meta_boxes ) {
                 'rows'       => 3,
                 'class' => 'enable-markdown',
                 'label_description' => __( '<span class="label">INFO</span> Fill with a short description of structure formatted text', 'wa-rsfp' ) . ' / ' .  __( '(Optional) This content will be displayed in knowledge single page.', 'wa-rsfp' ),
-				'desc' => __( '<span class="label">TIPS</span> Markdown is available : *italic* (Command + b) **bold** (Command + i) ***label*** (Command + Shift + L) #small# (Command + Shift + S) ##huge## (Command + Shift + H).', 'wa-rsfp' ),
+				'desc' => __( '<span class="label">TIPS</span> Markdown is available : *italic* (Command + b) **bold** (Command + i) ***label*** (Command + Shift + L) #small# (Command + Shift + S) ##huge## (Command + Shift + H)', 'wa-rsfp' ),
             ],
         ],
     ];
