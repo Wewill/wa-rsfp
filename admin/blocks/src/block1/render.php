@@ -65,6 +65,14 @@ $next_post = get_adjacent_post(true, '', false, 'thematic');
 
 <!-- Begin: Directory block -->
 <!-- #directorysubhero -->
+<?php
+if ( is_textdomain_loaded( 'wa-rsfp' ) ) {
+    echo( 'wa-rsfp text domain loaded.' );
+} else {
+    echo( 'wa-rsfp text domain not loaded.' );
+}
+?>
+
 <section id="directorysubhero" class="mb-4 mb-lg-7 contrast--light ">
 	<div class="container-fluid px-0">
 		<div class="row g-0  min-h-400px"> <!-- .vh-100 hack-->
