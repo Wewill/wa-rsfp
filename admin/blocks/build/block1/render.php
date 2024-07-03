@@ -573,7 +573,7 @@ $next_post = get_adjacent_post(true, '', false, 'thematic');
 			<div class="col-md overflow-hidden bg-color-layout p-3 p-lg-5 rounded-bottom-4 rounded-bottom-left-0" data-aos="fade-left" data-aos-delay="100">
 
 				<div class="w-100 d-flex align-items-center justify-content-between">
-					<h6 class="subline text-action-1"><?= /*translators:Carte d'identité */ esc_html__('Identity', 'wa-rsfp'); ?></h6>
+					<h6 class="subline text-action-1"><?= esc_html__('Identity', 'wa-rsfp'); ?></h6>
 					<div>
 						<?= ( isset($meta_output['production']) ) ? $meta_output['production'] : '' ?>
 					</div>
