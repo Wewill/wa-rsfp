@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WA RSFP Global functions\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-12 10:31+0000\n"
+"POT-Creation-Date: 2024-07-03 19:55+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -265,22 +265,15 @@ msgid ""
 "network..."
 msgstr ""
 
-#: admin/class-wa-rsfp-fields.php:209
+#: admin/class-wa-rsfp-fields.php:64 admin/class-wa-rsfp-fields.php:209
+#: admin/class-wa-rsfp-fields.php:251 admin/class-wa-rsfp-fields.php:263
+#: admin/class-wa-rsfp-fields.php:293 admin/class-wa-rsfp-fields.php:329
+#: admin/class-wa-rsfp-fields.php:603 admin/class-wa-rsfp-fields.php:614
+#: admin/class-wa-rsfp-fields.php:774 admin/class-wa-rsfp-fields.php:888
 msgid ""
 "<span class=\"label\">TIPS</span> Markdown is available : *italic* (Command "
 "+ b) **bold** (Command + i) ***label*** (Command + Shift + L) #small# "
 "(Command + Shift + S) ##huge## (Command + Shift + H)"
-msgstr ""
-
-#: admin/class-wa-rsfp-fields.php:64 admin/class-wa-rsfp-fields.php:251
-#: admin/class-wa-rsfp-fields.php:263 admin/class-wa-rsfp-fields.php:293
-#: admin/class-wa-rsfp-fields.php:329 admin/class-wa-rsfp-fields.php:603
-#: admin/class-wa-rsfp-fields.php:614 admin/class-wa-rsfp-fields.php:774
-#: admin/class-wa-rsfp-fields.php:888
-msgid ""
-"<span class=\"label\">TIPS</span> Markdown is available : *italic* (Command "
-"+ b) **bold** (Command + i) ***label*** (Command + Shift + L) #small# "
-"(Command + Shift + S) ##huge## (Command + Shift + H)."
 msgstr ""
 
 #: admin/class-wa-rsfp-fields.php:448
@@ -1726,4 +1719,52 @@ msgstr ""
 msgid ""
 "© RSFP V2 — Maintenance <a href=\"http://www.wilhemarnoldy.fr\" "
 "target=\"_blank\">Wilhem Arnoldy, www.wilhemarnoldy.fr</a>"
+msgstr ""
+
+msgctxt "Carte d'identité"
+msgid "Identity"
+msgstr ""
+
+msgctxt "Répartition"
+msgid "Diagram"
+msgstr ""
+
+msgid "Gallery"
+msgstr ""
+
+msgid "Video"
+msgstr ""
+
+msgctxt "Avec le soutien opérationnel de..."
+msgid "With the operational support of..."
+msgstr ""
+
+msgctxt "Contactez votre structure d'accompagnement local"
+msgid "Contact your local support structure"
+msgstr ""
+
+msgid "Contact us"
+msgstr ""
+
+msgctxt "Frise d’acquisition du savoir-faire"
+msgid "Acquisition"
+msgstr ""
+
+msgid "Links"
+msgstr ""
+
+msgid "Previous knowledge"
+msgstr ""
+
+msgid "ago"
+msgstr ""
+
+msgid "Next knowledge"
+msgstr ""
+
+msgid "Last update"
+msgstr ""
+
+msgctxt "Rapport.s"
+msgid "Report.s"
 msgstr ""

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: WA RSFP Global functions\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-06-12 10:31+0000\n"
-"PO-Revision-Date: 2024-07-03 19:28+0000\n"
+"PO-Revision-Date: 2024-07-03 19:55+0000\n"
 "Last-Translator: Wilhem\n"
 "Language-Team: Français\n"
 "Language: fr_FR\n"
@@ -317,7 +317,11 @@ msgstr ""
 "<span class=\"label\">CONSEILS</span> Les liens peuvent être un site "
 "internet, une page, un réseau social..."
 
-#: admin/class-wa-rsfp-fields.php:209
+#: admin/class-wa-rsfp-fields.php:64 admin/class-wa-rsfp-fields.php:209
+#: admin/class-wa-rsfp-fields.php:251 admin/class-wa-rsfp-fields.php:263
+#: admin/class-wa-rsfp-fields.php:293 admin/class-wa-rsfp-fields.php:329
+#: admin/class-wa-rsfp-fields.php:603 admin/class-wa-rsfp-fields.php:614
+#: admin/class-wa-rsfp-fields.php:774 admin/class-wa-rsfp-fields.php:888
 msgid ""
 "<span class=\"label\">TIPS</span> Markdown is available : *italic* (Command "
 "+ b) **bold** (Command + i) ***label*** (Command + Shift + L) #small# "
@@ -326,17 +330,6 @@ msgstr ""
 "<span class=\"label\">CONSEILS</span> Markdown est disponible : *italique* "
 "(Commande + b) **gras** (Commande + i) ***label*** (Commande + Maj + L) # "
 "petit# (Commande + Maj + S) ##énorme## (Commande + Maj + H)"
-
-#: admin/class-wa-rsfp-fields.php:64 admin/class-wa-rsfp-fields.php:251
-#: admin/class-wa-rsfp-fields.php:263 admin/class-wa-rsfp-fields.php:293
-#: admin/class-wa-rsfp-fields.php:329 admin/class-wa-rsfp-fields.php:603
-#: admin/class-wa-rsfp-fields.php:614 admin/class-wa-rsfp-fields.php:774
-#: admin/class-wa-rsfp-fields.php:888
-msgid ""
-"<span class=\"label\">TIPS</span> Markdown is available : *italic* (Command "
-"+ b) **bold** (Command + i) ***label*** (Command + Shift + L) #small# "
-"(Command + Shift + S) ##huge## (Command + Shift + H)."
-msgstr ""
 
 #: admin/class-wa-rsfp-fields.php:448
 msgid ""
@@ -462,6 +455,9 @@ msgstr "Ajouter ou supprimer des thématiques"
 msgid "Address.s"
 msgstr "Adresse.s"
 
+msgid "ago"
+msgstr "il y a"
+
 #: admin/class-wa-rsfp-fields.php:184
 msgid "Agriculteur Biologique"
 msgstr ""
@@ -528,6 +524,10 @@ msgstr ""
 msgid "Area (in ha)"
 msgstr "Superficie (en ha)"
 
+msgctxt "Avec le soutien opérationnel de..."
+msgid "With the operational support of..."
+msgstr "Avec le soutien opérationnel de..."
+
 #: admin/class-wa-rsfp-fields.php:186
 msgid "Bio Cohérence"
 msgstr ""
@@ -545,6 +545,10 @@ msgstr "Un bloc conçu pour les pages de répertoire."
 msgctxt "block title"
 msgid "WA RSFP directory block"
 msgstr "WA RSFP Répertoire block"
+
+msgctxt "Carte d'identité"
+msgid "Identity"
+msgstr "Carte d'identité"
 
 #: admin/class-wa-rsfp-taxonomy.php:190
 msgid "Choose most used farm types"
@@ -577,6 +581,13 @@ msgstr "Couleur"
 #: admin/class-wa-rsfp-fields.php:198
 msgid "Commercialization"
 msgstr "Commercialisation"
+
+msgid "Contact us"
+msgstr "Contactez-nous"
+
+msgctxt "Contactez votre structure d'accompagnement local"
+msgid "Contact your local support structure"
+msgstr "Contactez votre structure d'accompagnement local"
 
 #: admin/class-wa-rsfp-fields.php:1003
 msgid "Content"
@@ -746,12 +757,12 @@ msgstr ""
 
 #: admin/class-wa-rsfp-taxonomy.php:176
 msgid "Farm type"
-msgstr ""
+msgstr "Type de fermes"
 
 #: admin/class-wa-rsfp-taxonomy.php:175 admin/class-wa-rsfp-taxonomy.php:177
 #: admin/class-wa-rsfp-taxonomy.php:200
 msgid "Farm types"
-msgstr ""
+msgstr "Types de fermes"
 
 #: admin/class-wa-rsfp-taxonomy.php:195
 msgid "Farm types list"
@@ -872,6 +883,13 @@ msgstr ""
 msgid "Filter structures list"
 msgstr ""
 
+msgctxt "Frise d’acquisition du savoir-faire"
+msgid "Acquisition"
+msgstr "Frise d’acquisition du savoir-faire"
+
+msgid "Gallery"
+msgstr "Galerie"
+
 #: admin/class-wa-rsfp-fields.php:382
 msgid "Gallery files"
 msgstr "Fichiers de la galerie"
@@ -983,6 +1001,9 @@ msgstr ""
 msgid "Label Rouge"
 msgstr ""
 
+msgid "Last update"
+msgstr "Dernière mise à jour"
+
 #: admin/class-wa-rsfp-fields.php:823 admin/class-wa-rsfp-columns.php:298
 msgid "Leader.s"
 msgstr "Animateur.trice"
@@ -999,6 +1020,9 @@ msgstr "Lien"
 #: admin/class-wa-rsfp-fields.php:853
 msgid "Link.s"
 msgstr "Lien.s"
+
+msgid "Links"
+msgstr "Liens"
 
 #: admin/class-wa-rsfp-taxonomy.php:40
 msgid "List all department.s of France"
@@ -1040,7 +1064,7 @@ msgstr "Lieu (commune, département)"
 #: admin/class-wa-rsfp-taxonomy.php:142 admin/class-wa-rsfp-taxonomy.php:196
 #: admin/class-wa-rsfp-taxonomy.php:249
 msgid "Most Used"
-msgstr ""
+msgstr "Le plus utilisé"
 
 #: admin/class-wa-rsfp-fields.php:187
 msgid "Nature & Progrès"
@@ -1086,6 +1110,9 @@ msgstr ""
 #: admin/class-wa-rsfp-taxonomy.php:133
 msgid "New Thematic Name"
 msgstr ""
+
+msgid "Next knowledge"
+msgstr "Savoir-faire suivant"
 
 #: admin/class-wa-rsfp-taxonomy.php:192
 msgid "No farm types"
@@ -1337,7 +1364,7 @@ msgstr ""
 
 #: admin/class-wa-rsfp-taxonomy.php:229
 msgid "Partner category"
-msgstr ""
+msgstr "Catégorie de partenaire"
 
 #: admin/class-wa-rsfp-register.php:340
 msgid "Partner published privately."
@@ -1422,6 +1449,9 @@ msgstr "Image de présentation"
 msgid "Preview"
 msgstr "Aperçu"
 
+msgid "Previous knowledge"
+msgstr "Savoir-faire précédent"
+
 #: admin/class-wa-rsfp-taxonomy.php:68
 msgid "Production"
 msgstr ""
@@ -1443,6 +1473,10 @@ msgstr ""
 msgid "Productions list pagination"
 msgstr ""
 
+msgctxt "Rapport.s"
+msgid "Report.s"
+msgstr "Rapport.s"
+
 #: admin/class-wa-rsfp-fields.php:690 admin/class-wa-rsfp-columns.php:248
 msgid "Referent"
 msgstr "Référent"
@@ -1452,6 +1486,10 @@ msgstr "Référent"
 #: admin/class-wa-rsfp-register.php:332
 msgid "Remove featured image"
 msgstr "Supprimer l'image en avant"
+
+msgctxt "Répartition"
+msgid "Diagram"
+msgstr "Répartition"
 
 #: admin/class-wa-rsfp-taxonomy.php:178
 msgid "Search Farm types"
@@ -1696,6 +1734,9 @@ msgstr "Utiliser comme image en avant"
 #: admin/class-wa-rsfp-fields.php:241
 msgid "Viability.s"
 msgstr "Viabilité.s"
+
+msgid "Video"
+msgstr "Vidéo"
 
 #: admin/class-wa-rsfp-fields.php:399
 msgid "Video file"
