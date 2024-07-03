@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: WA RSFP Global functions\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-06-12 10:31+0000\n"
-"PO-Revision-Date: 2024-07-03 19:59+0000\n"
+"PO-Revision-Date: 2024-07-03 20:19+0000\n"
 "Last-Translator: Wilhem\n"
 "Language-Team: Français\n"
 "Language: fr_FR\n"
@@ -114,7 +114,8 @@ msgstr "<span class=\"label\">INFO</span> Choisissez une ou plusieurs options."
 #: admin/class-wa-rsfp-fields.php:292
 msgid "<span class=\"label\">INFO</span> Fill acquisitation.s as a chronology"
 msgstr ""
-"<span class=\"label\">INFO</span> Remplissez acquisition.s par chronologie"
+"<span class=\"label\">INFO</span> Remplissez les acquisition.s par "
+"chronologie"
 
 #: admin/class-wa-rsfp-fields.php:924
 msgid "<span class=\"label\">INFO</span> Fill one link"
@@ -380,6 +381,11 @@ msgstr ""
 "agricoles, les agriculteurs, les structures, les opérations, les partenaires "
 "du \"Répertoire des Savoir-faire Paysans\""
 
+#: admin/blocks/src/block1/render.php:1263
+#: admin/blocks/build/block1/render.php:1263
+msgid "Acquisition"
+msgstr "Frise d'acquisition du savoir-faire"
+
 #. translators:Chronologie Frise d'acquisition du savoir-faire
 #: admin/class-wa-rsfp-fields.php:283
 msgid "Acquisition.s"
@@ -455,8 +461,10 @@ msgstr "Ajouter ou supprimer des thématiques"
 msgid "Address.s"
 msgstr "Adresse.s"
 
-msgid "ago"
-msgstr "il y a"
+#: admin/blocks/src/block1/render.php:1376
+#: admin/blocks/build/block1/render.php:1376
+msgid "Adresse"
+msgstr ""
 
 #: admin/class-wa-rsfp-fields.php:184
 msgid "Agriculteur Biologique"
@@ -520,13 +528,10 @@ msgstr ""
 msgid "Apprentissage"
 msgstr ""
 
-#: admin/class-wa-rsfp-fields.php:162
+#: admin/class-wa-rsfp-fields.php:162 admin/blocks/src/block1/render.php:610
+#: admin/blocks/build/block1/render.php:610
 msgid "Area (in ha)"
 msgstr "Surface (en ha)"
-
-msgctxt "Avec le soutien opérationnel de..."
-msgid "With the operational support of..."
-msgstr "Avec le soutien opérationnel de..."
 
 #: admin/class-wa-rsfp-fields.php:186
 msgid "Bio Cohérence"
@@ -545,11 +550,6 @@ msgstr "Un bloc conçu pour les pages de répertoire."
 msgctxt "block title"
 msgid "WA RSFP directory block"
 msgstr "WA RSFP Répertoire block"
-
-#: admin/blocks/src/block1/block.json:1 admin/blocks/build/block1/render.php:1
-msgctxt "Carte d'identité"
-msgid "Identity"
-msgstr "Carte d'identité"
 
 #: admin/class-wa-rsfp-taxonomy.php:190
 msgid "Choose most used farm types"
@@ -579,14 +579,26 @@ msgstr "Code"
 msgid "Color"
 msgstr "Couleur"
 
-#: admin/class-wa-rsfp-fields.php:198
+#: admin/class-wa-rsfp-fields.php:198 admin/blocks/src/block1/render.php:669
+#: admin/blocks/build/block1/render.php:669
 msgid "Commercialization"
 msgstr "Commercialisation"
 
+#: admin/blocks/src/block1/render.php:1392
+#: admin/blocks/build/block1/render.php:1392
+msgid "Contact"
+msgstr ""
+
+#: admin/blocks/src/block1/render.php:1089
+#: admin/blocks/src/block1/render.php:1422
+#: admin/blocks/build/block1/render.php:1089
+#: admin/blocks/build/block1/render.php:1422
 msgid "Contact us"
 msgstr "Contactez-nous"
 
-msgctxt "Contactez votre structure d'accompagnement local"
+#. translators:Contactez votre structure d'accompagnement local
+#: admin/blocks/src/block1/render.php:1129
+#: admin/blocks/build/block1/render.php:1129
 msgid "Contact your local support structure"
 msgstr "Contactez votre structure d'accompagnement local"
 
@@ -605,6 +617,12 @@ msgstr ""
 #: admin/class-wa-rsfp-general.php:34
 msgid "DEV / BAC À SABLE"
 msgstr ""
+
+#. translators:Répartition
+#: admin/blocks/src/block1/render.php:698
+#: admin/blocks/build/block1/render.php:698
+msgid "Diagram"
+msgstr "Répartition"
 
 #: admin/class-wa-rsfp-fields.php:227
 msgid "Diagram.s"
@@ -824,7 +842,9 @@ msgstr ""
 msgid "Featured image"
 msgstr "Image en avant"
 
-#: admin/class-wa-rsfp-fields.php:406
+#. translators:Files
+#: admin/class-wa-rsfp-fields.php:406 admin/blocks/src/block1/render.php:935
+#: admin/blocks/build/block1/render.php:935
 msgid "Files"
 msgstr "Fichiers"
 
@@ -884,10 +904,9 @@ msgstr ""
 msgid "Filter structures list"
 msgstr ""
 
-msgctxt "Frise d’acquisition du savoir-faire"
-msgid "Acquisition"
-msgstr "Frise d’acquisition du savoir-faire"
-
+#. translators:Galerie
+#: admin/blocks/src/block1/render.php:881
+#: admin/blocks/build/block1/render.php:881
 msgid "Gallery"
 msgstr "Galerie"
 
@@ -933,6 +952,12 @@ msgstr "Contenu Homeslide"
 msgid "https://www.wilhemarnoldy.fr"
 msgstr ""
 
+#. translators:Carte d'identité
+#: admin/blocks/src/block1/render.php:584
+#: admin/blocks/build/block1/render.php:584
+msgid "Identity"
+msgstr "Carte d'identité"
+
 #: admin/class-wa-rsfp-fields.php:190
 msgid "IGP"
 msgstr ""
@@ -962,7 +987,8 @@ msgid "Insert into structure"
 msgstr ""
 
 #. translators:Parcours à l'installation
-#: admin/class-wa-rsfp-fields.php:306
+#: admin/class-wa-rsfp-fields.php:306 admin/blocks/src/block1/render.php:874
+#: admin/blocks/build/block1/render.php:874
 msgid "Installation period"
 msgstr "Parcours à l'installation"
 
@@ -994,16 +1020,14 @@ msgstr ""
 msgid "Knowledge updated."
 msgstr ""
 
-#: admin/class-wa-rsfp-fields.php:180
+#: admin/class-wa-rsfp-fields.php:180 admin/blocks/src/block1/render.php:648
+#: admin/blocks/build/block1/render.php:648
 msgid "Label"
 msgstr ""
 
 #: admin/class-wa-rsfp-fields.php:188
 msgid "Label Rouge"
 msgstr ""
-
-msgid "Last update"
-msgstr "Dernière mise à jour"
 
 #: admin/class-wa-rsfp-fields.php:823 admin/class-wa-rsfp-columns.php:298
 msgid "Leader.s"
@@ -1022,6 +1046,8 @@ msgstr "Lien"
 msgid "Link.s"
 msgstr "Lien.s"
 
+#: admin/blocks/src/block1/render.php:1407
+#: admin/blocks/build/block1/render.php:1407
 msgid "Links"
 msgstr "Liens"
 
@@ -1049,7 +1075,8 @@ msgstr ""
 msgid "LIVE"
 msgstr ""
 
-#: admin/class-wa-rsfp-fields.php:174
+#: admin/class-wa-rsfp-fields.php:174 admin/blocks/src/block1/render.php:634
+#: admin/blocks/build/block1/render.php:634
 msgid "Livestock"
 msgstr "Cheptel"
 
@@ -1058,6 +1085,8 @@ msgid "LOCAL"
 msgstr ""
 
 #: admin/class-wa-rsfp-fields.php:155 admin/class-wa-rsfp-fields.php:545
+#: admin/blocks/src/block1/render.php:598
+#: admin/blocks/build/block1/render.php:598
 msgid "Location"
 msgstr "Lieu (commune, département)"
 
@@ -1112,6 +1141,8 @@ msgstr ""
 msgid "New Thematic Name"
 msgstr ""
 
+#: admin/blocks/src/block1/render.php:1518
+#: admin/blocks/build/block1/render.php:1518
 msgid "Next knowledge"
 msgstr "Savoir-faire suivant"
 
@@ -1201,7 +1232,8 @@ msgstr ""
 msgid "Notes"
 msgstr "Notes"
 
-#: admin/class-wa-rsfp-fields.php:168
+#: admin/class-wa-rsfp-fields.php:168 admin/blocks/src/block1/render.php:622
+#: admin/blocks/build/block1/render.php:622
 msgid "Number of people"
 msgstr "Nombre de personnes"
 
@@ -1353,7 +1385,7 @@ msgstr ""
 #: admin/class-wa-rsfp-taxonomy.php:228 admin/class-wa-rsfp-taxonomy.php:230
 #: admin/class-wa-rsfp-taxonomy.php:253
 msgid "Partner categories"
-msgstr ""
+msgstr "Catégorie de partenaires"
 
 #: admin/class-wa-rsfp-taxonomy.php:248
 msgid "Partner categories list"
@@ -1450,6 +1482,8 @@ msgstr "Image de présentation"
 msgid "Preview"
 msgstr "Aperçu"
 
+#: admin/blocks/src/block1/render.php:1473
+#: admin/blocks/build/block1/render.php:1473
 msgid "Previous knowledge"
 msgstr "Savoir-faire précédent"
 
@@ -1474,10 +1508,6 @@ msgstr ""
 msgid "Productions list pagination"
 msgstr ""
 
-msgctxt "Rapport.s"
-msgid "Report.s"
-msgstr "Rapport.s"
-
 #: admin/class-wa-rsfp-fields.php:690 admin/class-wa-rsfp-columns.php:248
 msgid "Referent"
 msgstr "Référent"
@@ -1488,9 +1518,10 @@ msgstr "Référent"
 msgid "Remove featured image"
 msgstr "Supprimer l'image en avant"
 
-msgctxt "Répartition"
-msgid "Diagram"
-msgstr "Répartition"
+#: admin/blocks/src/block1/render.php:839
+#: admin/blocks/build/block1/render.php:839
+msgid "Report.s"
+msgstr "Rapport.s"
 
 #: admin/class-wa-rsfp-taxonomy.php:178
 msgid "Search Farm types"
@@ -1559,7 +1590,8 @@ msgid "Set featured image"
 msgstr "Définir l'image en avant"
 
 #. translators:Compétence.s acquise.s
-#: admin/class-wa-rsfp-fields.php:319
+#: admin/class-wa-rsfp-fields.php:319 admin/blocks/src/block1/render.php:865
+#: admin/blocks/build/block1/render.php:865
 msgid "Skill.s"
 msgstr "Compétence.s acquise.s"
 
@@ -1673,8 +1705,10 @@ msgstr "Thématique"
 msgid "Thematic › General"
 msgstr "Thématique › Général"
 
+#. translators:Thematiques
 #: admin/class-wa-rsfp-taxonomy.php:121 admin/class-wa-rsfp-taxonomy.php:123
-#: admin/class-wa-rsfp-taxonomy.php:146
+#: admin/class-wa-rsfp-taxonomy.php:146 admin/blocks/src/block1/render.php:773
+#: admin/blocks/build/block1/render.php:773
 msgid "Thematics"
 msgstr "Thématiques"
 
@@ -1732,10 +1766,14 @@ msgstr ""
 msgid "Use as featured image"
 msgstr "Utiliser comme image en avant"
 
-#: admin/class-wa-rsfp-fields.php:241
+#: admin/class-wa-rsfp-fields.php:241 admin/blocks/src/block1/render.php:845
+#: admin/blocks/build/block1/render.php:845
 msgid "Viability.s"
 msgstr "Viabilité.s"
 
+#. translators:Vidéo
+#: admin/blocks/src/block1/render.php:906
+#: admin/blocks/build/block1/render.php:906
 msgid "Video"
 msgstr "Vidéo"
 
@@ -1819,7 +1857,8 @@ msgstr ""
 msgid "Visite établissement scolaire"
 msgstr ""
 
-#: admin/class-wa-rsfp-fields.php:254
+#: admin/class-wa-rsfp-fields.php:254 admin/blocks/src/block1/render.php:855
+#: admin/blocks/build/block1/render.php:855
 msgid "Vivability.s"
 msgstr "Vivabilité.s"
 
@@ -1835,6 +1874,12 @@ msgstr ""
 #. Author of the plugin
 msgid "Wilhem Arnoldy"
 msgstr ""
+
+#. translators:Avec le soutien opérationnel de...
+#: admin/blocks/src/block1/render.php:1021
+#: admin/blocks/build/block1/render.php:1021
+msgid "With the operational support of..."
+msgstr "Avec le soutien opérationnel de..."
 
 #: admin/class-wa-rsfp-general.php:10
 msgid ""

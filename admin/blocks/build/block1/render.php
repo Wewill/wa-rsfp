@@ -65,14 +65,6 @@ $next_post = get_adjacent_post(true, '', false, 'thematic');
 
 <!-- Begin: Directory block -->
 <!-- #directorysubhero -->
-<?php
-if ( is_textdomain_loaded( 'wa-rsfp' ) ) {
-    echo( 'wa-rsfp text domain loaded.' );
-} else {
-    echo( 'wa-rsfp text domain not loaded.' );
-}
-?>
-
 <section id="directorysubhero" class="mb-4 mb-lg-7 contrast--light ">
 	<div class="container-fluid px-0">
 		<div class="row g-0  min-h-400px"> <!-- .vh-100 hack-->
@@ -581,7 +573,7 @@ if ( is_textdomain_loaded( 'wa-rsfp' ) ) {
 			<div class="col-md overflow-hidden bg-color-layout p-3 p-lg-5 rounded-bottom-4 rounded-bottom-left-0" data-aos="fade-left" data-aos-delay="100">
 
 				<div class="w-100 d-flex align-items-center justify-content-between">
-					<h6 class="subline text-action-1"><?= /*translators:Carte d'identité */ esc_html__('Identity', 'wa-rsfp'); ?></h6>
+					<h6 class="subline text-action-1"><?= /*translators:Carte d'identité */ __('Identity', 'wa-rsfp' ); ?></h6>
 					<div>
 						<?= ( isset($meta_output['production']) ) ? $meta_output['production'] : '' ?>
 					</div>
