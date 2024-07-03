@@ -546,6 +546,7 @@ msgctxt "block title"
 msgid "WA RSFP directory block"
 msgstr "WA RSFP Répertoire block"
 
+#: admin/blocks/src/block1/block.json:1 admin/blocks/build/block1/render.php:1
 msgctxt "Carte d'identité"
 msgid "Identity"
 msgstr "Carte d'identité"
