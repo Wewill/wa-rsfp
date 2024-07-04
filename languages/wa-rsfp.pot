@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WA RSFP Global functions\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-03 20:15+0000\n"
+"POT-Creation-Date: 2024-07-04 13:27+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -311,8 +311,8 @@ msgid ""
 "operations, partners of \"le Répertoire des Savoir-faire Paysans\""
 msgstr ""
 
-#: admin/blocks/src/block1/render.php:1263
-#: admin/blocks/build/block1/render.php:1263
+#: admin/blocks/src/block1/render.php:1255
+#: admin/blocks/build/block1/render.php:1255
 msgid "Acquisition"
 msgstr ""
 
@@ -391,8 +391,8 @@ msgstr ""
 msgid "Address.s"
 msgstr ""
 
-#: admin/blocks/src/block1/render.php:1376
-#: admin/blocks/build/block1/render.php:1376
+#: admin/blocks/src/block1/render.php:1368
+#: admin/blocks/build/block1/render.php:1368
 msgid "Adresse"
 msgstr ""
 
@@ -454,12 +454,17 @@ msgstr ""
 msgid "AOP"
 msgstr ""
 
+#: admin/blocks/src/block1/render.php:1220
+#: admin/blocks/build/block1/render.php:1220
+msgid "Apply to a stage"
+msgstr ""
+
 #: admin/class-wa-rsfp-fields.php:348
 msgid "Apprentissage"
 msgstr ""
 
-#: admin/class-wa-rsfp-fields.php:162 admin/blocks/src/block1/render.php:610
-#: admin/blocks/build/block1/render.php:610
+#: admin/class-wa-rsfp-fields.php:162 admin/blocks/src/block1/render.php:602
+#: admin/blocks/build/block1/render.php:602
 msgid "Area (in ha)"
 msgstr ""
 
@@ -479,6 +484,11 @@ msgstr ""
 #: admin/blocks/src/block1/block.json:1 admin/blocks/build/block1/block.json:1
 msgctxt "block title"
 msgid "WA RSFP directory block"
+msgstr ""
+
+#: admin/blocks/src/block1/render.php:1206
+#: admin/blocks/build/block1/render.php:1206
+msgid "Book a visit"
 msgstr ""
 
 #: admin/class-wa-rsfp-taxonomy.php:190
@@ -509,26 +519,26 @@ msgstr ""
 msgid "Color"
 msgstr ""
 
-#: admin/class-wa-rsfp-fields.php:198 admin/blocks/src/block1/render.php:669
-#: admin/blocks/build/block1/render.php:669
+#: admin/class-wa-rsfp-fields.php:198 admin/blocks/src/block1/render.php:661
+#: admin/blocks/build/block1/render.php:661
 msgid "Commercialization"
 msgstr ""
 
-#: admin/blocks/src/block1/render.php:1392
-#: admin/blocks/build/block1/render.php:1392
+#: admin/blocks/src/block1/render.php:1384
+#: admin/blocks/build/block1/render.php:1384
 msgid "Contact"
 msgstr ""
 
-#: admin/blocks/src/block1/render.php:1089
-#: admin/blocks/src/block1/render.php:1422
-#: admin/blocks/build/block1/render.php:1089
-#: admin/blocks/build/block1/render.php:1422
+#: admin/blocks/src/block1/render.php:1081
+#: admin/blocks/src/block1/render.php:1414
+#: admin/blocks/build/block1/render.php:1081
+#: admin/blocks/build/block1/render.php:1414
 msgid "Contact us"
 msgstr ""
 
 #. translators:Contactez votre structure d'accompagnement local
-#: admin/blocks/src/block1/render.php:1129
-#: admin/blocks/build/block1/render.php:1129
+#: admin/blocks/src/block1/render.php:1121
+#: admin/blocks/build/block1/render.php:1121
 msgid "Contact your local support structure"
 msgstr ""
 
@@ -549,8 +559,8 @@ msgid "DEV / BAC À SABLE"
 msgstr ""
 
 #. translators:Répartition
-#: admin/blocks/src/block1/render.php:698
-#: admin/blocks/build/block1/render.php:698
+#: admin/blocks/src/block1/render.php:690
+#: admin/blocks/build/block1/render.php:690
 msgid "Diagram"
 msgstr ""
 
@@ -608,6 +618,11 @@ msgstr ""
 
 #: admin/class-wa-rsfp-fields.php:71
 msgid "Directory › Relationships"
+msgstr ""
+
+#: admin/blocks/src/block1/render.php:1231
+#: admin/blocks/build/block1/render.php:1231
+msgid "Download"
 msgstr ""
 
 #: admin/class-wa-rsfp-register.php:117
@@ -684,6 +699,16 @@ msgstr ""
 #. translators:Ferme en transmission
 #: admin/class-wa-rsfp-fields.php:580
 msgid "Farm in transmission"
+msgstr ""
+
+#: admin/blocks/src/block1/render.php:1219
+#: admin/blocks/build/block1/render.php:1219
+msgid "Farm is open to stage :"
+msgstr ""
+
+#: admin/blocks/src/block1/render.php:1205
+#: admin/blocks/build/block1/render.php:1205
+msgid "Farm is open to visit :"
 msgstr ""
 
 #: admin/class-wa-rsfp-register.php:140
@@ -771,8 +796,8 @@ msgid "Featured image"
 msgstr ""
 
 #. translators:Files
-#: admin/class-wa-rsfp-fields.php:406 admin/blocks/src/block1/render.php:935
-#: admin/blocks/build/block1/render.php:935
+#: admin/class-wa-rsfp-fields.php:406 admin/blocks/src/block1/render.php:927
+#: admin/blocks/build/block1/render.php:927
 msgid "Files"
 msgstr ""
 
@@ -833,8 +858,8 @@ msgid "Filter structures list"
 msgstr ""
 
 #. translators:Galerie
-#: admin/blocks/src/block1/render.php:881
-#: admin/blocks/build/block1/render.php:881
+#: admin/blocks/src/block1/render.php:873
+#: admin/blocks/build/block1/render.php:873
 msgid "Gallery"
 msgstr ""
 
@@ -881,8 +906,8 @@ msgid "https://www.wilhemarnoldy.fr"
 msgstr ""
 
 #. translators:Carte d'identité
-#: admin/blocks/src/block1/render.php:584
-#: admin/blocks/build/block1/render.php:584
+#: admin/blocks/src/block1/render.php:576
+#: admin/blocks/build/block1/render.php:576
 msgid "Identity"
 msgstr ""
 
@@ -915,8 +940,8 @@ msgid "Insert into structure"
 msgstr ""
 
 #. translators:Parcours à l'installation
-#: admin/class-wa-rsfp-fields.php:306 admin/blocks/src/block1/render.php:874
-#: admin/blocks/build/block1/render.php:874
+#: admin/class-wa-rsfp-fields.php:306 admin/blocks/src/block1/render.php:866
+#: admin/blocks/build/block1/render.php:866
 msgid "Installation period"
 msgstr ""
 
@@ -948,8 +973,8 @@ msgstr ""
 msgid "Knowledge updated."
 msgstr ""
 
-#: admin/class-wa-rsfp-fields.php:180 admin/blocks/src/block1/render.php:648
-#: admin/blocks/build/block1/render.php:648
+#: admin/class-wa-rsfp-fields.php:180 admin/blocks/src/block1/render.php:640
+#: admin/blocks/build/block1/render.php:640
 msgid "Label"
 msgstr ""
 
@@ -974,8 +999,8 @@ msgstr ""
 msgid "Link.s"
 msgstr ""
 
-#: admin/blocks/src/block1/render.php:1407
-#: admin/blocks/build/block1/render.php:1407
+#: admin/blocks/src/block1/render.php:1399
+#: admin/blocks/build/block1/render.php:1399
 msgid "Links"
 msgstr ""
 
@@ -1003,8 +1028,8 @@ msgstr ""
 msgid "LIVE"
 msgstr ""
 
-#: admin/class-wa-rsfp-fields.php:174 admin/blocks/src/block1/render.php:634
-#: admin/blocks/build/block1/render.php:634
+#: admin/class-wa-rsfp-fields.php:174 admin/blocks/src/block1/render.php:626
+#: admin/blocks/build/block1/render.php:626
 msgid "Livestock"
 msgstr ""
 
@@ -1013,8 +1038,8 @@ msgid "LOCAL"
 msgstr ""
 
 #: admin/class-wa-rsfp-fields.php:155 admin/class-wa-rsfp-fields.php:545
-#: admin/blocks/src/block1/render.php:598
-#: admin/blocks/build/block1/render.php:598
+#: admin/blocks/src/block1/render.php:590
+#: admin/blocks/build/block1/render.php:590
 msgid "Location"
 msgstr ""
 
@@ -1068,8 +1093,8 @@ msgstr ""
 msgid "New Thematic Name"
 msgstr ""
 
-#: admin/blocks/src/block1/render.php:1518
-#: admin/blocks/build/block1/render.php:1518
+#: admin/blocks/src/block1/render.php:1510
+#: admin/blocks/build/block1/render.php:1510
 msgid "Next knowledge"
 msgstr ""
 
@@ -1159,9 +1184,14 @@ msgstr ""
 msgid "Notes"
 msgstr ""
 
-#: admin/class-wa-rsfp-fields.php:168 admin/blocks/src/block1/render.php:622
-#: admin/blocks/build/block1/render.php:622
+#: admin/class-wa-rsfp-fields.php:168 admin/blocks/src/block1/render.php:614
+#: admin/blocks/build/block1/render.php:614
 msgid "Number of people"
+msgstr ""
+
+#: admin/blocks/src/block1/render.php:1218
+#: admin/blocks/build/block1/render.php:1218
+msgid "Open to stage"
 msgstr ""
 
 #: admin/class-wa-rsfp-fields.php:341
@@ -1409,8 +1439,8 @@ msgstr ""
 msgid "Preview"
 msgstr ""
 
-#: admin/blocks/src/block1/render.php:1473
-#: admin/blocks/build/block1/render.php:1473
+#: admin/blocks/src/block1/render.php:1465
+#: admin/blocks/build/block1/render.php:1465
 msgid "Previous knowledge"
 msgstr ""
 
@@ -1445,8 +1475,8 @@ msgstr ""
 msgid "Remove featured image"
 msgstr ""
 
-#: admin/blocks/src/block1/render.php:839
-#: admin/blocks/build/block1/render.php:839
+#: admin/blocks/src/block1/render.php:831
+#: admin/blocks/build/block1/render.php:831
 msgid "Report.s"
 msgstr ""
 
@@ -1517,8 +1547,8 @@ msgid "Set featured image"
 msgstr ""
 
 #. translators:Compétence.s acquise.s
-#: admin/class-wa-rsfp-fields.php:319 admin/blocks/src/block1/render.php:865
-#: admin/blocks/build/block1/render.php:865
+#: admin/class-wa-rsfp-fields.php:319 admin/blocks/src/block1/render.php:857
+#: admin/blocks/build/block1/render.php:857
 msgid "Skill.s"
 msgstr ""
 
@@ -1634,8 +1664,8 @@ msgstr ""
 
 #. translators:Thematiques
 #: admin/class-wa-rsfp-taxonomy.php:121 admin/class-wa-rsfp-taxonomy.php:123
-#: admin/class-wa-rsfp-taxonomy.php:146 admin/blocks/src/block1/render.php:773
-#: admin/blocks/build/block1/render.php:773
+#: admin/class-wa-rsfp-taxonomy.php:146 admin/blocks/src/block1/render.php:765
+#: admin/blocks/build/block1/render.php:765
 msgid "Thematics"
 msgstr ""
 
@@ -1693,14 +1723,14 @@ msgstr ""
 msgid "Use as featured image"
 msgstr ""
 
-#: admin/class-wa-rsfp-fields.php:241 admin/blocks/src/block1/render.php:845
-#: admin/blocks/build/block1/render.php:845
+#: admin/class-wa-rsfp-fields.php:241 admin/blocks/src/block1/render.php:837
+#: admin/blocks/build/block1/render.php:837
 msgid "Viability.s"
 msgstr ""
 
 #. translators:Vidéo
-#: admin/blocks/src/block1/render.php:906
-#: admin/blocks/build/block1/render.php:906
+#: admin/blocks/src/block1/render.php:898
+#: admin/blocks/build/block1/render.php:898
 msgid "Video"
 msgstr ""
 
@@ -1772,6 +1802,11 @@ msgstr ""
 msgid "Vimeo & YouTube video link"
 msgstr ""
 
+#: admin/blocks/src/block1/render.php:1204
+#: admin/blocks/build/block1/render.php:1204
+msgid "Visit farm"
+msgstr ""
+
 #: admin/class-wa-rsfp-fields.php:361
 msgid "Visite collective"
 msgstr ""
@@ -1784,8 +1819,8 @@ msgstr ""
 msgid "Visite établissement scolaire"
 msgstr ""
 
-#: admin/class-wa-rsfp-fields.php:254 admin/blocks/src/block1/render.php:855
-#: admin/blocks/build/block1/render.php:855
+#: admin/class-wa-rsfp-fields.php:254 admin/blocks/src/block1/render.php:847
+#: admin/blocks/build/block1/render.php:847
 msgid "Vivability.s"
 msgstr ""
 
@@ -1803,8 +1838,8 @@ msgid "Wilhem Arnoldy"
 msgstr ""
 
 #. translators:Avec le soutien opérationnel de...
-#: admin/blocks/src/block1/render.php:1021
-#: admin/blocks/build/block1/render.php:1021
+#: admin/blocks/src/block1/render.php:1013
+#: admin/blocks/build/block1/render.php:1013
 msgid "With the operational support of..."
 msgstr ""
 
