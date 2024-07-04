@@ -1201,9 +1201,9 @@ $next_post = get_adjacent_post(true, '', false, 'thematic');
 				<div class="d-lg-flex d-inline-block align-items-center px-1 px-lg-0">
 					<i class="bi bi-house-heart flex-shrink-0 me-2 me-md-3 h2 md-reset-fontsize text-action-1"></i>
 					<div>
-					<h6 class="fw-bold text-action-1 my-2 my-lg-3"><?= esc_html__( 'Visit farm', 'waff' ); ?></h6>
-					<p class="mb-0 small-lg"><span class="visually-hidden"><?= esc_html__( 'Farm is open to visit :', 'waff' ); ?></span><?= WaffTwo\Core\waff_implode_options(', ', $d_stage_opentovisit, $options_d_stage_opentovisit); ?></p>
-					<a class="btn btn-action-1 btn-transition-scale mt-4 flex-fill w-100" href="<?= esc_url(add_query_arg(array('form_type' => 'visit', 'ID' => $post->ID),$contact_permalink)) ?>"><?= esc_html__( 'Book a visit', 'waff' ); ?></a>
+					<h6 class="fw-bold text-action-1 my-2 my-lg-3"><?= esc_html__( 'Visit farm', 'wa-rsfp' ); ?></h6>
+					<p class="mb-0 small-lg"><span class="visually-hidden"><?= esc_html__( 'Farm is open to visit :', 'wa-rsfp' ); ?></span><?= WaffTwo\Core\waff_implode_options(', ', $d_stage_opentovisit, $options_d_stage_opentovisit); ?></p>
+					<a class="btn btn-action-1 btn-transition-scale mt-4 flex-fill w-100" href="<?= esc_url(add_query_arg(array('form_type' => 'visit', 'ID' => $post->ID),$contact_permalink)) ?>"><?= esc_html__( 'Book a visit', 'wa-rsfp' ); ?></a>
 					</div>
 				</div>
 				<div class="d-none d-lg-flex align-items-center justify-content-center px-2 px-md-4 px-xl-5">
@@ -1215,9 +1215,9 @@ $next_post = get_adjacent_post(true, '', false, 'thematic');
 				<div class="d-lg-flex d-inline-block align-items-center px-1 px-lg-0">
 					<i class="bi bi-highlighter flex-shrink-0 me-2 me-md-3 h2 md-reset-fontsize text-action-1"></i>
 					<div>
-					<h6 class="fw-bold text-action-1 my-2 my-lg-3"><?= esc_html__( 'Open to stage', 'waff' ); ?></h6>
-					<p class="mb-0 small-lg"><span class="visually-hidden"><?= esc_html__( 'Farm is open to stage :', 'waff' ); ?></span><?= WaffTwo\Core\waff_implode_options(', ', $d_stage_opentostage, $options_d_stage_opentostage); ?></p>
-					<a class="btn btn-action-1 btn-transition-scale mt-4 flex-fill w-100" href="<?= esc_url(add_query_arg(array('form_type' => 'stage', 'ID' => $post->ID),$contact_permalink)) ?>"><?= esc_html__( 'Apply to a stage', 'waff' ); ?></a>
+					<h6 class="fw-bold text-action-1 my-2 my-lg-3"><?= esc_html__( 'Open to stage', 'wa-rsfp' ); ?></h6>
+					<p class="mb-0 small-lg"><span class="visually-hidden"><?= esc_html__( 'Farm is open to stage :', 'wa-rsfp' ); ?></span><?= WaffTwo\Core\waff_implode_options(', ', $d_stage_opentostage, $options_d_stage_opentostage); ?></p>
+					<a class="btn btn-action-1 btn-transition-scale mt-4 flex-fill w-100" href="<?= esc_url(add_query_arg(array('form_type' => 'stage', 'ID' => $post->ID),$contact_permalink)) ?>"><?= esc_html__( 'Apply to a stage', 'wa-rsfp' ); ?></a>
 					</div>
 				</div>
 				<!-- <div class="d-none d-lg-flex align-items-center justify-content-center px-5">
@@ -1228,7 +1228,7 @@ $next_post = get_adjacent_post(true, '', false, 'thematic');
 				<!-- <div class="d-lg-flex d-inline-block align-items-center">
 					<i class="bi bi-cloud-arrow-down flex-shrink-0 me-2 me-md-3 h2 md-reset-fontsize text-action-1"></i>
 					<div>
-					<h6 class="fw-bold --text-action-1"><?= esc_html__( 'Download', 'waff' ); ?></h6>
+					<h6 class="fw-bold --text-action-1"><?= esc_html__( 'Download', 'wa-rsfp' ); ?></h6>
 					<p class="mb-0 small-lg"><span class="badge bg-action-2">Bientôt disponible...</span></p>
 					</div>
 				</div> -->
