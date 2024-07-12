@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: WA RSFP Global functions\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-06-12 10:31+0000\n"
-"PO-Revision-Date: 2024-07-04 13:28+0000\n"
+"PO-Revision-Date: 2024-07-12 14:41+0000\n"
 "Last-Translator: Wilhem\n"
 "Language-Team: Français\n"
 "Language: fr_FR\n"
@@ -1878,7 +1878,7 @@ msgstr "Lien vidéo Vimeo & YouTube"
 #: admin/blocks/src/block1/render.php:1204
 #: admin/blocks/build/block1/render.php:1204
 msgid "Visit farm"
-msgstr "Ouverte au visites"
+msgstr "Ouverte aux visites"
 
 #: admin/class-wa-rsfp-fields.php:361
 msgid "Visite collective"
