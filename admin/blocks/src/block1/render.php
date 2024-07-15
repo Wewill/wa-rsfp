@@ -1517,10 +1517,10 @@ $next_post = get_adjacent_post(true, '', false, 'thematic');
 
 							printf('<div class="card my-2 border-0">
 									<div class="row g-0 align-items-center">
-										<div class="col-md-3 order-first">
+										<div class="col-3 order-first">
 											%s
 										</div>
-										<div class="col-md-9">
+										<div class="col-9">
 											<div class="card-body">', 
 								$next_post_image
 							);
