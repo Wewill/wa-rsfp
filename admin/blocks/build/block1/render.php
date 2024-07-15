@@ -1467,15 +1467,15 @@ $next_post = get_adjacent_post(true, '', false, 'thematic');
 							<?php // Get directory card content
 							$previous_post_media_url 				= get_the_post_thumbnail_url( $previous_post, 'medium' );
 							$previous_post_media_thumbnail_url		= get_the_post_thumbnail_url( $previous_post, 'thumbnail' );
-							$previous_post_image = $previous_post_media_thumbnail_url ? '<div class="d-flex flex-center rounded-4 bg-color-layout overflow-hidden"><img decoding="async" src="'.$previous_post_media_thumbnail_url.'" class="img-fluid fit-image rounded-4 img-transition-scale --h-100-px --w-100-px"></div>' : '<div class="d-flex flex-center rounded-4 bg-color-layout"><img decoding="async" src="https://placehold.co/300x300/white/white" class="img-fluid fit-image rounded-4 img-transition-scale --h-100-px --w-100-px op-0"><i class="position-absolute bi bi-image text-action-3"></i></div>';
+							$previous_post_image = $previous_post_media_thumbnail_url ? '<div class="d-flex flex-center rounded-4 --bg-color-layout overflow-hidden"><img decoding="async" src="'.$previous_post_media_thumbnail_url.'" class="img-fluid fit-image rounded-4 img-transition-scale --h-100-px --w-100-px"></div>' : '<div class="d-flex flex-center rounded-4 bg-color-layout"><img decoding="async" src="https://placehold.co/300x300/white/white" class="img-fluid fit-image rounded-4 img-transition-scale --h-100-px --w-100-px op-0"><i class="position-absolute bi bi-image text-action-3"></i></div>';
 							$previous_post_last_updated =  __('Last update') . " " . human_time_diff(get_post_time('U', $previous_post), current_time('timestamp')) . " " . __('ago');
 
 							printf('<div class="card my-2 border-0">
 									<div class="row g-0 align-items-center">
-										<div class="col-md-3 order-first">
+										<div class="col-3 order-first">
 											%s
 										</div>
-										<div class="col-md-9">
+										<div class="col-9">
 											<div class="card-body">', 
 								$previous_post_image
 							);
