@@ -1461,7 +1461,7 @@ $next_post = get_adjacent_post(true, '', false, 'thematic');
 					<?php if ( is_a( $previous_post, 'WP_Post' ) ) : ?>
 					<div class="col d-flex align-items-center">
 						<a href="<?= esc_url(get_permalink($previous_post)) ?>"><i class="bi bi-arrow-left-short h1 text-transparent-action-2 p-4 mt-4"></i></a>
-						<div class="flex-fill">
+						<div class="flex-fill pe-7 pe-md-0">
 							<h6 class="d-none d-md-block subline text-transparent-action-2 text-start"><?= __('Previous knowledge', 'wa-rsfp'); ?></h6>
 
 							<?php // Get directory card content
@@ -1506,7 +1506,7 @@ $next_post = get_adjacent_post(true, '', false, 'thematic');
 
 					<?php if ( is_a( $next_post, 'WP_Post' ) ) : ?>
 					<div class="col d-flex align-items-center">
-						<div class="flex-fill">
+						<div class="flex-fill ps-7 ps-md-0">
 							<h6 class="d-none d-md-block subline text-transparent-action-2 text-end"><?= __('Next knowledge', 'wa-rsfp'); ?></h6>
 
 							<?php // Get directory card content
