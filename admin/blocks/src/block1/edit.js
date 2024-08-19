@@ -190,7 +190,7 @@ export default function Edit( {
 	return (
 		<div { ...blockProps }>
 			<RichText
-				placeholder={ __( 'Subtitle', 'wa-rsfp' ) }
+				placeholder={ __( 'Sous-titre', 'wa-rsfp' ) }
 				tagName="h4"
 				allowedFormats={ [] }
 				disableLineBreaks

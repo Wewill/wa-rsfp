@@ -48,14 +48,14 @@ function addCustomText(targetNode, html) {
 */
 
 // Display a notice
-wp.data.dispatch('core/notices').createNotice(
-    'success', // Type of notice
-    'Directory › Knowledge › La fiche a été automatiquement mise en page.', // Notice message
-    {
-        isDismissible: true, // Whether the user can dismiss the notice
-        // Any additional options
-    }
-);
+// wp.data.dispatch('core/notices').createNotice(
+//     'success', // Type of notice
+//     'Directory › Knowledge › La fiche a été automatiquement mise en page.', // Notice message
+//     {
+//         isDismissible: true, // Whether the user can dismiss the notice
+//         // Any additional options
+//     }
+// );
 
 // Display a notice if no featured image set 
 ( function( wp ) {
