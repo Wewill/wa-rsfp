@@ -1078,7 +1078,7 @@ $next_post = get_adjacent_post(true, '', false, 'thematic');
 				</div>
 				<div>
 					<!-- <button type="button" class="btn btn-color-light btn-transition-scale">Prendre contact</span></button> -->
-					<a class="btn btn-inverse-action-2 btn-transition-scale" href="<?= add_query_arg(array('form_type' => 'operation', 'ID' => $relationships_operation_post_id),$contact_permalink) ?>"><?= __('Contact us', 'wa-rsfp'); ?></a>
+					<a class="btn btn-action-1 btn-sm btn-transition-scale mt-3 --flex-fill --w-100 px-2 py-0" href="<?= add_query_arg(array('form_type' => 'operation', 'ID' => $relationships_operation_post_id),$contact_permalink) ?>"><?= __('Contact us', 'wa-rsfp'); ?></a>
 				</div>
 			</div>
 		</div>
@@ -1165,7 +1165,7 @@ $next_post = get_adjacent_post(true, '', false, 'thematic');
 				</div>
 				<div>
 					<!-- <button type="button" class="btn btn-color-light btn-transition-scale">Prendre contact</span></button> -->
-					<a class="btn btn-inverse-action-2 btn-transition-scale" href="<?= esc_url(add_query_arg(array('form_type' => 'structure', 'ID' => $relationships_structure_post_id),$contact_permalink)) ?>">Prendre contact</a>
+					<a class="btn btn-action-1 btn-sm btn-transition-scale mt-3 --flex-fill --w-100 px-2 py-0" href="<?= esc_url(add_query_arg(array('form_type' => 'structure', 'ID' => $relationships_structure_post_id),$contact_permalink)) ?>">Prendre contact</a>
 				</div>
 			</div>
         </div>
@@ -1203,7 +1203,7 @@ $next_post = get_adjacent_post(true, '', false, 'thematic');
 					<div>
 					<h6 class="fw-bold text-action-1 my-2 my-lg-3"><?= esc_html__( 'Visit farm', 'wa-rsfp' ); ?></h6>
 					<p class="mb-0 small-lg"><span class="visually-hidden"><?= esc_html__( 'Farm is open to visit :', 'wa-rsfp' ); ?></span><?= WaffTwo\Core\waff_implode_options(', ', $d_stage_opentovisit, $options_d_stage_opentovisit); ?></p>
-					<a class="btn btn-action-1 btn-transition-scale mt-4 flex-fill w-100" href="<?= esc_url(add_query_arg(array('form_type' => 'visit', 'ID' => $post->ID),$contact_permalink)) ?>"><?= esc_html__( 'Book a visit', 'wa-rsfp' ); ?></a>
+					<a class="btn btn-action-1 btn-sm btn-transition-scale mt-3 --flex-fill --w-100 px-2 py-0" href="<?= esc_url(add_query_arg(array('form_type' => 'visit', 'ID' => $post->ID),$contact_permalink)) ?>"><?= esc_html__( 'Book a visit', 'wa-rsfp' ); ?></a>
 					</div>
 				</div>
 				<div class="d-none d-lg-flex align-items-center justify-content-center px-2 px-md-4 px-xl-5">
@@ -1217,7 +1217,7 @@ $next_post = get_adjacent_post(true, '', false, 'thematic');
 					<div>
 					<h6 class="fw-bold text-action-1 my-2 my-lg-3"><?= esc_html__( 'Open to stage', 'wa-rsfp' ); ?></h6>
 					<p class="mb-0 small-lg"><span class="visually-hidden"><?= esc_html__( 'Farm is open to stage :', 'wa-rsfp' ); ?></span><?= WaffTwo\Core\waff_implode_options(', ', $d_stage_opentostage, $options_d_stage_opentostage); ?></p>
-					<a class="btn btn-action-1 btn-transition-scale mt-4 flex-fill w-100" href="<?= esc_url(add_query_arg(array('form_type' => 'stage', 'ID' => $post->ID),$contact_permalink)) ?>"><?= esc_html__( 'Apply to a stage', 'wa-rsfp' ); ?></a>
+					<a class="btn btn-action-1 btn-sm btn-transition-scale mt-3 --flex-fill --w-100 px-2 py-0" href="<?= esc_url(add_query_arg(array('form_type' => 'stage', 'ID' => $post->ID),$contact_permalink)) ?>"><?= esc_html__( 'Apply to a stage', 'wa-rsfp' ); ?></a>
 					</div>
 				</div>
 				<!-- <div class="d-none d-lg-flex align-items-center justify-content-center px-5">
@@ -1411,7 +1411,7 @@ $next_post = get_adjacent_post(true, '', false, 'thematic');
 						</div>
 						<?php endif; ?>
 
-						<a class="btn btn-action-1 btn-transition-scale mt-4 flex-fill  w-50" href="<?= add_query_arg(array('form_type' => 'farm', 'ID' => $relationships_farm_post_id),$contact_permalink) ?>"><?= __('Contact us', 'wa-rsfp'); ?></a>
+						<a class="btn btn-action-1 btn-transition-scale mt-4 flex-fill w-50" href="<?= add_query_arg(array('form_type' => 'farm', 'ID' => $relationships_farm_post_id),$contact_permalink) ?>"><?= __('Contact us', 'wa-rsfp'); ?></a>
 
 					</div>
 					<!-- End: Contacts -->
