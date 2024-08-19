@@ -1799,7 +1799,7 @@ msgstr "Utiliser comme image en avant"
 #: admin/class-wa-rsfp-fields.php:241 admin/blocks/src/block1/render.php:837
 #: admin/blocks/build/block1/render.php:837
 msgid "Viability.s"
-msgstr "Viabilité.s"
+msgstr "Viabilité"
 
 #. translators:Vidéo
 #: admin/blocks/src/block1/render.php:898
@@ -1895,7 +1895,7 @@ msgstr ""
 #: admin/class-wa-rsfp-fields.php:254 admin/blocks/src/block1/render.php:847
 #: admin/blocks/build/block1/render.php:847
 msgid "Vivability.s"
-msgstr "Vivabilité.s"
+msgstr "Vivabilité"
 
 #. Name of the plugin
 msgid "WA RSFP Global functions"
