@@ -217,7 +217,7 @@ export default function Edit( {
 				}
 			/>
 
-			<section class="mb-2">
+			<section class="mb-2 d-none">
 				<div class="container-fluid px-0">
 					<div class="row g-0">
 
@@ -293,16 +293,13 @@ export default function Edit( {
 				</div>
 			</section>
 
-			<div class="d-flex">
-				<div class="">#KNOwLEDGE</div>
-				<div class="">#CONTENT
+			<section class="content">
 					<InnerBlocks
 						allowedBlocks={ALLOWED_BLOCKS}
 						template={TEMPLATE}
 						templateLock={false} // Change to "all" to lock the template structure
 					/>
-				</div>
-			</div>
+			</section>
 
 		</div>
 	);
