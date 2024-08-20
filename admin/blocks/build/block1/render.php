@@ -866,6 +866,13 @@ $next_post = get_adjacent_post(true, '', false, 'thematic');
 			<h6 class="text-action-1"><?= esc_html__( 'Installation period', 'wa-rsfp' ); ?></h6>
 			<?= WaffTwo\Core\waff_sanitize_msword_content($knowledge_installation_period) ?></p>
 			<?php endif; ?>
+			
+			<!-- Transmission / association -->
+			<?php $knowledge_transmission_association = rwmb_meta( $prefix . 'knowledge_transmission_association' ); ?>
+			<?php if ($knowledge_transmission_association) : ?>
+			<h6 class="text-action-1"><?= esc_html__( 'Transmission / association', 'wa-rsfp' ); ?></h6>
+			<?= WaffTwo\Core\waff_sanitize_msword_content($knowledge_transmission_association) ?></p>
+			<?php endif; ?>
 
 			<!-- Gallery -->
 			<?php $medias_gallery = rwmb_meta( $prefix . 'medias_gallery', ['size' => 'thumbnail'] ); ?>
