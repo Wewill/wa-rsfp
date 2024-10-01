@@ -181,7 +181,7 @@ function directory_fields( $meta_boxes ) {
 				'id'              => $prefix . 'identity_label',
 				'type'            => 'checkbox_list',
 				'options'         => [
-					'agriculture_biologique'    => __( 'Agriculteur Biologique', 'wa-rsfp' ),
+					'agriculture_biologique'    => __( 'Agriculture Biologique', 'wa-rsfp' ),
 					'demeter' 		            => __( 'Demeter', 'wa-rsfp' ),
                     'bio_coherence' 		    => __( 'Bio Cohérence', 'wa-rsfp' ),
 					'nature_progres' 		    => __( 'Nature & Progrès', 'wa-rsfp' ),

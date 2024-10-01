@@ -467,7 +467,7 @@ msgid "Adresse"
 msgstr ""
 
 #: admin/class-wa-rsfp-fields.php:184
-msgid "Agriculteur Biologique"
+msgid "Agriculture Biologique"
 msgstr ""
 
 #: admin/class-wa-rsfp-filters.php:31 admin/class-wa-rsfp-filters.php:53
