@@ -95,7 +95,7 @@ function display_contact_entity_shortcode() {
 add_shortcode('display_contact_entity', 'display_contact_entity_shortcode');
 
 
-function display_contact_entity_shortcode() {
+function display_thematic_list_shortcode() {
 	// Initialize an empty string to store the output
 	$output = '';
 
