@@ -43,10 +43,11 @@ function display_contact_entity_shortcode() {
 			
 		// Get post data from ID + post type 
 		if (isset($query_vars['ID'])) {
-			$ID = $query_vars['ID'];
-			$post = get_post($ID);
+			$ID 						= $query_vars['ID'];
+			$post 						= get_post($ID);
 			$p_media_url 				= get_the_post_thumbnail_url( $ID, 'large' );
-			// $p_media_thumbnail_url		= get_the_post_thumbnail_url( $ID, 'thumbnail' );
+			$p_link						= get_the_permalink( $ID );
+			// $p_media_thumbnail_url	= get_the_post_thumbnail_url( $ID, 'thumbnail' );
 			// $p_image = $p_media_thumbnail_url ? '<div class="d-flex flex-center rounded-4 bg-color-layout overflow-hidden"><img decoding="async" src="'.$p_media_thumbnail_url.'" class="img-fluid fit-image rounded-4 img-transition-scale --h-100-px --w-100-px"></div>' : '<div class="d-flex flex-center rounded-4 bg-color-layout"><img decoding="async" src="https://placehold.co/300x300/white/white" class="img-fluid fit-image rounded-4 img-transition-scale --h-100-px --w-100-px op-0"><i class="position-absolute bi bi-image text-action-3"></i></div>';
 
 			// print_r($post);
@@ -67,7 +68,8 @@ function display_contact_entity_shortcode() {
 								<p class="card-text"><strong>Un lien priviégié et direct avec nos paysans !</strong> Grâce au répertoire des savoir-faire paysans, je suis directement en relation avec ce contact par e-mail en remplissant le formulaire ci-dessous *</p>
 
 								<div class="d-inline-flex gap-2 mb-3">
-									<button class="d-inline-flex align-items-center btn btn-primary btn-lg px-4 rounded-pill" type="button">Je formule ma demande <i class="bi bi-arrow-right-short ms-2"></i></button> <button class="btn btn-outline-action-1 btn-lg px-4 rounded-pill" type="button">Je consulte la fiche</button>
+									<a href="#gform_wrapper_1" class="d-inline-flex align-items-center btn btn-primary btn-lg px-4 rounded-pill">Je formule ma demande <i class="bi bi-arrow-right-short ms-2"></i></a>
+									<a href="%s" class="btn btn-outline-action-1 btn-lg px-4 rounded-pill">Je consulte la fiche</a>
 								</div>
 
 								<p class="card-text"><small class="text-action-2 op-5">* À noter, le Répertoire des Savoir-Faire Paysans n\'assure ni le suivi des échanges ni la disponibilité de la structure contactée.</small></p>
@@ -77,7 +79,8 @@ function display_contact_entity_shortcode() {
 				</div>',
 				$p_media_url,
 				$post->post_title,
-				$post->post_title
+				$post->post_title,
+				$p_link
 			);
 
 		}
