@@ -93,3 +93,34 @@ function display_contact_entity_shortcode() {
 }
 
 add_shortcode('display_contact_entity', 'display_contact_entity_shortcode');
+
+
+function display_contact_entity_shortcode() {
+	// Initialize an empty string to store the output
+	$output = '';
+
+	// Check if function exists
+	if ( function_exists(WaffTwo\get_all_parent_terms) ) {
+		$all_parent_terms = WaffTwo\get_all_parent_terms($thematic_id, 'thematic');
+
+		// Display all descendant terms
+		if (!empty($all_parent_terms) && !is_wp_error($all_parent_terms)) {
+			$output .= '<h6 class="subline mt-5 mb-0">La thématique principale</h6><div class="d-flex flex-wrap gap-3 my-3 attribute-list">'; //@TODO to translate
+			foreach ($all_parent_terms as $parent_term) {
+				$t_general_color	= get_term_meta( $parent_term, 't_general_color', true ); 
+				$thematic_bgcolor	= (( $t_general_color != '' )?'style="background-color:'.$t_general_color.'"':'style="background-color:var(--waff-color-accent-2);"');
+				$output .= sprintf('<a href="%s" class="fs-4 m-0 text-white border-0 rounded-4 px-3 py-2 d-inline-block" %s>%s</a>',
+					esc_url(get_term_link($parent_term)),
+					$thematic_bgcolor,
+					esc_html($parent_term->name),
+				);
+			}
+			$output .= '</div>';
+		}
+	}
+
+	// Return the output string to be displayed (if any)
+	return $output;
+}
+
+add_shortcode('display_thematic_list', 'display_thematic_list_shortcode');
