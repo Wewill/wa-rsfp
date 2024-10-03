@@ -69,7 +69,7 @@ function display_contact_entity_shortcode() {
 
 								<div class="d-inline-flex gap-2 mb-3">
 									<a href="#gform_wrapper_1" class="d-inline-flex align-items-center btn btn-primary btn-lg px-4 rounded-pill">Je formule ma demande <i class="bi bi-arrow-right-short ms-2"></i></a>
-									<a href="%s" class="btn btn-outline-action-1 btn-lg px-4 rounded-pill">Je consulte la fiche</a>
+									<a href="%s" class="btn btn-outline-action-1 btn-lg px-4 rounded-pill %s">Je consulte la fiche</a>
 								</div>
 
 								<p class="card-text"><small class="text-action-2 op-5">* À noter, le Répertoire des Savoir-Faire Paysans n\'assure ni le suivi des échanges ni la disponibilité de la structure contactée.</small></p>
@@ -80,7 +80,8 @@ function display_contact_entity_shortcode() {
 				$p_media_url,
 				$post->post_title,
 				$post->post_title,
-				$p_link
+				$p_link,
+				$query_vars['form_type'] !== 'structure'?'':'d-none',
 			);
 
 		}
