@@ -203,8 +203,10 @@ class Wa_Rsfp_Admin {
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-wa-rsfp-notices.php';
 		// Add shortcodes
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-wa-rsfp-shortcodes.php';
-		// Manage settings
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-wa-rsfp-settings.php';
+		// // Manage settings
+		// require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-wa-rsfp-settings.php';
+		// Add export capabilities
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-wa-rsfp-export.php';
 	}
 
 	/**
@@ -221,7 +223,7 @@ class Wa_Rsfp_Admin {
 		register_post_types();
 		register_taxonomies();
 		register_custom_meta_fields(); //admin/class-wa-rsfp-fields //add_action( 'rwmb_meta_boxes', 'register_custom_meta_fields', 5);
-		register_custom_meta_settings(); //class-wa-rsfp-settings.php
+		// register_custom_meta_settings(); //class-wa-rsfp-settings.php
 
 		// @TODO REMOVE ? 
 		// Custom blocks
