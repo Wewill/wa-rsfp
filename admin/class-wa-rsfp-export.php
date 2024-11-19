@@ -21,7 +21,7 @@ class Wa_Rsfp_Export {
             'users.php',
             '⎋ ' . __('Export members', 'wa-rsfp'),
             '⎋ ' . __('Export members', 'wa-rsfp'),
-            'manage_options',
+            'edit_others_posts',
             'wa_rsfp_export',
             array($this, 'render')
         );
