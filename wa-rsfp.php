@@ -9,7 +9,7 @@
  * that starts the plugin.
  *
  * @link              https://www.wilhemarnoldy.fr
- * @since             1.7
+ * @since             1.8
  * @package           Wa_Rsfp
  *
  * @wordpress-plugin
@@ -43,7 +43,7 @@ if( !defined("IS_ADMIN"))
  * Start at version 1.0.0 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define( 'WA_RSFP_VERSION', '1.7' );
+define( 'WA_RSFP_VERSION', '1.8' );
 
 /**
  * The code that runs during plugin activation.

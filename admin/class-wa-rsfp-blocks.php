@@ -6,26 +6,76 @@
  * @since    1.1.0
  */
 
-// @TODO REMOVE 
-//  // Register Block 
-//  function custom_meta_block_register_block() {
-//     wp_register_script(
-//         'custom-meta-block-editor',
-//         plugins_url( 'js/block/index.js', __FILE__ ),
-//         array( 'wp-blocks', 'wp-element', 'wp-block-editor', 'wp-data' ), // Ensure dependencies are correct
-//         filemtime( plugin_dir_path( __FILE__ ) . 'js/block/index.js' )
-//     );
+//**
+// Allow
+// */
 
-//     register_block_type( 'custom-meta-block/meta-block', array(
-//         'editor_script' => 'custom-meta-block-editor',
-//     ) );
-// }
+// Allow custom blocks considering post_type 
+function allow_blocks() {
+	// Blocks 
+	add_filter( 'allowed_block_types_all', 'post_type_allowed_block_types', 10, 2 );
+
+}
 
 
-// @TODO REMOVE ??
+function post_type_allowed_block_types( $allowed_blocks, $editor_context ) {
+
+	// directory
+	if ( isset( $editor_context->post ) && $editor_context->post->post_type === 'directory' ) {
+		return array(
+			'core/image', 
+			'core/heading', 
+			'core/paragraph', 
+			'core/list', 
+			'core/quote', 
+			'core/pullquote', 
+			'core/block', 
+			'core/button', 
+			'core/buttons', 
+			'core/column', 
+			'core/columns', 
+			'core/table', 
+			'core/text-columns', 
+			//
+			'coblocks/accordion',
+			'coblocks/accordion-item',
+			'coblocks/alert',
+			'coblocks/counter',
+			'coblocks/column',
+			'coblocks/row',
+			'coblocks/dynamic-separator',
+			'coblocks/logos',
+			'coblocks/icon',
+			'coblocks/buttons',			
+			// Remplacez ceci par l'identifiant du bloc que vous souhaitez autoriser
+			// Ajoutez d'autres identifiants de blocs au besoin
+			// 'directory/wa-rsfp-directory-block',
+		);
+	}
+
+	// Because the thme restrict the blocks, add here custom blocks created in plugin
+	// Add custom block
+	$allowed_blocks[] = 'directory/wa-rsfp-directory-block';
+	// Add metabox.io testimony block
+	// $allowed_blocks[] = 'meta-box/test';
+
+	return $allowed_blocks;
+}		
+
+//**	
+// Register
+// */
+
+// Register Theme Blocks >> need rwmb_meta_boxes
 // Register via MetaBox.io block
-function register_blocks() {
-	$prefix = 'waff_blocks_';
+function register_custom_blocks() {
+	// Blocks
+	// add_filter( 'rwmb_meta_boxes', 'register_blocks');
+
+}
+
+function register_blocks( $meta_boxes ) {
+	$prefix = 'waff_rsfp_';
 
 	/**
 	 * Test block

@@ -189,8 +189,8 @@ class Wa_Rsfp_Admin {
 		// Adding metabox io custom fields 
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-wa-rsfp-fields.php';
 		// Adding metabox io custom blocks and default blocks 
-		// @TODO REMOVE ? 
-		// require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-wa-rsfp-blocks.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-wa-rsfp-blocks.php';
+		// Adding custom block
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/blocks/wa-rsfp-directory-block.php';
 		
 		// Extending metabox io custom fields 
@@ -225,9 +225,9 @@ class Wa_Rsfp_Admin {
 		register_custom_meta_fields(); //admin/class-wa-rsfp-fields //add_action( 'rwmb_meta_boxes', 'register_custom_meta_fields', 5);
 		// register_custom_meta_settings(); //class-wa-rsfp-settings.php
 
-		// @TODO REMOVE ? 
 		// Custom blocks
-		//add_action( 'rwmb_meta_boxes', 'register_blocks', 5);
+		register_custom_blocks(); // admin/class-wa-golfs-blocks.php
+
 
 		// @TODO REMOVE ? 
 		// Custom blocks
@@ -262,6 +262,7 @@ class Wa_Rsfp_Admin {
 		//$screen = get_current_screen(); //$screen->id
 		global $pagenow;
 
+		// Check dependencies
 		if ( !is_login() && is_admin() && !in_array( $pagenow, array( 'plugins.php' ) ) && !function_exists('rwmb_meta') ) {
 			wp_die('Error : please install Meta Box plugin.');
 		}
@@ -278,43 +279,8 @@ class Wa_Rsfp_Admin {
 			wp_die('Error : please install Meta Box Text limiter plugin.');
 		}
 
-		// @TOMOVE correct place 
-		function rsfp_directory_allowed_block_types( $allowed_blocks, $editor_context ) {
-			if ( isset( $editor_context->post ) && $editor_context->post->post_type === 'directory' ) {
-				return array(
-					'core/image', 
-					'core/heading', 
-					'core/paragraph', 
-					'core/list', 
-					'core/quote', 
-					'core/pullquote', 
-					'core/block', 
-					'core/button', 
-					'core/buttons', 
-					'core/column', 
-					'core/columns', 
-					'core/table', 
-					'core/text-columns', 
-					//
-					'coblocks/accordion',
-					'coblocks/accordion-item',
-					'coblocks/alert',
-					'coblocks/counter',
-					'coblocks/column',
-					'coblocks/row',
-					'coblocks/dynamic-separator',
-					'coblocks/logos',
-					'coblocks/icon',
-					'coblocks/buttons',			
-					// Remplacez ceci par l'identifiant du bloc que vous souhaitez autoriser
-					// Ajoutez d'autres identifiants de blocs au besoin
-					'directory/wa-rsfp-directory-block',
-				);
-			}
-		
-			return $allowed_blocks;
-		}		
-		add_filter( 'allowed_block_types_all', 'rsfp_directory_allowed_block_types', 10, 2 );
+		// Allowed blocks
+		allow_blocks(); //admin/class-wa-golfs-blocks.php
 
 
 		// Default post meta page toggle 
