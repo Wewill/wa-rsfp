@@ -22,7 +22,7 @@ class WA_RSFP_Notify {
         // if (($new_status === 'pending' || $new_status === 'publish') && $old_status !== $new_status) {
 
             // Subject
-            $subject = ($new_status === 'pending' ? 'Une fiche est en attente de révision : ' : 'Une fiche a été publiée : ') . $post->post_title;
+            $subject = $post->post_title . ($new_status === 'pending' ? ' est en attente de révision' : 'a été publiée');
 
             // Message
             // $message = sprintf(
@@ -127,9 +127,16 @@ class WA_RSFP_Notify {
                 'admin_name' => $admin_name
             );
             
-            // Send the email
-            error_log("Sending email to $to with subject '$subject' and message: $message");
-            wp_mail($to, $subject, $message, $headers, $attachments);
+            // Prevent duplicate emails by using a transient
+            $transient_key = 'wa_rsfp_notify_' . $post->ID . '_' . $new_status;
+            if (!get_transient($transient_key)) {
+                // Send the email
+                // error_log("Sending email to $to with subject '$subject' and message: $message");
+                wp_mail($to, $subject, $message, $headers, $attachments);
+    
+                // Set a transient to avoid duplicate emails
+                set_transient($transient_key, true, 60); // Expires in 60 seconds
+            }
         // }
     }
 }
