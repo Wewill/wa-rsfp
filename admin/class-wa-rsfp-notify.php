@@ -20,40 +20,117 @@ class WA_RSFP_Notify {
 
         // // Check if the status transition is relevant
         // if (($new_status === 'pending' || $new_status === 'publish') && $old_status !== $new_status) {
-            // Prepare email details
-            // To address
-            $to = 'maintenance-web@wilhemarnoldy.fr'; // Replace with the recipient's email address
+
             // Subject
-            $subject = ($new_status === 'pending' ? 'Post Pending Review: ' : 'Post Published: ') . $post->post_title;
+            $subject = ($new_status === 'pending' ? 'Une fiche est en attente de révision : ' : 'Une fiche a été publiée : ') . $post->post_title;
+
             // Message
-            $message = sprintf(
-                "A post of type '%s' has changed status.\n\nTitle: %s\nStatus: %s\nLink: %s",
-                $post->post_type,
-                $post->post_title,
-                $new_status,
-                get_permalink($post->ID)
-            );
+            // $message = sprintf(
+            //     "Une fiche de type '%s' a changer de status.\n\nTitre: %s\nStatus: %s",
+            //     $post->post_type,
+            //     $post->post_title,
+            //     $new_status,
+            // );
+
+            // Farm and Directory specific messages
+            if ( $post->post_type === 'farm' ) {
+                if ( $new_status === 'pending') {
+                    $message .= sprintf(
+                        "Une fiche ferme nommée <b>%s</b> est à réviser.\n\n",
+                        $post->post_title
+                    );
+                }  else {
+                    $message .= sprintf(
+                        "Une fiche ferme nommée <b>%s</b> a été publiée.\n\n",
+                        $post->post_title
+                    );
+                }
+            }
+
+            if ( $post->post_type === 'directory' ) {
+                if ( $new_status === 'pending') {
+                    $message .= sprintf(
+                        "Une fiche répertoire nommée <b>%s</b> est à réviser.\n\n",
+                        $post->post_title
+                    );
+                }  else {
+                    $message .= sprintf(
+                        "Une fiche répertoire nommée <b>%s</b> a été publiée.\n\n",
+                        $post->post_title
+                    );
+                }
+            }
 
             // Add user details to message
             $author_id = $post->post_author;
             $author = get_userdata($author_id);
-            $user_structure = get_user_meta($author_id, 'user_structure', true) ?: 'N/A';
-            $user_geography = get_user_meta($author_id, 'user_geography', true) ?: 'N/A';
 
+            // Get geography taxonomies
+            $geography_terms = get_terms( array(
+                'taxonomy' => 'geography',
+                'hide_empty' => false,
+            ));
+
+            // Get posts structure
+            $structure_posts = get_posts( array(
+                'post_type' => 'structure',
+                'post_status' => 'publish',
+                'numberposts' => -1,
+            ));
+            
+            // Récuperer la geography
+			$user_geography = get_user_meta($author_id, 'user_geography', true);
+			$filtered_geography_term = array_filter($geography_terms, function($t) use ($user_geography) {
+				return $t->slug === $user_geography;
+			});
+			$geography_name = ($user_geography && $filtered_geography_term) ? reset($filtered_geography_term)->name : 'N/A';
+
+			// Récuperer la geography
+			$user_structure = get_user_meta($author_id, 'user_structure', true);
+			$filtered_structure_post = array_filter($structure_posts, function($p) use ($user_structure) {
+				return $p->ID === (int)$user_structure;
+			});
+			$structure_name = ( $user_structure && $filtered_structure_post) ? reset($filtered_structure_post)->post_title : 'N/A';
+
+            // Add user details to message
             $message .= sprintf(
-                "\n\nAuthor Details:\nID: %d\nName: %s\nStructure: %s\nGeography: %s",
-                $author_id,
-                $author->display_name,
-                $user_structure,
-                $user_geography
+                "\n\nCette fiche a été créée par <b>%s %s</b> de la structure <b>%s (%s)</b>",
+                $author->first_name,
+                $author->last_name,
+                $structure_name,
+                $geography_name
             );
 
             // Send name to template
             $name = $author->display_name;
 
+            // Admin user 
+            $admin = get_userdata(2); // Romane 
+            $admin_email = $admin->user_email;
+            $admin_name = $admin->display_name;
+
+            // To address
+            $to = 'maintenance-web@wilhemarnoldy.fr'; // Replace with the recipient's email address
+            //$to = $admin_email; // Replace with the recipient's email address
+
+            // Headers 
+            $headers = array(
+                'From: Le répertoire des savoir-faire paysans <contact@savoirfairepaysans.fr>',
+                'Reply-To: no-reply@savoirfairepaysans.fr',
+                'BCC: maintenance-web@wilhemarnoldy.fr'
+            );
+
+            // Attachments used as custom args
+            $attachments = array(
+                'name' => $name,
+                'link' => get_permalink($post->ID),
+                'admin_email' => $admin_email,
+                'admin_name' => $admin_name
+            );
+            
             // Send the email
             error_log("Sending email to $to with subject '$subject' and message: $message");
-            wp_mail($to, $subject, $message, $name);
+            wp_mail($to, $subject, $message, $headers, $attachments);
         // }
     }
 }
@@ -78,16 +155,24 @@ add_filter('wp_mail', function($args) {
         // Load the template content
         $html_template = file_get_contents($template_path);
 
+        // Get custom args passed in the attachments :
+        $name = $args['attachments']['name'] ?? '';
+        $link = $args['attachments']['link'] ?? '';
+        $admin_email = $args['attachments']['admin_email'] ?? '';
+        $admin_name = $args['attachments']['admin_name'] ?? '';
+
         // Replace placeholders in the template with dynamic content
         $args['message'] = str_replace(
-            ['{{name}}', '{{message}}', '{{year}}'],
+            ['{{name}}', '{{message}}', '{{year}}', '{{link}}'],
             [
-                esc_html($args['name'] ?? ''),
+                esc_html($admin_name),
                 nl2br(esc_html($args['message'] ?? '')),
-                esc_html(date('Y'))
+                esc_html(date('Y')),
+                esc_url($link)
             ],
             $html_template
         );
+
     } else {
         error_log("Email template file not found: $template_path");
     }
