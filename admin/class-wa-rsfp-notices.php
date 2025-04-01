@@ -130,7 +130,7 @@ function general_admin_notice(){
 			'allowed_taxonomy' => array(),
 			'allowed_page' => array(),
 			'allowed_roles' => array('administrator', 'editor', 'contributor'), 
-			'title' => __('Bienvenue dans le <em>Répertoire</em> des savoir-faire paysans', 'war'), 'content' => __('<strong>Nouveau ?</strong> Pour publier du contenu sur le <em>Répertoire</em>, merci de consulter préalablement le  <a href="/wp-content/plugins/wa-rsfp/dist/pdf/RSFP_Tutoriel_etre_administrateur.pdf">Tutoriel RSFP - Être adminitrateur du site</a>.', 'war'), 'class' => 'default', 'wrapper' => 'h1',
+			'title' => __('Bienvenue dans le <em>Répertoire</em> des savoir-faire paysans', 'war'), 'content' => __('<strong>Nouveau ?</strong> Pour publier du contenu sur le <em>Répertoire</em>, merci de consulter préalablement le  <a href="/prive/tutoriel-etre-administrateur-du-repertoire/">(Tutoriel) - Être administrateur du répertoire</a>.', 'war'), 'class' => 'default', 'wrapper' => 'h1',
 			'icon' => 'dashicons dashicons-pressthis',
 		],
 		// Post
