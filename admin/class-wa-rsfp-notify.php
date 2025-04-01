@@ -18,8 +18,8 @@ class WA_RSFP_Notify {
             return;
         }
 
-        // // Check if the status transition is relevant
-        // if (($new_status === 'pending' || $new_status === 'publish') && $old_status !== $new_status) {
+        // Check if the status transition is relevant
+        if (($new_status === 'pending' || $new_status === 'publish') && $old_status !== $new_status) {
 
             // Subject
             $subject = $post->post_title . ($new_status === 'pending' ? ' est en attente de révision' : 'a été publiée');
@@ -102,6 +102,7 @@ class WA_RSFP_Notify {
 
             // Send name to template
             $name = $author->display_name;
+            $email = $author->user_email;
 
             // Admin user 
             $admin = get_userdata(2); // Romane 
@@ -109,8 +110,14 @@ class WA_RSFP_Notify {
             $admin_name = $admin->display_name;
 
             // To address
+            // If pending > send mail to admin, if published > send mail to user
+            if ($new_status === 'pending') {
+                $to = $admin_email;
+            } else {
+                $to = $email;
+            }
             $to = 'maintenance-web@wilhemarnoldy.fr'; // Replace with the recipient's email address
-            //$to = $admin_email; // Replace with the recipient's email address
+
 
             // Headers 
             $headers = array(
@@ -121,23 +128,15 @@ class WA_RSFP_Notify {
 
             // Attachments used as custom args
             $attachments = array(
-                'name' => $name,
+                'name' => ($new_status === 'pending') ? $admin_name : $name,
                 'link' => get_permalink($post->ID),
-                'admin_email' => $admin_email,
-                'admin_name' => $admin_name
+                'email' => ($new_status === 'pending') ? $admin_email : $email,
             );
             
-            // Prevent duplicate emails by using a transient
-            $transient_key = 'wa_rsfp_notify_' . $post->ID . '_' . $new_status;
-            if (!get_transient($transient_key)) {
-                // Send the email
-                // error_log("Sending email to $to with subject '$subject' and message: $message");
-                wp_mail($to, $subject, $message, $headers, $attachments);
-    
-                // Set a transient to avoid duplicate emails
-                set_transient($transient_key, true, 60); // Expires in 60 seconds
-            }
-        // }
+            // Send the email
+            // error_log("Sending email to $to with subject '$subject' and message: $message");
+            wp_mail($to, $subject, $message, $headers, $attachments);
+        }
     }
 }
 
@@ -164,14 +163,13 @@ add_filter('wp_mail', function($args) {
         // Get custom args passed in the attachments :
         $name = $args['attachments']['name'] ?? '';
         $link = $args['attachments']['link'] ?? '';
-        $admin_email = $args['attachments']['admin_email'] ?? '';
-        $admin_name = $args['attachments']['admin_name'] ?? '';
+        $email = $args['attachments']['email'] ?? '';
 
         // Replace placeholders in the template with dynamic content
         $args['message'] = str_replace(
             ['{{name}}', '{{message}}', '{{year}}', '{{link}}'],
             [
-                esc_html($admin_name),
+                esc_html($name),
                 nl2br($args['message'] ?? ''),
                 esc_html(date('Y')),
                 esc_url($link)
