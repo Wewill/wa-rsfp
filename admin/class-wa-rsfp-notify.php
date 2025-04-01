@@ -116,8 +116,7 @@ class WA_RSFP_Notify {
             } else {
                 $to = $email;
             }
-            $to = 'maintenance-web@wilhemarnoldy.fr'; // Replace with the recipient's email address
-
+            // $to = 'maintenance-web@wilhemarnoldy.fr'; // Replace with the recipient's email address
 
             // Headers 
             $headers = array(
