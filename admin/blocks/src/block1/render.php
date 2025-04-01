@@ -932,7 +932,7 @@ $next_post = get_adjacent_post(true, '', false, 'thematic');
 			<?php $d_medias_files 					= rwmb_meta( $prefix . 'medias_files', array(), $post->ID); ?>
 			<?php if (!empty($d_medias_files)): ?>
 			<h6 class="subline --text-action-1 mt-5"><?= /*translators:Files */ __('Files', 'wa-rsfp'); ?></h6>
-			<!-- Begin: Video row -->
+			<!-- Begin: File -->
 			<div class="row row-cols-sm-2 row-cols-lg-3 mt-2 mb-6 g-4">
 				<?php foreach ( $d_medias_files as $d_medias_file ) : ?>
 					<a class="col mx-3 rounded-4 bg-action-3 w-100-px h-100-px d-flex flex-center" href="<?= esc_html($d_medias_file['url']); ?>" target="_blank">
@@ -944,7 +944,7 @@ $next_post = get_adjacent_post(true, '', false, 'thematic');
 					<!-- <?= esc_html($d_medias_file['name']); ?> -->
 				<?php endforeach ?>
 			</div>
-			<!-- End: Video row -->
+			<!-- End: File -->
 			<?php endif; ?>
 
 
