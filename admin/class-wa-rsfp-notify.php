@@ -36,12 +36,12 @@ class WA_RSFP_Notify {
             if ( $post->post_type === 'farm' ) {
                 if ( $new_status === 'pending') {
                     $message .= sprintf(
-                        "Une fiche ferme nommée <b>%s</b> est à réviser.\n\n",
+                        "Une fiche ferme nommée <b>%s</b> est à réviser.",
                         $post->post_title
                     );
                 }  else {
                     $message .= sprintf(
-                        "Une fiche ferme nommée <b>%s</b> a été publiée.\n\n",
+                        "Une fiche ferme nommée <b>%s</b> a été publiée.",
                         $post->post_title
                     );
                 }
@@ -50,12 +50,12 @@ class WA_RSFP_Notify {
             if ( $post->post_type === 'directory' ) {
                 if ( $new_status === 'pending') {
                     $message .= sprintf(
-                        "Une fiche répertoire nommée <b>%s</b> est à réviser.\n\n",
+                        "Une fiche répertoire nommée <b>%s</b> est à réviser.",
                         $post->post_title
                     );
                 }  else {
                     $message .= sprintf(
-                        "Une fiche répertoire nommée <b>%s</b> a été publiée.\n\n",
+                        "Une fiche répertoire nommée <b>%s</b> a été publiée.",
                         $post->post_title
                     );
                 }
@@ -94,9 +94,8 @@ class WA_RSFP_Notify {
 
             // Add user details to message
             $message .= sprintf(
-                "\n\nCette fiche a été créée par <b>%s %s</b> de la structure <b>%s (%s)</b>",
-                $author->first_name,
-                $author->last_name,
+                "\nCette fiche a été créée par <b>%s</b> de la structure <b>%s <em>(%s)</em></b>",
+                !empty($author->first_name) && !empty($author->last_name) ? $author->first_name . ' ' . $author->last_name : (!empty($author->display_name) ? $author->display_name : $author->user_login),
                 $structure_name,
                 $geography_name
             );
@@ -166,7 +165,7 @@ add_filter('wp_mail', function($args) {
             ['{{name}}', '{{message}}', '{{year}}', '{{link}}'],
             [
                 esc_html($admin_name),
-                nl2br(esc_html($args['message'] ?? '')),
+                nl2br($args['message'] ?? ''),
                 esc_html(date('Y')),
                 esc_url($link)
             ],
