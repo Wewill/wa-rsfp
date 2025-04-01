@@ -207,6 +207,8 @@ class Wa_Rsfp_Admin {
 		// require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-wa-rsfp-settings.php';
 		// Add export capabilities
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-wa-rsfp-export.php';
+		// Add notify capabilities
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-wa-rsfp-notify.php';
 	}
 
 	/**
