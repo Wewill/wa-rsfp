@@ -87,13 +87,13 @@ class Wa_Rsfp_Export {
             __('Verified', 'wa-rsfp')
         ];
 
-		// Taxonomies
+		// Get geography taxonomies
 		$geography_terms = get_terms( array(
 			'taxonomy' => 'geography',
 			'hide_empty' => false,
 		));
 
-		// Posts structure
+		// Get posts structure
 		$structure_posts = get_posts( array(
 			'post_type' => 'structure',
 			'post_status' => 'publish',
