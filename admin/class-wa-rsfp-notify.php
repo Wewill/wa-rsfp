@@ -22,7 +22,7 @@ class WA_RSFP_Notify {
         if (($new_status === 'pending' || $new_status === 'publish') && $old_status !== $new_status) {
 
             // Subject
-            $subject = $post->post_title . ($new_status === 'pending' ? ' est en attente de révision' : 'a été publiée');
+            $subject = '"' . $post->post_title . ($new_status === 'pending' ? '" est en attente de révision' : '" a été publiée');
 
             // Message
             // $message = sprintf(
@@ -41,7 +41,7 @@ class WA_RSFP_Notify {
                     );
                 }  else {
                     $message .= sprintf(
-                        "Une fiche ferme nommée <b>%s</b> a été publiée.",
+                        "Votre fiche ferme nommée <b>%s</b> a été publiée.",
                         $post->post_title
                     );
                 }
