@@ -60,6 +60,19 @@ $previous_post = get_adjacent_post(true, '', true, 'thematic');
 // Get the next post in the same category
 $next_post = get_adjacent_post(true, '', false, 'thematic');
 
+if ( has_post_thumbnail($post->ID) ) { 
+	$d_featured_img_id     		= get_post_thumbnail_id($post->ID);
+	$d_featured_img_url_full 	= get_the_post_thumbnail_url($post->ID);
+	foreach (array( 'thumbnail' ) as $size) { //'post-featured-image-s', 'post-featured-image-m'
+		$d_featured_img_url = wp_get_attachment_image_src( $d_featured_img_id, $size ); // OK
+		$d_featured_img_urls[$size] = ( !empty($d_featured_img_url[0]) )?$d_featured_img_url[0]:$d_featured_img_url_full; 
+	}
+	$d_alt = get_post_meta ( get_post_thumbnail_id(), '_wp_attachment_image_alt', true );
+	$d_featured_img_caption = wp_get_attachment_caption($d_featured_img_id); // ADD WIL                    
+	$d_thumb_img = get_post( $d_featured_img_id ); // Get post by ID
+	$d_featured_img_description =  $d_thumb_img->post_content; // Display Description
+}
+
 
 ?>
 
@@ -903,22 +916,27 @@ $next_post = get_adjacent_post(true, '', false, 'thematic');
 			<!-- Begin: Video row -->
 			<div class="row row-cols-sm-2 row-cols-lg-3 mt-2 mb-6 g-4">
 				<?php foreach ( $d_medias_videos as $d_medias_video ) : ?>
-					<a class="col" href="javascript:;">
+					<!-- <a class="col" href="javascript:;"> -->
 						<figure class="wp-block-video position-relative d-flex flex-center" id="<?= $d_medias_video['ID'] ?>" data-fancybox="gallery" data-loader="pic" data-src="<?= $d_medias_video['src'] ?>">
-							<img src="https://placehold.co/600x600" class="img-fluid rounded-4 fit-image w-100"/>
-							<video class="position-absolute top-0 start-0 h-100 img-fluid rounded-4 h-300-px fit-image w-100 img-transition-scale" autoplay loop muted playsinline src="<?= $d_medias_video['src']; ?>"><!-- poster="<?= $d_medias_video['image']['src']; ?>" --></video>
+							<img src="<?= $d_featured_img_urls['thumbnail']; ?>" class="img-fluid rounded-4 fit-image w-100"/>
 							<?php if ( $d_medias_video['alt'] || $d_medias_video['description'] ) : ?>
 							<figcaption><strong>© <?= esc_html($d_medias_video['alt']); ?></strong> <?= esc_html($d_medias_video['description']); ?></figcaption>
 							<?php endif; /* If captions */ ?>
+							<div class="absolute position-absolute top-0 h-100 w-100 btn_holder">
+								<a class="btn action-1 --color-light play" data-fancybox="pagetitle_fancybox_<?= $post->ID; ?>" href="<?= $d_medias_video_link; ?>" target="_blank"><i class="bi bi-play-fill h3 ms-1"></i></a>
+							</div>
 						</figure>
-					</a>
+					<!-- </a> -->
 				<?php endforeach ?>
 				<?php foreach ( $d_medias_video_links as $d_medias_video_link ) : ?>
-					<a class="col" href="javascript:;">
-						<figure class="wp-block-video position-relative d-flex flex-center" id="<?= $d_medias_video['ID'] ?>" data-fancybox="gallery" data-loader="pic" data-src="<?= $d_medias_video_link ?>">
-							<img src="https://placehold.co/600x600" class="img-fluid rounded-4 fit-image w-100"/>
+					<!-- <a class="col" href="javascript:;"> -->
+						<figure class="wp-block-video position-relative d-flex flex-center" data-fancybox="gallery" data-loader="pic" data-src="<?= $d_medias_video_link ?>">
+							<img src="<?= $d_featured_img_urls['thumbnail']; ?>" class="img-fluid rounded-4 fit-image w-100"/>
+							<div class="absolute position-absolute top-0 h-100 w-100 btn_holder">
+								<a class="btn action-1 --color-light play" data-fancybox="pagetitle_fancybox_<?= $post->ID; ?>" href="<?= $d_medias_video_link; ?>" target="_blank"><i class="bi bi-play-fill h3 ms-1"></i></a>
+							</div>
 						</figure>
-					</a>
+					<!-- </a> -->
 				<?php endforeach ?>
 			</div>
 			<!-- End: Video row -->
