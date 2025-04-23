@@ -168,7 +168,7 @@ add_filter('wp_mail', function($args) {
         $args['message'] = str_replace(
             ['{{name}}', '{{message}}', '{{year}}', '{{link}}'],
             [
-                esc_html($name),
+                $name != '' ? esc_html($name) . ',' : '',
                 nl2br($args['message'] ?? ''),
                 esc_html(date('Y')),
                 esc_url($link)
