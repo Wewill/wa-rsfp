@@ -611,7 +611,7 @@ function get_code($fd) {
 		printf( __( '<code>%s</code>' ), $fd );
 }
 
-// Get code 
+// Get color 
 function get_color($fd) {
 	if ( empty( $fd ) )
 		echo __( '<span style="color:silver;">—</span>' ); // marker.png
