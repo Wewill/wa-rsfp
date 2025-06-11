@@ -1088,10 +1088,10 @@ if ( has_post_thumbnail($post->ID) ) {
 			<div class="d-flex justify-content-between align-items-end">
 				<div>
 					<h6 class="subline --text-action-1"><?= esc_html( $o_title ); ?></h6>
-					<?php if (!empty($o_general_leaders)) printf('<h5 class="">%s</h5>', WaffTwo\Core\waff_implode_nonempty('<br/>', $o_general_leaders )); ?>
-					<?php if (!empty($o_general_address)) foreach ($o_general_address as $address) printf('<p class="mb-0">%s</p>', WaffTwo\Core\waff_implode_nonempty('<br/>', $address)); ?>
-					<?php if (!empty($o_general_phones)) printf('<p class="mb-0 fw-bold">%s</p>', WaffTwo\Core\waff_implode_nonempty('<br/>', $o_general_phones)); ?>
-					<?php if (!empty($o_general_emails)) printf('<p class="mb-0">%s</p>', WaffTwo\Core\waff_implode_nonempty('<br/>', $o_general_emails)); ?>
+					<?php if (!empty($o_general_leaders)) printf('<h5 class="">%s</h5>', WaffTwo\Core\waff_implode_nonempty($o_general_leaders, ' / ')); ?>
+					<?php if (!empty($o_general_address)) foreach ($o_general_address as $address) printf('<p class="mb-0">%s</p>', WaffTwo\Core\waff_implode_nonempty($address, '<br/>')); ?>
+					<?php if (!empty($o_general_phones)) printf('<p class="mb-0 fw-bold">%s</p>', WaffTwo\Core\waff_implode_nonempty($o_general_phones)); ?>
+					<?php if (!empty($o_general_emails)) printf('<p class="mb-0">%s</p>', WaffTwo\Core\waff_implode_nonempty($o_general_emails)); ?>
 					<?php 
 					foreach($o_general_links as $o_general_link) : 
 						printf('<p class="mb-0 --lead"><a class="--text-action-1" href="%s" title="Visit %s">%s</></p>', $o_general_link, $o_title, str_replace(array('http://', 'https://'), '', $o_general_link));
@@ -1176,9 +1176,9 @@ if ( has_post_thumbnail($post->ID) ) {
 				<div>
 					<h6 class="subline --text-action-1"><?= esc_html( $s_title ); ?></h6>
 					<?php if (!empty($s_general_referent)) printf('<h5 class="fw-bold">%s</h5>', esc_html( $s_general_referent )); ?>
-					<?php if (!empty($s_general_address)) foreach ($s_general_address as $address) printf('<p class="mb-0">%s</p>', WaffTwo\Core\waff_implode_nonempty('<br/>', $address)); ?>
-					<?php if (!empty($s_general_phones)) printf('<p class="mb-0">%s</p>', WaffTwo\Core\waff_implode_nonempty('<br/>', $s_general_phones)); ?>
-					<?php if (!empty($s_general_emails)) printf('<p class="mb-0">%s</p>', WaffTwo\Core\waff_implode_nonempty('<br/>', $s_general_emails)); ?>
+					<?php if (!empty($s_general_address)) foreach ($s_general_address as $address) printf('<p class="mb-0">%s</p>', WaffTwo\Core\waff_implode_nonempty($address, '<br/>')); ?>
+					<?php if (!empty($s_general_phones)) printf('<p class="mb-0">%s</p>', WaffTwo\Core\waff_implode_nonempty($s_general_phones)); ?>
+					<?php if (!empty($s_general_emails)) printf('<p class="mb-0">%s</p>', WaffTwo\Core\waff_implode_nonempty($s_general_emails)); ?>
 					<?php 
 					foreach($s_general_links as $s_general_link) : 
 						printf('<p class="mb-0 --lead"><a class="text-action-1" href="%s" title="Visit %s">%s</></p>', $s_general_link, $s_title, str_replace(array('http://', 'https://'), '', $s_general_link));
@@ -1390,7 +1390,7 @@ if ( has_post_thumbnail($post->ID) ) {
 								<?php if (!empty($f_general_address)) printf('<h6 class="fw-bold text-action-1 op-6">%s</h6>', __('Adresse', 'wa-rsfp')); ?>
 								<?php if ($f_title) printf('<p class="mb-0 lead"><strong>%s</strong></p>', $f_title); ?>
 								<?php if ($f_general_legal_entity && $f_title != $f_general_legal_entity) printf('<p class="mb-0"><strong>%s</strong></p>', $f_general_legal_entity); ?>
-								<?php if (!empty($f_general_address)) foreach ($f_general_address as $address) printf('<p class="mb-0">%s</p>', WaffTwo\Core\waff_implode_nonempty('<br/>', $address)); ?>
+								<?php if (!empty($f_general_address)) foreach ($f_general_address as $address) printf('<p class="mb-0">%s</p>', WaffTwo\Core\waff_implode_nonempty($address, '<br/>')); ?>
 							</div>
 						</div>
 
