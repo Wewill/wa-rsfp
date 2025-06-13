@@ -1036,7 +1036,7 @@ if ( has_post_thumbnail($post->ID) ) {
 
 			<!-- Featured image -->  
 			<?php if (!empty($o_featured_img_urls)): ?>
-				<div class="row row-cols-2 row-cols-md-4 row-cols-lg-2 mt-2 --mb-6 g-4">
+				<div class="row row-cols-2 row-cols-md-4 row-cols-lg-2 row-cols-xl-3 mt-2 --mb-6 g-4">
 					<a class="col " href="javascript:;">
 						<figure title="<?php echo esc_attr($o_featured_img_description); ?>">
 							<picture class="--contrast--light overflow-hidden h-100 lazy" data-fancybox="logotypes" data-loader="pic" data-src="<?= $o_featured_img_url_full ?>" data-aos="fade-up" data-aos-delay="200">
@@ -1144,7 +1144,7 @@ if ( has_post_thumbnail($post->ID) ) {
 
 				<!-- Featured image -->  
 				<?php if (!empty($s_featured_img_urls)): ?>
-					<div class="row row-cols-2 row-cols-md-4 row-cols-lg-2 mt-2 --mb-6 g-4">
+					<div class="row row-cols-2 row-cols-md-4 row-cols-lg-2 row-cols-xl-3 mt-2 --mb-6 g-4">
 						<a class="col" href="javascript:;">
 							<figure title="<?php echo esc_attr($s_featured_img_description); ?>">
 								<picture class="--contrast--light overflow-hidden h-100 lazy" data-fancybox="logotypes" data-loader="pic" data-src="<?= $s_featured_img_url_full ?>" data-aos="fade-up" data-aos-delay="200">
