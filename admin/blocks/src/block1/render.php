@@ -922,7 +922,7 @@ if ( has_post_thumbnail($post->ID) ) {
 							<?php if ( $d_medias_video['alt'] || $d_medias_video['description'] ) : ?>
 							<figcaption><strong>© <?= esc_html($d_medias_video['alt']); ?></strong> <?= esc_html($d_medias_video['description']); ?></figcaption>
 							<?php endif; /* If captions */ ?>
-							<div class="absolute position-absolute top-0 h-100 w-100 btn_holder">
+							<div class="absolute position-absolute top-50 --h-100 w-100 btn_holder">
 								<a class="btn action-1 --color-light play" data-fancybox="pagetitle_fancybox_<?= $post->ID; ?>" href="<?= $d_medias_video_link; ?>" target="_blank"><i class="bi bi-play-fill h3 ms-1"></i></a>
 							</div>
 						</figure>
@@ -932,7 +932,7 @@ if ( has_post_thumbnail($post->ID) ) {
 					<!-- <a class="col" href="javascript:;"> -->
 						<figure class="col wp-block-video position-relative d-flex flex-center" data-fancybox="gallery" data-loader="pic" data-src="<?= $d_medias_video_link ?>">
 							<img src="<?= $d_featured_img_urls['thumbnail']; ?>" class="img-fluid rounded-4 fit-image w-100"/>
-							<div class="absolute position-absolute top-0 h-100 w-100 btn_holder">
+							<div class="absolute position-absolute top-50 --h-100 w-100 btn_holder">
 								<a class="btn action-1 --color-light play" data-fancybox="pagetitle_fancybox_<?= $post->ID; ?>" href="<?= $d_medias_video_link; ?>" target="_blank"><i class="bi bi-play-fill h3 ms-1"></i></a>
 							</div>
 						</figure>
@@ -1036,7 +1036,7 @@ if ( has_post_thumbnail($post->ID) ) {
 
 			<!-- Featured image -->  
 			<?php if (!empty($o_featured_img_urls)): ?>
-				<div class="row row-cols-6 row-cols-md-4 row-cols-lg-6 mt-2 --mb-6 g-4">
+				<div class="row row-cols-2 row-cols-md-4 row-cols-lg-2 mt-2 --mb-6 g-4">
 					<a class="col " href="javascript:;">
 						<figure title="<?php echo esc_attr($o_featured_img_description); ?>">
 							<picture class="--contrast--light overflow-hidden h-100 lazy" data-fancybox="logotypes" data-loader="pic" data-src="<?= $o_featured_img_url_full ?>" data-aos="fade-up" data-aos-delay="200">
@@ -1144,7 +1144,7 @@ if ( has_post_thumbnail($post->ID) ) {
 
 				<!-- Featured image -->  
 				<?php if (!empty($s_featured_img_urls)): ?>
-					<div class="row row-cols-6 row-cols-md-4 row-cols-lg-6 mt-2 mb-6 g-4">
+					<div class="row row-cols-2 row-cols-md-4 row-cols-lg-2 mt-2 --mb-6 g-4">
 						<a class="col" href="javascript:;">
 							<figure title="<?php echo esc_attr($s_featured_img_description); ?>">
 								<picture class="--contrast--light overflow-hidden h-100 lazy" data-fancybox="logotypes" data-loader="pic" data-src="<?= $s_featured_img_url_full ?>" data-aos="fade-up" data-aos-delay="200">
