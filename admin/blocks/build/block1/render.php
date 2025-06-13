@@ -1045,7 +1045,7 @@ if ( has_post_thumbnail($post->ID) ) {
 									srcset="<?= $o_featured_img_urls['post-featured-image-m']; ?>" type="image/jpeg"></data-src>
 							<data-src media="(min-width: 380px)"
 									srcset="<?= $o_featured_img_urls['post-featured-image-s']; ?>" type="image/jpeg"></data-src>
-							<data-img src="<?= $o_featured_img_urls['thumbnail']; ?>" alt="<?= esc_html($o_featured_img_caption); ?>" class="img-fluid rounded-4 shadow-lg --h-300-px fit-image w-100 img-transition-scale bg-light"></data-img>
+							<data-img src="<?= $o_featured_img_urls['thumbnail']; ?>" alt="<?= esc_html($o_featured_img_caption); ?>" class="img-fluid rounded-4 shadow-lg --h-300-px fit-image w-100 img-transition-scale bg-light p-3"></data-img>
 							</picture>
 							<?php if ( $o_featured_img_caption || $o_featured_img_description ) : ?>
 							<figcaption><strong>© <?= esc_html($o_featured_img_caption); ?></strong> <?= esc_html($o_featured_img_description); ?></figcaption>
@@ -1153,7 +1153,7 @@ if ( has_post_thumbnail($post->ID) ) {
 										srcset="<?= $s_featured_img_urls['post-featured-image-m']; ?>" type="image/jpeg"></data-src>
 								<data-src media="(min-width: 380px)"
 										srcset="<?= $s_featured_img_urls['post-featured-image-s']; ?>" type="image/jpeg"></data-src>
-								<data-img src="<?= $s_featured_img_urls['thumbnail']; ?>" alt="<?= esc_html($s_featured_img_caption); ?>" class="img-fluid rounded-4 shadow-lg --h-300-px fit-image w-100 img-transition-scale bg-light p-4"></data-img>
+								<data-img src="<?= $s_featured_img_urls['thumbnail']; ?>" alt="<?= esc_html($s_featured_img_caption); ?>" class="img-fluid rounded-4 shadow-lg --h-300-px fit-image w-100 img-transition-scale bg-light p-3"></data-img>
 								</picture>
 								<?php if ( $s_featured_img_caption || $s_featured_img_description ) : ?>
 								<figcaption><strong>© <?= esc_html($s_featured_img_caption); ?></strong> <?= esc_html($s_featured_img_description); ?></figcaption>
