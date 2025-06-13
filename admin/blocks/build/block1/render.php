@@ -698,7 +698,7 @@ if ( has_post_thumbnail($post->ID) ) {
         <div class="inner-sticky bg-color-bg p-4 p-lg-5 rounded-end-4 rounded-bottom-right-0">
 			
 			<!-- Diagram & thematics -->
-			<div class="row row-cols-1 row-cols-md-2">
+			<div class="row row-cols-2 row-cols-lg-1 row-cols-xl-2">
 				<?php $knowledge_diagrams = rwmb_meta( $prefix . 'knowledge_diagrams' );
 				if (!empty($knowledge_diagrams)): ?>
 				<div class="col">
@@ -889,7 +889,7 @@ if ( has_post_thumbnail($post->ID) ) {
 			<?php if (!empty($medias_gallery)): ?>
 			<h6 class="subline --text-action-1 mt-5"><?= /*translators:Galerie */ __('Gallery', 'wa-rsfp'); ?></h6>
 			<!-- Begin: Gallery row -->
-			<div class="row row-cols-sm-2 row-cols-lg-3 mt-2 mb-6 g-4">
+			<div class="row row-cols-3 row-cols-md-4 row-cols-lg-3 mt-2 mb-6 g-4">
 				<?php foreach ( $medias_gallery as $image ) : ?>
 					<a class="col" href="javascript:;">
 						<figure id="<?= $image['ID'] ?>">
@@ -914,10 +914,10 @@ if ( has_post_thumbnail($post->ID) ) {
 			<?php if (!empty($d_medias_videos) || !empty($d_medias_video_links)): ?>
 			<h6 class="subline --text-action-1 mt-5"><?= /*translators:Vidéo */ __('Video', 'wa-rsfp'); ?></h6>
 			<!-- Begin: Video row -->
-			<div class="row row-cols-sm-2 row-cols-lg-3 mt-2 mb-6 g-4">
+			<div class="row row-cols-3 row-cols-md-4 row-cols-lg-3  mt-2 mb-6 g-4">
 				<?php foreach ( $d_medias_videos as $d_medias_video ) : ?>
 					<!-- <a class="col" href="javascript:;"> -->
-						<figure class="wp-block-video position-relative d-flex flex-center" id="<?= $d_medias_video['ID'] ?>" data-fancybox="gallery" data-loader="pic" data-src="<?= $d_medias_video['src'] ?>">
+						<figure class="col wp-block-video position-relative d-flex flex-center" id="<?= $d_medias_video['ID'] ?>" data-fancybox="gallery" data-loader="pic" data-src="<?= $d_medias_video['src'] ?>">
 							<img src="<?= $d_featured_img_urls['thumbnail']; ?>" class="img-fluid rounded-4 fit-image w-100"/>
 							<?php if ( $d_medias_video['alt'] || $d_medias_video['description'] ) : ?>
 							<figcaption><strong>© <?= esc_html($d_medias_video['alt']); ?></strong> <?= esc_html($d_medias_video['description']); ?></figcaption>
@@ -930,7 +930,7 @@ if ( has_post_thumbnail($post->ID) ) {
 				<?php endforeach ?>
 				<?php foreach ( $d_medias_video_links as $d_medias_video_link ) : ?>
 					<!-- <a class="col" href="javascript:;"> -->
-						<figure class="wp-block-video position-relative d-flex flex-center" data-fancybox="gallery" data-loader="pic" data-src="<?= $d_medias_video_link ?>">
+						<figure class="col wp-block-video position-relative d-flex flex-center" data-fancybox="gallery" data-loader="pic" data-src="<?= $d_medias_video_link ?>">
 							<img src="<?= $d_featured_img_urls['thumbnail']; ?>" class="img-fluid rounded-4 fit-image w-100"/>
 							<div class="absolute position-absolute top-0 h-100 w-100 btn_holder">
 								<a class="btn action-1 --color-light play" data-fancybox="pagetitle_fancybox_<?= $post->ID; ?>" href="<?= $d_medias_video_link; ?>" target="_blank"><i class="bi bi-play-fill h3 ms-1"></i></a>
@@ -948,7 +948,7 @@ if ( has_post_thumbnail($post->ID) ) {
 			<?php if (!empty($d_medias_files)): ?>
 			<h6 class="subline --text-action-1 mt-5"><?= /*translators:Files */ __('Files', 'wa-rsfp'); ?></h6>
 			<!-- Begin: File -->
-			<div class="row row-cols-sm-2 row-cols-lg-3 mt-2 mb-6 g-4">
+			<div class="row row-cols-3 row-cols-md-4 row-cols-lg-3 mt-2 mb-6 g-4">
 				<?php foreach ( $d_medias_files as $d_medias_file ) : ?>
 					<a class="col mx-3 rounded-4 bg-action-3 w-100-px h-100-px d-flex flex-center" href="<?= esc_html($d_medias_file['url']); ?>" target="_blank">
 						<i class="bi bi-file-earmark-arrow-down h2 m-0"></i>
@@ -1036,7 +1036,7 @@ if ( has_post_thumbnail($post->ID) ) {
 
 			<!-- Featured image -->  
 			<?php if (!empty($o_featured_img_urls)): ?>
-				<div class="row row-cols-sm-2 row-cols-lg-3 mt-2 --mb-6 g-4">
+				<div class="row row-cols-6 row-cols-md-4 row-cols-lg-6 mt-2 --mb-6 g-4">
 					<a class="col " href="javascript:;">
 						<figure title="<?php echo esc_attr($o_featured_img_description); ?>">
 							<picture class="--contrast--light overflow-hidden h-100 lazy" data-fancybox="logotypes" data-loader="pic" data-src="<?= $o_featured_img_url_full ?>" data-aos="fade-up" data-aos-delay="200">
@@ -1144,8 +1144,8 @@ if ( has_post_thumbnail($post->ID) ) {
 
 				<!-- Featured image -->  
 				<?php if (!empty($s_featured_img_urls)): ?>
-					<div class="row row-cols-sm-2 row-cols-lg-3 mt-2 mb-6 g-4">
-						<a class="col " href="javascript:;">
+					<div class="row row-cols-6 row-cols-md-4 row-cols-lg-6 mt-2 mb-6 g-4">
+						<a class="col" href="javascript:;">
 							<figure title="<?php echo esc_attr($s_featured_img_description); ?>">
 								<picture class="--contrast--light overflow-hidden h-100 lazy" data-fancybox="logotypes" data-loader="pic" data-src="<?= $s_featured_img_url_full ?>" data-aos="fade-up" data-aos-delay="200">
 								<!-- 3800x1200 > 1900x600 -->
@@ -1153,7 +1153,7 @@ if ( has_post_thumbnail($post->ID) ) {
 										srcset="<?= $s_featured_img_urls['post-featured-image-m']; ?>" type="image/jpeg"></data-src>
 								<data-src media="(min-width: 380px)"
 										srcset="<?= $s_featured_img_urls['post-featured-image-s']; ?>" type="image/jpeg"></data-src>
-								<data-img src="<?= $s_featured_img_urls['thumbnail']; ?>" alt="<?= esc_html($s_featured_img_caption); ?>" class="img-fluid rounded-4 shadow-lg --h-300-px fit-image w-100 img-transition-scale bg-light"></data-img>
+								<data-img src="<?= $s_featured_img_urls['thumbnail']; ?>" alt="<?= esc_html($s_featured_img_caption); ?>" class="img-fluid rounded-4 shadow-lg --h-300-px fit-image w-100 img-transition-scale bg-light p-4"></data-img>
 								</picture>
 								<?php if ( $s_featured_img_caption || $s_featured_img_description ) : ?>
 								<figcaption><strong>© <?= esc_html($s_featured_img_caption); ?></strong> <?= esc_html($s_featured_img_description); ?></figcaption>
