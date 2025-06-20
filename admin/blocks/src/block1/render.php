@@ -1459,7 +1459,7 @@ if ( has_post_thumbnail($post->ID) ) {
 				</div>
 				<!-- Line 2 -->
 				<div class="d-flex align-items-center justify-content-center gap-3">
-					<a class="btn btn-action-1 btn-transition-scale mt-4 flex-fill --w-50 --me-2" href="http://localhost/wp-login.php?action=register">Je m'inscris</a>
+					<a class="btn btn-action-1 btn-transition-scale mt-4 flex-fill --w-50 --me-2" href="/wp-login.php?action=register">Je m'inscris</a>
 					<button class="btn btn-action-2 btn-transition-scale mt-4 flex-fill --w-50 --ms-2" role="switch" data-bs-toggle="modal" data-bs-target="#modalLoginout" aria-checked="false" aria-label="">Je me connecte</button>
 				</div>
 				<!-- End: Log -->
