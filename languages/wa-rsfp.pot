@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WA RSFP Global functions\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-04 13:27+0000\n"
+"POT-Creation-Date: 2025-11-03 14:52+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -36,8 +36,8 @@ msgstr ""
 msgid "&larr; Go to Thematics"
 msgstr ""
 
-#: admin/class-wa-rsfp-fields.php:602 admin/class-wa-rsfp-fields.php:613
-#: admin/class-wa-rsfp-fields.php:773 admin/class-wa-rsfp-fields.php:887
+#: admin/class-wa-rsfp-fields.php:615 admin/class-wa-rsfp-fields.php:626
+#: admin/class-wa-rsfp-fields.php:786 admin/class-wa-rsfp-fields.php:900
 msgid "(Optional) This content will be displayed in knowledge single page."
 msgstr ""
 
@@ -47,26 +47,26 @@ msgid ""
 "\"></span>"
 msgstr ""
 
-#: admin/class-wa-rsfp-fields.php:409
+#: admin/class-wa-rsfp-fields.php:422
 msgid "<span class=\"important\">Maximum 10 files.</span>"
 msgstr ""
 
-#: admin/class-wa-rsfp-fields.php:385
+#: admin/class-wa-rsfp-fields.php:398
 msgid "<span class=\"important\">Maximum 20 images.</span>"
 msgstr ""
 
-#: admin/class-wa-rsfp-fields.php:966
+#: admin/class-wa-rsfp-fields.php:979
 msgid ""
 "<span class=\"important\">Provide at least 1000x1000px image in transparent "
 "* .png format."
 msgstr ""
 
-#: admin/class-wa-rsfp-fields.php:657
+#: admin/class-wa-rsfp-fields.php:670
 msgid ""
 "<span class=\"important\">Provide at least 1440x900px image in * .jpg format."
 msgstr ""
 
-#: admin/class-wa-rsfp-fields.php:378
+#: admin/class-wa-rsfp-fields.php:391
 msgid ""
 "<span class=\"label\">INFO</span> <b>Featured image</b> please choose an "
 "image below on side panel."
@@ -84,20 +84,20 @@ msgstr ""
 msgid "<span class=\"label\">INFO</span> Associate one or many post.s"
 msgstr ""
 
-#: admin/class-wa-rsfp-fields.php:1026
+#: admin/class-wa-rsfp-fields.php:1039
 msgid "<span class=\"label\">INFO</span> Choose an color"
 msgstr ""
 
-#: admin/class-wa-rsfp-fields.php:1020 admin/class-wa-rsfp-fields.php:1061
+#: admin/class-wa-rsfp-fields.php:1033 admin/class-wa-rsfp-fields.php:1074
 msgid "<span class=\"label\">INFO</span> Choose an image as featured image"
 msgstr ""
 
-#: admin/class-wa-rsfp-fields.php:387
+#: admin/class-wa-rsfp-fields.php:400
 msgid "<span class=\"label\">INFO</span> Choose one or many image.s"
 msgstr ""
 
-#: admin/class-wa-rsfp-fields.php:195 admin/class-wa-rsfp-fields.php:352
-#: admin/class-wa-rsfp-fields.php:365
+#: admin/class-wa-rsfp-fields.php:195 admin/class-wa-rsfp-fields.php:365
+#: admin/class-wa-rsfp-fields.php:378
 msgid "<span class=\"label\">INFO</span> Choose one or many option.s"
 msgstr ""
 
@@ -105,27 +105,27 @@ msgstr ""
 msgid "<span class=\"label\">INFO</span> Fill acquisitation.s as a chronology"
 msgstr ""
 
-#: admin/class-wa-rsfp-fields.php:924
+#: admin/class-wa-rsfp-fields.php:937
 msgid "<span class=\"label\">INFO</span> Fill one link"
 msgstr ""
 
-#: admin/class-wa-rsfp-fields.php:721
+#: admin/class-wa-rsfp-fields.php:734
 msgid "<span class=\"label\">INFO</span> Fill one or many complete address"
 msgstr ""
 
-#: admin/class-wa-rsfp-fields.php:485
+#: admin/class-wa-rsfp-fields.php:498
 msgid ""
 "<span class=\"label\">INFO</span> Fill one or many complete address that "
 "will shown in farm sheet"
 msgstr ""
 
-#: admin/class-wa-rsfp-fields.php:499 admin/class-wa-rsfp-fields.php:735
-#: admin/class-wa-rsfp-fields.php:856
+#: admin/class-wa-rsfp-fields.php:512 admin/class-wa-rsfp-fields.php:748
+#: admin/class-wa-rsfp-fields.php:869
 msgid "<span class=\"label\">INFO</span> Fill one or many links"
 msgstr ""
 
-#: admin/class-wa-rsfp-fields.php:471 admin/class-wa-rsfp-fields.php:707
-#: admin/class-wa-rsfp-fields.php:842
+#: admin/class-wa-rsfp-fields.php:484 admin/class-wa-rsfp-fields.php:720
+#: admin/class-wa-rsfp-fields.php:855
 msgid "<span class=\"label\">INFO</span> Fill one or many phone"
 msgstr ""
 
@@ -135,48 +135,49 @@ msgid ""
 "sure total of values is 100%."
 msgstr ""
 
-#: admin/class-wa-rsfp-fields.php:540
+#: admin/class-wa-rsfp-fields.php:553
 msgid ""
 "<span class=\"label\">INFO</span> Fill unique address to geolocate the farm "
 "(this address will not shown in website)"
 msgstr ""
 
-#: admin/class-wa-rsfp-fields.php:613
+#: admin/class-wa-rsfp-fields.php:626
 msgid ""
 "<span class=\"label\">INFO</span> Fill with a short biography of farm / "
 "entity formatted text"
 msgstr ""
 
-#: admin/class-wa-rsfp-fields.php:773 admin/class-wa-rsfp-fields.php:887
+#: admin/class-wa-rsfp-fields.php:786 admin/class-wa-rsfp-fields.php:900
 msgid ""
 "<span class=\"label\">INFO</span> Fill with a short description of structure "
 "formatted text"
 msgstr ""
 
-#: admin/class-wa-rsfp-fields.php:818
+#: admin/class-wa-rsfp-fields.php:831
 msgid "<span class=\"label\">INFO</span> Fill with an image"
 msgstr ""
 
-#: admin/class-wa-rsfp-fields.php:316 admin/class-wa-rsfp-fields.php:1013
+#: admin/class-wa-rsfp-fields.php:316 admin/class-wa-rsfp-fields.php:329
+#: admin/class-wa-rsfp-fields.php:1026
 msgid "<span class=\"label\">INFO</span> Fill with formatted text"
 msgstr ""
 
-#: admin/class-wa-rsfp-fields.php:986
+#: admin/class-wa-rsfp-fields.php:999
 msgid "<span class=\"label\">INFO</span> Fill with geojson area code"
 msgstr ""
 
-#: admin/class-wa-rsfp-fields.php:426 admin/class-wa-rsfp-fields.php:636
-#: admin/class-wa-rsfp-fields.php:789 admin/class-wa-rsfp-fields.php:903
-#: admin/class-wa-rsfp-fields.php:943
+#: admin/class-wa-rsfp-fields.php:439 admin/class-wa-rsfp-fields.php:649
+#: admin/class-wa-rsfp-fields.php:802 admin/class-wa-rsfp-fields.php:916
+#: admin/class-wa-rsfp-fields.php:956
 msgid "<span class=\"label\">INFO</span> Fill with long text"
 msgstr ""
 
-#: admin/class-wa-rsfp-fields.php:463 admin/class-wa-rsfp-fields.php:699
-#: admin/class-wa-rsfp-fields.php:834
+#: admin/class-wa-rsfp-fields.php:476 admin/class-wa-rsfp-fields.php:712
+#: admin/class-wa-rsfp-fields.php:847
 msgid "<span class=\"label\">INFO</span> Fill with one or many email"
 msgstr ""
 
-#: admin/class-wa-rsfp-fields.php:454 admin/class-wa-rsfp-fields.php:826
+#: admin/class-wa-rsfp-fields.php:467 admin/class-wa-rsfp-fields.php:839
 msgid "<span class=\"label\">INFO</span> Fill with one or many simple text"
 msgstr ""
 
@@ -184,63 +185,63 @@ msgstr ""
 #: admin/class-wa-rsfp-fields.php:159 admin/class-wa-rsfp-fields.php:165
 #: admin/class-wa-rsfp-fields.php:171 admin/class-wa-rsfp-fields.php:177
 #: admin/class-wa-rsfp-fields.php:208 admin/class-wa-rsfp-fields.php:250
-#: admin/class-wa-rsfp-fields.php:262 admin/class-wa-rsfp-fields.php:328
-#: admin/class-wa-rsfp-fields.php:447 admin/class-wa-rsfp-fields.php:602
-#: admin/class-wa-rsfp-fields.php:693
+#: admin/class-wa-rsfp-fields.php:262 admin/class-wa-rsfp-fields.php:341
+#: admin/class-wa-rsfp-fields.php:460 admin/class-wa-rsfp-fields.php:615
+#: admin/class-wa-rsfp-fields.php:706
 msgid "<span class=\"label\">INFO</span> Fill with simple text"
 msgstr ""
 
-#: admin/class-wa-rsfp-fields.php:396
+#: admin/class-wa-rsfp-fields.php:409
 msgid ""
 "<span class=\"label\">INFO</span> Recommanded : choose an external video "
 "link from online platform"
 msgstr ""
 
-#: admin/class-wa-rsfp-fields.php:656
+#: admin/class-wa-rsfp-fields.php:669
 msgid ""
 "<span class=\"label\">INFO</span> This image will be used as a hero image."
 msgstr ""
 
-#: admin/class-wa-rsfp-fields.php:965
+#: admin/class-wa-rsfp-fields.php:978
 msgid "<span class=\"label\">INFO</span> This image will be used as a logotype"
 msgstr ""
 
 #: admin/class-wa-rsfp-fields.php:250 admin/class-wa-rsfp-fields.php:262
-#: admin/class-wa-rsfp-fields.php:328
+#: admin/class-wa-rsfp-fields.php:341
 msgid ""
 "<span class=\"label\">INFO</span> This will be rendered as a list of items"
 msgstr ""
 
-#: admin/class-wa-rsfp-fields.php:402
+#: admin/class-wa-rsfp-fields.php:415
 msgid ""
 "<span class=\"label\">INFO</span> Upload a video file directly to the media "
 "library"
 msgstr ""
 
-#: admin/class-wa-rsfp-fields.php:411
+#: admin/class-wa-rsfp-fields.php:424
 msgid "<span class=\"label\">INFO</span> Upload one or many file.s"
 msgstr ""
 
-#: admin/class-wa-rsfp-fields.php:583
+#: admin/class-wa-rsfp-fields.php:596
 msgid ""
 "<span class=\"label\">TIPS</span> Check this if the farm is currently in a "
 "transmission process."
 msgstr ""
 
-#: admin/class-wa-rsfp-fields.php:819
+#: admin/class-wa-rsfp-fields.php:832
 msgid ""
 "<span class=\"label\">TIPS</span> Choose an image 1200px x 600px  in *.jpg"
 msgstr ""
 
-#: admin/class-wa-rsfp-fields.php:455
+#: admin/class-wa-rsfp-fields.php:468
 msgid ""
 "<span class=\"label\">TIPS</span> Farmer.s name, surname or full-name. You "
 "can add couple names or add fields to a collective farm."
 msgstr ""
 
-#: admin/class-wa-rsfp-fields.php:427 admin/class-wa-rsfp-fields.php:637
-#: admin/class-wa-rsfp-fields.php:790 admin/class-wa-rsfp-fields.php:904
-#: admin/class-wa-rsfp-fields.php:944
+#: admin/class-wa-rsfp-fields.php:440 admin/class-wa-rsfp-fields.php:650
+#: admin/class-wa-rsfp-fields.php:803 admin/class-wa-rsfp-fields.php:917
+#: admin/class-wa-rsfp-fields.php:957
 msgid ""
 "<span class=\"label\">TIPS</span> Fill here internal informations such as re-"
 "reading, notes or reminder. Those informations will not be displayed in "
@@ -252,14 +253,14 @@ msgid ""
 "<span class=\"label\">TIPS</span> Lead content will be showed after title"
 msgstr ""
 
-#: admin/class-wa-rsfp-fields.php:925
+#: admin/class-wa-rsfp-fields.php:938
 msgid ""
 "<span class=\"label\">TIPS</span> Link can be a website, page, social "
 "network..."
 msgstr ""
 
-#: admin/class-wa-rsfp-fields.php:500 admin/class-wa-rsfp-fields.php:736
-#: admin/class-wa-rsfp-fields.php:857
+#: admin/class-wa-rsfp-fields.php:513 admin/class-wa-rsfp-fields.php:749
+#: admin/class-wa-rsfp-fields.php:870
 msgid ""
 "<span class=\"label\">TIPS</span> Link.s can be a website, page, social "
 "network..."
@@ -267,23 +268,23 @@ msgstr ""
 
 #: admin/class-wa-rsfp-fields.php:64 admin/class-wa-rsfp-fields.php:209
 #: admin/class-wa-rsfp-fields.php:251 admin/class-wa-rsfp-fields.php:263
-#: admin/class-wa-rsfp-fields.php:293 admin/class-wa-rsfp-fields.php:329
-#: admin/class-wa-rsfp-fields.php:603 admin/class-wa-rsfp-fields.php:614
-#: admin/class-wa-rsfp-fields.php:774 admin/class-wa-rsfp-fields.php:888
+#: admin/class-wa-rsfp-fields.php:293 admin/class-wa-rsfp-fields.php:342
+#: admin/class-wa-rsfp-fields.php:616 admin/class-wa-rsfp-fields.php:627
+#: admin/class-wa-rsfp-fields.php:787 admin/class-wa-rsfp-fields.php:901
 msgid ""
 "<span class=\"label\">TIPS</span> Markdown is available : *italic* (Command "
 "+ b) **bold** (Command + i) ***label*** (Command + Shift + L) #small# "
 "(Command + Shift + S) ##huge## (Command + Shift + H)"
 msgstr ""
 
-#: admin/class-wa-rsfp-fields.php:448
+#: admin/class-wa-rsfp-fields.php:461
 msgid ""
 "<span class=\"label\">TIPS</span> Only required if legal entity is different "
 "than title."
 msgstr ""
 
-#: admin/class-wa-rsfp-fields.php:472 admin/class-wa-rsfp-fields.php:708
-#: admin/class-wa-rsfp-fields.php:843
+#: admin/class-wa-rsfp-fields.php:485 admin/class-wa-rsfp-fields.php:721
+#: admin/class-wa-rsfp-fields.php:856
 msgid ""
 "<span class=\"label\">TIPS</span> Phone number can be a direct line, mobile "
 "phone, fax... Recommanded format : 0X XX XX XX XX"
@@ -299,7 +300,7 @@ msgstr ""
 msgid "<span class=\"label\">TIPS</span> Subtitle will be showed after title"
 msgstr ""
 
-#: admin/class-wa-rsfp-fields.php:403
+#: admin/class-wa-rsfp-fields.php:416
 msgid ""
 "<span class=\"label\">TIPS</span> Video has to be *.mp4 well compressed "
 "format."
@@ -311,8 +312,8 @@ msgid ""
 "operations, partners of \"le Répertoire des Savoir-faire Paysans\""
 msgstr ""
 
-#: admin/blocks/src/block1/render.php:1255
-#: admin/blocks/build/block1/render.php:1255
+#: admin/blocks/src/block1/render.php:1277
+#: admin/blocks/build/block1/render.php:1277
 msgid "Acquisition"
 msgstr ""
 
@@ -387,12 +388,12 @@ msgstr ""
 msgid "Add or remove thematics"
 msgstr ""
 
-#: admin/class-wa-rsfp-fields.php:482 admin/class-wa-rsfp-fields.php:718
+#: admin/class-wa-rsfp-fields.php:495 admin/class-wa-rsfp-fields.php:731
 msgid "Address.s"
 msgstr ""
 
-#: admin/blocks/src/block1/render.php:1368
-#: admin/blocks/build/block1/render.php:1368
+#: admin/blocks/src/block1/render.php:1420
+#: admin/blocks/build/block1/render.php:1420
 msgid "Adresse"
 msgstr ""
 
@@ -454,17 +455,17 @@ msgstr ""
 msgid "AOP"
 msgstr ""
 
-#: admin/blocks/src/block1/render.php:1220
-#: admin/blocks/build/block1/render.php:1220
+#: admin/blocks/src/block1/render.php:1242
+#: admin/blocks/build/block1/render.php:1242
 msgid "Apply to a stage"
 msgstr ""
 
-#: admin/class-wa-rsfp-fields.php:348
+#: admin/class-wa-rsfp-fields.php:361
 msgid "Apprentissage"
 msgstr ""
 
-#: admin/class-wa-rsfp-fields.php:162 admin/blocks/src/block1/render.php:602
-#: admin/blocks/build/block1/render.php:602
+#: admin/class-wa-rsfp-fields.php:162 admin/blocks/src/block1/render.php:615
+#: admin/blocks/build/block1/render.php:615
 msgid "Area (in ha)"
 msgstr ""
 
@@ -472,7 +473,7 @@ msgstr ""
 msgid "Bio Cohérence"
 msgstr ""
 
-#: admin/class-wa-rsfp-fields.php:606
+#: admin/class-wa-rsfp-fields.php:619
 msgid "Biography"
 msgstr ""
 
@@ -486,8 +487,8 @@ msgctxt "block title"
 msgid "WA RSFP directory block"
 msgstr ""
 
-#: admin/blocks/src/block1/render.php:1206
-#: admin/blocks/build/block1/render.php:1206
+#: admin/blocks/src/block1/render.php:1228
+#: admin/blocks/build/block1/render.php:1228
 msgid "Book a visit"
 msgstr ""
 
@@ -511,46 +512,50 @@ msgstr ""
 msgid "Choose most used thematics"
 msgstr ""
 
-#: admin/class-wa-rsfp-fields.php:983
+#: admin/class-wa-rsfp-fields.php:996
 msgid "Code"
 msgstr ""
 
-#: admin/class-wa-rsfp-fields.php:1023 admin/class-wa-rsfp-columns.php:421
+#: admin/class-wa-rsfp-fields.php:1036 admin/class-wa-rsfp-columns.php:421
 msgid "Color"
 msgstr ""
 
-#: admin/class-wa-rsfp-fields.php:198 admin/blocks/src/block1/render.php:661
-#: admin/blocks/build/block1/render.php:661
+#: admin/class-wa-rsfp-fields.php:198 admin/blocks/src/block1/render.php:674
+#: admin/blocks/build/block1/render.php:674
 msgid "Commercialization"
 msgstr ""
 
-#: admin/blocks/src/block1/render.php:1384
-#: admin/blocks/build/block1/render.php:1384
+#: admin/blocks/src/block1/render.php:1436
+#: admin/blocks/build/block1/render.php:1436
 msgid "Contact"
 msgstr ""
 
-#: admin/blocks/src/block1/render.php:1081
-#: admin/blocks/src/block1/render.php:1414
-#: admin/blocks/build/block1/render.php:1081
-#: admin/blocks/build/block1/render.php:1414
+#: admin/blocks/src/block1/render.php:1103
+#: admin/blocks/src/block1/render.php:1466
+#: admin/blocks/build/block1/render.php:1103
+#: admin/blocks/build/block1/render.php:1466
 msgid "Contact us"
 msgstr ""
 
 #. translators:Contactez votre structure d'accompagnement local
-#: admin/blocks/src/block1/render.php:1121
-#: admin/blocks/build/block1/render.php:1121
+#: admin/blocks/src/block1/render.php:1143
+#: admin/blocks/build/block1/render.php:1143
 msgid "Contact your local support structure"
 msgstr ""
 
-#: admin/class-wa-rsfp-fields.php:1003
+#: admin/class-wa-rsfp-fields.php:1016
 msgid "Content"
+msgstr ""
+
+#: admin/class-wa-rsfp-export.php:86
+msgid "Date"
 msgstr ""
 
 #: admin/class-wa-rsfp-fields.php:185
 msgid "Demeter"
 msgstr ""
 
-#: admin/class-wa-rsfp-fields.php:766 admin/class-wa-rsfp-fields.php:880
+#: admin/class-wa-rsfp-fields.php:779 admin/class-wa-rsfp-fields.php:893
 msgid "Description"
 msgstr ""
 
@@ -559,8 +564,8 @@ msgid "DEV / BAC À SABLE"
 msgstr ""
 
 #. translators:Répartition
-#: admin/blocks/src/block1/render.php:690
-#: admin/blocks/build/block1/render.php:690
+#: admin/blocks/src/block1/render.php:705
+#: admin/blocks/build/block1/render.php:705
 msgid "Diagram"
 msgstr ""
 
@@ -600,7 +605,7 @@ msgstr ""
 msgid "Directory › Identity"
 msgstr ""
 
-#: admin/class-wa-rsfp-fields.php:418
+#: admin/class-wa-rsfp-fields.php:431
 msgid "Directory › Internal"
 msgstr ""
 
@@ -608,11 +613,11 @@ msgstr ""
 msgid "Directory › Knowledge"
 msgstr ""
 
-#: admin/class-wa-rsfp-fields.php:372
+#: admin/class-wa-rsfp-fields.php:385
 msgid "Directory › Medias"
 msgstr ""
 
-#: admin/class-wa-rsfp-fields.php:336
+#: admin/class-wa-rsfp-fields.php:349
 msgid "Directory › Opening"
 msgstr ""
 
@@ -620,9 +625,14 @@ msgstr ""
 msgid "Directory › Relationships"
 msgstr ""
 
-#: admin/blocks/src/block1/render.php:1231
-#: admin/blocks/build/block1/render.php:1231
+#: admin/blocks/src/block1/render.php:1253
+#: admin/blocks/build/block1/render.php:1253
 msgid "Download"
+msgstr ""
+
+#: admin/blocks/src/block1/render.php:1314
+#: admin/blocks/build/block1/render.php:1314
+msgid "Download knowledge *.pdf"
 msgstr ""
 
 #: admin/class-wa-rsfp-register.php:117
@@ -665,8 +675,12 @@ msgstr ""
 msgid "Edit Thematic"
 msgstr ""
 
-#: admin/class-wa-rsfp-fields.php:460 admin/class-wa-rsfp-fields.php:696
-#: admin/class-wa-rsfp-fields.php:831
+#: admin/class-wa-rsfp-export.php:80
+msgid "Email"
+msgstr ""
+
+#: admin/class-wa-rsfp-fields.php:473 admin/class-wa-rsfp-fields.php:709
+#: admin/class-wa-rsfp-fields.php:844
 msgid "Email.s"
 msgstr ""
 
@@ -678,6 +692,18 @@ msgstr ""
 
 #: admin/class-wa-rsfp-fields.php:263
 msgid "Ex. : répartition des tâches, horaires quotidiens, congés ..."
+msgstr ""
+
+#: admin/class-wa-rsfp-export.php:45
+msgid "Export"
+msgstr ""
+
+#: admin/class-wa-rsfp-export.php:33
+msgid "export"
+msgstr ""
+
+#: admin/class-wa-rsfp-export.php:22 admin/class-wa-rsfp-export.php:23
+msgid "Export members"
 msgstr ""
 
 #: admin/class-wa-rsfp-register.php:114
@@ -697,17 +723,17 @@ msgid "Farm belongs to"
 msgstr ""
 
 #. translators:Ferme en transmission
-#: admin/class-wa-rsfp-fields.php:580
+#: admin/class-wa-rsfp-fields.php:593
 msgid "Farm in transmission"
 msgstr ""
 
-#: admin/blocks/src/block1/render.php:1219
-#: admin/blocks/build/block1/render.php:1219
+#: admin/blocks/src/block1/render.php:1241
+#: admin/blocks/build/block1/render.php:1241
 msgid "Farm is open to stage :"
 msgstr ""
 
-#: admin/blocks/src/block1/render.php:1205
-#: admin/blocks/build/block1/render.php:1205
+#: admin/blocks/src/block1/render.php:1227
+#: admin/blocks/build/block1/render.php:1227
 msgid "Farm is open to visit :"
 msgstr ""
 
@@ -748,23 +774,23 @@ msgstr ""
 msgid "Farm updated."
 msgstr ""
 
-#: admin/class-wa-rsfp-fields.php:439
+#: admin/class-wa-rsfp-fields.php:452
 msgid "Farm › General"
 msgstr ""
 
-#: admin/class-wa-rsfp-fields.php:532
+#: admin/class-wa-rsfp-fields.php:545
 msgid "Farm › Geolocation"
 msgstr ""
 
-#: admin/class-wa-rsfp-fields.php:628
+#: admin/class-wa-rsfp-fields.php:641
 msgid "Farm › Internal"
 msgstr ""
 
-#: admin/class-wa-rsfp-fields.php:590
+#: admin/class-wa-rsfp-fields.php:603
 msgid "Farm › More"
 msgstr ""
 
-#: admin/class-wa-rsfp-fields.php:569
+#: admin/class-wa-rsfp-fields.php:582
 msgid "Farm › Transmission"
 msgstr ""
 
@@ -772,7 +798,7 @@ msgstr ""
 msgid "Farm.s"
 msgstr ""
 
-#: admin/class-wa-rsfp-fields.php:451 admin/class-wa-rsfp-columns.php:193
+#: admin/class-wa-rsfp-fields.php:464 admin/class-wa-rsfp-columns.php:193
 msgid "Farmer.s"
 msgstr ""
 
@@ -796,8 +822,8 @@ msgid "Featured image"
 msgstr ""
 
 #. translators:Files
-#: admin/class-wa-rsfp-fields.php:406 admin/blocks/src/block1/render.php:927
-#: admin/blocks/build/block1/render.php:927
+#: admin/class-wa-rsfp-fields.php:419 admin/blocks/src/block1/render.php:949
+#: admin/blocks/build/block1/render.php:949
 msgid "Files"
 msgstr ""
 
@@ -857,17 +883,21 @@ msgstr ""
 msgid "Filter structures list"
 msgstr ""
 
+#: admin/class-wa-rsfp-export.php:78
+msgid "First name"
+msgstr ""
+
 #. translators:Galerie
-#: admin/blocks/src/block1/render.php:873
-#: admin/blocks/build/block1/render.php:873
+#: admin/blocks/src/block1/render.php:890
+#: admin/blocks/build/block1/render.php:890
 msgid "Gallery"
 msgstr ""
 
-#: admin/class-wa-rsfp-fields.php:382
+#: admin/class-wa-rsfp-fields.php:395
 msgid "Gallery files"
 msgstr ""
 
-#: admin/class-wa-rsfp-fields.php:537
+#: admin/class-wa-rsfp-fields.php:550
 msgid "Geo address"
 msgstr ""
 
@@ -884,11 +914,11 @@ msgstr ""
 msgid "Geographies list pagination"
 msgstr ""
 
-#: admin/class-wa-rsfp-taxonomy.php:14
+#: admin/class-wa-rsfp-taxonomy.php:14 admin/class-wa-rsfp-export.php:82
 msgid "Geography"
 msgstr ""
 
-#: admin/class-wa-rsfp-fields.php:978
+#: admin/class-wa-rsfp-fields.php:991
 msgid "Geography › Special"
 msgstr ""
 
@@ -896,18 +926,18 @@ msgstr ""
 msgid "Geolocation"
 msgstr ""
 
-#: admin/class-wa-rsfp-settings.php:37
-msgid "Homeslide content"
-msgstr ""
-
 #. URI of the plugin
 #. Author URI of the plugin
 msgid "https://www.wilhemarnoldy.fr"
 msgstr ""
 
+#: admin/class-wa-rsfp-export.php:76
+msgid "ID"
+msgstr ""
+
 #. translators:Carte d'identité
-#: admin/blocks/src/block1/render.php:576
-#: admin/blocks/build/block1/render.php:576
+#: admin/blocks/src/block1/render.php:589
+#: admin/blocks/build/block1/render.php:589
 msgid "Identity"
 msgstr ""
 
@@ -915,7 +945,7 @@ msgstr ""
 msgid "IGP"
 msgstr ""
 
-#: admin/class-wa-rsfp-fields.php:1016 admin/class-wa-rsfp-fields.php:1057
+#: admin/class-wa-rsfp-fields.php:1029 admin/class-wa-rsfp-fields.php:1070
 msgid "Image"
 msgstr ""
 
@@ -940,13 +970,19 @@ msgid "Insert into structure"
 msgstr ""
 
 #. translators:Parcours à l'installation
-#: admin/class-wa-rsfp-fields.php:306 admin/blocks/src/block1/render.php:866
-#: admin/blocks/build/block1/render.php:866
+#: admin/class-wa-rsfp-fields.php:306 admin/blocks/src/block1/render.php:876
+#: admin/blocks/build/block1/render.php:876
 msgid "Installation period"
 msgstr ""
 
 #: admin/class-wa-rsfp-fields.php:56
 msgid "Introduction"
+msgstr ""
+
+#. translators:Download the PDF version of this page
+#: admin/blocks/src/block1/render.php:1312
+#: admin/blocks/build/block1/render.php:1312
+msgid "Keep this knowledge close to you..."
 msgstr ""
 
 #: admin/class-wa-rsfp-register.php:14
@@ -973,8 +1009,8 @@ msgstr ""
 msgid "Knowledge updated."
 msgstr ""
 
-#: admin/class-wa-rsfp-fields.php:180 admin/blocks/src/block1/render.php:640
-#: admin/blocks/build/block1/render.php:640
+#: admin/class-wa-rsfp-fields.php:180 admin/blocks/src/block1/render.php:653
+#: admin/blocks/build/block1/render.php:653
 msgid "Label"
 msgstr ""
 
@@ -982,25 +1018,29 @@ msgstr ""
 msgid "Label Rouge"
 msgstr ""
 
-#: admin/class-wa-rsfp-fields.php:823 admin/class-wa-rsfp-columns.php:298
+#: admin/class-wa-rsfp-export.php:79
+msgid "Last name"
+msgstr ""
+
+#: admin/class-wa-rsfp-fields.php:836 admin/class-wa-rsfp-columns.php:298
 msgid "Leader.s"
 msgstr ""
 
-#: admin/class-wa-rsfp-fields.php:444
+#: admin/class-wa-rsfp-fields.php:457
 msgid "Legal entity"
 msgstr ""
 
-#: admin/class-wa-rsfp-fields.php:921 admin/class-wa-rsfp-columns.php:348
+#: admin/class-wa-rsfp-fields.php:934 admin/class-wa-rsfp-columns.php:348
 msgid "Link"
 msgstr ""
 
-#: admin/class-wa-rsfp-fields.php:496 admin/class-wa-rsfp-fields.php:732
-#: admin/class-wa-rsfp-fields.php:853
+#: admin/class-wa-rsfp-fields.php:509 admin/class-wa-rsfp-fields.php:745
+#: admin/class-wa-rsfp-fields.php:866
 msgid "Link.s"
 msgstr ""
 
-#: admin/blocks/src/block1/render.php:1399
-#: admin/blocks/build/block1/render.php:1399
+#: admin/blocks/src/block1/render.php:1451
+#: admin/blocks/build/block1/render.php:1451
 msgid "Links"
 msgstr ""
 
@@ -1028,8 +1068,8 @@ msgstr ""
 msgid "LIVE"
 msgstr ""
 
-#: admin/class-wa-rsfp-fields.php:174 admin/blocks/src/block1/render.php:626
-#: admin/blocks/build/block1/render.php:626
+#: admin/class-wa-rsfp-fields.php:174 admin/blocks/src/block1/render.php:639
+#: admin/blocks/build/block1/render.php:639
 msgid "Livestock"
 msgstr ""
 
@@ -1037,10 +1077,14 @@ msgstr ""
 msgid "LOCAL"
 msgstr ""
 
-#: admin/class-wa-rsfp-fields.php:155 admin/class-wa-rsfp-fields.php:545
-#: admin/blocks/src/block1/render.php:590
-#: admin/blocks/build/block1/render.php:590
+#: admin/class-wa-rsfp-fields.php:155 admin/class-wa-rsfp-fields.php:558
+#: admin/blocks/src/block1/render.php:603
+#: admin/blocks/build/block1/render.php:603
 msgid "Location"
+msgstr ""
+
+#: admin/class-wa-rsfp-export.php:33
+msgid "Members"
 msgstr ""
 
 #: admin/class-wa-rsfp-taxonomy.php:34 admin/class-wa-rsfp-taxonomy.php:88
@@ -1093,8 +1137,8 @@ msgstr ""
 msgid "New Thematic Name"
 msgstr ""
 
-#: admin/blocks/src/block1/render.php:1510
-#: admin/blocks/build/block1/render.php:1510
+#: admin/blocks/src/block1/render.php:1562
+#: admin/blocks/build/block1/render.php:1562
 msgid "Next knowledge"
 msgstr ""
 
@@ -1178,27 +1222,27 @@ msgstr ""
 msgid "No thematics found."
 msgstr ""
 
-#: admin/class-wa-rsfp-fields.php:423 admin/class-wa-rsfp-fields.php:633
-#: admin/class-wa-rsfp-fields.php:786 admin/class-wa-rsfp-fields.php:900
-#: admin/class-wa-rsfp-fields.php:940
+#: admin/class-wa-rsfp-fields.php:436 admin/class-wa-rsfp-fields.php:646
+#: admin/class-wa-rsfp-fields.php:799 admin/class-wa-rsfp-fields.php:913
+#: admin/class-wa-rsfp-fields.php:953
 msgid "Notes"
 msgstr ""
 
-#: admin/class-wa-rsfp-fields.php:168 admin/blocks/src/block1/render.php:614
-#: admin/blocks/build/block1/render.php:614
+#: admin/class-wa-rsfp-fields.php:168 admin/blocks/src/block1/render.php:627
+#: admin/blocks/build/block1/render.php:627
 msgid "Number of people"
 msgstr ""
 
-#: admin/blocks/src/block1/render.php:1218
-#: admin/blocks/build/block1/render.php:1218
+#: admin/blocks/src/block1/render.php:1240
+#: admin/blocks/build/block1/render.php:1240
 msgid "Open to stage"
 msgstr ""
 
-#: admin/class-wa-rsfp-fields.php:341
+#: admin/class-wa-rsfp-fields.php:354
 msgid "Open to stage ?"
 msgstr ""
 
-#: admin/class-wa-rsfp-fields.php:355
+#: admin/class-wa-rsfp-fields.php:368
 msgid "Open to visit ?"
 msgstr ""
 
@@ -1238,15 +1282,15 @@ msgstr ""
 msgid "Operation updated."
 msgstr ""
 
-#: admin/class-wa-rsfp-fields.php:802
+#: admin/class-wa-rsfp-fields.php:815
 msgid "Operation › General"
 msgstr ""
 
-#: admin/class-wa-rsfp-fields.php:895
+#: admin/class-wa-rsfp-fields.php:908
 msgid "Operation › Internal"
 msgstr ""
 
-#: admin/class-wa-rsfp-fields.php:875
+#: admin/class-wa-rsfp-fields.php:888
 msgid "Operation › More"
 msgstr ""
 
@@ -1265,6 +1309,12 @@ msgstr ""
 
 #: admin/class-wa-rsfp-register.php:204
 msgid "Operations list navigation"
+msgstr ""
+
+#. translators:Notre catalogue
+#: admin/blocks/src/block1/render.php:1325
+#: admin/blocks/build/block1/render.php:1325
+msgid "Our catalogue"
 msgstr ""
 
 #: admin/class-wa-rsfp-register.php:24
@@ -1376,11 +1426,11 @@ msgstr ""
 msgid "Partner updated."
 msgstr ""
 
-#: admin/class-wa-rsfp-fields.php:916
+#: admin/class-wa-rsfp-fields.php:929
 msgid "Partner › General"
 msgstr ""
 
-#: admin/class-wa-rsfp-fields.php:935
+#: admin/class-wa-rsfp-fields.php:948
 msgid "Partner › Internal"
 msgstr ""
 
@@ -1397,13 +1447,9 @@ msgstr ""
 msgid "Partners list navigation"
 msgstr ""
 
-#: admin/class-wa-rsfp-fields.php:468 admin/class-wa-rsfp-fields.php:704
-#: admin/class-wa-rsfp-fields.php:839
+#: admin/class-wa-rsfp-fields.php:481 admin/class-wa-rsfp-fields.php:717
+#: admin/class-wa-rsfp-fields.php:852
 msgid "Phone.s"
-msgstr ""
-
-#: admin/class-wa-rsfp-settings.php:16
-msgid "Plugin settings"
 msgstr ""
 
 #: admin/class-wa-rsfp-taxonomy.php:179
@@ -1430,7 +1476,7 @@ msgstr ""
 msgid "Posted"
 msgstr ""
 
-#: admin/class-wa-rsfp-fields.php:815
+#: admin/class-wa-rsfp-fields.php:828
 msgid "Presentation image"
 msgstr ""
 
@@ -1439,8 +1485,8 @@ msgstr ""
 msgid "Preview"
 msgstr ""
 
-#: admin/blocks/src/block1/render.php:1465
-#: admin/blocks/build/block1/render.php:1465
+#: admin/blocks/src/block1/render.php:1517
+#: admin/blocks/build/block1/render.php:1517
 msgid "Previous knowledge"
 msgstr ""
 
@@ -1448,7 +1494,7 @@ msgstr ""
 msgid "Production"
 msgstr ""
 
-#: admin/class-wa-rsfp-fields.php:1039
+#: admin/class-wa-rsfp-fields.php:1052
 msgid "Production › General"
 msgstr ""
 
@@ -1465,7 +1511,17 @@ msgstr ""
 msgid "Productions list pagination"
 msgstr ""
 
-#: admin/class-wa-rsfp-fields.php:690 admin/class-wa-rsfp-columns.php:248
+#: admin/class-wa-rsfp-export.php:84
+msgid "Profil"
+msgstr ""
+
+#. translators:Retrouvez l'ensemble des savoir-faire...
+#: admin/blocks/src/block1/render.php:1323
+#: admin/blocks/build/block1/render.php:1323
+msgid "Read all the knowledges..."
+msgstr ""
+
+#: admin/class-wa-rsfp-fields.php:703 admin/class-wa-rsfp-columns.php:248
 msgid "Referent"
 msgstr ""
 
@@ -1475,8 +1531,8 @@ msgstr ""
 msgid "Remove featured image"
 msgstr ""
 
-#: admin/blocks/src/block1/render.php:831
-#: admin/blocks/build/block1/render.php:831
+#: admin/blocks/src/block1/render.php:841
+#: admin/blocks/build/block1/render.php:841
 msgid "Report.s"
 msgstr ""
 
@@ -1547,24 +1603,24 @@ msgid "Set featured image"
 msgstr ""
 
 #. translators:Compétence.s acquise.s
-#: admin/class-wa-rsfp-fields.php:319 admin/blocks/src/block1/render.php:857
-#: admin/blocks/build/block1/render.php:857
+#: admin/class-wa-rsfp-fields.php:332 admin/blocks/src/block1/render.php:867
+#: admin/blocks/build/block1/render.php:867
 msgid "Skill.s"
 msgstr ""
 
-#: admin/class-wa-rsfp-blocks.php:69
+#: admin/class-wa-rsfp-blocks.php:119
 msgid "Some text"
 msgstr ""
 
-#: admin/class-wa-rsfp-fields.php:345
+#: admin/class-wa-rsfp-fields.php:358
 msgid "Stage de découverte"
 msgstr ""
 
-#: admin/class-wa-rsfp-fields.php:346
+#: admin/class-wa-rsfp-fields.php:359
 msgid "Stage non rémunéré"
 msgstr ""
 
-#: admin/class-wa-rsfp-fields.php:347
+#: admin/class-wa-rsfp-fields.php:360
 msgid "Stage rémunéré"
 msgstr ""
 
@@ -1572,7 +1628,7 @@ msgstr ""
 msgid "STG"
 msgstr ""
 
-#: admin/class-wa-rsfp-register.php:248
+#: admin/class-wa-rsfp-register.php:248 admin/class-wa-rsfp-export.php:83
 msgid "Structure"
 msgstr ""
 
@@ -1608,15 +1664,15 @@ msgstr ""
 msgid "Structure updated."
 msgstr ""
 
-#: admin/class-wa-rsfp-fields.php:669
+#: admin/class-wa-rsfp-fields.php:682
 msgid "Structure › General"
 msgstr ""
 
-#: admin/class-wa-rsfp-fields.php:781
+#: admin/class-wa-rsfp-fields.php:794
 msgid "Structure › Internal"
 msgstr ""
 
-#: admin/class-wa-rsfp-fields.php:761
+#: admin/class-wa-rsfp-fields.php:774
 msgid "Structure › More"
 msgstr ""
 
@@ -1641,16 +1697,16 @@ msgstr ""
 msgid "Subtitle"
 msgstr ""
 
-#: admin/class-wa-rsfp-blocks.php:34
+#: admin/class-wa-rsfp-blocks.php:84
 msgid "Test"
 msgstr ""
 
 #. translators:Témoignage libre
-#: admin/class-wa-rsfp-fields.php:595
+#: admin/class-wa-rsfp-fields.php:608
 msgid "Testimony"
 msgstr ""
 
-#: admin/class-wa-rsfp-blocks.php:64
+#: admin/class-wa-rsfp-blocks.php:114
 msgid "Text"
 msgstr ""
 
@@ -1658,14 +1714,14 @@ msgstr ""
 msgid "Thematic"
 msgstr ""
 
-#: admin/class-wa-rsfp-fields.php:998
+#: admin/class-wa-rsfp-fields.php:1011
 msgid "Thematic › General"
 msgstr ""
 
 #. translators:Thematiques
 #: admin/class-wa-rsfp-taxonomy.php:121 admin/class-wa-rsfp-taxonomy.php:123
-#: admin/class-wa-rsfp-taxonomy.php:146 admin/blocks/src/block1/render.php:765
-#: admin/blocks/build/block1/render.php:765
+#: admin/class-wa-rsfp-taxonomy.php:146 admin/blocks/src/block1/render.php:777
+#: admin/blocks/build/block1/render.php:777
 msgid "Thematics"
 msgstr ""
 
@@ -1675,6 +1731,12 @@ msgstr ""
 
 #: admin/class-wa-rsfp-taxonomy.php:140
 msgid "Thematics list pagination"
+msgstr ""
+
+#. translators:Transmission / association
+#: admin/class-wa-rsfp-fields.php:319 admin/blocks/src/block1/render.php:883
+#: admin/blocks/build/block1/render.php:883
+msgid "Transmission / association"
 msgstr ""
 
 #: admin/class-wa-rsfp-taxonomy.php:185
@@ -1723,18 +1785,26 @@ msgstr ""
 msgid "Use as featured image"
 msgstr ""
 
-#: admin/class-wa-rsfp-fields.php:241 admin/blocks/src/block1/render.php:837
-#: admin/blocks/build/block1/render.php:837
+#: admin/class-wa-rsfp-export.php:77
+msgid "Username"
+msgstr ""
+
+#: admin/class-wa-rsfp-export.php:87
+msgid "Verified"
+msgstr ""
+
+#: admin/class-wa-rsfp-fields.php:241 admin/blocks/src/block1/render.php:847
+#: admin/blocks/build/block1/render.php:847
 msgid "Viability.s"
 msgstr ""
 
 #. translators:Vidéo
-#: admin/blocks/src/block1/render.php:898
-#: admin/blocks/build/block1/render.php:898
+#: admin/blocks/src/block1/render.php:915
+#: admin/blocks/build/block1/render.php:915
 msgid "Video"
 msgstr ""
 
-#: admin/class-wa-rsfp-fields.php:399
+#: admin/class-wa-rsfp-fields.php:412
 msgid "Video file"
 msgstr ""
 
@@ -1798,29 +1868,29 @@ msgstr ""
 msgid "View Thematic"
 msgstr ""
 
-#: admin/class-wa-rsfp-fields.php:390
+#: admin/class-wa-rsfp-fields.php:403
 msgid "Vimeo & YouTube video link"
 msgstr ""
 
-#: admin/blocks/src/block1/render.php:1204
-#: admin/blocks/build/block1/render.php:1204
+#: admin/blocks/src/block1/render.php:1226
+#: admin/blocks/build/block1/render.php:1226
 msgid "Visit farm"
 msgstr ""
 
-#: admin/class-wa-rsfp-fields.php:361
+#: admin/class-wa-rsfp-fields.php:374
 msgid "Visite collective"
 msgstr ""
 
-#: admin/class-wa-rsfp-fields.php:359
+#: admin/class-wa-rsfp-fields.php:372
 msgid "Visite libre"
 msgstr ""
 
-#: admin/class-wa-rsfp-fields.php:360
+#: admin/class-wa-rsfp-fields.php:373
 msgid "Visite établissement scolaire"
 msgstr ""
 
-#: admin/class-wa-rsfp-fields.php:254 admin/blocks/src/block1/render.php:847
-#: admin/blocks/build/block1/render.php:847
+#: admin/class-wa-rsfp-fields.php:254 admin/blocks/src/block1/render.php:857
+#: admin/blocks/build/block1/render.php:857
 msgid "Vivability.s"
 msgstr ""
 
@@ -1838,8 +1908,8 @@ msgid "Wilhem Arnoldy"
 msgstr ""
 
 #. translators:Avec le soutien opérationnel de...
-#: admin/blocks/src/block1/render.php:1013
-#: admin/blocks/build/block1/render.php:1013
+#: admin/blocks/src/block1/render.php:1035
+#: admin/blocks/build/block1/render.php:1035
 msgid "With the operational support of..."
 msgstr ""
 

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: WA RSFP Global functions\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-06-12 10:31+0000\n"
-"PO-Revision-Date: 2025-11-03 14:54+0000\n"
+"PO-Revision-Date: 2025-11-03 14:52+0000\n"
 "Last-Translator: Wilhem\n"
 "Language-Team: Français\n"
 "Language: fr_FR\n"
@@ -698,12 +698,12 @@ msgstr "Répertoire › Relations"
 #: admin/blocks/src/block1/render.php:1253
 #: admin/blocks/build/block1/render.php:1253
 msgid "Download"
-msgstr "Télécharger"
+msgstr ""
 
 #: admin/blocks/src/block1/render.php:1314
 #: admin/blocks/build/block1/render.php:1314
 msgid "Download knowledge *.pdf"
-msgstr "Télécharger le savoir-faire *.pdf"
+msgstr ""
 
 #: admin/class-wa-rsfp-register.php:117
 msgid "Edit Farm"
@@ -1055,7 +1055,7 @@ msgstr ""
 #: admin/blocks/src/block1/render.php:1312
 #: admin/blocks/build/block1/render.php:1312
 msgid "Keep this knowledge close to you..."
-msgstr "Conservez ce savoir-faire proche de vous... "
+msgstr ""
 
 #: admin/class-wa-rsfp-register.php:14
 msgid "Knowledge"
@@ -1388,7 +1388,7 @@ msgstr ""
 #: admin/blocks/src/block1/render.php:1325
 #: admin/blocks/build/block1/render.php:1325
 msgid "Our catalogue"
-msgstr "Notre catalogue"
+msgstr ""
 
 #: admin/class-wa-rsfp-register.php:24
 msgid "Parent Directory:"
@@ -1592,7 +1592,7 @@ msgstr ""
 #: admin/blocks/src/block1/render.php:1323
 #: admin/blocks/build/block1/render.php:1323
 msgid "Read all the knowledges..."
-msgstr "Retrouvez l'ensemble des savoir-faire..."
+msgstr ""
 
 #: admin/class-wa-rsfp-fields.php:703 admin/class-wa-rsfp-columns.php:248
 msgid "Referent"
