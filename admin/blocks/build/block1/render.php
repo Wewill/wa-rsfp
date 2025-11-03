@@ -1292,6 +1292,58 @@ if ( has_post_thumbnail($post->ID) ) {
       <!-- End: Timeline-->
 
 
+
+		<!-- Begin: Display pdf maker -->
+		<?php
+		if (isset($ccpcm) && $ccpcm !== false) {
+			// Le plugin est chargé WA CCP Catalog Maker et l’objet est disponible
+
+			// Display pdf dwonload button if user is loggued 
+			if (is_user_logged_in() ) {
+			?>
+
+				<div class="container-fluid">
+					<div class="row g-0 align-items-top ms-1 me-1 ms-lg-10 me-lg-10">
+						<!-- First col -->
+						<div class="col-md-6 h-250-px bg-color-layout img-shifted rounded-start-4 md-rounded-end-4 aos-init aos-animate" data-aos="fade-up" data-aos-delay="0">
+							<div class="bg-image bg-cover bg-position-center-center" style="background-image: url(public/images/Fiche_mockup.png)"></div>
+							<div class="card bg-transparent border-0 --text-white h-100 p-4 d-flex flex-column justify-content-center text-white">
+								<hgroup>
+									<h3 class="card-title w-60"><a class="stretched-link link-white" href="https://www.agriculturepaysanne.org/IMG/pdf/bulletin_adhesion.pdf">Adhérer</a></h3>
+								</hgroup>
+								<p class="card-text">Recevoir des informations, formations, annonces...</p>
+								<div>
+									<a class="btn btn-sm btn-inverse-action-2" href="https://www.agriculturepaysanne.org/IMG/pdf/bulletin_adhesion.pdf">En savoir plus...</a>
+									<?php echo do_shortcode('[ccpcm method="integrator_button" title="'.__('Download *.pdf', 'wa-rsfp').'" template="Test-directory" class="btn btn-sm btn-inverse-action-2"]'); ?>
+								</div>
+							</div>
+						</div><!-- Last col -->
+						<div class="col-md-6 h-250-px bg-color-layout img-shifted rounded-end-4 d-none d-md-block aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+							<div class="bg-image bg-cover bg-position-center-center" style="background-image: url(public/images/Catalogue_mockup.png)"></div>
+							<div class="card bg-transparent border-0 --text-white h-100 p-4 d-flex flex-column justify-content-center text-white">
+								<hgroup></hgroup>
+								<p class="card-text">Projet créé par...</p>
+								<div>
+									<a class="btn btn-sm btn-inverse-action-2" disabled>Bientôt disponible...</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="d-flex align-items-top justify-content-between">
+
+
+				</div>
+				<div class="bg-color-layout my-2 my-lg-6 me-n5 p-5 rounded-start-top-4 rounded-top-start-4">
+					<h6 class="subline --text-action-1"><?= /*translators:Download the PDF version of this page */ __('Keep this knowledge close to you...', 'wa-rsfp'); ?></h6>
+					<?php echo do_shortcode('[ccpcm method="integrator_button" title="'.__('Download *.pdf', 'wa-rsfp').'" template="Test-directory"]'); ?>
+				</div>
+			<?php
+			}
+		}
+		?>
+		<!-- End: Display pdf maker -->
 	  
 		<!-- Begin: Farm contact bloc -->
 		<?php
