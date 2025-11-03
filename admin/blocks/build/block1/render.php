@@ -1318,7 +1318,7 @@ if ( has_post_thumbnail($post->ID) ) {
 						<div class="col-md-6 h-250-px bg-action-3 img-shifted rounded-end-4 rounded-bottom-0 d-none d-md-block aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
 							<div class="bg-image bg-cover bg-position-center-center" style="background-image: url(<?= esc_url(plugins_url( '../../../../public/images/Catalogue_mockup.png', __FILE__ )) ?>)"></div>
 							<div class="card-img-overlay bg-v-gradient-action-3 h-75 bottom-0 top-auto"></div>
-							<div class="card card-img-overlay bg-transparent border-0 h-100 p-4 d-flex flex-column justify-content-end">
+							<div class="card card-img-overlay bg-transparent border-0 h-100 p-4 d-flex flex-column justify-content-end text-white">
 								<hgroup></hgroup>
 								<p class="card-text mb-2"><strong><?= /*translators:Retrouvez l'ensemble des savoir-faire... */ __('Read all the knowledges...', 'wa-rsfp'); ?></strong></p>
 								<div>
