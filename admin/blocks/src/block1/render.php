@@ -1311,7 +1311,7 @@ if ( has_post_thumbnail($post->ID) ) {
 								<hgroup></hgroup>
 								<p class="card-text mb-2"><strong><?= /*translators:Download the PDF version of this page */ __('Keep this knowledge close to you...', 'wa-rsfp'); ?></strong></p>
 								<div>
-									<?php echo do_shortcode('[ccpcm method="integrator_button" title="'.__('Download knowledge *.pdf', 'wa-rsfp').'" template="Directory" render_dpi="150" filename_prefix="'.sanitize_file_name(get_the_title( $post->ID )).'" class="btn btn-sm btn-action-2"]'); ?>
+									<?php echo do_shortcode('[ccpcm method="integrator_button" title="'.__('Download knowledge *.pdf', 'wa-rsfp').'" template="Directory" render_dpi="150" filename_prefix="'.sanitize_file_name(get_the_title($post->ID)).'" class="btn btn-sm btn-action-2"]'); ?>
 								</div>
 							</div>
 						</div><!-- Last col -->
