@@ -1295,49 +1295,38 @@ if ( has_post_thumbnail($post->ID) ) {
 
 		<!-- Begin: Display pdf maker -->
 		<?php
-		if (isset($ccpcm) && $ccpcm !== false) {
-			// Le plugin est chargé WA CCP Catalog Maker et l’objet est disponible
-
+		if (is_plugin_active('wa-ccp-catalog-maker/wa-ccp-catalog-maker.php') && function_exists('fct_wa_ccp_catalog_maker')) {
+			// The WA CCP Catalog Maker plugin is active and the object is available
 			// Display pdf dwonload button if user is loggued 
 			if (is_user_logged_in() ) {
 			?>
 
-				<div class="container-fluid">
-					<div class="row g-0 align-items-top ms-1 me-1 ms-lg-10 me-lg-10">
+				<div class="container-fluid m-0 p-0">
+					<div class="row g-0 align-items-top">
 						<!-- First col -->
-						<div class="col-md-6 h-250-px bg-color-layout img-shifted rounded-start-4 md-rounded-end-4 aos-init aos-animate" data-aos="fade-up" data-aos-delay="0">
-							<div class="bg-image bg-cover bg-position-center-center" style="background-image: url(public/images/Fiche_mockup.png)"></div>
-							<div class="card bg-transparent border-0 --text-white h-100 p-4 d-flex flex-column justify-content-center text-white">
-								<hgroup>
-									<h3 class="card-title w-60"><a class="stretched-link link-white" href="https://www.agriculturepaysanne.org/IMG/pdf/bulletin_adhesion.pdf">Adhérer</a></h3>
-								</hgroup>
-								<p class="card-text">Recevoir des informations, formations, annonces...</p>
+						<div class="col-md-6 h-250-px bg-action-1 img-shifted rounded-start-4 rounded-bottom-0 md-rounded-end-4 aos-init aos-animate" data-aos="fade-up" data-aos-delay="0">
+							<div class="bg-image bg-cover bg-position-center-center" style="background-image: url(<?= esc_url(plugins_url( '../../../../public/images/Fiche_mockup.png', __FILE__ )) ?>)"></div>
+							<div class="card-img-overlay bg-v-gradient-action-1 h-50 bottom-0 top-auto"></div>
+							<div class="card bg-transparent border-0 h-100 p-4 d-flex flex-column justify-content-end">
+								<hgroup></hgroup>
+								<p class="card-text mb-2"><strong><?= /*translators:Download the PDF version of this page */ __('Keep this knowledge close to you...', 'wa-rsfp'); ?></strong></p>
 								<div>
-									<a class="btn btn-sm btn-inverse-action-2" href="https://www.agriculturepaysanne.org/IMG/pdf/bulletin_adhesion.pdf">En savoir plus...</a>
-									<?php echo do_shortcode('[ccpcm method="integrator_button" title="'.__('Download *.pdf', 'wa-rsfp').'" template="Test-directory" class="btn btn-sm btn-inverse-action-2"]'); ?>
+									<?php echo do_shortcode('[ccpcm method="integrator_button" title="'.__('Download knowledge *.pdf', 'wa-rsfp').'" template="Test-directory" class="btn btn-sm btn-action-2"]'); ?>
 								</div>
 							</div>
 						</div><!-- Last col -->
-						<div class="col-md-6 h-250-px bg-color-layout img-shifted rounded-end-4 d-none d-md-block aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
-							<div class="bg-image bg-cover bg-position-center-center" style="background-image: url(public/images/Catalogue_mockup.png)"></div>
-							<div class="card bg-transparent border-0 --text-white h-100 p-4 d-flex flex-column justify-content-center text-white">
+						<div class="col-md-6 h-250-px bg-action-3 img-shifted rounded-end-4 rounded-bottom-0 d-none d-md-block aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+							<div class="bg-image bg-cover bg-position-center-center" style="background-image: url(<?= esc_url(plugins_url( '../../../../public/images/Catalogue_mockup.png', __FILE__ )) ?>)"></div>
+							<div class="card-img-overlay bg-v-gradient-action-3 h-75 bottom-0 top-auto"></div>
+							<div class="card card-img-overlay bg-transparent border-0 h-100 p-4 d-flex flex-column justify-content-end">
 								<hgroup></hgroup>
-								<p class="card-text">Projet créé par...</p>
+								<p class="card-text mb-2"><strong><?= /*translators:Retrouvez l'ensemble des savoir-faire... */ __('Read all the knowledges...', 'wa-rsfp'); ?></strong></p>
 								<div>
-									<a class="btn btn-sm btn-inverse-action-2" disabled>Bientôt disponible...</a>
+									<a class="btn btn-sm btn-inverse-action-2" disabled><?= /*translators:Notre catalogue*/ __('Our catalogue', 'wa-rsfp'); ?> - bientôt disponible...</a>
 								</div>
 							</div>
 						</div>
 					</div>
-				</div>
-
-				<div class="d-flex align-items-top justify-content-between">
-
-
-				</div>
-				<div class="bg-color-layout my-2 my-lg-6 me-n5 p-5 rounded-start-top-4 rounded-top-start-4">
-					<h6 class="subline --text-action-1"><?= /*translators:Download the PDF version of this page */ __('Keep this knowledge close to you...', 'wa-rsfp'); ?></h6>
-					<?php echo do_shortcode('[ccpcm method="integrator_button" title="'.__('Download *.pdf', 'wa-rsfp').'" template="Test-directory"]'); ?>
 				</div>
 			<?php
 			}
@@ -1380,34 +1369,23 @@ if ( has_post_thumbnail($post->ID) ) {
 			}
 
 			?>
-			<div class="bg-color-layout my-2 my-lg-6 me-n5 p-5 rounded-start-4">
+			<div class="bg-color-layout mb-2 mb-lg-6 --me-n5 p-5 rounded-bottom-4 <?= is_plugin_active('wa-ccp-catalog-maker/wa-ccp-catalog-maker.php') && function_exists('fct_wa_ccp_catalog_maker')?'mt-0':''; ?>">
 				<div class="d-flex align-items-top justify-content-between me-n5">
 					<!-- Head -->
-					<?php if ($f_general_legal_entity || $f_more_testimony || $f_more_biography) : ?>
+					<?php if ($f_general_farmers || $f_more_testimony || $f_more_biography) : ?>
 						<div class="pe-3 flex-fill">
-							<h1 class="heading-1 mt-4 lh-xs">“</h1>
+							<?php if ($f_more_testimony) echo '<h1 class="heading-1 mt-4 lh-xs">“</h1>'; ?>
 							<?php if ($f_general_farmers) 	printf('<p class="lead fw-bold mb-3"><strong>%s</strong></p>', implode(', ', $f_general_farmers)); ?>
 							<?php if ($f_more_testimony) 	printf('<p class="lead mb-3">%s</p>', WaffTwo\Core\waff_do_markdown($f_more_testimony)); ?>
 							<?php if ($f_more_biography) 	printf('<p class="">%s</p>', WaffTwo\Core\waff_do_markdown($f_more_biography)); ?>
 						</div>
 
-						<div class="min-w-200-px">
+						<div class="min-w-200-px me-n5">
 							<div class="mt-n8">
-								<!-- <figure class="" id="2">
-									<picture class="lazy" data-fancybox="gallery" data-loader="pic" data-src="https://placehold.co/1600x800?text=1600x800(2)">
-									<data-src media="(max-width: 576px)"
-									srcset="https://placehold.co/1200x1200/FF0000/808080?text=1200x1200@2 2x,
-											https://placehold.co/600x600/AA0000/808080?text=600x600" type="image/jpeg"></data-src>
-									<data-img src="https://placehold.co/600x600" alt="Lorem ipsum" class="img-fluid rounded-start-4 h-200-px w-200-px fit-image --w-100 img-transition-scale" style=""></data-img>
-									</picture>
-									<figcaption>This is a Lazy loaded image</figcaption>
-								</figure>
-	-->
-
 								<!-- Farm Featured image -->  
 								<?php if (!empty($f_featured_img_urls)): ?>
 									<figure title="<?php echo esc_attr($f_featured_img_description); ?>">
-										<picture class="--contrast--light overflow-hidden h-100 lazy" data-aos="fade-up" data-aos-delay="200">
+										<picture class="farm --contrast--light overflow-hidden h-100 lazy" data-aos="fade-up" data-aos-delay="200">
 										<!-- 3800x1200 > 1900x600 -->
 										<data-src media="(min-width: 990px)"
 												srcset="<?= $f_featured_img_urls['post-featured-image-m']; ?>" type="image/jpeg"></data-src>
@@ -1473,7 +1451,7 @@ if ( has_post_thumbnail($post->ID) ) {
 								<h6 class="fw-bold text-action-1 op-6"><?= __('Links', 'wa-rsfp'); ?></h6>
 								<?php 
 								foreach($f_general_links as $f_general_link) : 
-									printf('<p class="mb-0 --lead"><a class="text-action-1" href="%s" title="Visit %s">%s</></p>', $f_general_link, $f_title, str_replace(array('http://', 'https://'), '', $f_general_link));
+									printf('<p class="mb-0 --lead"><a class="text-action-1" href="%s" title="Visit %s">%s</></p>', $f_general_link, $f_title, 'Visitez ce lien', str_replace(array('http://', 'https://'), '', $f_general_link));
 								endforeach; 
 								?>
 							</div>
