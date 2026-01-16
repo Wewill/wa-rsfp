@@ -57,7 +57,7 @@ function post_type_allowed_block_types( $allowed_blocks, $editor_context ) {
 	// Add custom block
 	$allowed_blocks[] = 'directory/wa-rsfp-directory-block';
 	// Add metabox.io testimony block
-	// $allowed_blocks[] = 'meta-box/test';
+	$allowed_blocks[] = 'meta-box/read-more';
 
 	return $allowed_blocks;
 }		
@@ -70,70 +70,34 @@ function post_type_allowed_block_types( $allowed_blocks, $editor_context ) {
 // Register via MetaBox.io block
 function register_custom_blocks() {
 	// Blocks
-	// add_filter( 'rwmb_meta_boxes', 'register_blocks');
+	add_filter( 'rwmb_meta_boxes', 'wa_rsfp_register_blocks');
 
 }
 
-function register_blocks( $meta_boxes ) {
-	$prefix = 'waff_rsfp_';
+function wa_rsfp_register_blocks( $meta_boxes ) {
+	$prefix = 'wa_rsfp_';
 
 	/**
 	 * Test block
 	 */
 	$meta_boxes[] = [
-		'title'           => __( 'Test', 'wa-rsfp' ),
-		'id'              => 'test',
-		'icon'            => 'admin-generic',
+		'title'           => __( '(RSFP) Read more', 'wa-rsfp' ),
+        'description' => __( 'Adds a read more block to cut long text for catalog maker', 'wa-rsfp' ),
+		'id'              => 'read-more',
+        'icon'        	  => 'editor-insertmore',
 		'supports'        => [
-			'align' => [''],
+            'customClassName' => false,
 		],
-		'render_callback' => function( $attributes, $preview, $post_id ) {
-			?>
-			<div class="testimonial testimonial--<?= mb_get_block_field( 'style' ) ?>">
-			<b>Default block page :</b>
-				<div class="testimonial__text">
-					Inner blocks : 
-					<InnerBlocks />
-				</div>
-				<div class="testimonial__image">
-					Block fields (some_text):
-					<?php mb_the_block_field( 'waff_blocks_some_text' ) ?>
-				</div>
-				<div class="testimonial__desc">
-					Post fields (description): 
-					A:<?php echo rwmb_meta( 'd_general_subtitle', $post_id ) ?>
-					B:<?php echo get_post_meta($post_id, 'd_general_subtitle', true) ?>
-				</div>
-			</div>
-			<?php
-		},
+        'render_code' => '<!-- Read more for catalog maker purpose -->
+		<more id="{{ post_id }}" {{ attribute }}></more>
+		<!-- END : Read more for catalog maker purpose -->
+		',
 		'type'            => 'block',
 		'context'         => 'content',
-		'fields'          => [
-			[
-				'name' => __( 'Text', 'wa-rsfp' ),
-				'id'   => $prefix . 'text_vpj8e9ong3',
-				'type' => 'text',
-			],
-			[
-				'name' => __( 'Some text', 'wa-rsfp' ),
-				'id'   => $prefix . 'some_text',
-				'type' => 'text',
-			],
-			[
-				'type' => 'select',
-				'id'   => 'style',
-				'name' => 'Style',
-				'options' => [
-					'default'     => 'Default',
-					'image_above' => 'Image above',
-				],
-			],
-			[
-				'type' => 'single_image',
-				'id'   => 'image',
-				'name' => 'Image',
-			],
+		'fields'          => [],
+		'icon'            => [
+            'foreground' 	=> '#ff4400ff',
+			'src' 			=> 'format-standard',
 		],
 	];
 
