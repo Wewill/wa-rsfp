@@ -138,6 +138,6 @@ function wa_rsfp_readmore_callback( $attributes ) {
 		$data .= " data-coblocks-animation='{$attributes['animation']}'";
 	}
 	?>
-	<more id="<?= $id ?>" class="<?= $class ?> <?= $animation_class ?>" <?= $data ?>></more>
+	<span id="<?= $id ?>" class="<?= $class ?> <?= $animation_class ?>" <?= $data ?>></span>
 	<?php
 }
