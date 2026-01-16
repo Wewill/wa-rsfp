@@ -128,16 +128,5 @@ function wa_rsfp_readmore_callback( $attributes ) {
 	// Block margin
 	$themeClass = 'readmore visually-hidden';
 	$class = $themeClass . ' ' . ( $attributes['className'] ?? '' );
-	if ( ! empty( $attributes['align'] ) ) {
-		$class .= " align{$attributes['align']}";
-	}
-	$data = '';
-	$animation_class = '';
-	if ( ! empty( $attributes['animation'] ) ) {
-		$animation_class .= " coblocks-animate";
-		$data .= " data-coblocks-animation='{$attributes['animation']}'";
-	}
-	?>
-	<span id="<?= $id ?>" class="<?= $class ?> <?= $animation_class ?>" <?= $data ?>> ( Lire la suite... ) </span>
-	<?php
+	?><span id="<?= $id ?>" class="<?= $class ?>"> ( Lire la suite... ) </span><?php
 }
