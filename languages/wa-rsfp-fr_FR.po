@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: WA RSFP Global functions\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-06-12 10:31+0000\n"
-"PO-Revision-Date: 2025-11-03 14:54+0000\n"
+"PO-Revision-Date: 2026-03-09 11:29+0000\n"
 "Last-Translator: Wilhem\n"
 "Language-Team: Français\n"
 "Language: fr_FR\n"
@@ -39,6 +39,10 @@ msgstr "← Aller aux thématiques"
 #: admin/class-wa-rsfp-fields.php:786 admin/class-wa-rsfp-fields.php:900
 msgid "(Optional) This content will be displayed in knowledge single page."
 msgstr "(Facultatif) Ce contenu sera affiché sur une page de savoir-faire."
+
+#: admin/class-wa-rsfp-blocks.php:85
+msgid "(RSFP) Read more"
+msgstr ""
 
 #: admin/class-wa-rsfp-columns.php:403 admin/class-wa-rsfp-columns.php:419
 msgid ""
@@ -462,8 +466,12 @@ msgstr "Ajouter ou supprimer des thématiques"
 msgid "Address.s"
 msgstr "Adresse.s"
 
-#: admin/blocks/src/block1/render.php:1420
-#: admin/blocks/build/block1/render.php:1420
+#: admin/class-wa-rsfp-blocks.php:86
+msgid "Adds a read more block to cut long text for catalog maker"
+msgstr ""
+
+#: admin/blocks/src/block1/render.php:1425
+#: admin/blocks/build/block1/render.php:1425
 msgid "Adresse"
 msgstr ""
 
@@ -595,15 +603,15 @@ msgstr "Couleur"
 msgid "Commercialization"
 msgstr "Commercialisation"
 
-#: admin/blocks/src/block1/render.php:1436
-#: admin/blocks/build/block1/render.php:1436
+#: admin/blocks/src/block1/render.php:1441
+#: admin/blocks/build/block1/render.php:1441
 msgid "Contact"
 msgstr ""
 
 #: admin/blocks/src/block1/render.php:1103
-#: admin/blocks/src/block1/render.php:1466
+#: admin/blocks/src/block1/render.php:1471
 #: admin/blocks/build/block1/render.php:1103
-#: admin/blocks/build/block1/render.php:1466
+#: admin/blocks/build/block1/render.php:1471
 msgid "Contact us"
 msgstr "Contactez-nous"
 
@@ -700,8 +708,8 @@ msgstr "Répertoire › Relations"
 msgid "Download"
 msgstr "Télécharger"
 
-#: admin/blocks/src/block1/render.php:1314
-#: admin/blocks/build/block1/render.php:1314
+#: admin/blocks/src/block1/render.php:1313
+#: admin/blocks/build/block1/render.php:1313
 msgid "Download knowledge *.pdf"
 msgstr "Télécharger le savoir-faire *.pdf"
 
@@ -1003,6 +1011,14 @@ msgstr "Géolocalisation"
 msgid "https://www.wilhemarnoldy.fr"
 msgstr ""
 
+#. translators:Je m'inscris ou je me connecte...
+#: admin/blocks/src/block1/render.php:1316
+#: admin/blocks/src/block1/render.php:1331
+#: admin/blocks/build/block1/render.php:1316
+#: admin/blocks/build/block1/render.php:1331
+msgid "I log in or register..."
+msgstr "Je m'inscris ou je me connecte..."
+
 #: admin/class-wa-rsfp-export.php:76
 msgid "ID"
 msgstr ""
@@ -1051,9 +1067,9 @@ msgstr "Parcours à l'installation"
 msgid "Introduction"
 msgstr ""
 
-#. translators:Download the PDF version of this page
-#: admin/blocks/src/block1/render.php:1312
-#: admin/blocks/build/block1/render.php:1312
+#. translators:Conservez ce savoir-faire proche de vous
+#: admin/blocks/src/block1/render.php:1310
+#: admin/blocks/build/block1/render.php:1310
 msgid "Keep this knowledge close to you..."
 msgstr "Conservez ce savoir-faire proche de vous... "
 
@@ -1111,8 +1127,8 @@ msgstr "Lien"
 msgid "Link.s"
 msgstr "Lien.s"
 
-#: admin/blocks/src/block1/render.php:1451
-#: admin/blocks/build/block1/render.php:1451
+#: admin/blocks/src/block1/render.php:1456
+#: admin/blocks/build/block1/render.php:1456
 msgid "Links"
 msgstr "Liens"
 
@@ -1210,8 +1226,8 @@ msgstr ""
 msgid "New Thematic Name"
 msgstr ""
 
-#: admin/blocks/src/block1/render.php:1562
-#: admin/blocks/build/block1/render.php:1562
+#: admin/blocks/src/block1/render.php:1567
+#: admin/blocks/build/block1/render.php:1567
 msgid "Next knowledge"
 msgstr "Savoir-faire suivant"
 
@@ -1385,8 +1401,8 @@ msgid "Operations list navigation"
 msgstr ""
 
 #. translators:Notre catalogue
-#: admin/blocks/src/block1/render.php:1325
-#: admin/blocks/build/block1/render.php:1325
+#: admin/blocks/src/block1/render.php:1328
+#: admin/blocks/build/block1/render.php:1328
 msgid "Our catalogue"
 msgstr "Notre catalogue"
 
@@ -1558,8 +1574,8 @@ msgstr "Image de présentation"
 msgid "Preview"
 msgstr "Aperçu"
 
-#: admin/blocks/src/block1/render.php:1517
-#: admin/blocks/build/block1/render.php:1517
+#: admin/blocks/src/block1/render.php:1522
+#: admin/blocks/build/block1/render.php:1522
 msgid "Previous knowledge"
 msgstr "Savoir-faire précédent"
 
@@ -1589,8 +1605,8 @@ msgid "Profil"
 msgstr ""
 
 #. translators:Retrouvez l'ensemble des savoir-faire...
-#: admin/blocks/src/block1/render.php:1323
-#: admin/blocks/build/block1/render.php:1323
+#: admin/blocks/src/block1/render.php:1325
+#: admin/blocks/build/block1/render.php:1325
 msgid "Read all the knowledges..."
 msgstr "Retrouvez l'ensemble des savoir-faire..."
 
@@ -1681,10 +1697,6 @@ msgstr "Définir l'image en avant"
 msgid "Skill.s"
 msgstr "Compétence.s acquise.s"
 
-#: admin/class-wa-rsfp-blocks.php:119
-msgid "Some text"
-msgstr ""
-
 #: admin/class-wa-rsfp-fields.php:358
 msgid "Stage de découverte"
 msgstr ""
@@ -1770,18 +1782,10 @@ msgstr ""
 msgid "Subtitle"
 msgstr "Soustitre"
 
-#: admin/class-wa-rsfp-blocks.php:84
-msgid "Test"
-msgstr ""
-
 #. translators:Témoignage libre
 #: admin/class-wa-rsfp-fields.php:608
 msgid "Testimony"
 msgstr "Témoignage libre"
-
-#: admin/class-wa-rsfp-blocks.php:114
-msgid "Text"
-msgstr "Texte"
 
 #: admin/class-wa-rsfp-taxonomy.php:122
 msgid "Thematic"

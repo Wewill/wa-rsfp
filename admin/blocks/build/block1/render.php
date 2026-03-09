@@ -1478,7 +1478,7 @@ if ( has_post_thumbnail($post->ID) ) {
 		} else {
 			?>
 			<!-- User is not loggued -->
-			<div class="bg-color-layout my-2 my-lg-6 me-n5 p-5 rounded-start-4 <?= is_plugin_active('wa-ccp-catalog-maker/wa-ccp-catalog-maker.php') && function_exists('fct_wa_ccp_catalog_maker')?'mt-0 rounded-top-left-0':''; ?>">
+			<div class="bg-color-layout p-5 rounded-bottom-4 <?= is_plugin_active('wa-ccp-catalog-maker/wa-ccp-catalog-maker.php') && function_exists('fct_wa_ccp_catalog_maker')?'mt-0 mb-2':'my-2 my-lg-6 me-n5'; ?>">
 				<div class="d-flex align-items-top justify-content-between --me-n5">
 					<!-- Begin: Log -->
 					<!-- Line 1 -->

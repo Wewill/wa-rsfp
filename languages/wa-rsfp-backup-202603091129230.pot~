@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WA RSFP Global functions\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-09 11:29+0000\n"
+"POT-Creation-Date: 2025-11-03 14:52+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -39,10 +39,6 @@ msgstr ""
 #: admin/class-wa-rsfp-fields.php:615 admin/class-wa-rsfp-fields.php:626
 #: admin/class-wa-rsfp-fields.php:786 admin/class-wa-rsfp-fields.php:900
 msgid "(Optional) This content will be displayed in knowledge single page."
-msgstr ""
-
-#: admin/class-wa-rsfp-blocks.php:85
-msgid "(RSFP) Read more"
 msgstr ""
 
 #: admin/class-wa-rsfp-columns.php:403 admin/class-wa-rsfp-columns.php:419
@@ -396,12 +392,8 @@ msgstr ""
 msgid "Address.s"
 msgstr ""
 
-#: admin/class-wa-rsfp-blocks.php:86
-msgid "Adds a read more block to cut long text for catalog maker"
-msgstr ""
-
-#: admin/blocks/src/block1/render.php:1425
-#: admin/blocks/build/block1/render.php:1425
+#: admin/blocks/src/block1/render.php:1420
+#: admin/blocks/build/block1/render.php:1420
 msgid "Adresse"
 msgstr ""
 
@@ -533,15 +525,15 @@ msgstr ""
 msgid "Commercialization"
 msgstr ""
 
-#: admin/blocks/src/block1/render.php:1441
-#: admin/blocks/build/block1/render.php:1441
+#: admin/blocks/src/block1/render.php:1436
+#: admin/blocks/build/block1/render.php:1436
 msgid "Contact"
 msgstr ""
 
 #: admin/blocks/src/block1/render.php:1103
-#: admin/blocks/src/block1/render.php:1471
+#: admin/blocks/src/block1/render.php:1466
 #: admin/blocks/build/block1/render.php:1103
-#: admin/blocks/build/block1/render.php:1471
+#: admin/blocks/build/block1/render.php:1466
 msgid "Contact us"
 msgstr ""
 
@@ -638,8 +630,8 @@ msgstr ""
 msgid "Download"
 msgstr ""
 
-#: admin/blocks/src/block1/render.php:1313
-#: admin/blocks/build/block1/render.php:1313
+#: admin/blocks/src/block1/render.php:1314
+#: admin/blocks/build/block1/render.php:1314
 msgid "Download knowledge *.pdf"
 msgstr ""
 
@@ -939,14 +931,6 @@ msgstr ""
 msgid "https://www.wilhemarnoldy.fr"
 msgstr ""
 
-#. translators:Je m'inscris ou je me connecte...
-#: admin/blocks/src/block1/render.php:1316
-#: admin/blocks/src/block1/render.php:1331
-#: admin/blocks/build/block1/render.php:1316
-#: admin/blocks/build/block1/render.php:1331
-msgid "I log in or register..."
-msgstr ""
-
 #: admin/class-wa-rsfp-export.php:76
 msgid "ID"
 msgstr ""
@@ -995,9 +979,9 @@ msgstr ""
 msgid "Introduction"
 msgstr ""
 
-#. translators:Conservez ce savoir-faire proche de vous
-#: admin/blocks/src/block1/render.php:1310
-#: admin/blocks/build/block1/render.php:1310
+#. translators:Download the PDF version of this page
+#: admin/blocks/src/block1/render.php:1312
+#: admin/blocks/build/block1/render.php:1312
 msgid "Keep this knowledge close to you..."
 msgstr ""
 
@@ -1055,8 +1039,8 @@ msgstr ""
 msgid "Link.s"
 msgstr ""
 
-#: admin/blocks/src/block1/render.php:1456
-#: admin/blocks/build/block1/render.php:1456
+#: admin/blocks/src/block1/render.php:1451
+#: admin/blocks/build/block1/render.php:1451
 msgid "Links"
 msgstr ""
 
@@ -1153,8 +1137,8 @@ msgstr ""
 msgid "New Thematic Name"
 msgstr ""
 
-#: admin/blocks/src/block1/render.php:1567
-#: admin/blocks/build/block1/render.php:1567
+#: admin/blocks/src/block1/render.php:1562
+#: admin/blocks/build/block1/render.php:1562
 msgid "Next knowledge"
 msgstr ""
 
@@ -1328,8 +1312,8 @@ msgid "Operations list navigation"
 msgstr ""
 
 #. translators:Notre catalogue
-#: admin/blocks/src/block1/render.php:1328
-#: admin/blocks/build/block1/render.php:1328
+#: admin/blocks/src/block1/render.php:1325
+#: admin/blocks/build/block1/render.php:1325
 msgid "Our catalogue"
 msgstr ""
 
@@ -1501,8 +1485,8 @@ msgstr ""
 msgid "Preview"
 msgstr ""
 
-#: admin/blocks/src/block1/render.php:1522
-#: admin/blocks/build/block1/render.php:1522
+#: admin/blocks/src/block1/render.php:1517
+#: admin/blocks/build/block1/render.php:1517
 msgid "Previous knowledge"
 msgstr ""
 
@@ -1532,8 +1516,8 @@ msgid "Profil"
 msgstr ""
 
 #. translators:Retrouvez l'ensemble des savoir-faire...
-#: admin/blocks/src/block1/render.php:1325
-#: admin/blocks/build/block1/render.php:1325
+#: admin/blocks/src/block1/render.php:1323
+#: admin/blocks/build/block1/render.php:1323
 msgid "Read all the knowledges..."
 msgstr ""
 
@@ -1624,6 +1608,10 @@ msgstr ""
 msgid "Skill.s"
 msgstr ""
 
+#: admin/class-wa-rsfp-blocks.php:119
+msgid "Some text"
+msgstr ""
+
 #: admin/class-wa-rsfp-fields.php:358
 msgid "Stage de découverte"
 msgstr ""
@@ -1709,9 +1697,17 @@ msgstr ""
 msgid "Subtitle"
 msgstr ""
 
+#: admin/class-wa-rsfp-blocks.php:84
+msgid "Test"
+msgstr ""
+
 #. translators:Témoignage libre
 #: admin/class-wa-rsfp-fields.php:608
 msgid "Testimony"
+msgstr ""
+
+#: admin/class-wa-rsfp-blocks.php:114
+msgid "Text"
 msgstr ""
 
 #: admin/class-wa-rsfp-taxonomy.php:122
