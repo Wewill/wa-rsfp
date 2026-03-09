@@ -1297,10 +1297,8 @@ if ( has_post_thumbnail($post->ID) ) {
 		<?php
 		if (is_plugin_active('wa-ccp-catalog-maker/wa-ccp-catalog-maker.php') && function_exists('fct_wa_ccp_catalog_maker')) {
 			// The WA CCP Catalog Maker plugin is active and the object is available
-			// Display pdf dwonload button if user is loggued 
-			if (is_user_logged_in() ) {
+			// Display pdf download button if user is loggued 
 			?>
-
 				<div class="container-fluid m-0 p-0">
 					<div class="row g-0 align-items-top">
 						<!-- First col -->
@@ -1309,10 +1307,14 @@ if ( has_post_thumbnail($post->ID) ) {
 							<div class="card-img-overlay bg-v-gradient-action-1 h-50 bottom-0 top-auto"></div>
 							<div class="card bg-transparent border-0 h-100 p-4 d-flex flex-column justify-content-end">
 								<hgroup></hgroup>
-								<p class="card-text mb-2"><strong><?= /*translators:Download the PDF version of this page */ __('Keep this knowledge close to you...', 'wa-rsfp'); ?></strong></p>
-								<div>
-									<?php echo do_shortcode('[ccpcm method="integrator_button" title="'.__('Download knowledge *.pdf', 'wa-rsfp').'" template="Directory" render_dpi="150" filename_prefix="'.sanitize_file_name(get_the_title($post->ID)).'" class="btn btn-sm btn-action-2"]'); ?>
-								</div>
+								<p class="card-text mb-2"><strong><?= /*translators:Conservez ce savoir-faire proche de vous */ __('Keep this knowledge close to you...', 'wa-rsfp'); ?></strong></p>
+									<?php if (is_user_logged_in() ) { ?>
+										<div>
+											<?php echo do_shortcode('[ccpcm method="integrator_button" title="'.__('Download knowledge *.pdf', 'wa-rsfp').'" template="Directory" render_dpi="150" filename_prefix="'.sanitize_file_name(get_the_title($post->ID)).'" class="btn btn-sm btn-action-2"]'); ?>
+										</div>
+									<?php } else { ?>
+										<p class="card-text btn btn-sm btn-disabled  mb-2"><?= /*translators:Veuillez vous connecter pour télécharger le PDF */ __('Please log in to download the PDF', 'wa-rsfp'); ?></p>
+									<?php } ?>
 							</div>
 						</div><!-- Last col -->
 						<div class="col-md-6 h-250-px bg-action-3 img-shifted rounded-end-4 rounded-bottom-0 d-none d-md-block aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
@@ -1321,15 +1323,18 @@ if ( has_post_thumbnail($post->ID) ) {
 							<div class="card card-img-overlay bg-transparent border-0 h-100 p-4 d-flex flex-column justify-content-end text-white">
 								<hgroup></hgroup>
 								<p class="card-text mb-2"><strong><?= /*translators:Retrouvez l'ensemble des savoir-faire... */ __('Read all the knowledges...', 'wa-rsfp'); ?></strong></p>
-								<div>
-									<a class="btn btn-sm btn-inverse-action-2" disabled><?= /*translators:Notre catalogue*/ __('Our catalogue', 'wa-rsfp'); ?> - bientôt disponible...</a>
-								</div>
+									<?php if (is_user_logged_in() ) { ?>
+										<div>
+											<a class="btn btn-sm btn-inverse-action-2" disabled><?= /*translators:Notre catalogue*/ __('Our catalogue', 'wa-rsfp'); ?> - bientôt disponible...</a>
+										</div>
+									<?php } else { ?>
+										<p class="card-text btn btn-sm btn-disabled mb-2"><?= /*translators:Veuillez vous connecter pour accéder à notre catalogue */ __('Please log in to access our catalogue', 'wa-rsfp'); ?></p>
+									<?php } ?>
 							</div>
 						</div>
 					</div>
 				</div>
 			<?php
-			}
 		}
 		?>
 		<!-- End: Display pdf maker -->
