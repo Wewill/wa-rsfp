@@ -1313,7 +1313,7 @@ if ( has_post_thumbnail($post->ID) ) {
 											<?php echo do_shortcode('[ccpcm method="integrator_button" title="'.__('Download knowledge *.pdf', 'wa-rsfp').'" template="Directory" render_dpi="150" filename_prefix="'.sanitize_file_name(get_the_title($post->ID)).'" class="btn btn-sm btn-action-2"]'); ?>
 										</div>
 									<?php } else { ?>
-										<p class="card-text btn btn-sm btn-disabled  mb-2"><?= /*translators:Veuillez vous connecter pour télécharger le PDF */ __('Please log in to download the PDF', 'wa-rsfp'); ?></p>
+										<p class="card-text mb-2"><?= /*translators:Je m'inscris ou je me connecte... */ __('I log in or register...', 'wa-rsfp'); ?></p>
 									<?php } ?>
 							</div>
 						</div><!-- Last col -->
@@ -1328,7 +1328,7 @@ if ( has_post_thumbnail($post->ID) ) {
 											<a class="btn btn-sm btn-inverse-action-2" disabled><?= /*translators:Notre catalogue*/ __('Our catalogue', 'wa-rsfp'); ?> - bientôt disponible...</a>
 										</div>
 									<?php } else { ?>
-										<p class="card-text btn btn-sm btn-disabled mb-2"><?= /*translators:Veuillez vous connecter pour accéder à notre catalogue */ __('Please log in to access our catalogue', 'wa-rsfp'); ?></p>
+										<p class="card-text mb-2"><?= /*translators:Je m'inscris ou je me connecte... */ __('I log in or register...', 'wa-rsfp'); ?></p>
 									<?php } ?>
 							</div>
 						</div>
@@ -1486,8 +1486,8 @@ if ( has_post_thumbnail($post->ID) ) {
 						<div class="d-flex align-items-center flex-fill --w-50">
 							<i class="bi bi bi-person-lock flex-shrink-0 me-2 me-md-3 h2 md-reset-fontsize text-action-1"></i>
 							<div>
-								<h6 class="fw-bold text-action-1 mt-0">Inscrivez-vous / connectez-vous au répertoire pour découvrir les coordonnées</h6>
-								<p class="mb-0">Entrez en contact avec des paysans désireux de partager leur savoir-faire avec vous ...</p>
+								<h6 class="fw-bold text-action-1 mt-0"><u>Inscrivez-vous / connectez-vous</u> pour découvrir les coordonnées, les fiches pdf et notre catalogue complet de savoir-faire...</h6>
+								<p class="mb-0">Entrez en contact avec des paysans désireux de partager leur savoir-faire avec vous !</p>
 							</div>
 						</div>		
 					</div>				
